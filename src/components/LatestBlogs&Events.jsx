@@ -6,7 +6,7 @@ import img3 from "@/assets/homepage_event/blogs3.svg";
 import img4 from "@/assets/homepage_event/blogs4.svg";
 import { Calendar } from "lucide-react";
 import Heading from "@/components/Heading";
-import Container from "@/components/wrappers/Container";
+import Container from "@/wrapper/Container";
 import { AnimatedList } from "@/components/ui/animated-list";
 export default function LatestBlogsAndEvents() {
   let events = [
