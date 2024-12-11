@@ -6,7 +6,7 @@ const AboutSection = () => {
       <div className="flex flex-col md:flex-row gap-8 items-center">
         {/* Image Section */}
         <div className="relative w-full md:w-1/2 order-2 md:order-1">
-          <div className="absolute inset-0 bg-[#A41E34] w-1/4 md:w-1/3 h-full -z-10 rounded-l-lg" />
+          <div className="absolute inset-0 bg-red-600 w-1/4 md:w-1/3 h-full -z-10 rounded-l-lg" />
           <img
             src={AboutSSIM}
             alt="Students at SSIM"
@@ -18,10 +18,10 @@ const AboutSection = () => {
         {/* Content Section */}
         <div className="w-full md:w-1/2 space-y-4 md:space-y-6 order-1 md:order-2">
           <div className="text-center md:text-left">
-            <h2 className="text-xl md:text-2xl font-medium text-gray-600 mb-2">
+            <h2 className="text-xl md:text-2xl font-medium text-mainBlue mb-2">
               About SSIM
             </h2>
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#A41E34] leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-red-600 leading-tight">
               Top Management Institute in Hyderabad
             </h1>
           </div>
