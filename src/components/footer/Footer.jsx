@@ -120,12 +120,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t mt-8 py-4 flex justify-between items-center">
-          <p className="text-gray-600 text-lg">Copyright © SSIM 2024</p>
-          <div className="flex items-center gap-2">
-            <img src="/whatsapp-icon.png" alt="WhatsApp" className="h-5 w-5" />
-            <span className="text-gray-600 text-lg">Admissions Assistant</span>
-          </div>
+        <div className="border-t mt-8 py-4 flex justify-center md:justify-start items-center">
+          <p className="text-gray-600  text-lg">Copyright © SSIM 2024</p>
         </div>
       </div>
     </footer>

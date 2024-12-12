@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "@/assets/ssimlogo.webp";
+import { Link } from "react-router-dom";
 
 import Drawer from "./Drawer";
 import {
@@ -8,28 +8,26 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-import { Link } from "react-router-dom";
 import { navlinks } from "./navData";
 import { useState } from "react";
+import logo from "@/assets/ssimlogo.webp";
 
 export default function Navbar() {
   const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <div className="bg-red-600 px-4 py-4">
-      <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-10">
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Indo Global Group of Colleges"
-              className="h-12 sm:h-16 object-contain "
-            />
-          </Link>
-        </div>
+    <div className="bg-white lg:bg-blue-900 px-4 py-4">
+      <div className="container mx-auto">
         <nav>
-          <ul className="hidden lg:flex space-x-4">
+          <div className="flex justify-between items-center lg:hidden">
+            <Link to="/">
+              <img src={logo} alt="SSIM Logo" className="h-12" />
+            </Link>
+            <Drawer className="text-black bg-black" />
+          </div>
+
+          <ul className="hidden lg:flex justify-between items-center">
             {navlinks.map((link, index) => (
               <li
                 key={link.name}
@@ -87,7 +85,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Drawer />
         </nav>
       </div>
     </div>

@@ -1,8 +1,26 @@
 import AboutSSIM from "@/assets/about_ssim/aboutssim.webp";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const AboutSection = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  useEffect(() => {
+    setHasAnimated(true);
+  }, []);
+
   return (
-    <section className="container mx-auto px-4 py-8 md:py-16">
+    <motion.section
+      className="container mx-auto px-4 py-8 md:py-16"
+      initial="hidden"
+      animate={hasAnimated ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="flex flex-col md:flex-row gap-8 items-center">
         {/* Image Section */}
         <div className="relative w-full md:w-1/2 order-2 md:order-1">
@@ -44,7 +62,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
