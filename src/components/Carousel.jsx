@@ -37,10 +37,10 @@ export default function ExcursionCarousel() {
   };
 
   return (
-    <div className="min-h-screen bg-[#641C34] flex items-center justify-center p-4">
+    <div className="bg-[#641C34] py-8 px-4">
       <div className="w-full max-w-3xl container mx-auto">
         <h1 className="text-white text-3xl md:text-4xl font-bold text-center mb-8">
-          Global Excursion at IMM
+          SSIM Stories
         </h1>
 
         <Carousel opts={{ loop: true }} className="relative w-full">
