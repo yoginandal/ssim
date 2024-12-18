@@ -36,4 +36,5 @@ export const navlinks = [
     name: "INTERNATIONAL RELATIONS",
     path: "/international-relations",
   },
+  { name: "CONTACT US", path: "/contact-us" }, // Added Contact Us link
 ];

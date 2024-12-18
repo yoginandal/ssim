@@ -60,7 +60,7 @@ const ImmLegacySection = () => {
   }, [isInView, stats]);
 
   return (
-    <section ref={sectionRef} className="w-full py-16 bg-mainBlue">
+    <section ref={sectionRef} className="w-full py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -69,13 +69,13 @@ const ImmLegacySection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-red-600/30 p-8 rounded-lg text-center hover:bg-red-600/50 transition-all duration-300"
+              className="bg-blue-900 p-8 rounded-lg text-center hover:bg-blue-900 transition-all duration-300"
             >
-              <h3 className="text-yellow-400 text-4xl font-bold mb-2">
+              <h3 className="text-white text-4xl font-bold mb-2">
                 {animatedNumbers[index]}
                 {stat.suffix}
               </h3>
-              <p className="text-yellow-400 text-xl font-semibold mb-1">
+              <p className="text-white text-xl font-semibold mb-1">
                 {stat.title}
               </p>
               <p className="text-white text-sm">{stat.description}</p>

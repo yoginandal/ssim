@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import HomePage from "@/pages/HomePage";
+import ContactUs from "@/pages/ContactUs"; // Import the ContactUs page
 import Header from "@/components/header/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
 import Footer from "@/components/footer/Footer";
 
 export default function App() {
@@ -10,7 +11,12 @@ export default function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <main className="min-h-screen">
           <Header />
-          <HomePage />
+          <Routes>
+            {/* Define routes for the application */}
+            <Route path="/" element={<HomePage />} /> {/* Home page route */}
+            <Route path="/contact-us" element={<ContactUs />} />
+            {/* Contact Us page route */}
+          </Routes>
           <Footer />
         </main>
       </Suspense>

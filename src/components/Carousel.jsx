@@ -37,7 +37,7 @@ export default function ExcursionCarousel() {
   };
 
   return (
-    <div className="bg-[#641C34] py-8 px-4">
+    <div className="bg-blue-900 py-12 px-4">
       <div className="w-full max-w-3xl container mx-auto">
         <h1 className="text-white text-3xl md:text-4xl font-bold text-center mb-8">
           SSIM Stories
