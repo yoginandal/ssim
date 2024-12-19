@@ -1,4 +1,13 @@
 import IndustryMarquee from "./IndustryMarquee";
+import ImageSlider from "./ImageSlider";
+import placement1 from "@/assets/placement_images/placement1.webp";
+import placement2 from "@/assets/placement_images/placement2.webp";
+import placement3 from "@/assets/placement_images/placement3.webp";
+import placement4 from "@/assets/placement_images/placement4.webp";
+import placement5 from "@/assets/placement_images/placement5.webp";
+import StatsDashboard from "@/components/newMatrix/stats-dashboard";
+
+const images = [placement1, placement2, placement3, placement4, placement5];
 
 const LiveProjects = () => {
   return (
@@ -7,21 +16,28 @@ const LiveProjects = () => {
         <div className="space-y-16">
           <div className="text-center">
             <h2 className="inline-block text-base font-semibold bg-blue-600 text-white dark:bg-blue-500 px-4 py-2 rounded-full tracking-wide uppercase">
-              IIM India
+              SSIM Placements
             </h2>
-            <h1 className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              Our Live Projects
-              <span className="block mt-2 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                International and National
-              </span>
+            <h1 className="mt-6 font-extrabold tracking-tight sm:text-4xl lg:text-5xl mb-8">
+              Placement Stories
+              {/* <p className="text-lg font-normal mb-8">
+                The World&apos;s Leading Companies Hire Our Talent
+              </p> */}
             </h1>
+            <ImageSlider images={images} />
             <p className="mt-6 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto leading-relaxed">
-              Gain hands-on experience through our industry-integrated live
-              projects, where students work directly with leading companies to
-              solve real business challenges and implement innovative solutions.
+              Our students are successfully placed in top companies, gaining
+              invaluable experience and insights that enhance their skills and
+              career prospects.
             </p>
           </div>
-          <IndustryMarquee />
+          <div className="text-center">
+            <h2 className="text-4xl mb-8 font-bold text-mainBlue">
+              Our Placement Partners
+            </h2>
+            <IndustryMarquee className="mt-6" />
+          </div>
+
           <div className="relative">
             <div
               className="absolute inset-0 flex items-center"
@@ -35,12 +51,7 @@ const LiveProjects = () => {
               </span>
             </div>
           </div>
-          <p className="text-center text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-            Our live projects provide invaluable exposure to real-world business
-            scenarios, enabling students to apply classroom learning to
-            practical situations while building strong industry connections and
-            enhancing their professional portfolio.
-          </p>
+          <StatsDashboard />
         </div>
       </div>
     </div>
