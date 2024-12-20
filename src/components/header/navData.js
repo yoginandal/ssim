@@ -9,6 +9,10 @@ export const navlinks = [
     ],
   },
   {
+    name: "ABOUT US",
+    path: "/about-us",
+  },
+  {
     name: "ADMISSIONS",
     path: "/admissions",
     dropdown: [
