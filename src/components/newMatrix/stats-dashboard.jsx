@@ -9,12 +9,12 @@ export default function StatsDashboard() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <MetricCard number="9000+" label="Placement" sublabel="Offers" />
           <MetricCard
-            number="900+"
+            number="130+"
             label="Company Visited"
             sublabel="for Recruitment"
           />
           <MetricCard
-            number="54.75LPA"
+            number="12LPA"
             label="Highest National"
             sublabel="Package Offered"
           />
@@ -27,9 +27,9 @@ export default function StatsDashboard() {
 
         {/* Package Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-5 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-200 rounded-lg shadow-lg">
-          <PackageMetric lpa="20" companies="50+" />
-          <PackageMetric lpa="15" companies="60+" />
-          <PackageMetric lpa="10" companies="200+" />
+          <PackageMetric lpa="10.70" companies="10+" />
+          <PackageMetric lpa="9.25" companies="20+" />
+          <PackageMetric lpa="7.83" companies="50+" />
           <PackageMetric lpa="7" companies="162" />
           <PackageMetric
             lpa="5"

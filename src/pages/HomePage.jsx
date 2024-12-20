@@ -10,6 +10,9 @@ import AcademicPrograms from "@/components/AcademicsProgram";
 import HeroSlider from "@/components/HeroSlider";
 import LiveProjects from "@/components/LiveProjects";
 //import AwardsSection from "@/components/AwardsSection";
+// import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
+
+import { Fragment } from "react";
 
 const sectionVariants = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -36,19 +39,22 @@ const SectionWrapper = ({ children }) => {
 
 export default function HomePage() {
   return (
-    <>
-      {[
-        <HeroSlider key="hero-slider" />,
-        <AboutSection key="about-section" />,
-        <AcademicPrograms key="academic-programs" />,
-        <ImmLegacySection key="imm-legacy-section" />,
-        <Carousel key="carousel" />,
-        <LatestBlogsAndEvents key="latest-blogs-and-events" />,
-        <Testimonial key="testimonial" />,
-        <LiveProjects key="live-projects" />,
-      ].map((Section, index) => (
-        <SectionWrapper key={index}>{Section}</SectionWrapper>
-      ))}
-    </>
+    <Fragment>
+      <div>
+        {[
+          <HeroSlider key="hero-slider" />,
+          <AboutSection key="about-section" />,
+          <AcademicPrograms key="academic-programs" />,
+          <ImmLegacySection key="imm-legacy-section" />,
+          <Carousel key="carousel" />,
+          <LatestBlogsAndEvents key="latest-blogs-and-events" />,
+          <Testimonial key="testimonial" />,
+
+          <LiveProjects key="live-projects" />,
+        ].map((Section, index) => (
+          <SectionWrapper key={index}>{Section}</SectionWrapper>
+        ))}
+      </div>
+    </Fragment>
   );
 }
