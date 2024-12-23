@@ -1,13 +1,13 @@
-import RadialIcons from "@/components/RadialIcons";
 import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
 import GlassBackground from "@/components/glassbackground";
+import AboutOne from "@/components/about-us/AboutOne";
 
 const AboutUs = () => {
   return (
     <div>
-      <RadialIcons />
       <AnimatedBeamShowcase />
       <GlassBackground />
+      <AboutOne />
     </div>
   );
 };

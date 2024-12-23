@@ -5,6 +5,7 @@ import Header from "@/components/header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom"; // Import Routes and Route
 import Footer from "@/components/footer/Footer";
 import AboutUs from "@/pages/AboutUs";
+import AppLayout from "@/components/about-us/AppLayout";
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,6 +16,7 @@ export default function App() {
             {/* Define routes for the application */}
             <Route path="/" element={<HomePage />} /> {/* Home page route */}
             <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/about-us/sidebar" element={<AppLayout />} />
             <Route path="/contact-us" element={<ContactUs />} />
             {/* Contact Us page route */}
           </Routes>
