@@ -29,6 +29,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
+    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-horizontal-scrolling-menu": "^8.2.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-intersection-observer": "^9.14.0",

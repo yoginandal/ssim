@@ -9,8 +9,13 @@ export const navlinks = [
     ],
   },
   {
-    name: "ABOUT US",
-    path: "/about-us",
+    name: "About Us",
+    path: "/about",
+    dropdown: [
+      { name: "Message", path: "/about/message" },
+      { name: "Our Values", path: "/about/values" },
+      { name: "What Sets Us Apart", path: "/about/set-us-apart" },
+    ],
   },
   {
     name: "ADMISSIONS",
