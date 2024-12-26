@@ -6,7 +6,7 @@ import Header from "@/components/header/Header";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"; // Import Routes and Route
 import Footer from "@/components/footer/Footer";
 import AboutMessage from "@/components/abouts/AboutMessage"; // Import AboutMessage component
-import AboutValues from "@/components/abouts/AboutValues"; // Import AboutValues component
+import AboutValues from "@/components/abouts/VisionMission"; // Import AboutValues component
 import AboutSetUsApart from "@/components/abouts/AboutSetUsApart"; // Import AboutSetUsApart component
 import AboutLayout from "@/components/abouts/AboutLayout";
 
