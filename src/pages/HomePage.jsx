@@ -14,6 +14,7 @@ import RadialIcons from "@/components/RadialIcons";
 // import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
 
 import { Fragment } from "react";
+// import Page from "@/components/page"
 
 const sectionVariants = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -45,6 +46,7 @@ export default function HomePage() {
         {[
           <HeroSlider key="hero-slider" />,
           <AboutSection key="about-section" />,
+          // <Page key="page" />,
           <AcademicPrograms key="academic-programs" />,
           <ImmLegacySection key="imm-legacy-section" />,
           <Carousel key="carousel" />,

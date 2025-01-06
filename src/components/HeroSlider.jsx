@@ -208,8 +208,8 @@ const HeroSlider = () => {
                   words={img.highlights}
                 />
 
-                <div>
-                  <Link to="/courses" className="mt-5">
+                <div className="!mt-0">
+                  <Link to="/courses" className="!mt-0">
                     <ShinyButton className="text-sm font-bold text-white bg-white rounded-none sm:py-5 sm:px-10 lg:text-lg">
                       Explore Courses
                     </ShinyButton>

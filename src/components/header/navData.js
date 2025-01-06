@@ -1,15 +1,7 @@
 export const navlinks = [
-  { name: "HOME", path: "/" },
+  { name: "Home", path: "/" },
   {
-    name: "PROGRAMS",
-    path: "/programs",
-    dropdown: [
-      { name: "PGDM", path: "/programs/pgdm" },
-      { name: "Executive PGDM", path: "/programs/executive-pgdm" },
-    ],
-  },
-  {
-    name: "About Us",
+    name: "About",
     path: "/about",
     dropdown: [
       { name: "Message", path: "/about/message" },
@@ -18,7 +10,15 @@ export const navlinks = [
     ],
   },
   {
-    name: "ADMISSIONS",
+    name: "Programs",
+    path: "/programs",
+    dropdown: [
+      { name: "PGDM", path: "/programs/pgdm" },
+      { name: "Executive PGDM", path: "/programs/executive-pgdm" },
+    ],
+  },
+  {
+    name: "Admissions",
     path: "/admissions",
     dropdown: [
       { name: "Admission Process", path: "/admissions/process" },
