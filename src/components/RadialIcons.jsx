@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -254,18 +252,16 @@ const RadialIcons = () => {
           </div>
           <div className="absolute bottom-[-2rem] md:bottom-4 md:right-4 justify-center md:justify-end w-full flex gap-4">
             <Button
-              variant="outline"
               size="icon"
               onClick={handlePrevious}
-              className="rounded-full"
+              className="rounded-full bg-red-600"
             >
               <ArrowLeft className="h-6 w-6" />
             </Button>
             <Button
-              variant="outline"
               size="icon"
               onClick={handleNext}
-              className="rounded-full"
+              className="rounded-full bg-red-600"
             >
               <ArrowRight className="h-6 w-6" />
             </Button>
