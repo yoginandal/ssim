@@ -167,8 +167,8 @@ const RadialIcons = () => {
   };
 
   return (
-    <div className="bg-gray-200">
-      <Card className="grid grid-cols-1 md:grid-cols-5 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen py-20 md:min-h-[90vh] bg-gray-200">
+    <div className="bg-gradient-to-r from-blue-200 to-blue-200">
+      <Card className="grid grid-cols-1 md:grid-cols-5 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen py-20 md:min-h-[90vh] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
         {/* Circular Image Carousel */}
         <CardContent className="col-span-2 flex justify-center items-center relative h-[30rem] md:h-[22rem]">
           <div
@@ -224,7 +224,7 @@ const RadialIcons = () => {
         {/* Testimonial Content */}
         <CardContent className="col-span-3 relative flex flex-col justify-between items-center md:items-start text-center md:text-left p-2 md:p-6">
           <WordPullUp
-            words="Student Testimonials"
+            words="Alumni Testimonials"
             className="text-4xl text-mainBlue md:text-5xl font-bold mt-8 mb-0 md:mb-6 p-6 font-serif"
           />
           <div className="p-6 rounded-md flex-grow w-full max-w-2xl mx-auto md:mx-0">

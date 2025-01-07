@@ -11,7 +11,7 @@ const images = [placement1, placement2, placement3, placement4, placement5];
 
 const LiveProjects = () => {
   return (
-    <div className="py-20 bg-gradient-to-b from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
+    <div className="py-20 bg-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-16">
           <div className="text-center">
