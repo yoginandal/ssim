@@ -80,3 +80,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(0.9);
+  }
+  50% {
+    transform: translateY(-10px) scale(0.9);
+  }
+}
+
+.carousel-item {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.carousel-item:not(.active):hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .carousel-item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+}
