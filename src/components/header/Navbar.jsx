@@ -1,6 +1,5 @@
-import { NavLink, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
-
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { NavLink, useLocation, Link } from "react-router-dom";
 import Drawer from "./Drawer";
 import {
   DropdownMenu,
@@ -9,12 +8,36 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { navlinks } from "./navData";
-import { useState } from "react";
 import logo from "@/assets/ssimlogo.webp";
 
 export default function Navbar() {
   const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState(null);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = useCallback((index) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setOpenDropdown(index);
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150); // Delay closing by 150ms
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="bg-white lg:bg-blue-900 px-4 py-4">
@@ -31,45 +54,40 @@ export default function Navbar() {
             {navlinks.map((link, index) => (
               <li
                 key={link.name}
-                onMouseEnter={() => setOpenDropdown(index)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+                className="relative"
               >
                 {link.dropdown ? (
-                  <DropdownMenu open={openDropdown === index}>
-                    <DropdownMenuTrigger asChild>
-                      <button
-                        className={
-                          link.dropdown.some(
-                            (item) => item.path === location.pathname
-                          )
-                            ? "rounded bg-red-700 px-3 py-2 -mt-2 text-red-100 outline-0"
-                            : "rounded px-3 py-2 text-white -mt-2 hover:bg-red-700 hover:text-red-200"
-                        }
-                      >
-                        {link.name}
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start">
-                      {link.dropdown.map((dropdownLink) => (
-                        <DropdownMenuItem
-                          key={dropdownLink.name}
-                          asChild
-                          className="pr-6"
-                        >
-                          <NavLink
-                            to={dropdownLink.path}
-                            className={({ isActive }) =>
-                              isActive
-                                ? "w-full px-2 py-1.5 text-red-600"
-                                : "w-full px-2 py-1.5 hover:text-red-600"
-                            }
-                          >
-                            {dropdownLink.name}
-                          </NavLink>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                  <div>
+                    <button
+                      className={`rounded px-3 py-2 text-white -mt-2 hover:bg-red-700 hover:text-red-200 ${
+                        openDropdown === index ? 'bg-red-700 text-red-100' : ''
+                      }`}
+                    >
+                      {link.name}
+                    </button>
+                    {openDropdown === index && (
+                      <div className="absolute z-10 left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                        <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                          {link.dropdown.map((dropdownLink) => (
+                            <NavLink
+                              key={dropdownLink.name}
+                              to={dropdownLink.path}
+                              className={({ isActive }) =>
+                                `block px-4 py-2 text-sm ${
+                                  isActive ? 'bg-gray-100 text-red-600' : 'text-gray-700 hover:bg-gray-100 hover:text-red-600'
+                                }`
+                              }
+                              role="menuitem"
+                            >
+                              {dropdownLink.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <NavLink
                     to={link.path}
@@ -90,3 +108,4 @@ export default function Navbar() {
     </div>
   );
 }
+
