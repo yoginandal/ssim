@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Building2,
 } from "lucide-react";
+import WordPullUp from "./ui/word-pull-up";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -88,9 +89,10 @@ export default function AboutSection() {
                 <h2 className="text-xl md:text-2xl font-medium text-mainBlue mb-2 border-0">
                   About SSIM
                 </h2>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-red-600">
-                  Top Management Institute in Hyderabad
-                </h2>
+                <WordPullUp
+                  words="Top Management Institute in Hyderabad"
+                  className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 sm:text-left mt-8 mb-0 md:mb-6"
+                />
                 <div className="w-32 h-1.5 bg-red-600/80 rounded-none" />
               </div>
 

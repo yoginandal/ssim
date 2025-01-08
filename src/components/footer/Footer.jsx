@@ -79,7 +79,7 @@ export default function Footer() {
                 <img
                   src={logo}
                   alt="SSIM Logo"
-                  className="h-14 w-auto transition-transform group-hover:scale-105"
+                  className="h-14 cursor-pointer w-auto transition-transform group-hover:scale-105"
                 />
               </div>
               <div className="flex gap-3">

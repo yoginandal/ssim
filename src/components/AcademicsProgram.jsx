@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Users, GraduationCap, Landmark, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import WordPullUp from "./ui/word-pull-up";
 
 export default function AcademicPrograms() {
   const [activeVideo, setActiveVideo] = useState(0);
@@ -47,9 +48,10 @@ export default function AcademicPrograms() {
       <div className="relative grid lg:grid-cols-2 gap-20 items-start">
         <div className="space-y-10">
           <div className="ml-auto max-w-[550px] space-y-8">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-primary">
-              Academic Programs
-            </h2>
+            <WordPullUp
+              words="Academic Programs"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 sm:text-left mt-8 mb-0 md:mb-6"
+            />
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
               We train our students to master both the technical & management
               aspects of the business.

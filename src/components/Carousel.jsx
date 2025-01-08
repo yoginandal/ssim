@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import WordPullUp from "./ui/word-pull-up";
 
 // const movies = [
 //   {
@@ -95,9 +96,10 @@ function ExcursionCarousel() {
 
   return (
     <div className="w-full min-h-screen bg-mainBlue flex flex-col items-center justify-center p-4 sm:p-8">
-      <h1 className="text-white text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
-        SSIM Stories
-      </h1>
+      <WordPullUp
+        words="SSIM Stories"
+        className="tracking-tigh sm:text-left mt-8 md:mb-6 text-white text-3xl md:text-4xl font-bold text-center mb-8 sm:!mb-12"
+      />
       <Carousel
         setApi={setApi}
         className="w-full max-w-6xl"
@@ -139,9 +141,7 @@ function ExcursionCarousel() {
                   </div>
                   <div
                     className="absolute cursor-pointer inset-0 w-full h-full flex items-center justify-center"
-                    onClick={() =>
-                      window.open(`${slide.videoId}`, "_blank")
-                    }
+                    onClick={() => window.open(`${slide.videoId}`, "_blank")}
                   >
                     <div className="relative">
                       <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">

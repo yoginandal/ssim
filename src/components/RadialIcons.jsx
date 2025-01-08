@@ -225,7 +225,7 @@ const RadialIcons = () => {
         <CardContent className="col-span-3 relative flex flex-col justify-between items-center md:items-start text-center md:text-left p-2 md:p-6">
           <WordPullUp
             words="Alumni Testimonials"
-            className="text-4xl text-mainBlue md:text-5xl font-bold mt-8 mb-0 md:mb-6 p-6 font-serif"
+            className="text-4xl md:text-5xl font-bold tracking-tight text-mainBlue sm:text-left mt-8 mb-0 md:mb-6 pl-6"
           />
           <div className="p-6 rounded-md flex-grow w-full max-w-2xl mx-auto md:mx-0">
             <div className="flex justify-center md:justify-start items-center mb-4">

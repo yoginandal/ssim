@@ -6,6 +6,7 @@ import placement3 from "@/assets/placement_images/placement3.webp";
 import placement4 from "@/assets/placement_images/placement4.webp";
 import placement5 from "@/assets/placement_images/placement5.webp";
 import StatsDashboard from "@/components/newMatrix/stats-dashboard";
+import WordPullUp from "./ui/word-pull-up";
 
 const images = [placement1, placement2, placement3, placement4, placement5];
 
@@ -18,12 +19,10 @@ const LiveProjects = () => {
             <h2 className="inline-block text-base font-semibold bg-blue-600 text-white dark:bg-blue-500 px-4 py-2 rounded-full tracking-wide uppercase">
               SSIM Placements
             </h2>
-            <h1 className="mt-6 font-extrabold tracking-tight sm:text-4xl lg:text-5xl mb-8">
-              Placement Stories
-              {/* <p className="text-lg font-normal mb-8">
-                The World&apos;s Leading Companies Hire Our Talent
-              </p> */}
-            </h1>
+            <WordPullUp
+              words="Placement Stories"
+              className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-6"
+            />
             <ImageSlider images={images} />
             <p className="mt-6 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto leading-relaxed">
               Our students are successfully placed in top companies, gaining
@@ -32,9 +31,10 @@ const LiveProjects = () => {
             </p>
           </div>
           <div className="text-center">
-            <h2 className="text-4xl mb-8 font-bold text-mainBlue">
-              Our Placement Partners
-            </h2>
+            <WordPullUp
+              words="Our Placement Partners"
+              className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-12"
+            />
             <IndustryMarquee className="mt-6" />
           </div>
 

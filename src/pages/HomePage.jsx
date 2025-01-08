@@ -41,12 +41,11 @@ const SectionWrapper = ({ children }) => {
 
 export default function HomePage() {
   return (
-    <Fragment>
+    <>
       <div>
         {[
           <HeroSlider key="hero-slider" />,
           <AboutSection key="about-section" />,
-          // <Page key="page" />,
           <AcademicPrograms key="academic-programs" />,
           <ImmLegacySection key="imm-legacy-section" />,
           <Carousel key="carousel" />,
@@ -58,6 +57,6 @@ export default function HomePage() {
           <SectionWrapper key={index}>{Section}</SectionWrapper>
         ))}
       </div>
-    </Fragment>
+    </>
   );
 }
