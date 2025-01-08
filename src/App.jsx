@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState, useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import HomePage from "@/pages/HomePage";
 import ContactUs from "@/pages/ContactUs"; // Import the ContactUs page
@@ -9,6 +9,8 @@ import AboutMessage from "@/components/abouts/AboutMessage"; // Import AboutMess
 import AboutValues from "@/components/abouts/VisionMission"; // Import AboutValues component
 import AboutSetUsApart from "@/components/abouts/AboutSetUsApart"; // Import AboutSetUsApart component
 import AboutLayout from "@/components/abouts/AboutLayout";
+import LifeAtSsim from "@/components/studentslife/LifeAtSsim";
+import { Button } from "./components/ui/button";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -17,6 +19,32 @@ const aboutSidebarLinks = [
 ];
 
 export default function App() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Show button when page is scrolled up to given distance
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  // Scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -35,10 +63,36 @@ export default function App() {
                 <Route path="values" element={<AboutValues />} />
                 <Route path="set-us-apart" element={<AboutSetUsApart />} />
               </Route>
+              <Route
+                path="/students-life/life-at-ssim"
+                element={<LifeAtSsim />}
+              />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}
             </Routes>
             <Footer />
+            {isVisible && (
+              <Button
+                onClick={scrollToTop}
+                size="icon"
+                className="fixed bottom-4 right-4 h-9 w-9 rounded-md bg-red-600 hover:bg-red-700 animate-bounce shadow-lg z-50"
+                aria-label="Scroll to top"
+              >
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 10l7-7m0 0l7 7m-7-7v18"
+                  />
+                </svg>
+              </Button>
+            )}
           </main>
         </Suspense>
       </BrowserRouter>
