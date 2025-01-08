@@ -2,48 +2,147 @@ export const navlinks = [
   { name: "Home", path: "/" },
   {
     name: "About",
-    path: "/about",
     dropdown: [
-      { name: "Message", path: "/about/message" },
-      { name: "Our Values", path: "/about/values" },
-      { name: "What Sets Us Apart", path: "/about/set-us-apart" },
-    ],
-  },
-  {
-    name: "Programs",
-    path: "/programs",
-    dropdown: [
-      { name: "PGDM", path: "/programs/pgdm" },
-      { name: "Executive PGDM", path: "/programs/executive-pgdm" },
+      {
+        name: "Academic Advisory Board",
+        path: "/about/academic-advisory-board",
+      },
+      {
+        name: "Accreditations & Rankings",
+        path: "/about/accreditations-rankings",
+      },
+      {
+        name: "Board of Governors",
+        path: "/about/board-of-governors",
+      },
+      {
+        name: "Board of Studies",
+        path: "/about/board-of-studies",
+      },
+      {
+        name: "Core Values",
+        path: "/about/core-values",
+      },
+      {
+        name: "Message from Leaders",
+        subDropdown: [
+          { name: "Director's Message", path: "/about/directors-message" },
+          { name: "Founder's Message", path: "/about/founders-message" },
+          { name: "President's Message", path: "/about/presidents-message" },
+          {
+            name: "Vice-President's Message",
+            path: "/about/vice-presidents-message",
+          },
+        ],
+      },
+      {
+        name: "Milestones",
+        path: "/about/milestones",
+      },
+      {
+        name: "Vision & Mission",
+        path: "/about/vision-mission",
+      },
     ],
   },
   {
     name: "Admissions",
-    path: "/admissions",
     dropdown: [
       { name: "Admission Process", path: "/admissions/process" },
       { name: "Apply Now", path: "/admissions/apply" },
+      { name: "FPM/EFPM", path: "/admissions/fpm-efpm" },
+      { name: "PGDM BA", path: "/admissions/pgdm-ba" },
+      { name: "PGDM BIFS", path: "/admissions/pgdm-bifs" },
+      {
+        name: "PGDM Triple Specialisation",
+        path: "/admissions/pgdm-triple-specialisation",
+      },
     ],
   },
   {
-    name: "PLACEMENT",
-    path: "/placement",
+    name: "Alumni",
+    path: "/alumni",
+  },
+  {
+    name: "Faculty & Research",
+    dropdown: [
+      { 
+        name: "Faculty", 
+        subDropdown: [
+          { name: "Areas", path: "/faculty/areas" },
+          { name: "Faculty Publications", path: "/faculty/publications" }
+        ] 
+      },
+      {
+        name: "Research",
+        subDropdown: [
+          { name: "Case Research Center", path: "/research/case-research-center" },
+          { name: "Conferences", path: "/research/conferences" },
+          { name: "Ph.D. Scholars", path: "/research/phd-scholars" }
+        ],
+      },
+    ],
+  },
+  {
+    name: "International Relations",
+    path: "/international-relations",
+  },
+  {
+    name: "Placement",
     dropdown: [
       { name: "Overview", path: "/placement/overview" },
+      { name: "Placement Records", path: "/placement/records" },
+      { name: "Placement Team", path: "/placement/team" },
       { name: "Statistics", path: "/placement/statistics" },
     ],
   },
   {
-    name: "STUDENT'S LIFE",
-    path: "/students-life",
+    name: "Programs",
     dropdown: [
-      { name: "Campus Life", path: "/students-life/campus" },
-      { name: "Activities", path: "/students-life/activities" },
+      {
+        name: "FPM/EFPM",
+        subDropdown: [
+          {
+            name: "FPM/EFPM",
+            path: "/programs/fpm-efpm",
+          },
+        ],
+      },
+      {
+        name: "PGDM",
+        subDropdown: [
+          { name: "PGDM BA", path: "/programs/pgdm-ba" },
+          { name: "PGDM BFIS", path: "/programs/pgdm-bfis" },
+          {
+            name: "PGDM Triple Specialisation",
+            path: "/programs/pgdm-triple-specialisation",
+          },
+        ],
+      },
     ],
   },
   {
-    name: "INTERNATIONAL RELATIONS",
-    path: "/international-relations",
+    name: "Student's Life",
+    dropdown: [
+      { name: "Activities", path: "/students-life/activities" },
+      { name: "Campus", path: "/students-life/campus-overview" },
+      { name: "Campus Life", path: "/students-life/campus" },
+      {
+        name: "Events",
+        subDropdown: [
+          { name: "News & Announcements", path: "/students-life/news" },
+          {
+            name: "Student's Achievements",
+            path: "/students-life/achievements",
+          },
+        ],
+      },
+      {
+        name: "International Immersions",
+        path: "/students-life/international-immersions",
+      },
+      { name: "Life at SSIM", path: "/students-life/life-at-ssim" },
+    ],
   },
-  { name: "CONTACT US", path: "/contact-us" }, // Added Contact Us link
+  { name: "Contact Us", path: "/contact-us" }, // Added Contact Us link
 ];
