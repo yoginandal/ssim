@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ImageIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, ImageIcon, Image } from "lucide-react";
 import { Button } from "@/components/ui/button"; // Adjust path as needed
 import {
   Dialog,
@@ -16,30 +16,181 @@ const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 // Categories array
 const categories = [
-  { id: "all", label: "All", icon: "📸" },
-  { id: "campus", label: "Campus", icon: "🏛️" },
-  { id: "infrastructure", label: "Infrastructure", icon: "🏗️" },
-  { id: "labs", label: "Labs", icon: "🔬" },
-  { id: "events", label: "Events", icon: "🎉" },
-  { id: "sports", label: "Sports", icon: "⚽" },
-  { id: "campus1", label: "Campus", icon: "🏛️" },
-  { id: "infrastructure1", label: "Infrastructure", icon: "🏗️" },
-  { id: "labs1", label: "Labs", icon: "🔬" },
-  { id: "events1", label: "Events", icon: "🎉" },
-  { id: "sports1", label: "Sports", icon: "⚽" },
+  {
+    id: "spandana",
+    label: "Spandana",
+    icon: "",
+    heading: "SPANDANA - A SPONTANEOUS RESPONSE (FRESHERS’ PARTY)",
+    description:
+      "The institute strongly believes in inter personnel relations and teamwork. In order to give a feeling of oneness to the freshers, the Seniors conduct ‘Spandana’ to warmly and formally welcome their Juniors into the family of Siva Sivani.",
+  },
+  {
+    id: "sammelan",
+    label: "Sammelan",
+    icon: "",
+    heading: "SAMMELAN - AN INTRA COLLEGIATE MEET",
+    description:
+      "To bring out the innate talent of the students, various cultural activities, management games etc are conducted. One day in a term is earmarked for this activity.",
+  },
+  {
+    id: "samaroh",
+    label: "Samaroh",
+    icon: <Image />,
+    heading: "SAMAROH - IT IS INTERNATIONAL RESEARCH CONFERENCE AT SSIM",
+    description: `The SAMAROH is conducted to commemorate the death anniversary of the founder of Siva Sivani Group of Institutions.
+Samaroh is an international conference which is aimed to offer a knowledge sharing platform for academicians, researchers and corporate professionals for exchange of new body of knowledge. This conference will also have key note address from renowned management experts and research paper presentations of conference participants.`,
+  },
+  {
+    id: "samanvay",
+    label: "Samanvay",
+    icon: <Image />,
+    heading: "SAMANVAY - THE ESSENCE OF CO-ORDINATION",
+    description: `An Inter Collegiate Management Students' Meet organised by the students of Siva Sivani. This event brings together the students of various Business Schools across the state. They participate in various management related competitive events. This is an opportunity for the students of Siva Sivani to organise and show their leadership qualities in managing such a big event.
+
+Many business houses sponsor the events organised in Samanvay. This clearly manifests the Industry- Institute-Interaction of Siva Sivani Institute of Management.`,
+  },
+  {
+    id: "sameeksha",
+    label: "Sameeksha",
+    icon: <Image />,
+    heading: "SAMEEKSHA",
+    description: `The Students organise Club Activities under HR, Finance, Marketing and Systems Club to bring out the innate latent talent. Students make various presentations, conduct formal and informal activities such as acquiesces, group discussions, Management related games etc in order to develop and nourish the creativity that is abundantly available in every one of us.
+
+Experts from the industry may chair the club sessions conducted by the students who will share their experiences with the students. These activities help students acquire the knowledge on contemporary issues in their respective specializations, improve their oral and written communication skills and participate effectively in the competitions conducted by various Business Schools.`,
+  },
+  {
+    id: "smriti",
+    label: "Smriti",
+    icon: "",
+    heading: "SMRITI - A FOND REMEMBRANCE (FAREWELL PARTY)",
+    description: `Meeting and parting is a way of life. After the completion of the course, it is certain that the Seniors part with the Juniors. In order to express their feelings and the unwritten bonding between the Seniors and the Juniors, the Juniors bid a grand Farewell to the seniors in the 6th trimester. Various activities are organised in order to further strengthen the relationship even after leaving the portals of the Institute. The Juniors present mementos as a fond memory to the seniors.`,
+  },
+  {
+    id: "sneha",
+    label: "Sneha",
+    icon: <Image />,
+    heading: "SNEHA - THE ALUMNI ASSOCIATION OF SSIM",
+    description: `We at SSIM strongly believe that the Alumni Association has a great role to play in the developmental activities of the Institute. To strengthen our relationship with the Alumni, we conduct various activities and invite them to the campus. This gives a feeling to every student of SSIM that they are always a part of the Siva Sivani family.`,
+  },
+  {
+    id: "sadhana",
+    label: "Sadhana",
+    icon: <Image />,
+    heading: "SADHANA - STUDENT RESEARCH CONFERENCE",
+    description: `SADHANA is a Student Research Conference introduced in 2022. The aim of the conference is to bring Bachelor's / Master's research into spotlight and to increase the enthusiasm among students for academic research. This conference gives UG / PG students a unique opportunity to present their research among the learned audiences. Participating in this conference enables the students to experience academic practice.`,
+  },
+  {
+    id: "snatak",
+    label: "Snatak",
+    icon: <Image />,
+    heading: "SNATAK - CONVOCATION",
+    description: `Snatak – Convocation of every batch will be held on 22nd October on every year to conform the degrees of the passed students.`,
+  },
+  {
+    id: "sanman",
+    label: "Sanman",
+    icon: <Image />,
+    heading: "SANMAN - TEACHER'S DAY",
+    description: `Teachers' Day is celebrated every year on 5th September at SSIM. On this day SSIM facilitates a distinguished teacher every year with a citation highlighting the accomplishments and contributions made by the teacher. This is sending a strong message to students on our tradition of respecting the teachers which is part of our culture in our society.`,
+  },
+  {
+    id: "satakshi",
+    label: "Satakshi",
+    icon: <Image />,
+    heading: "SATAKSHI - WOMAN'S DAY",
+    description: `SSIM conducts women's day in the name of SATHAKSHI and the event is being organized by the Women Empowerment Cell at the institute. The event thrust area is gender sensitization and makes the students and employees aware of women's rights in society. As a part of it, successful women invited to campus to share their accomplishments and challenges faced in the journey of success and did they overcome.`,
+  },
+  {
+    id: "sanghibhav",
+    label: "Sanghibhav",
+    icon: <Image />,
+    heading: "SANGHIBHAV - ISR",
+    description: `SSIM, under its ISR initiative "SANGHIBHAV", is supporting a Government Primary School, Harijanawada, Macha Bollaram. The school students are from the under privileged sections of the society who are below the poverty line. The student and faculty regularly visit the school to give sweets and snacks, conduct games and sports. Their joy cannot be expressed in words.
+
+Presence of institutes' representative gives them immense happiness; they look forward to our visits expecting kind words, candies and surprises. Institute students give them a moral support. This brings a smile on their faces, by just being with them, for some time, once a week or a month.`,
+  },
+  {
+    id: "samskriti",
+    label: "Samskriti",
+    icon: <Image />,
+    heading: "SAMSKRITI - TRADITIONAL DAY TO THE FRESHER'S",
+    description: `Samskriti is conducted after the completion of induction program. After the commencement of the classes the junior students (fresher's) are asked to come in traditional dresses to represent the culture of the state which they represent. This promotes integration among the students who come from different regions of the country. Various competitions are held and the organizers, the senior students award the titles – Mr. and Miss Samskriti to the winners amongst the junior students with the help of a panel of judges.`,
+  },
 ];
 
-// Gallery items array
-const galleryItems = Array.from({ length: 12 }, (_, i) => ({
+// Replace all individual samaroh imports with this
+const samarohImages = Array.from({ length: 21 }, (_, i) => ({
   id: i + 1,
-  src: `/placeholder.svg?height=${Math.floor(
-    Math.random() * 200 + 300
-  )}&width=${Math.floor(Math.random() * 200 + 400)}`,
-  category: categories[Math.floor(Math.random() * categories.length)].id,
-  alt: `Gallery image ${i + 1}`,
-  title: `Gallery Item ${i + 1}`,
-  description: `Description for gallery item ${i + 1}`,
+  src: new URL(`../../assets/studentslife/life-at-ssim/samaroh/samaroh (${i + 1}).webp`, import.meta.url).href,
+  category: "samaroh",
+  alt: `samaroh image ${i + 1}`,
 }));
+
+const samanvayImages = Array.from({ length: 12 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/samanvay/samanvay (${i + 1}).webp`, import.meta.url).href,
+  category: "samanvay",
+  alt: `samanvay image ${i + 1}`,
+}));
+
+const sameekshaImages = Array.from({ length: 23 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/sameeksha/sameeksha (${i + 1}).webp`, import.meta.url).href,
+  category: "sameeksha",
+  alt: `sameeksha image ${i + 1}`,
+}));
+
+const snehaImages = Array.from({ length: 42 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/sneha/sneha (${i + 1}).${i > 39 ? 'png' : 'webp'}`, import.meta.url).href,
+  category: "sneha", 
+  alt: `sneha image ${i + 1}`,
+}));
+
+const sadhanaImages = Array.from({ length: 14 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/sadhana/sadhana (${i + 1}).webp`, import.meta.url).href,
+  category: "sadhana",
+  alt: `sadhana image ${i + 1}`,
+}));
+
+const snatakImages = Array.from({ length: 21 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/snatak/snatak (${i + 1}).webp`, import.meta.url).href,
+  category: "snatak",
+  alt: `snatak image ${i + 1}`,
+}));
+
+const sanmanImages = Array.from({ length: 2 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/sanman/sanman (${i + 1}).webp`, import.meta.url).href,
+  category: "sanman",
+  alt: `sanman image ${i + 1}`,
+}));
+
+const satakshiImages = Array.from({ length: 9 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/satakshi/satakshi (${i + 1}).webp`, import.meta.url).href,
+  category: "satakshi",
+  alt: `satakshi image ${i + 1}`,
+}));
+
+const sanghibhavImages = Array.from({ length: 11 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/sanghibhav/sanghibhav (${i + 1}).webp`, import.meta.url).href,
+  category: "sanghibhav",
+  alt: `sanghibhav image ${i + 1}`,
+}));
+
+const samskritiImages = Array.from({ length: 25 }, (_, i) => ({
+  id: i + 1,
+  src: new URL(`../../assets/studentslife/life-at-ssim/samskriti/samskriti (${i + 1}).webp`, import.meta.url).href,
+  category: "samskriti",
+  alt: `samskriti image ${i + 1}`,
+}));
+
+// Then modify your galleryItems array to use both image sets
+const galleryItems = [...samarohImages, ...samanvayImages, ...sameekshaImages, ...snehaImages, ...sadhanaImages, ...snatakImages, ...sanmanImages, ...satakshiImages, ...sanghibhavImages, ...samskritiImages];
 
 const ImageDialog = ({
   isOpen,
@@ -50,17 +201,27 @@ const ImageDialog = ({
 }) => {
   if (!currentImage) return null;
 
+  // Get total images for current category
+  const totalImages = galleryItems.filter(
+    item => item.category === currentImage.category
+  ).length;
+  
+  // Get current image number within its category
+  const currentNumber = galleryItems.filter(
+    item => item.category === currentImage.category && item.id <= currentImage.id
+  ).length;
+
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-7xl p-0 pt-6">
         <DialogDescription className="sr-only">
           Image gallery viewer showing {currentImage.title}
         </DialogDescription>
-        <div className="relative flex-1 flex items-center justify-center p-6">
+        <div className="relative flex-1 flex flex-col items-center justify-center p-6 pb-14">
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-4 z-50 rounded-full bg-background/80 backdrop-blur-sm"
+            className="absolute left-4 z-50 rounded-full hover:bg-slate-100 bg-slate-200 text-black backdrop-blur-sm"
             onClick={onPrevious}
           >
             <ChevronLeft className="h-6 w-6" />
@@ -70,27 +231,23 @@ const ImageDialog = ({
             <img
               src={currentImage.src}
               alt={currentImage.alt}
-              className="max-w-full max-h-[70vh] object-contain rounded-lg"
+              loading="lazy"
+              className="w-full h-full max-w-[750px] object-contain rounded-lg"
             />
           </div>
 
           <Button
-            variant="ghost"
             size="icon"
-            className="absolute right-4 z-50 rounded-full bg-background/80 backdrop-blur-sm"
+            className="absolute right-4 z-50 rounded-full bg-slate-200 hover:bg-slate-100 text-black backdrop-blur-sm"
             onClick={onNext}
           >
             <ChevronRight className="h-6 w-6" />
           </Button>
-        </div>
 
-        <div className="w-full bg-background p-6 rounded-b-lg">
-          <h2 className="text-xl font-semibold text-center">
-            {currentImage.title}
-          </h2>
-          <p className="text-sm text-muted-foreground text-center mt-1">
-            {currentImage.description}
-          </p>
+          {/* Image counter */}
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+            {currentNumber} / {totalImages}
+          </div>
         </div>
       </DialogContent>
     </Dialog>
@@ -98,7 +255,7 @@ const ImageDialog = ({
 };
 
 export default function LifeAtSsim() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("spandana");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -140,17 +297,17 @@ export default function LifeAtSsim() {
   }, [handleKeyPress]);
 
   return (
-    <div className="container mx-auto px-4 py-8 pb-16 min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="container mx-auto px-4 py-8 sm:pb-16 bg-gradient-to-b from-gray-50 to-white">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-7"
+        className="mb-7"
       >
         <WordPullUp
           words="Explore Life at SSIM"
-          className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-6"
+          className="text-4xl md:text-5xl text-left sm:text-center font-bold tracking-tight text-mainBlue mt-8 mb-4 md:mb-6"
         />
-        <p className="text-base max-w-6xl mx-auto text-gray-600">
+        <p className="text-base text-center max-w-7xl mx-auto text-gray-600">
           Siva Sivani strongly believes in motivating the students to become
           leaders by giving them ample opportunities to explore the talent
           within them. In order to provide such opportunities SSIM has designed
@@ -205,7 +362,7 @@ export default function LifeAtSsim() {
                     "ring-2 ring-primary/20 bg-primary text-primary-foreground font-medium"
                 )}
               >
-                <span className="mr-2">{category.icon}</span>
+                <span>{category.icon}</span>
                 {category.label}
               </Button>
             </motion.div>
@@ -228,10 +385,22 @@ export default function LifeAtSsim() {
         </div>
       </div>
 
+      {categories.find((cat) => cat.id === activeCategory)?.heading && (
+        <WordPullUp
+          words={categories.find((cat) => cat.id === activeCategory)?.heading}
+          className="text-2xl md:text-4xl text-left sm:text-center font-bold tracking-tight text-mainBlue mt-8 mb-4 md:mb-6"
+        />
+      )}
+      {categories.find((cat) => cat.id === activeCategory)?.description && (
+        <p className="text-base text-center max-w-7xl mx-auto text-gray-600">
+          {categories.find((cat) => cat.id === activeCategory)?.description}
+        </p>
+      )}
+
       {/* Gallery Items */}
       <motion.div
         layout
-        className="grid mx-auto max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        className="grid mx-auto max-w-7xl grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10"
       >
         <AnimatePresence mode="wait">
           {isLoading
@@ -251,7 +420,7 @@ export default function LifeAtSsim() {
                   <DialogTrigger asChild>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
-                      className="cursor-pointer group relative overflow-hidden rounded-xl shadow-lg bg-white"
+                      className="cursor-pointer group relative overflow-hidden rounded-sm shadow-lg bg-white"
                       onClick={() => {
                         setCurrentImageIndex(index);
                         setIsDialogOpen(true);
@@ -261,11 +430,12 @@ export default function LifeAtSsim() {
                         <img
                           src={item.src}
                           alt={item.alt}
+                          loading="lazy"
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center text-white">
+                        {/* <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300 flex items-center justify-center text-white">
                           <ImageIcon className="h-8 w-8" />
-                        </div>
+                        </div> */}
                       </div>
                     </motion.div>
                   </DialogTrigger>
