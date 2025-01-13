@@ -10,6 +10,7 @@ import AcademicPrograms from "@/components/AcademicsProgram";
 import HeroSlider from "@/components/HeroSlider";
 import LiveProjects from "@/components/LiveProjects";
 import RadialIcons from "@/components/RadialIcons";
+import UpcomingEvents from "@/components/UpcomingEvents";
 //import AwardsSection from "@/components/AwardsSection";
 // import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
 
@@ -51,7 +52,7 @@ export default function HomePage() {
           <Carousel key="carousel" />,
           <LatestBlogsAndEvents key="latest-blogs-and-events" />,
           <RadialIcons key="testimonial" />,
-
+          <UpcomingEvents key="upcoming-events" />,
           <LiveProjects key="live-projects" />,
         ].map((Section, index) => (
           <SectionWrapper key={index}>{Section}</SectionWrapper>

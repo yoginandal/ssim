@@ -400,7 +400,7 @@ export default function LifeAtSsim() {
       {/* Gallery Items */}
       <motion.div
         layout
-        className="grid mx-auto max-w-7xl grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10"
+        className="grid mx-auto max-w-7xl grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 mt-10"
       >
         <AnimatePresence mode="wait">
           {isLoading
