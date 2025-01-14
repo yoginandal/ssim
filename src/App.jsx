@@ -11,6 +11,7 @@ import AboutSetUsApart from "@/components/abouts/AboutSetUsApart"; // Import Abo
 import AboutLayout from "@/components/abouts/AboutLayout";
 import LifeAtSsim from "@/components/studentslife/LifeAtSsim";
 import { Button } from "./components/ui/button";
+import AcademicAdvisoryBoard from "@/components/abouts/AcademicAdvisoryBoard";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -59,8 +60,9 @@ export default function App() {
                 element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
               >
                 <Route path="" element={<Navigate to="message" replace />} />
-                <Route path="message" element={<AboutMessage />} />
+                <Route path="directors-message" element={<AboutMessage />} />
                 <Route path="values" element={<AboutValues />} />
+                <Route path="academic-advisory-board" element={<AcademicAdvisoryBoard />} />
                 <Route path="set-us-apart" element={<AboutSetUsApart />} />
               </Route>
               <Route

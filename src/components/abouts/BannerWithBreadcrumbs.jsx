@@ -76,7 +76,7 @@ const BannerWithBreadcrumbs = ({ title, aboutLinks }) => {
                 onClick={handleDropdownToggle}
               >
                 About
-                <ChevronDown className="w-4 h-4" />
+                {/* <ChevronDown className="w-4 h-4" /> */}
               </div>
               {showDropdown && (
                 <div

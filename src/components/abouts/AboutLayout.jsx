@@ -24,7 +24,7 @@ const AboutLayout = () => {
       <BannerWithBreadcrumbs title={title} breadcrumbs={breadcrumbs} />
       <div className="container mx-auto mt-8">
         {/* Content Area for Subpages */}
-        <div className="bg-white p-6 rounded-lg shadow">
+        <div className="bg-white p-6">
           <Outlet />
         </div>
       </div>
