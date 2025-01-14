@@ -6,8 +6,8 @@ const AboutSidebar = ({ sidebarLinks }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="col-span-1 mb-16 pt-8 lg:h-[700px] lg:sticky lg:top-4 lg:overflow-y-auto hidden lg:block">
-      <div className="flex flex-col h-full p-6 rounded-lg shadow-lg  text-white border border-black">
+    <div className="col-span-2 mb-16 pt-8 lg:h-[620px] lg:sticky lg:top-5 lg:overflow-y-auto hidden lg:block">
+      <div className="flex flex-col h-full rounded-lg shadow-lg  text-white">
         <h2 className="mb-4 text-2xl text-red-600 font-bold tracking-wider uppercase ml-4">
           Overview
         </h2>
@@ -31,7 +31,7 @@ const AboutSidebar = ({ sidebarLinks }) => {
           Apply Online
         </Button>
 
-        <div className="relative flex-grow overflow-hidden rounded-lg bg-black min-h-48 max-h-96 shadow-md">
+        <div className="relative flex-grow overflow-hidden rounded-lg bg-black shadow-md">
           <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-white">
             <p className="mb-3 text-xl font-semibold text-center">

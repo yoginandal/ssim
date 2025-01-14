@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import BannerWithBreadcrumbs from "./BannerWithBreadcrumbs";
+import AboutSidebar from "./AboutSidebar";
 
 const AboutLayout = () => {
   const location = useLocation();
@@ -9,6 +10,14 @@ const AboutLayout = () => {
   const breadcrumbs = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+  ];
+
+  const sidebarLinks = [
+    { href: "/about/academic-advisory-board", label: "Academic Advisory Board" },
+    { href: "/about/directors-message", label: "Message" },
+    { href: "/about/vision-mission", label: "Vision & Mission" },
+    { href: "/about/values", label: "Our Values" },
+    { href: "/about/set-us-apart", label: "What Sets Us Apart" },
   ];
 
   // Determine title based on the current path
@@ -22,7 +31,8 @@ const AboutLayout = () => {
     <div>
       {/* Banner with Breadcrumbs */}
       <BannerWithBreadcrumbs title={title} breadcrumbs={breadcrumbs} />
-      <div className="container mx-auto mt-8">
+      <div className="mt-8">
+        {/* <AboutSidebar sidebarLinks={sidebarLinks} /> */}
         {/* Content Area for Subpages */}
         <div className="bg-white p-6">
           <Outlet />
