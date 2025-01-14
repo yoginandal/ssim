@@ -31,7 +31,7 @@ export default function AcademicAdvisoryBoard() {
         "https://ssim.ac.in/wp-content/uploads/2022/10/Prof_Abhiram_Krishna.jpg",
     },
     {
-      name: "Dr. Ashok K. Agarwal", 
+      name: "Dr. Ashok K. Agarwal",
       role: "Director",
       bio: "Director, EWB India, Member, Governing Council, Badruka Education Society, Hyderabad.",
       image:
@@ -192,11 +192,13 @@ export default function AcademicAdvisoryBoard() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-[32px] font-bold text-gray-900 mb-4">
-            Meet our soldier of finance
+            Academic Advisory Board
           </h2>
           <p className="text-gray-500 max-w-3xl mx-auto">
-            We provide all the advantage that can simplify all your financial
-            and banking support without any further issues
+            The Vice President & Dy. Chief Executive is pleased to re-constitute
+            the Academic Advisory Board (AAB) to review, restructure and guide
+            the conduct of the various academic courses of the Programmes on
+            offer with the following as its members:
           </p>
         </div>
 
