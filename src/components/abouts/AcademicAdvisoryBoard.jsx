@@ -88,7 +88,7 @@ export default function AcademicAdvisoryBoard() {
       role: "Member",
       bio: "Warehousing Development and Regulatory Authority (WDRA), Delhi.",
       image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Raghavendra_Rao.jpg",
+        "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
     {
       name: "Sri. Raghavendra Rao",
@@ -127,7 +127,7 @@ export default function AcademicAdvisoryBoard() {
       name: "Sri. C. Shanthan Reddy",
       role: "Managing Partner",
       bio: "Arise Films, Hyderabad.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/SIVA_Kumar.jpg",
+      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
     {
       name: "Dr. S. Siva Kumar",
@@ -152,7 +152,7 @@ export default function AcademicAdvisoryBoard() {
       name: "Prof. B.R. Virmani",
       role: "Chairman",
       bio: "Centre for Organization Research & Development in Management (CORD-M), Hyderabad.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/V_Viswanadham.jpg",
+      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
     {
       name: "Prof. V. Viswanadham",
@@ -182,7 +182,7 @@ export default function AcademicAdvisoryBoard() {
       name: "Prof. A. Sudhakar",
       role: "Former Director – General",
       bio: "SSGI.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/VG_CHARI.jpg",
+      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
   ];
 
