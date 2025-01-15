@@ -14,6 +14,7 @@ import { Button } from "./components/ui/button";
 import AcademicAdvisoryBoard from "@/components/abouts/AcademicAdvisoryBoard";
 import VisionMission from "@/components/abouts/VisionMission";
 import Leadership from "@/components/abouts/Leadership";
+import BoardOfGovernors from "@/components/abouts/BoardOfGovernors";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -68,6 +69,7 @@ export default function App() {
                 <Route path="set-us-apart" element={<AboutSetUsApart />} />
                 <Route path="vision-mission" element={<VisionMission />} />
                 <Route path="leadership" element={<Leadership />} />
+                <Route path="board-of-governors" element={<BoardOfGovernors />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"

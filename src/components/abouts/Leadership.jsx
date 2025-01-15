@@ -40,10 +40,10 @@ function LeaderCard({ leader }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="group overflow-hidden border-none transition-all duration-300">
+      <Card className="group shadow-lg overflow-hidden border-none transition-all duration-300">
         <CardContent className="p-6 md:p-8">
           <div className="grid gap-8 md:grid-cols-[250px_1fr] items-start">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-lg shadow-xl">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
               <img
                 src={leader.image}
                 alt={`${leader.role} - ${leader.name}`}
