@@ -27,7 +27,7 @@ export const navlinks = [
         name: "Message from Leaders",
         subDropdown: [
           { name: "Director's Message", path: "/about/directors-message" },
-          { name: "Founder's Message", path: "/about/founders-message" },
+          { name: "Founder's Message", path: "/about/leadership" },
           { name: "President's Message", path: "/about/presidents-message" },
           {
             name: "Vice-President's Message",
