@@ -115,11 +115,11 @@ export default function BoardOfGovernors() {
         </h2>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto mb-12">
+      <div className="grid md:grid-cols-2 sm:gap-8 gap-4 max-w-7xl mx-auto mb-12">
         {teamMembers.map((member, index) => (
           <motion.div
             key={member.id}
-            className="flex gap-8 group p-4 rounded-lg bg-gray-100"
+            className="flex flex-col items-center sm:flex-row gap-8 group p-4 rounded-lg bg-gray-100"
             initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -136,7 +136,7 @@ export default function BoardOfGovernors() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col text-center sm:text-left justify-center">
               <motion.div
                 initial={false}
                 animate={{ y: hoveredMember === member.id ? -2 : 0 }}
