@@ -15,6 +15,8 @@ import AcademicAdvisoryBoard from "@/components/abouts/AcademicAdvisoryBoard";
 import VisionMission from "@/components/abouts/VisionMission";
 import Leadership from "@/components/abouts/Leadership";
 import BoardOfGovernors from "@/components/abouts/BoardOfGovernors";
+import BoardOfStudies from "@/components/abouts/BoardOfStudies";
+import Accreditations from "@/components/abouts/Accreditations";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -70,6 +72,8 @@ export default function App() {
                 <Route path="vision-mission" element={<VisionMission />} />
                 <Route path="leadership" element={<Leadership />} />
                 <Route path="board-of-governors" element={<BoardOfGovernors />} />
+                <Route path="board-of-studies" element={<BoardOfStudies />} />
+                <Route path="accreditations-rankings" element={<Accreditations />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"
