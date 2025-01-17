@@ -19,26 +19,27 @@ export const navlinks = [
         name: "Board of Studies",
         path: "/about/board-of-studies",
       },
-      {
-        name: "Core Values",
-        path: "/about/core-values",
-      },
+      // {
+      //   name: "Core Values",
+      //   path: "/about/core-values",
+      // },
       {
         name: "Message from Leaders",
-        subDropdown: [
-          { name: "Director's Message", path: "/about/directors-message" },
-          { name: "Founder's Message", path: "/about/leadership" },
-          { name: "President's Message", path: "/about/presidents-message" },
-          {
-            name: "Vice-President's Message",
-            path: "/about/vice-presidents-message",
-          },
-        ],
+        path: "/about/leadership",
+        // subDropdown: [
+        //   { name: "Director's Message", path: "/about/directors-message" },
+        //   { name: "Founder's Message", path: "/about/leadership" },
+        //   { name: "President's Message", path: "/about/presidents-message" },
+        //   {
+        //     name: "Vice-President's Message",
+        //     path: "/about/vice-presidents-message",
+        //   },
+        // ],
       },
-      {
-        name: "Milestones",
-        path: "/about/milestones",
-      },
+      // {
+      //   name: "Milestones",
+      //   path: "/about/milestones",
+      // },
       {
         name: "Vision & Mission",
         path: "/about/vision-mission",
@@ -66,19 +67,22 @@ export const navlinks = [
   {
     name: "Faculty & Research",
     dropdown: [
-      { 
-        name: "Faculty", 
+      {
+        name: "Faculty",
         subDropdown: [
           { name: "Areas", path: "/faculty/areas" },
-          { name: "Faculty Publications", path: "/faculty/publications" }
-        ] 
+          { name: "Faculty Publications", path: "/faculty/publications" },
+        ],
       },
       {
         name: "Research",
         subDropdown: [
-          { name: "Case Research Center", path: "/research/case-research-center" },
+          {
+            name: "Case Research Center",
+            path: "/research/case-research-center",
+          },
           { name: "Conferences", path: "/research/conferences" },
-          { name: "Ph.D. Scholars", path: "/research/phd-scholars" }
+          { name: "Ph.D. Scholars", path: "/research/phd-scholars" },
         ],
       },
     ],
