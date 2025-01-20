@@ -11,6 +11,39 @@ import {
   GraduationCapIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+import ANNA from "../../assets/faculty&research/faculty/ANNAPURNA.webp";
+import Balani from "../../assets/faculty&research/faculty/balanji.webp";
+import BinalK from "../../assets/faculty&research/faculty/Bipul Kumar.webp";
+import Chaitha from "../../assets/faculty&research/faculty/chaithanya.webp";
+import Damandeep from "../../assets/faculty&research/faculty/daman.webp";
+import DINES from "../../assets/faculty&research/faculty/DINESH.webp";
+import DrArij from "../../assets/faculty&research/faculty/DR Arijit.webp";
+import DrHari from "../../assets/faculty&research/faculty/Dr Harish.webp";
+import DrJaya from "../../assets/faculty&research/faculty/dr jayalakshmi.webp";
+import DrPAV from "../../assets/faculty&research/faculty/DR PAVAN.webp";
+import DrRaj from "../../assets/faculty&research/faculty/Dr Rajyalakshmi.webp";
+import Gowri from "../../assets/faculty&research/faculty/Gowri Kusuma.webp";
+import Gracena from "../../assets/faculty&research/faculty/gracemani.webp";
+import JKame from "../../assets/faculty&research/faculty/J Kameswari.webp";
+import KiranK from "../../assets/faculty&research/faculty/Kiran Kumar.webp";
+import Kommu from "../../assets/faculty&research/faculty/kiranmayi.webp";
+import LOHIT from "../../assets/faculty&research/faculty/LOHIT.webp";
+import MrMa from "../../assets/faculty&research/faculty/Mr. Madhava Murthy.webp";
+import Murali from "../../assets/faculty&research/faculty/Murali Krishna.webp";
+import NRKS from "../../assets/faculty&research/faculty/NRKS Chakravarthy.webp";
+import PARDH from "../../assets/faculty&research/faculty/PARDHASARADHI.webp";
+import Pushpa from "../../assets/faculty&research/faculty/PUSHPA.webp";
+import rahul from "../../assets/faculty&research/faculty/rahul.webp";
+import chandra from "../../assets/faculty&research/faculty/SF Chandra.webp";
+import Shambhavi from "../../assets/faculty&research/faculty/Shambhavi.webp";
+import Shubhra from "../../assets/faculty&research/faculty/Shubhra Johri.webp";
+import Smarpita from "../../assets/faculty&research/faculty/Smarpitaroy.webp";
+import Sreehari from "../../assets/faculty&research/faculty/SREEHARI.webp";
+import subba from "../../assets/faculty&research/faculty/subba.webp";
+import Subhash from "../../assets/faculty&research/faculty/Subhash Tej.webp";
+import Thirumal from "../../assets/faculty&research/faculty/THIRUMALREDDY.webp";
+import Vallinayagam from "../../assets/faculty&research/faculty/Vallinayagam.webp";
 
 const teamMembers = [
   {
@@ -18,264 +51,297 @@ const teamMembers = [
     area: "Finance",
     qualification: "Ph.D, MBA",
     experience: 30,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a",
-    description: "Expert in financial markets with extensive research in corporate finance. Passionate about teaching and mentoring students in investment strategies."
+    image: Ramana,
+    description:
+      "Expert in financial markets with extensive research in corporate finance. Passionate about teaching and mentoring students in investment strategies.",
   },
   {
-    name: "Dr. S.F. Chandra Sekhar", 
+    name: "Dr. S.F. Chandra Sekhar",
     area: "HR & Strategy",
     qualification: "Ph.D, MBA",
     experience: 36,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Specializes in organizational behavior and strategic management. Focuses on employee development and creating effective workplace cultures."
+    image: chandra,
+    description:
+      "Specializes in organizational behavior and strategic management. Focuses on employee development and creating effective workplace cultures.",
   },
   {
     name: "Dr. Pavan Patel",
     area: "HR & Strategy",
     qualification: "Ph.D, MIRPM",
     experience: 36,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-    description: "Expert in human resource development and strategic planning. Passionate about training programs and organizational development."
+    image: DrPAV,
+    description:
+      "Expert in human resource development and strategic planning. Passionate about training programs and organizational development.",
   },
   {
     name: "Dr. K.S. Harish",
     area: "Data Science",
     qualification: "Ph.D, M.Sc.",
     experience: 36,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-    description: "Pioneering researcher in machine learning and artificial intelligence. Leads innovative projects in predictive analytics and data mining."
+    image: DrHari,
+    description:
+      "Pioneering researcher in machine learning and artificial intelligence. Leads innovative projects in predictive analytics and data mining.",
   },
   {
     name: "Mr. Karanam Sreehari",
     area: "Data Science",
     qualification: "MCA, M.Tech, M.Sc.",
     experience: 36,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    description: "Experienced in big data analytics and programming. Focuses on developing practical solutions for complex computational problems."
+    image: Sreehari,
+    description:
+      "Experienced in big data analytics and programming. Focuses on developing practical solutions for complex computational problems.",
   },
   {
     name: "Mr. Pardha Saradhi Madasu",
     area: "Finance",
     qualification: "M. Com, MBA",
     experience: 36,
-    image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef",
-    description: "Specializes in financial accounting and corporate taxation. Brings practical industry experience to academic concepts."
+    image: PARDH,
+    description:
+      "Specializes in financial accounting and corporate taxation. Brings practical industry experience to academic concepts.",
   },
   {
     name: "Dr. Annapurna Valluripally",
     area: "Finance",
     qualification: "Ph.D, MBA, M.Com",
     experience: 27,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Expert in financial risk management and banking. Conducts research on emerging trends in global financial markets."
+    image: ANNA,
+    description:
+      "Expert in financial risk management and banking. Conducts research on emerging trends in global financial markets.",
   },
   {
     name: "Dr. Jayalakshmi Valluri",
     area: "Finance",
     qualification: "Ph.D, M.Com",
     experience: 28,
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956",
-    description: "Specializes in investment analysis and portfolio management. Passionate about teaching financial planning and wealth management."
+    image: DrJaya,
+    description:
+      "Specializes in investment analysis and portfolio management. Passionate about teaching financial planning and wealth management.",
   },
   {
     name: "Dr. Arijit Santikary",
     area: "Marketing",
     qualification: "Ph.D, MBA",
     experience: 18,
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d",
-    description: "Expert in consumer behavior and digital marketing strategies. Conducts research on emerging trends in social media marketing."
+    image: DrArij,
+    description:
+      "Expert in consumer behavior and digital marketing strategies. Conducts research on emerging trends in social media marketing.",
   },
   {
     name: "Dr. T. Thirumal Reddy",
     area: "Marketing",
     qualification: "Ph.D, PGDBA",
     experience: 21,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Specializes in brand management and marketing analytics. Focuses on developing innovative marketing strategies for digital platforms."
+    image: Thirumal,
+    description:
+      "Specializes in brand management and marketing analytics. Focuses on developing innovative marketing strategies for digital platforms.",
   },
   {
     name: "Mr. Lohith Kumar.B",
     area: "Finance",
     qualification: "MBA",
     experience: 18,
-    image: "https://images.unsplash.com/photo-1542178243-bc20204b769f",
-    description: "Expert in corporate finance and investment banking. Brings practical industry experience to theoretical concepts."
+    image: LOHIT,
+    description:
+      "Expert in corporate finance and investment banking. Brings practical industry experience to theoretical concepts.",
   },
   {
     name: "Mr. Rahul Jain",
     area: "HR & Strategy",
     qualification: "PGDBA",
     experience: 21,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Specializes in talent management and organizational development. Focuses on employee engagement and leadership development programs."
+    image: rahul,
+    description:
+      "Specializes in talent management and organizational development. Focuses on employee engagement and leadership development programs.",
   },
   {
     name: "Ms. Damandeep Johar",
     area: "HR & Strategy",
     qualification: "PGDBA, (Ph.D)",
     experience: 16,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
-    description: "Expert in change management and organizational behavior. Researches workplace dynamics and employee motivation strategies."
+    image: Damandeep,
+    description:
+      "Expert in change management and organizational behavior. Researches workplace dynamics and employee motivation strategies.",
   },
   {
     name: "Dr. Grace Mani K.",
     area: "Marketing",
     qualification: "Ph.D, MBA",
     experience: 25,
-    image: "https://images.unsplash.com/photo-1573497019236-17f8177b81e8",
-    description: "Specializes in marketing research and consumer psychology. Conducts studies on customer experience and service marketing."
+    image: Gracena,
+    description:
+      "Specializes in marketing research and consumer psychology. Conducts studies on customer experience and service marketing.",
   },
   {
     name: "Mr. Subash Tej Tumu",
     area: "Data Science",
     qualification: "MCA, MBA",
     experience: 21,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Expert in data analytics and business intelligence. Develops innovative solutions for data-driven decision making."
+    image: Subhash,
+    description:
+      "Expert in data analytics and business intelligence. Develops innovative solutions for data-driven decision making.",
   },
   {
     name: "Ms. Kiranmayi Patel",
     area: "Data Science",
     qualification: "MBA",
     experience: 11,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Specializes in statistical analysis and data visualization. Focuses on making complex data insights accessible and actionable."
+    image: Kommu,
+    description:
+      "Specializes in statistical analysis and data visualization. Focuses on making complex data insights accessible and actionable.",
   },
   {
     name: "Dr. Balanji Reddy Mora",
     area: "Finance",
     qualification: "Ph.D, MBA",
     experience: 15,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Expert in financial modeling and risk assessment. Conducts research on emerging trends in corporate finance."
+    image: Balani,
+    description:
+      "Expert in financial modeling and risk assessment. Conducts research on emerging trends in corporate finance.",
   },
   {
     name: "Dr. Avudaiappan Dinesh",
     area: "Communication & PD",
     qualification: "Ph.D, MA, M.Phil",
     experience: 5,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Specializes in business communication and personal development. Focuses on improving student presentation and leadership skills."
+    image: DINES,
+    description:
+      "Specializes in business communication and personal development. Focuses on improving student presentation and leadership skills.",
   },
   {
     name: "Dr. Pushpa Machani",
     area: "Entrepreneurship",
     qualification: "Ph.D, MBA",
     experience: 16,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
-    description: "Expert in startup ecosystems and innovation management. Mentors students in developing entrepreneurial mindsets and business plans."
+    image: Pushpa,
+    description:
+      "Expert in startup ecosystems and innovation management. Mentors students in developing entrepreneurial mindsets and business plans.",
   },
   {
     name: "Mr. M. Chaithanya",
     area: "Marketing",
     qualification: "PGDBA",
     experience: 20,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Specializes in digital marketing and market research. Brings practical industry experience to marketing strategy development."
+    image: Chaitha,
+    description:
+      "Specializes in digital marketing and market research. Brings practical industry experience to marketing strategy development.",
   },
   {
     name: "Dr. K. Subba Rama Sarma",
     area: "Data Science",
     qualification: "Ph.D, MBA",
     experience: 22,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Expert in advanced analytics and machine learning. Conducts research on artificial intelligence applications in business."
+    image: subba,
+    description:
+      "Expert in advanced analytics and machine learning. Conducts research on artificial intelligence applications in business.",
   },
   {
     name: "Ms. Samarpita Roy",
     area: "Communication & PD",
     qualification: "MBA",
     experience: 14,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Specializes in professional communication and soft skills development. Focuses on enhancing student employability and confidence."
+    image: Smarpita,
+    description:
+      "Specializes in professional communication and soft skills development. Focuses on enhancing student employability and confidence.",
   },
   {
     name: "Dr. Shubhra Johri",
     area: "Finance",
     qualification: "Ph.D, MBA",
     experience: 19,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
-    description: "Expert in international finance and financial markets. Researches global economic trends and monetary policies."
+    image: Shubhra,
+    description:
+      "Expert in international finance and financial markets. Researches global economic trends and monetary policies.",
   },
   {
     name: "Dr. Pinjarla Gowri Kusuma",
     area: "HR & Strategy",
     qualification: "Ph.D",
     experience: 17,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Specializes in strategic human resource management. Focuses on organizational development and employee performance management."
+    image: Gowri,
+    description:
+      "Specializes in strategic human resource management. Focuses on organizational development and employee performance management.",
   },
   {
     name: "Dr. Shambhavi Tamrakar",
     area: "Marketing",
     qualification: "Ph.D, MBA, MA",
     experience: 13,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e",
-    description: "Expert in marketing analytics and consumer research. Conducts studies on digital consumer behavior patterns."
+    image: Shambhavi,
+    description:
+      "Expert in marketing analytics and consumer research. Conducts studies on digital consumer behavior patterns.",
   },
   {
     name: "Mr. Bipul Kumar",
     area: "Marketing",
     qualification: "MBA, (Ph.D)",
     experience: 5,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Specializes in marketing strategy and brand management. Brings fresh perspective to traditional marketing concepts."
+    image: BinalK,
+    description:
+      "Specializes in marketing strategy and brand management. Brings fresh perspective to traditional marketing concepts.",
   },
   {
     name: "Mr. T. Madhav Murthy",
     area: "Finance",
     qualification: "MBA",
     experience: 22,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Expert in financial planning and investment analysis. Focuses on practical applications of financial theories."
+    image: MrMa,
+    description:
+      "Expert in financial planning and investment analysis. Focuses on practical applications of financial theories.",
   },
   {
     name: "Dr. N.C. Rajyalakshmi",
     area: "Finance",
     qualification: "Ph. D",
     experience: 29,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Specializes in corporate finance and financial management. Conducts research on emerging financial technologies and markets."
+    image: DrRaj,
+    description:
+      "Specializes in corporate finance and financial management. Conducts research on emerging financial technologies and markets.",
   },
   {
     name: "Mr. A. Vallinayagam",
     area: "Data Science",
     qualification: "MBA, (Ph.D)",
     experience: 18,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Expert in business analytics and data mining. Develops innovative approaches to data-driven problem solving."
+    image: Vallinayagam,
+    description:
+      "Expert in business analytics and data mining. Develops innovative approaches to data-driven problem solving.",
   },
   {
     name: "Mr. NRKS Chakravarthy",
     area: "Marketing",
     qualification: "MBA",
     experience: 28,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Specializes in strategic marketing and market research. Brings decades of industry experience to academic teaching."
+    image: NRKS,
+    description:
+      "Specializes in strategic marketing and market research. Brings decades of industry experience to academic teaching.",
   },
   {
     name: "Dr. J. Kameshwari",
     area: "Data Science",
     qualification: "Ph.D, MBA",
     experience: 18,
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
-    description: "Expert in statistical analysis and data modeling. Conducts research on predictive analytics and machine learning."
+    image: JKame,
+    description:
+      "Expert in statistical analysis and data modeling. Conducts research on predictive analytics and machine learning.",
   },
   {
     name: "Dr. K. Kiran Kumar",
     area: "Marketing",
     qualification: "Ph.D, MBA",
     experience: 15,
-    image: "https://images.unsplash.com/photo-1542190891-2093d38760f2",
-    description: "Specializes in digital marketing and consumer behavior. Researches emerging trends in social media marketing strategies."
+    image: KiranK,
+    description:
+      "Specializes in digital marketing and consumer behavior. Researches emerging trends in social media marketing strategies.",
   },
   {
     name: "Mr. G. Murali Krishna Patnaik",
     area: "Aptitude Training",
     qualification: "M.Sc.",
     experience: 18,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7",
-    description: "Expert in quantitative aptitude and logical reasoning. Helps students develop critical thinking and problem-solving skills."
+    image: Murali,
+    description:
+      "Expert in quantitative aptitude and logical reasoning. Helps students develop critical thinking and problem-solving skills.",
   },
 ];
 

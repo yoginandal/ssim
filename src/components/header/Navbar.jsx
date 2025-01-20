@@ -81,12 +81,12 @@ export default function Navbar() {
                       {link.name}
                     </button>
                     {openDropdown === index && (
-                      <div className="absolute z-10 left-0 mt-2 min-w-[12rem] w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                      <div className="absolute z-50 left-0 mt-2 min-w-[12rem] w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                           {link.dropdown.map((dropdownLink) => (
                             <div
                               key={dropdownLink.name}
-                              className="relative group"
+                              className="relativ group"
                               onMouseEnter={(e) => handleSubDropdownPosition(e, dropdownLink.name)}
                             >
                               {dropdownLink.subDropdown ? (
