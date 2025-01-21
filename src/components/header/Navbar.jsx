@@ -73,13 +73,14 @@ export default function Navbar() {
               >
                 {link.dropdown ? (
                   <div>
-                    <button
+                    <NavLink
+                      to={link.path}
                       className={`rounded px-3 py-2 text-white -mt-2 hover:bg-red-700 hover:text-red-200 ${
                         openDropdown === index ? 'bg-red-700 text-red-100' : ''
                       }`}
                     >
                       {link.name}
-                    </button>
+                    </NavLink>
                     {openDropdown === index && (
                       <div className="absolute z-50 left-0 mt-2 min-w-[12rem] w-max rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                         <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">

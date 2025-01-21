@@ -49,8 +49,8 @@ export const navlinks = [
   {
     name: "Admissions",
     dropdown: [
-      { name: "Admission Process", path: "/admissions/process" },
-      { name: "Apply Now", path: "/admissions/apply" },
+      // { name: "Admission Process", path: "/admissions/process" },
+      // { name: "Apply Now", path: "/admissions/apply" },
       { name: "FPM/EFPM", path: "/admissions/fpm-efpm" },
       { name: "PGDM BA", path: "/admissions/pgdm-ba" },
       { name: "PGDM BIFS", path: "/admissions/pgdm-bifs" },
