@@ -27,9 +27,9 @@ const stats = [
   },
   {
     icon: <Calendar className="w-6 h-6" />,
-    value: "1992",
-    label: "Established",
-    description: "As autonomous institute",
+    value: "30+",
+    label: "Years of Excellence",
+    description: "Academic excellence since 1992",
   },
   {
     icon: <Award className="w-6 h-6" />,

@@ -3,83 +3,95 @@ import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import WordPullUp from "@/components/ui/word-pull-up";
-import Testimonials1 from "../assets/user_images/man1.jpg";
-import Testimonials2 from "../assets/user_images/man2.jpg";
-import Testimonials3 from "../assets/user_images/man3.jpg";
-import Testimonials4 from "../assets/user_images/man4.jpg";
-import Testimonials5 from "../assets/user_images/man5.jpg";
-import Testimonials6 from "../assets/user_images/man6.jpg";
-import Testimonials7 from "../assets/user_images/man7.jpg";
+import Testimonials1 from "../assets/user_images/aditya.jpg";
+import Testimonials2 from "../assets/user_images/daniaskhata.jpg";
+import Testimonials3 from "../assets/user_images/Itha.jpg";
+import Testimonials4 from "../assets/user_images/jaideep.jpg";
+import Testimonials5 from "../assets/user_images/niraj.jpg";
+import Testimonials6 from "../assets/user_images/Parameshwar.jpg";
+import Testimonials7 from "../assets/user_images/swapnil.jpg";
 import Testimonials8 from "../assets/user_images/women1.jpg";
 import Testimonials9 from "../assets/user_images/women2.jpg";
 import Testimonials10 from "../assets/user_images/women3.jpg";
 import Testimonials11 from "../assets/user_images/women4.jpg";
+import goc from "../assets/user_images/goc.png";
 
 // Testimonials data
 const testimonials = [
   {
-    name: "John Davis",
-    role: "Software Engineer",
+    name: "Aditya Datta ",
+    role: "Executive Director",
+    company: "https://www.jpmorganchase.com/content/dam/jpmorganchase/images/logos/jpmc-logo.svg",
     text: "Inspiring leadership qualities. Always pushes the team forward with innovative solutions and creative problem-solving approaches.",
     rating: 5,
   },
   {
-    name: "Emily Chen",
-    role: "UX Designer",
+    name: "Akshata Dani",
+    role: "Technical Writer Specialist",
+    company: goc,
     text: "Excellent commitment and creativity. The attention to detail and fresh perspective brings new life to every project we collaborate on.",
     rating: 4,
   },
   {
-    name: "Marcus Johnson",
-    role: "Project Manager",
+    name: "Itha Lakshmipathi",
+    role: "AVP & Global Head - HR",
+    company: "Prodapt",
     text: "Reliable and punctual in every project. A true professional who consistently delivers outstanding results on time.",
     rating: 5,
   },
   {
-    name: "Sophia Lee",
-    role: "Marketing Specialist",
+    name: "Jaideep Avasarala",
+    role: "Talent Acquisition Leader",
+    company: "Microsoft",
     text: "An amazing communicator who always keeps the team informed. Her ability to connect with clients is unmatched.",
     rating: 4,
   },
   {
-    name: "Michael Brown",
-    role: "Data Scientist",
+    name: "Niraj Kumar Rana",
+    role: "EVP & Head of Sales",
+    company: "Naukri.com",
     text: "Brings incredible data insights to every project. His analytical skills and attention to detail make all the difference.",
     rating: 5,
   },
   {
-    name: "Isabella Martinez",
-    role: "Content Strategist",
+    name: "Parameshwar N",
+    role: "Vice-President Customer Engagement",
+    company: "SBI Life Insurance Co. Ltd.",
     text: "An extraordinary thinker who knows how to capture the essence of our brand in every piece of content.",
     rating: 5,
   },
   {
-    name: "William Taylor",
-    role: "Full-Stack Developer",
+    name: "Swapnil Bhele",
+    role: "Assistsnt Vice President",
+    company: "Citi",
     text: "A quick problem solver who always finds efficient and scalable solutions. A great team player.",
     rating: 4,
   },
   {
     name: "Ava Wilson",
     role: "Graphic Designer",
+    company: "Codex",
     text: "Her designs are always fresh and creative, perfectly capturing the essence of every project.",
     rating: 5,
   },
   {
     name: "James White",
     role: "DevOps Engineer",
+    company: "Codex",
     text: "Has a knack for making our systems run smoothly. A key player in maintaining our infrastructure.",
     rating: 4,
   },
   {
     name: "Olivia Turner",
     role: "SEO Specialist",
+    company: "Codex",
     text: "Consistently delivers exceptional results in improving our online presence and driving organic traffic.",
     rating: 5,
   },
   {
     name: "Ethan Miller",
     role: "Product Manager",
+    company: "Codex",
     text: "Keeps the team aligned and focused on our goals. A true leader who inspires everyone to perform their best.",
     rating: 5,
   },
@@ -248,6 +260,7 @@ const RadialIcons = () => {
                 {activeTestimonial.name}
               </p>
               <p className="text-sm text-gray-500">{activeTestimonial.role}</p>
+              <img src={activeTestimonial.company} alt="Company Logo" className="mt-5 h-10" />
             </div>
           </div>
           <div className="absolute bottom-[-2rem] md:bottom-4 md:right-4 justify-center md:justify-end w-full flex gap-4">

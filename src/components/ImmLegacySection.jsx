@@ -11,7 +11,7 @@ const ImmLegacySection = () => {
         description: "Partners",
       },
       {
-        number: 32,
+        number: 30,
         suffix: "+",
         title: "Years",
         description: "of Excellence",
@@ -23,10 +23,10 @@ const ImmLegacySection = () => {
         description: "Network",
       },
       {
-        number: 5,
+        number: 35,
         suffix: "+",
-        title: "Foreign",
-        description: "Collaborations",
+        title: "Full Time",
+        description: "Faculty",
       },
     ],
     []
