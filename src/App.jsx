@@ -19,6 +19,7 @@ import BoardOfStudies from "@/components/abouts/BoardOfStudies";
 import Accreditations from "@/components/abouts/Accreditations";
 import Areas from "@/components/faculty&research/Areas";
 import PlacementRecords from "@/components/placement/PlacementRecords";
+import PlacementTeam from "@/components/placement/PlacementTeam";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -90,6 +91,7 @@ export default function App() {
               >
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="records" element={<PlacementRecords />} />
+                <Route path="team" element={<PlacementTeam />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"
