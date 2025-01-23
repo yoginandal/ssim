@@ -3,9 +3,14 @@ import { Users, GraduationCap, Landmark, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 
 export default function AcademicPrograms() {
   const [activeVideo, setActiveVideo] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const features = [
     {
@@ -14,34 +19,36 @@ export default function AcademicPrograms() {
       icon: <GraduationCap className="w-6 h-6" />,
       description:
         "SSIM's two-year Post-Graduation Diploma in Management (PGDM) program is NBA accredited and uniquely designed to push our students to go beyond their boundaries to reach their aspirational careers. The two-year PGDM program will prepare our students with various cross-functional skills and life skills: Communication skills, Decision making, Leadership Skills, Problem-solving, Teamwork, Experiential Learning and several industry-relevant skills to face this VUCA world. These skills will help our students to achieve their career aspirations and learn to exhibit their best selves.",
-      videoImg: "https://img.youtube.com/vi/3zQr7bXzYek/maxresdefault.jpg",
-      video: "https://www.youtube.com/watch?v=3zQr7bXzYek",
+      video: "https://www.youtube.com/watch?v=aurjFtjWkIc",
     },
     {
       title: "PGDM - BIFS",
       subtitle: "Banking, Insurance & Financial Services",
       icon: <Landmark className="w-6 h-6" />,
       description: `SSIM's two-year Post-Graduation Diploma in Management (PGDM) in Banking, Insurance, and Financial Services (BIFS) programme is accredited by NAAC (AICTE). PGDM-BIFS course provides students the opportunity to familiarize themselves with and learn "Value-Creation through Financial Analysis." The two-year PGDM programme equips students with concepts in Banking, Insurance, and Financial Services, along with life skills: Communication, Decision-Making, Leadership, Problem-Solving, Teamwork, and Experiential Learning. It also emphasizes industry-relevant skills to face today's VUCA world, preparing students for careers in both traditional and modern companies.`,
-      videoImg: "https://img.youtube.com/vi/X1mXANADbCc/maxresdefault.jpg",
-      video: "https://www.youtube.com/watch?v=X1mXANADbCc",
+      video: "https://www.youtube.com/watch?v=beOxW30taGk",
     },
     {
       title: "PGDM - BA",
       subtitle: "Business Analytics",
       icon: <LineChart className="w-6 h-6" />,
       description: `SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement. PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course. SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics.`,
-      videoImg: "https://img.youtube.com/vi/39XOoUacs9Q/maxresdefault.jpg",
-      video: "https://www.youtube.com/watch?v=39XOoUacs9Q",
+      video: "https://www.youtube.com/watch?v=-7EavtYSQrA",
     },
     {
       title: "FPM / EFPM",
       subtitle: "Fellow Program In Management",
       icon: <Users className="w-6 h-6" />,
       description: `SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement. PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course. SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics.`,
-      videoImg: "https://img.youtube.com/vi/y-GwG39jVZc/maxresdefault.jpg",
       video: "https://www.youtube.com/watch?v=y-GwG39jVZc",
     },
   ];
+
+  const getVideoId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11 ? match[2] : null;
+  };
 
   return (
     <div className="container mx-auto pl-4 py-16">
@@ -76,16 +83,6 @@ export default function AcademicPrograms() {
                       {feature.subtitle}
                     </p>
                   </div>
-                  {/* <div>
-                  <h3 className={`text-xl font-semibold transition-colors ${
-                    activeVideo === index ? 'text-[#C62B28]' : 'group-hover:text-[#C62B28]'
-                  }`}>
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 mt-2 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div> */}
                 </div>
               ))}
             </div>
@@ -119,19 +116,15 @@ export default function AcademicPrograms() {
 
         <div
           className="relative cursor-pointer aspect-square bg-gray-900 overflow-hidden"
-          onClick={() =>
-            window.open(`${features[activeVideo].video}`, "_blank")
-          }
+          onClick={() => setVideoOpen(true)}
         >
           <img
             className="w-full h-full object-cover"
-            src={features[activeVideo].videoImg}
+            src={`https://img.youtube.com/vi/${getVideoId(features[activeVideo].video)}/maxresdefault.jpg`}
           />
           <div
             className="absolute cursor-pointer inset-0 w-full h-full flex sm:hidden items-center justify-center"
-            onClick={() =>
-              window.open(`${features[activeVideo].video}`, "_blank")
-            }
+            onClick={() => setVideoOpen(true)}
           >
             <div className="relative">
               <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">
@@ -144,9 +137,7 @@ export default function AcademicPrograms() {
         </div>
         <div
           className="absolute cursor-pointer top-1/2 left-[53%] transform -translate-x-[53%] -translate-y-1/2 w-fit h-fit hidden sm:flex items-center justify-center"
-          onClick={() =>
-            window.open(`${features[activeVideo].video}`, "_blank")
-          }
+          onClick={() => setVideoOpen(true)}
         >
           <div className="relative">
             <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">
@@ -157,6 +148,20 @@ export default function AcademicPrograms() {
           </div>
         </div>
       </div>
+
+      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+        <DialogContent className="sm:max-w-[900px] p-0">
+          <div className="aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${getVideoId(features[activeVideo].video)}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

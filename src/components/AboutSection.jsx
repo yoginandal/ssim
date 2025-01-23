@@ -8,7 +8,7 @@ import {
   Calendar,
   Award,
   ArrowRight,
-  Building2,
+  BookCheck,
 } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
 
@@ -20,22 +20,22 @@ const fadeIn = {
 
 const stats = [
   {
-    icon: <Building2 className="w-6 h-6" />,
-    value: "6+",
-    label: "Decades of Excellence",
-    description: "Leading education since 1960s",
+    icon: <Award className="w-6 h-6" />,
+    value: "#1",
+    label: "in Hyderabad",
+    description: "Top management institute",
+  },
+  {
+    icon: <BookCheck className="w-6 h-6" />,
+    value: "9",
+    label: "Value Added",
+    description: "Certification Programs",
   },
   {
     icon: <Calendar className="w-6 h-6" />,
     value: "30+",
     label: "Years of Excellence",
     description: "Academic excellence since 1992",
-  },
-  {
-    icon: <Award className="w-6 h-6" />,
-    value: "#1",
-    label: "in Hyderabad",
-    description: "Top management institute",
   },
 ];
 

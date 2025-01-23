@@ -8,27 +8,6 @@ import {
 } from "@/components/ui/carousel";
 import WordPullUp from "./ui/word-pull-up";
 
-// const movies = [
-//   {
-//     id: 1,
-//     title: "Thor: Ragnarok",
-//     image:
-//       "https://image.tmdb.org/t/p/original/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
-//   },
-//   {
-//     id: 2,
-//     title: "Suicide Squad",
-//     image:
-//       "https://image.tmdb.org/t/p/original/xFw9RXKZDvevAGocgBK0zteto4U.jpg",
-//   },
-//   {
-//     id: 3,
-//     title: "Guardians of the Galaxy",
-//     image:
-//       "https://image.tmdb.org/t/p/original/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg",
-//   },
-// ];
-
 const slides = [
   {
     videoId: "https://www.youtube.com/watch?v=QonokkvYeNs",
@@ -50,13 +29,27 @@ const slides = [
     alt: "Shalini EN I PGDM BA Student",
     thumbnail: `https://img.youtube.com/vi/_BUXcgQMer8/maxresdefault.jpg`,
   },
+  // {
+  //   videoId: "https://www.youtube.com/watch?v=huRs1xw8Cfc",
+  //   alt: "Akshita, a PGDM-Triple Specialisation student",
+  //   thumbnail: `https://img.youtube.com/vi/huRs1xw8Cfc/maxresdefault.jpg`,
+  // },
 ];
+
+// Add a helper function to extract video ID from URL
+const getYouTubeVideoId = (url) => {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+};
 
 function ExcursionCarousel() {
   const [api, setApi] = useState(null);
   const [current, setCurrent] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const timerRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedVideoId, setSelectedVideoId] = useState(null);
 
   useEffect(() => {
     if (!api) return;
@@ -94,86 +87,123 @@ function ExcursionCarousel() {
     };
   }, [api]);
 
+  // Add modal close handler
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedVideoId(null);
+  };
+
+  // Modify the video click handler
+  const handleVideoClick = (videoUrl) => {
+    const videoId = getYouTubeVideoId(videoUrl);
+    if (videoId) {
+      setSelectedVideoId(videoId);
+      setIsModalOpen(true);
+    }
+  };
+
   return (
-    <div className="w-full min-h-screen bg-mainBlue flex flex-col items-center justify-center p-4 sm:p-8">
-      <WordPullUp
-        words="SSIM Stories"
-        className="tracking-tigh sm:text-left mt-8 md:mb-6 text-white text-3xl md:text-4xl font-bold text-center mb-8 sm:!mb-12"
-      />
-      <Carousel
-        setApi={setApi}
-        className="w-full max-w-6xl"
-        opts={{
-          align: "center",
-          loop: true,
-        }}
-      >
-        <CarouselContent className="-ml-2 sm:-ml-4">
-          {slides.map((slide, index) => (
-            <>
-              <CarouselItem
-                key={index}
-                className="pl-2 sm:pl-4 md:basis-4/5 lg:basis-3/4"
-              >
-                <div
-                  className={`relative transition-all duration-500 ease-in-out ${
-                    current === index
-                      ? "scale-100 z-20"
-                      : `scale-90 opacity-40 z-10 ${
-                          index === hoveredIndex ? "opacity-60" : ""
-                        }`
-                  }`}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
+    <>
+      <div className="w-full min-h-screen bg-mainBlue flex flex-col items-center justify-center p-4 sm:p-8">
+        <WordPullUp
+          words="SSIM Stories"
+          className="tracking-tigh sm:text-left mt-8 md:mb-6 text-white text-3xl md:text-4xl font-bold text-center mb-8 sm:!mb-12"
+        />
+        <Carousel
+          setApi={setApi}
+          className="w-full max-w-6xl"
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 sm:-ml-4">
+            {slides.map((slide, index) => (
+              <>
+                <CarouselItem
+                  key={index}
+                  className="pl-2 sm:pl-4 md:basis-4/5 lg:basis-3/4"
                 >
-                  <div className="aspect-video overflow-hidden rounded-lg shadow-xl">
-                    <img
-                      src={slide.thumbnail}
-                      alt={slide.alt}
-                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent rounded-lg"></div>
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-white">
-                    <h2 className="text-xl sm:text-2xl font-bold truncate">
-                      {slide.alt}
-                    </h2>
-                  </div>
                   <div
-                    className="absolute cursor-pointer inset-0 w-full h-full flex items-center justify-center"
-                    onClick={() => window.open(`${slide.videoId}`, "_blank")}
+                    className={`relative transition-all duration-500 ease-in-out ${
+                      current === index
+                        ? "scale-100 z-20"
+                        : `scale-90 opacity-40 z-10 ${
+                            index === hoveredIndex ? "opacity-60" : ""
+                          }`
+                    }`}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
                   >
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">
-                        <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-1" />
+                    <div className="aspect-video overflow-hidden rounded-lg shadow-xl">
+                      <img
+                        src={slide.thumbnail}
+                        alt={slide.alt}
+                        className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-transparent rounded-lg"></div>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-white">
+                      <h2 className="text-xl sm:text-2xl font-bold truncate">
+                        {slide.alt}
+                      </h2>
+                    </div>
+                    <div
+                      className="absolute cursor-pointer inset-0 w-full h-full flex items-center justify-center"
+                      onClick={() => handleVideoClick(slide.videoId)}
+                    >
+                      <div className="relative">
+                        <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">
+                          <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-1" />
+                        </div>
+                        <div className="absolute -inset-4 bg-[#C62B28]/20 rounded-full animate-ping" />
+                        <div className="absolute -inset-8 bg-[#C62B28]/10 rounded-full" />
                       </div>
-                      <div className="absolute -inset-4 bg-[#C62B28]/20 rounded-full animate-ping" />
-                      <div className="absolute -inset-8 bg-[#C62B28]/10 rounded-full" />
                     </div>
                   </div>
-                </div>
-              </CarouselItem>
-            </>
+                </CarouselItem>
+              </>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden w-8 h-8 bg-red-600 text-white sm:flex items-center justify-center -left-4 sm:-left-12" />
+          <CarouselNext className="hidden w-8 h-8 bg-red-600 text-white sm:flex items-center justify-center -right-4 sm:-right-12" />
+        </Carousel>
+        <div className="mt-6 flex justify-center space-x-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                current === index
+                  ? "bg-white w-6"
+                  : "bg-gray-500 hover:bg-gray-400"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden w-8 h-8 bg-red-600 text-white sm:flex items-center justify-center -left-4 sm:-left-12" />
-        <CarouselNext className="hidden w-8 h-8 bg-red-600 text-white sm:flex items-center justify-center -right-4 sm:-right-12" />
-      </Carousel>
-      <div className="mt-6 flex justify-center space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              current === index
-                ? "bg-white w-6"
-                : "bg-gray-500 hover:bg-gray-400"
-            }`}
-            onClick={() => api?.scrollTo(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        </div>
       </div>
-    </div>
+
+      {/* Add Modal/Dialog */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+          <div className="relative w-full max-w-4xl aspect-video">
+            <button
+              onClick={handleCloseModal}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+            >
+              Close
+            </button>
+            <iframe
+              src={`https://www.youtube.com/embed/${selectedVideoId}`}
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
