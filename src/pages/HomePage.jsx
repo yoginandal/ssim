@@ -13,7 +13,7 @@ import RadialIcons from "@/components/RadialIcons";
 import UpcomingEvents from "@/components/UpcomingEvents";
 //import AwardsSection from "@/components/AwardsSection";
 // import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
-
+import Events from "@/components/Events";
 import { Fragment } from "react";
 // import Page from "@/components/page"
 
@@ -52,6 +52,7 @@ export default function HomePage() {
           <Carousel key="carousel" />,
           <LatestBlogsAndEvents key="latest-blogs-and-events" />,
           <RadialIcons key="testimonial" />,
+          <Events key="events" />,
           <UpcomingEvents key="upcoming-events" />,
           <LiveProjects key="live-projects" />,
         ].map((Section, index) => (

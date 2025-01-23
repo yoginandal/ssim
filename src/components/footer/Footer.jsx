@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const footerSections = [
@@ -75,13 +75,13 @@ export default function Footer() {
           {/* Logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
-              <div className="flex items-center gap-3 group">
+              <Link to="/" className="flex items-center gap-3 group">
                 <img
                   src={logo}
                   alt="SSIM Logo"
                   className="h-14 cursor-pointer w-auto transition-transform group-hover:scale-105"
                 />
-              </div>
+              </Link>
               <div className="flex gap-3">
                 {[
                   {
