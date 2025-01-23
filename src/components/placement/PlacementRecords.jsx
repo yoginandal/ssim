@@ -66,10 +66,11 @@ function PlacementCard({ photo, name, program, company, city, state }) {
             {/* Company and Location */}
             <div className="w-full block sm:hidden pt-4 border-t sm:border-t-0 border-slate-200 space-y-3">
               <div className="flex justify-center items-center space-x-2">
-                <Building2 className="w-4 h-4 text-red-600" />
+                {/* <Building2 className="w-4 h-4 text-red-600" />
                 <span className="text-base font-semibold text-slate-700">
                   {company}
-                </span>
+                </span> */}
+                <img src={company} alt={company} className="h-10 my-2" />
               </div>
               <div className="flex justify-center items-center space-x-2">
                 <MapPin className="w-4 h-4 text-slate-800" />
