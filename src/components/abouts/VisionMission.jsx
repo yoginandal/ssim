@@ -67,7 +67,7 @@ export function VisionMission() {
             <div className="flex items-center justify-center lg:justify-start gap-2 mb-8">
               <div className="h-1 w-12 bg-teal-500" />
               <h2 className="text-3xl md:text-4xl font-bold">
-                Our Mission & Mission
+                Our Vision & Mission
               </h2>
             </div>
             <div className="space-y-8 md:space-y-10">
@@ -75,17 +75,22 @@ export function VisionMission() {
                 S.P Sampathy’s Siva Sivani Institute of Management is promoted
                 by the Siva Sivani Group of Educational Institutions. The group
                 has been running the prestigious and internationally renowned
-                Siva Sivani Public Schools for more than four decades. The Post
-                Graduate Diploma in Management Programs of Siva Sivani Institute
-                of Management is approved by the All India Council for Technical
-                Education (AICTE), Ministry of Human Resource Development, Govt.
-                of India, New Delhi, since its commencement. SSIM started
-                functioning as an autonomous institute in 1992. SSIM is situated
-                in Secunderabad, about 6 kilometres from Bowenpally along
-                National Highway No. 7, away from the bustle of the city. The
-                institute is roomy and peaceful, providing the perfect setting
-                for delivering value-based management education. Since its
-                foundation, SSIM has a long history of sustained academic
+                Siva Sivani Public Schools for more than six decades.
+              </p>
+              <p className="text-zinc-600 text-sm sm:text-base">
+                The Post Graduate Diploma in Management Programs of Siva Sivani
+                Institute of Management is approved by the All India Council for
+                Technical Education (AICTE), Ministry of Human Resource
+                Development, Govt. of India, New Delhi, since its commencement.
+                SSIM started functioning as an autonomous institute in 1992.
+                SSIM is situated in Secunderabad, about 6 kilometres from
+                Bowenpally along National Highway No. 7, away from the bustle of
+                the city.
+              </p>
+              <p className="text-zinc-600 text-sm sm:text-base">
+                The institute is roomy and peaceful, providing the perfect
+                setting for delivering value-based management education. Since
+                its foundation, SSIM has a long history of sustained academic
                 success and holistic development of our students. The founders
                 started the institute with the vision of creating a premier
                 management institute which significantly contributes to the

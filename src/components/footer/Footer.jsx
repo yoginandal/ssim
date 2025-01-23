@@ -147,7 +147,7 @@ export default function Footer() {
                         className="group inline-flex items-center gap-1 text-[#293794] hover:text-primary transition-colors duration-200"
                       >
                         {item.name}
-                        <ExternalLink className="h-3 w-3 opacity-0 -translate-y-1 transition-all group-hover:opacity-100 group-hover:translate-y-0" />
+                        {/* <ExternalLink className="h-3 w-3 opacity-0 -translate-y-1 transition-all group-hover:opacity-100 group-hover:translate-y-0" /> */}
                       </a>
                     </li>
                   ))}

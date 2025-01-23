@@ -21,7 +21,8 @@ const testimonials = [
   {
     name: "Aditya Datta ",
     role: "Executive Director",
-    company: "https://www.jpmorganchase.com/content/dam/jpmorganchase/images/logos/jpmc-logo.svg",
+    company:
+      "https://www.jpmorganchase.com/content/dam/jpmorganchase/images/logos/jpmc-logo.svg",
     text: "Inspiring leadership qualities. Always pushes the team forward with innovative solutions and creative problem-solving approaches.",
     rating: 5,
   },
@@ -42,21 +43,24 @@ const testimonials = [
   {
     name: "Jaideep Avasarala",
     role: "Talent Acquisition Leader",
-    company: "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/UHFbanner-MSlogo?fmt=png-alpha&bfc=off&qlt=100,1",
+    company:
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/UHFbanner-MSlogo?fmt=png-alpha&bfc=off&qlt=100,1",
     text: "An amazing communicator who always keeps the team informed. Her ability to connect with clients is unmatched.",
     rating: 4,
   },
   {
     name: "Niraj Kumar Rana",
     role: "EVP & Head of Sales",
-    company: "https://static.naukimg.com/s/0/0/i/naukri-identity/naukri_gnb_logo.svg",
+    company:
+      "https://static.naukimg.com/s/0/0/i/naukri-identity/naukri_gnb_logo.svg",
     text: "Brings incredible data insights to every project. His analytical skills and attention to detail make all the difference.",
     rating: 5,
   },
   {
     name: "Parameshwar N",
     role: "Vice-President Customer Engagement",
-    company: "https://www.sbilife.co.in/sites/SBILife/NewHomePage/images/SBI_Logo.png",
+    company:
+      "https://www.sbilife.co.in/sites/SBILife/NewHomePage/images/SBI_Logo.png",
     text: "An extraordinary thinker who knows how to capture the essence of our brand in every piece of content.",
     rating: 5,
   },
@@ -70,14 +74,16 @@ const testimonials = [
   {
     name: "Mamatha Madireddy",
     role: "Head & Managing Director",
-    company: "https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=EFB19274CD17649AE659D3351B595180",
+    company:
+      "https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=EFB19274CD17649AE659D3351B595180",
     text: "Her designs are always fresh and creative, perfectly capturing the essence of every project.",
     rating: 5,
   },
   {
     name: "Mr. Badri Vishal Katta",
     role: "Senior Vice President",
-    company: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/330px-HDFC_Bank_Logo.svg.png",
+    company:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/330px-HDFC_Bank_Logo.svg.png",
     text: "Has a knack for making our systems run smoothly. A key player in maintaining our infrastructure.",
     rating: 4,
   },
@@ -171,13 +177,17 @@ const RadialIcons = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-200 to-blue-200">
-      <Card className="grid grid-cols-1 md:grid-cols-5 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen py-20 md:min-h-[90vh] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
+    <div className="bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
+      <WordPullUp
+        words="Alumni Testimonials"
+        className="text-4xl block md:hidden md:text-5xl font-bold tracking-tight text-mainBlue text-center sm:text-left pt-12 mb-0"
+      />
+      <Card className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen pb-20 md:min-h-[90vh] bg-inherit">
         {/* Circular Image Carousel */}
         <CardContent className="col-span-2 flex justify-center items-center relative h-[30rem] md:h-[22rem]">
           <div
             ref={containerRef}
-            className={`relative w-full flex justify-center items-center transition-transform duration-700 ${
+            className={`relative max-w- w-full flex justify-center items-center transition-transform duration-700 ${
               isVisible ? "scale-100" : "scale-0"
             }`}
           >
@@ -188,8 +198,16 @@ const RadialIcons = () => {
               if (!isActive) {
                 const idx = circleImageIndices.indexOf(index);
                 const angle = anglePerImage * idx;
+                // Get window width for responsive transform
+                const getTranslateDistance = () => {
+                  const width = window.innerWidth;
+                  if (width < 370) return "9.5rem";
+                  if (width < 640) return "10rem"; // sm
+                  if (width > 640) return "12rem";
+                };
+
                 transform = `rotate(${angle}deg) translateX(${
-                  isVisible ? "12rem" : "0rem"
+                  isVisible ? getTranslateDistance() : "0rem"
                 }) rotate(-${angle}deg)`;
               }
 
@@ -226,12 +244,12 @@ const RadialIcons = () => {
         </CardContent>
 
         {/* Testimonial Content */}
-        <CardContent className="col-span-3 relative flex flex-col justify-between items-center md:items-start text-center md:text-left p-2 md:p-6">
+        <CardContent className="col-span-3 relative flex flex-col justify-between items-center md:items-start text-center md:text-left p-0 md:p-6">
           <WordPullUp
             words="Alumni Testimonials"
-            className="text-4xl md:text-5xl font-bold tracking-tight text-mainBlue sm:text-left mt-8 mb-0 md:mb-6 pl-6"
+            className="text-4xl hidden md:block md:text-5xl font-bold tracking-tight text-mainBlue sm:text-left mt-8 mb-0 md:mb-6 pl-6"
           />
-          <div className="p-6 rounded-md flex-grow w-full max-w-2xl mx-auto md:mx-0">
+          <div className="p-0 pb-6 sm:p-6 rounded-md flex-grow w-full max-w-full sm:max-w-2xl mx-auto md:mx-0">
             <div className="flex justify-center md:justify-start items-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -252,7 +270,11 @@ const RadialIcons = () => {
                 {activeTestimonial.name}
               </p>
               <p className="text-sm text-gray-500">{activeTestimonial.role}</p>
-              <img src={activeTestimonial.company} alt="Company Logo" className="mt-5 h-10" />
+              <img
+                src={activeTestimonial.company}
+                alt="Company Logo"
+                className="mt-5 h-10"
+              />
             </div>
           </div>
           <div className="absolute bottom-[-2rem] md:bottom-4 md:right-4 justify-center md:justify-end w-full flex gap-4">

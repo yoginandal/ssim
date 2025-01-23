@@ -91,7 +91,7 @@ export default function AboutSection() {
                 </h2>
                 <WordPullUp
                   words="Top Management Institute in Hyderabad"
-                  className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 sm:text-left mt-8 mb-0 md:mb-6"
+                  className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 text-left mt-8 mb-0 md:mb-6"
                 />
                 <div className="w-32 h-1.5 bg-red-600/80 rounded-none" />
               </div>
@@ -112,11 +112,11 @@ export default function AboutSection() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8">
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    className="p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow"
+                    className={`p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow ${index === 2 ? "col-span-2" : ""} sm:col-span-1`}
                     whileHover={{ y: -5 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

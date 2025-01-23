@@ -7,6 +7,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import WordPullUp from "./ui/word-pull-up";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 const slides = [
   {
@@ -87,12 +92,6 @@ function ExcursionCarousel() {
     };
   }, [api]);
 
-  // Add modal close handler
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedVideoId(null);
-  };
-
   // Modify the video click handler
   const handleVideoClick = (videoUrl) => {
     const videoId = getYouTubeVideoId(videoUrl);
@@ -104,7 +103,7 @@ function ExcursionCarousel() {
 
   return (
     <>
-      <div className="w-full min-h-screen bg-mainBlue flex flex-col items-center justify-center p-4 sm:p-8">
+      <div className="w-full bg-mainBlue flex flex-col items-center justify-center p-4 pb-10 sm:p-8 sm:pb-14">
         <WordPullUp
           words="SSIM Stories"
           className="tracking-tigh sm:text-left mt-8 md:mb-6 text-white text-3xl md:text-4xl font-bold text-center mb-8 sm:!mb-12"
@@ -184,25 +183,22 @@ function ExcursionCarousel() {
         </div>
       </div>
 
-      {/* Add Modal/Dialog */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-4xl aspect-video">
-            <button
-              onClick={handleCloseModal}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
-            >
-              Close
-            </button>
+      {/* Replace the custom modal with Dialog component */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-4xl border-none bg-transparent p-0">
+          <DialogClose className="absolute -top-10 right-0 text-white hover:text-gray-300 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+            Close
+          </DialogClose>
+          <div className="w-full aspect-video">
             <iframe
               src={`https://www.youtube.com/embed/${selectedVideoId}`}
               className="w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           </div>
-        </div>
-      )}
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

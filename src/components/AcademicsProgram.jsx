@@ -51,13 +51,13 @@ export default function AcademicPrograms() {
   };
 
   return (
-    <div className="container mx-auto pl-4 py-16">
-      <div className="relative grid lg:grid-cols-2 gap-20 items-start">
+    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:py-16">
+      <div className="relative grid lg:grid-cols-2 gap-10 sm:gap-20 items-start">
         <div className="space-y-10">
           <div className="ml-auto max-w-[550px] space-y-8">
             <WordPullUp
               words="Academic Programs"
-              className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 sm:text-left mt-8 mb-0 md:mb-6"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 text-left mt-8 mb-0 md:mb-6"
             />
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
               We train our students to master both the technical & management
