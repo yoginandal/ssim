@@ -21,6 +21,7 @@ import Areas from "@/components/faculty&research/Areas";
 import PlacementRecords from "@/components/placement/PlacementRecords";
 import PlacementTeam from "@/components/placement/PlacementTeam";
 import FPM from "@/components/admissions/FPM";
+import PGDMTPS from "@/components/admissions/PGDMTPS";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -99,6 +100,7 @@ export default function App() {
                 element={<LifeAtSsim />}
               />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
+              <Route path="/admissions/pgdm-triple-specialisation" element={<PGDMTPS />} />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}
             </Routes>
