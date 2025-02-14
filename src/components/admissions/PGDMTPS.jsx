@@ -94,20 +94,20 @@ const processData = [
     step: 3,
     title: "Application Submission",
     description: "Submit your complete application.",
-    details: "Submit the application form along with all required documents and test scores.",
+    details: "Submit the application form along with all required documents including academic records (X, XII, Graduation) and entrance test scores. Ensure all certificates and mark sheets are included.",
   },
   {
     step: 4,
     title: "SOP & Video Introduction",
     description: "Submit Statement of Purpose and self-introduction video.",
-    details: "Prepare and submit your Statement of Purpose (SOP) along with a self-introduction video as part of your application.",
+    details: "Prepare and submit your Statement of Purpose (SOP) highlighting your career goals and interest in management studies, along with a self-introduction video that showcases your personality.",
   },
   {
     step: 5,
-    title: "Personal Interview",
-    description: "Attend interview either online or offline.",
-    details: "Final selection is based on cumulative score of: Entrance test scores, Academic records (X, XII, Graduation), Work Experience, SOP, Video Introduction, Personal Interview, and Extra Curricular Activities/Certification Courses.",
-  },
+    title: "Selection Process",
+    description: "Final evaluation based on multiple criteria.",
+    details: "The final selection is based on a cumulative score of: Entrance test scores, Academic records, Work Experience, SOP, Video Introduction, Personal Interview (online/offline), and Extra Curricular Activities/Certification Courses.",
+  }
 ];
 
 const feesData = {
@@ -152,41 +152,44 @@ const feesData = {
     {
       distance: "0 to 10 kms",
       amount: "₹40,000",
-      frequency: "per annum"
     },
     {
       distance: "10 to 15 kms",
       amount: "₹45,000",
-      frequency: "per annum"
     },
     {
       distance: "15+ kms",
       amount: "₹50,000",
-      frequency: "per annum"
     }
   ],
   hostelFees: [
     {
       type: "A/C Single Occupancy",
       amount: "₹1,97,500",
-      frequency: "per annum"
     },
     {
       type: "Non A/C Single Occupancy",
       amount: "₹1,85,000",
-      frequency: "per annum"
     },
     {
       type: "A/C Double Occupancy",
       amount: "₹1,67,500",
-      frequency: "per annum"
     },
     {
       type: "Non A/C Double Occupancy",
       amount: "₹1,55,000",
-      frequency: "per annum"
     }
-  ]
+  ],
+  importantNotes: [
+    "Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)",
+    "Fee structure includes Admission fee, Course fee and regular Examination fee",
+    "Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student",
+    "Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)",
+    "Names of defaulters will be removed from rolls after 15 days of due date",
+    "Students must report within 10 days of specified date or admission will be cancelled"
+  ],
+  totalFee: "₹6,90,000",
+  batch: "2025-27"
 };
 
 const datesData = [
@@ -381,6 +384,7 @@ const Overview = () => (
 
 const Process = () => (
   <div className="space-y-8">
+    {/* Selection Process Steps */}
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -399,6 +403,25 @@ const Process = () => (
         </div>
       </motion.div>
     ))}
+
+    {/* Additional Information */}
+    <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
+      <h3 className="text-xl font-semibold text-mainBlue mb-4">Important Notes:</h3>
+      <ul className="space-y-2 text-gray-700">
+        <li className="flex items-start gap-2">
+          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
+          <span>Testing Bodies have no role in the selection process or conduct of the PGDM Program</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
+          <span>Final year students can apply before completion of their degree</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
+          <span>Selection is based on overall profile evaluation including academics, entrance test scores, and extracurricular activities</span>
+        </li>
+      </ul>
+    </div>
   </div>
 );
 
@@ -499,12 +522,9 @@ const Fees = () => (
         <div className="bg-[#002f87]/5 p-4 rounded-lg space-y-2">
           <h4 className="font-semibold text-[#002f87] text-lg">Important Notes:</h4>
           <ul className="list-disc list-inside space-y-1 text-lg text-black">
-            <li>Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)</li>
-            <li>Fee structure includes Admission fee, Course fee and regular Examination fee</li>
-            <li>Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student</li>
-            <li>Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)</li>
-            <li>Names of defaulters will be removed from rolls after 15 days of due date</li>
-            <li>Students must report within 10 days of specified date or admission will be cancelled</li>
+            {feesData.importantNotes.map((note, index) => (
+              <li key={index}>{note}</li>
+            ))}
           </ul>
         </div>
       </CardContent>

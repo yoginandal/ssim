@@ -83,31 +83,36 @@ const processData = [
     step: 1,
     title: "Eligibility Check",
     description: "Verify if you meet the program requirements.",
-    details: "Candidates with a minimum three-year Bachelor Degree from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
+    details:
+      "Candidates with an Engineering or (B.Sc Maths/Physics/Statistics) Or B.A (MES) background or B.Com(Computers) or BBA (Analytics) from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
   },
   {
     step: 2,
     title: "Entrance Test Scores",
     description: "Submit scores from accepted entrance exams.",
-    details: "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct.",
+    details:
+      "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct. Minimum 60% score required in data interpretation and numerical ability sections.",
   },
   {
     step: 3,
     title: "Application Submission",
     description: "Submit your complete application.",
-    details: "Submit the application form along with all required documents and test scores.",
+    details:
+      "Submit the application form along with all required documents and test scores. Ensure all academic records and certificates are included with the application.",
   },
   {
     step: 4,
     title: "SOP & Video Introduction",
     description: "Submit Statement of Purpose and self-introduction video.",
-    details: "Prepare and submit your Statement of Purpose (SOP) along with a self-introduction video as part of your application.",
+    details:
+      "Prepare and submit your Statement of Purpose (SOP) along with a self-introduction video as part of your application. The SOP should highlight your interest in Business Analytics.",
   },
   {
     step: 5,
     title: "Personal Interview",
     description: "Attend interview either online or offline.",
-    details: "Final selection is based on cumulative score of: Entrance test scores, Academic records (X, XII, Graduation), Work Experience, SOP, Video Introduction, Personal Interview, and Extra Curricular Activities/Certification Courses.",
+    details:
+      "Final selection is based on cumulative score of: Entrance test scores, Academic records (X, XII, Graduation), Work Experience, SOP, Video Introduction, Personal Interview, and Extra Curricular Activities/Certification Courses.",
   },
 ];
 
@@ -147,47 +152,50 @@ const feesData = {
       type: "5th & 6th Installment",
       amount: "₹1,00,000",
       dueDate: "8th November 2026",
-    }
+    },
   ],
   transportFees: [
     {
       distance: "0 to 10 kms",
       amount: "₹40,000",
-      frequency: "per annum"
     },
     {
       distance: "10 to 15 kms",
       amount: "₹45,000",
-      frequency: "per annum"
     },
     {
       distance: "15+ kms",
       amount: "₹50,000",
-      frequency: "per annum"
-    }
+    },
   ],
   hostelFees: [
     {
       type: "A/C Single Occupancy",
       amount: "₹1,97,500",
-      frequency: "per annum"
     },
     {
       type: "Non A/C Single Occupancy",
       amount: "₹1,85,000",
-      frequency: "per annum"
     },
     {
       type: "A/C Double Occupancy",
       amount: "₹1,67,500",
-      frequency: "per annum"
     },
     {
       type: "Non A/C Double Occupancy",
       amount: "₹1,55,000",
-      frequency: "per annum"
-    }
-  ]
+    },
+  ],
+  importantNotes: [
+    "Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)",
+    "Fee structure includes Admission fee, Course fee and regular Examination fee",
+    "Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student",
+    "Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)",
+    "Names of defaulters will be removed from rolls after 15 days of due date",
+    "Students must report within 10 days of specified date or admission will be cancelled",
+  ],
+  totalFee: "₹6,90,000",
+  batch: "2025-27",
 };
 
 const datesData = [
@@ -265,7 +273,12 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" className="bg-mainBlue hover:bg-mainBlue/80 text-white">Download Now</Button>
+          <Button
+            type="submit"
+            className="bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Download Now
+          </Button>
         </DialogFooter>
       </form>
     </DialogContent>
@@ -276,10 +289,16 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
 const Overview = () => (
   <div className="space-y-3 p-3">
     <p className="text-lg text-gray-700 font-semibold">
-      SSIM offers Post Graduate Diploma in Management - Business Analytics (PGDM-BA), a pioneering program in Telugu speaking states, designed to meet the growing demand for data analytics professionals.
+      SSIM offers Post Graduate Diploma in Management - Business Analytics
+      (PGDM-BA), a pioneering program in Telugu speaking states, designed to
+      meet the growing demand for data analytics professionals.
     </p>
     <p className="text-lg text-gray-700">
-      In today's data-driven world, where 2.5 quintillion bytes of data are generated daily, organizations are shifting from intuition-based to data-driven decision-making. SSIM's PGDM-BA program uniquely combines Business Management, Analytical Mathematics, Statistics, and Computer Science to prepare professionals for this transformation.
+      In today's data-driven world, where 2.5 quintillion bytes of data are
+      generated daily, organizations are shifting from intuition-based to
+      data-driven decision-making. SSIM's PGDM-BA program uniquely combines
+      Business Management, Analytical Mathematics, Statistics, and Computer
+      Science to prepare professionals for this transformation.
     </p>
 
     <h3 className="font-bold text-mainBlue text-2xl">Program Objectives</h3>
@@ -287,10 +306,22 @@ const Overview = () => (
       The program aims to achieve the following specific objectives:
     </p>
     <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-      <li>To develop understanding of how managers use business analytics for problem-solving and decision making</li>
-      <li>To apply principles of economics, marketing, and decision making in data science contexts</li>
-      <li>To build business intelligence capabilities through appropriate technology and software solutions</li>
-      <li>To provide leading-edge analytical skills across various functional areas of business</li>
+      <li>
+        To develop understanding of how managers use business analytics for
+        problem-solving and decision making
+      </li>
+      <li>
+        To apply principles of economics, marketing, and decision making in data
+        science contexts
+      </li>
+      <li>
+        To build business intelligence capabilities through appropriate
+        technology and software solutions
+      </li>
+      <li>
+        To provide leading-edge analytical skills across various functional
+        areas of business
+      </li>
     </ul>
 
     <h3 className="font-bold text-mainBlue text-2xl">Program Focus Areas</h3>
@@ -310,19 +341,22 @@ const Overview = () => (
       {[
         {
           title: "Harvard Certification",
-          description: "Embedded with Harvard Business School Online Business Analytics certification",
-          icon: Award
+          description:
+            "Embedded with Harvard Business School Online Business Analytics certification",
+          icon: Award,
         },
         {
           title: "Technical Expertise",
-          description: "Exposure to wide range of software, programming languages and big data processing tools",
-          icon: Code
+          description:
+            "Exposure to wide range of software, programming languages and big data processing tools",
+          icon: Code,
         },
         {
           title: "Global Exposure",
-          description: "Exchange programs with Herzing University, Atlanta (USA)",
-          icon: Globe
-        }
+          description:
+            "Exchange programs with Herzing University, Atlanta (USA)",
+          icon: Globe,
+        },
       ].map((item, index) => (
         <motion.div
           key={index}
@@ -347,14 +381,22 @@ const Overview = () => (
     </p>
     <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
       <li>Engage in hands-on learning through simulations and gamifications</li>
-      <li>Learn from faculty with extensive industry, academia, and research experience</li>
+      <li>
+        Learn from faculty with extensive industry, academia, and research
+        experience
+      </li>
       <li>Participate in paid summer internships (Earn-while-you-learn)</li>
-      <li>Gain practical experience through corporate interviews and industrial visits</li>
+      <li>
+        Gain practical experience through corporate interviews and industrial
+        visits
+      </li>
       <li>Develop entrepreneurial skills through real-world projects</li>
     </ul>
 
     <p className="text-lg text-gray-700 mt-4">
-      With the demand for data analytics professionals projected to grow by 25% between 2020-2030, PGDM-BA graduates are well-positioned for successful careers in this rapidly expanding field.
+      With the demand for data analytics professionals projected to grow by 25%
+      between 2020-2030, PGDM-BA graduates are well-positioned for successful
+      careers in this rapidly expanding field.
     </p>
   </div>
 );
@@ -374,7 +416,9 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">{item.description}</p>
+          <p className="text-xl font-semibold text-gray-700">
+            {item.description}
+          </p>
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
@@ -386,7 +430,9 @@ const Fees = () => (
   <div className="space-y-8">
     <Card className="border-none shadow-none">
       <CardHeader>
-        <CardTitle className="text-3xl text-[#002f87]">Fee Structure (Batch 2025-27)</CardTitle>
+        <CardTitle className="text-3xl text-[#002f87]">
+          Fee Structure (Batch 2025-27)
+        </CardTitle>
         <CardDescription className="text-lg text-red-600 font-semibold">
           Total Program Fee: ₹6,90,000 (Six Lakhs Ninety Thousand only)
         </CardDescription>
@@ -394,22 +440,36 @@ const Fees = () => (
       <CardContent className="space-y-6">
         {/* Regular Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Regular Fee Structure</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Regular Fee Structure
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">Payment Type</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Due Date</TableHead>
+                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
+                    Payment Type
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Due Date
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.tuitionFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.type}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
-                    <TableCell className="text-black text-lg">{fee.dueDate}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.type}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {fee.dueDate}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -419,7 +479,10 @@ const Fees = () => (
           <div className="mt-4 space-y-2 text-gray-700">
             <div className="flex items-center gap-2">
               <Info className="h-4 w-4 animate-pulse text-red-600 flex-shrink-0" />
-              <p>Admission Fee and Alumni Association Fee are to be paid at the time of Admission</p>
+              <p>
+                Admission Fee and Alumni Association Fee are to be paid at the
+                time of Admission
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <Info className="h-4 w-4 animate-pulse text-red-600 flex-shrink-0" />
@@ -430,20 +493,30 @@ const Fees = () => (
 
         {/* Transport Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Transportation Charges</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Transportation Charges
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Distance</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount (Per Annum)</TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Distance
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount (Per Annum)
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.transportFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.distance}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.distance}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -453,38 +526,69 @@ const Fees = () => (
 
         {/* Hostel Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Hostel Fee (Accommodation and Food)</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Hostel Fee (Accommodation and Food)
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Room Type</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Fee Per Annum</TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Room Type
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Fee Per Annum
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.hostelFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.type}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.type}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </div>
-          <p className="text-sm text-gray-600 mt-2">* Food Charges: Every year there will be an increase of 15%.</p>
+          <p className="text-sm text-gray-600 mt-2">
+            * Food Charges: Every year there will be an increase of 15%.
+          </p>
         </div>
 
         {/* Important Notes */}
         <div className="bg-[#002f87]/5 p-4 rounded-lg space-y-2">
-          <h4 className="font-semibold text-[#002f87] text-lg">Important Notes:</h4>
+          <h4 className="font-semibold text-[#002f87] text-lg">
+            Important Notes:
+          </h4>
           <ul className="list-disc list-inside space-y-1 text-lg text-black">
-            <li>Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)</li>
-            <li>Fee structure includes Admission fee, Course fee and regular Examination fee</li>
-            <li>Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student</li>
-            <li>Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)</li>
-            <li>Names of defaulters will be removed from rolls after 15 days of due date</li>
-            <li>Students must report within 10 days of specified date or admission will be cancelled</li>
+            <li>
+              Caution money deposit of ₹25,000 should be deposited along with
+              the 1st installment fee (refundable upon exit)
+            </li>
+            <li>
+              Fee structure includes Admission fee, Course fee and regular
+              Examination fee
+            </li>
+            <li>
+              Institute provides Laptop, Business Suit and Textbooks (As per
+              Book Bank Policy) to every student
+            </li>
+            <li>
+              Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)
+            </li>
+            <li>
+              Names of defaulters will be removed from rolls after 15 days of
+              due date
+            </li>
+            <li>
+              Students must report within 10 days of specified date or admission
+              will be cancelled
+            </li>
           </ul>
         </div>
       </CardContent>
@@ -513,7 +617,9 @@ const Dates = () => (
             <time className="text-sm text-red-600 font-semibold">
               {item.date}
             </time>
-            <h3 className="text-lg font-semibold text-mainBlue mt-2">{item.event}</h3>
+            <h3 className="text-lg font-semibold text-mainBlue mt-2">
+              {item.event}
+            </h3>
             <p className="text-gray-700 text-lg mt-1">{item.description}</p>
           </motion.div>
         ))}
@@ -525,7 +631,9 @@ const Dates = () => (
 const Brochure = ({ setIsEnquireOpen }) => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-center text-red-600">Download Our Brochure</CardTitle>
+      <CardTitle className="text-3xl text-center text-red-600">
+        Download Our Brochure
+      </CardTitle>
       <CardDescription className="text-xl text-center text-gray-700">
         Get detailed information about our programs
       </CardDescription>
@@ -552,7 +660,9 @@ const Brochure = ({ setIsEnquireOpen }) => (
 const Apply = () => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-red-600 text-center">Apply Now</CardTitle>
+      <CardTitle className="text-3xl text-red-600 text-center">
+        Apply Now
+      </CardTitle>
       <CardDescription className="text-xl text-gray-700 text-center">
         Start your application process
       </CardDescription>
@@ -563,7 +673,10 @@ const Apply = () => (
           Ready to begin your journey? Click below to start your application.
           Make sure you have all necessary documents ready.
         </p>
-        <Button size="lg" className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white">
+        <Button
+          size="lg"
+          className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
+        >
           Begin Application
         </Button>
       </div>
