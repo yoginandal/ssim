@@ -3,10 +3,7 @@ import { Users, GraduationCap, Landmark, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 export default function AcademicPrograms() {
   const [activeVideo, setActiveVideo] = useState(0);
@@ -17,35 +14,51 @@ export default function AcademicPrograms() {
       title: "PGDM",
       subtitle: "Triple Specialisation",
       icon: <GraduationCap className="w-6 h-6" />,
-      description:
-        "SSIM's two-year Post-Graduation Diploma in Management (PGDM) program is NBA accredited and uniquely designed to push our students to go beyond their boundaries to reach their aspirational careers. The two-year PGDM program will prepare our students with various cross-functional skills and life skills: Communication skills, Decision making, Leadership Skills, Problem-solving, Teamwork, Experiential Learning and several industry-relevant skills to face this VUCA world. These skills will help our students to achieve their career aspirations and learn to exhibit their best selves.",
+      description: [
+        "SSIM's two-year Post-Graduation Diploma in Management (PGDM) program is NBA accredited and uniquely designed to push our students to go beyond their boundaries to reach their aspirational careers.",
+        "The two-year PGDM program will prepare our students with various cross-functional skills and life skills: Communication skills, Decision making, Leadership Skills, Problem-solving, Teamwork, Experiential Learning and several industry-relevant skills to face this VUCA world.",
+        "These skills will help our students to achieve their career aspirations and learn to exhibit their best selves."
+      ],
       video: "https://www.youtube.com/watch?v=aurjFtjWkIc",
     },
     {
       title: "PGDM - BIFS",
       subtitle: "Banking, Insurance & Financial Services",
       icon: <Landmark className="w-6 h-6" />,
-      description: `SSIM's two-year Post-Graduation Diploma in Management (PGDM) in Banking, Insurance, and Financial Services (BIFS) programme is accredited by NAAC (AICTE). PGDM-BIFS course provides students the opportunity to familiarize themselves with and learn "Value-Creation through Financial Analysis." The two-year PGDM programme equips students with concepts in Banking, Insurance, and Financial Services, along with life skills: Communication, Decision-Making, Leadership, Problem-Solving, Teamwork, and Experiential Learning. It also emphasizes industry-relevant skills to face today's VUCA world, preparing students for careers in both traditional and modern companies.`,
+      description: [
+        "The Post-Graduation Diploma in Management – Banking, Insurance, and Financial Services (PGDM-BIFS) at Siva Sivani Institute of Management (SSIM) is designed to provide management graduates with in-depth knowledge of the Banking, Financial Services, and Insurance (BFSI) sectors. These industries play a vital role in driving economic growth, offering risk coverage, and ensuring financial security.",
+        "The BFSI sector, which is rapidly evolving with advancements in AI, Blockchain, and robotic process automation, presents significant career opportunities. However, there is a shortage of qualified professionals to meet the sector's growing demand.",
+        "To address this, SSIM offers an integrated curriculum with elective options that allow students to specialize in areas like investment banking, risk management, FinTech, and wealth management. The program combines academic theory with practical learning, ensuring that students are well-equipped for successful careers in BFSI. The electives provide flexibility, enhancing employability and preparing students for specialized roles in the industry."
+      ],
       video: "https://www.youtube.com/watch?v=beOxW30taGk",
     },
     {
       title: "PGDM - BA",
       subtitle: "Business Analytics",
       icon: <LineChart className="w-6 h-6" />,
-      description: `SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement. PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course. SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics.`,
+      description: [
+        "Embark on a transformative journey with SSIMs Post Graduate Diploma in Management (PGDM – BA) in Business Analytics, meticulously crafted to mold future-ready business leaders adept in data-driven decision-making. This program offers a harmonious blend of comprehensive business education and cutting-edge analytical skills, ensuring students stand out in today's competitive landscape.",
+        "Our industry-aligned curriculum, designed in collaboration with seasoned professionals, encompasses core subjects such as Data Visualization, Machine Learning, Predictive Modelling, and Big Data Analytics. Gain proficiency in leading analytical tools, including R Programming, Python, SQL, and Tableau, through immersive, hands-on learning experiences.",
+        "Beyond the classroom, engage in real-world applications and internships, providing invaluable exposure to business challenges. Join us to unlock your potential and become a catalyst for strategic innovation in the dynamic realm of business analytics."
+      ],
       video: "https://www.youtube.com/watch?v=-7EavtYSQrA",
     },
     {
       title: "FPM / EFPM",
       subtitle: "Fellow Program In Management",
       icon: <Users className="w-6 h-6" />,
-      description: `SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement. PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course. SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics.`,
+      description: [
+        "SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement.",
+        "PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course.",
+        "SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics."
+      ],
       video: "https://www.youtube.com/watch?v=y-GwG39jVZc",
     },
   ];
 
   const getVideoId = (url) => {
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const regExp =
+      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
     return match && match[2].length === 11 ? match[2] : null;
   };
@@ -57,7 +70,7 @@ export default function AcademicPrograms() {
           <div className="ml-auto max-w-[550px] space-y-8">
             <WordPullUp
               words="Academic Programs"
-              className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 text-left mt-8 mb-0 md:mb-6"
+              className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 text-left mb-0 md:mb-6"
             />
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
               We train our students to master both the technical & management
@@ -86,9 +99,11 @@ export default function AcademicPrograms() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-gray-600 leading-relaxed">
-              {features[activeVideo].description}
-            </p>
+            <div className="mt-4 text-gray-600 text-base leading-relaxed space-y-4">
+              {features[activeVideo].description.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
             <Button
               className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
               size="lg"
@@ -120,7 +135,9 @@ export default function AcademicPrograms() {
         >
           <img
             className="w-full h-full object-cover"
-            src={`https://img.youtube.com/vi/${getVideoId(features[activeVideo].video)}/maxresdefault.jpg`}
+            src={`https://img.youtube.com/vi/${getVideoId(
+              features[activeVideo].video
+            )}/maxresdefault.jpg`}
           />
           <div
             className="absolute cursor-pointer inset-0 w-full h-full flex sm:hidden items-center justify-center"
@@ -155,7 +172,9 @@ export default function AcademicPrograms() {
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${getVideoId(features[activeVideo].video)}`}
+              src={`https://www.youtube.com/embed/${getVideoId(
+                features[activeVideo].video
+              )}`}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

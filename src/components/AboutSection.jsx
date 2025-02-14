@@ -98,16 +98,37 @@ export default function AboutSection() {
 
               <div className="space-y-6 text-gray-600">
                 <p className="text-lg leading-relaxed">
-                  Siva Sivani Institute of Management (SSIM) is an integral part
-                  of the Siva Sivani Group, whose presence in the field of
-                  education has crossed six decades. SSIM began operating as an
-                  autonomous institute in 1992.
+                  Located in the heart of Hyderabad and Secunderabad, Siva
+                  Sivani Institute of Management (SSIM) is a premier institution
+                  with over three decades of excellence in management education.
+                  Renowned for its strong ethical foundation, this SAQS, NBA,
+                  and NAAC accredited institution delivers industry-relevant
+                  learning through an innovative curriculum and experienced
+                  faculty blending academic and corporate insights.
                 </p>
+
                 <p className="text-lg leading-relaxed">
-                  Since its inception, SSIM has maintained a rich tradition of
-                  continuing academic excellence, and comprehensive personal
-                  growth and is recognized as Hyderabad&apos;s Top Management
-                  Institute.
+                  Recognized as an A<sup>+++</sup> B-School by Business India (2024), SSIM
+                  ranks 21st among private standalone B-Schools in India
+                  (Outlook 2024) and 2nd in Telangana (Outlook, CSR, and GHRDC
+                  Times 2024). Its vibrant, extremely qualified, and talented
+                  alumni network spans across the globe, fostering valuable
+                  professional connections and success stories across
+                  industries, domains, and profiles.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                  With a focus on holistic development of individuals with
+                  special inclination towards critical decision-making bordering
+                  on creativity, innovation, sustainability, ethics, and
+                  practical applicability, SSIM continues to shape future-ready
+                  leaders year-on-year.
+                </p>
+
+                <p className="text-lg leading-relaxed">
+                  Embark on your transformative journey with SSIM today and
+                  unlock limitless opportunities of growth and success ready to
+                  embrace you!!!
                 </p>
               </div>
 
@@ -116,7 +137,9 @@ export default function AboutSection() {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    className={`p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow ${index === 2 ? "col-span-2" : ""} sm:col-span-1`}
+                    className={`p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow ${
+                      index === 2 ? "col-span-2" : ""
+                    } sm:col-span-1`}
                     whileHover={{ y: -5 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
