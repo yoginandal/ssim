@@ -512,7 +512,7 @@ const FPM = () => {
             className="max-w-2xl"
           >
             <h1 className="text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
-              Begin Your Journey
+              Begin Your Journey with FPM Program
             </h1>
             <p className="text-xl text-gray-900">
               Take the first step towards your future with our world-class
