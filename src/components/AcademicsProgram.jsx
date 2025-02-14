@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Users, GraduationCap, Landmark, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -8,6 +8,22 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 export default function AcademicPrograms() {
   const [activeVideo, setActiveVideo] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!isHovered && !videoOpen) {
+      const timer = setInterval(() => {
+        setIsAnimating(true);
+        setTimeout(() => {
+          setActiveVideo((prev) => (prev + 1) % features.length);
+          setIsAnimating(false);
+        }, 500);
+      }, 3000);
+
+      return () => clearInterval(timer);
+    }
+  }, [isHovered, videoOpen]);
 
   const features = [
     {
@@ -64,7 +80,7 @@ export default function AcademicPrograms() {
   };
 
   return (
-    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:py-16">
+    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:pt-16">
       <div className="relative grid lg:grid-cols-2 gap-10 sm:gap-20 items-start">
         <div className="space-y-10">
           <div className="ml-auto max-w-[550px] space-y-8">
@@ -80,11 +96,19 @@ export default function AcademicPrograms() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`flex gap-6 cursor-pointer group`}
-                  onClick={() => setActiveVideo(index)}
+                  className={`flex gap-6 cursor-pointer group transition-all duration-300`}
+                  onClick={() => {
+                    setIsAnimating(true);
+                    setTimeout(() => {
+                      setActiveVideo(index);
+                      setIsAnimating(false);
+                    }, 500);
+                  }}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
                 >
                   <div
-                    className={`w-full min-h-[120px] space-y-[6px] flex flex-col items-center justify-center shadow-2xl text-white flex-shrink-0 ${
+                    className={`w-full min-h-[120px] space-y-[6px] flex flex-col items-center justify-center shadow-2xl text-white flex-shrink-0 transition-colors duration-300 ${
                       activeVideo === index ? "bg-red-600" : "bg-mainBlue"
                     }`}
                   >
@@ -99,7 +123,11 @@ export default function AcademicPrograms() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 text-gray-600 text-base leading-relaxed space-y-4">
+            <div 
+              className={`mt-4 text-gray-600 text-base leading-relaxed space-y-4 transition-opacity duration-500 ${
+                isAnimating ? 'opacity-0' : 'opacity-100'
+              }`}
+            >
               {features[activeVideo].description.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -129,9 +157,13 @@ export default function AcademicPrograms() {
           </div>
         </div>
 
-        <div
-          className="relative cursor-pointer aspect-square bg-gray-900 overflow-hidden"
+        <div 
+          className={`relative cursor-pointer aspect-square bg-gray-900 overflow-hidden transition-opacity duration-500 ${
+            isAnimating ? 'opacity-0' : 'opacity-100'
+          }`}
           onClick={() => setVideoOpen(true)}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <img
             className="w-full h-full object-cover"

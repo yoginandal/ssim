@@ -113,9 +113,26 @@ const images = [
 const RadialIcons = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef(null);
 
   const totalTestimonials = testimonials.length;
+
+  // Auto-change testimonial effect
+  useEffect(() => {
+    if (!isHovered) {
+      const timer = setInterval(() => {
+        setIsAnimating(true);
+        setTimeout(() => {
+          setActiveIndex((prev) => (prev === totalTestimonials - 1 ? 0 : prev + 1));
+          setIsAnimating(false);
+        }, 500);
+      }, 3000);
+
+      return () => clearInterval(timer);
+    }
+  }, [isHovered, totalTestimonials]);
 
   // Intersection Observer for visibility animation
   useEffect(() => {
@@ -143,20 +160,32 @@ const RadialIcons = () => {
     };
   }, []);
 
-  // Handle image click
+  // Handle image click with animation
   const handleImageClick = (index) => {
     if (index !== activeIndex) {
-      setActiveIndex(index);
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActiveIndex(index);
+        setIsAnimating(false);
+      }, 500);
     }
   };
 
-  // Handle navigation buttons
+  // Handle navigation buttons with animation
   const handlePrevious = () => {
-    setActiveIndex((prev) => (prev === 0 ? totalTestimonials - 1 : prev - 1));
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex((prev) => (prev === 0 ? totalTestimonials - 1 : prev - 1));
+      setIsAnimating(false);
+    }, 500);
   };
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev === totalTestimonials - 1 ? 0 : prev + 1));
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveIndex((prev) => (prev === totalTestimonials - 1 ? 0 : prev + 1));
+      setIsAnimating(false);
+    }, 500);
   };
 
   // Circle image indices (excluding active image)
@@ -182,7 +211,11 @@ const RadialIcons = () => {
         words="Alumni Testimonials"
         className="text-4xl block md:hidden md:text-5xl font-bold tracking-tight text-mainBlue text-center sm:text-left pt-12 mb-0"
       />
-      <Card className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen pb-20 md:min-h-[90vh] bg-inherit">
+      <Card 
+        className="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-6 max-w-screen-xl mx-auto p-6 md:p-8 border-none shadow-none items-center min-h-screen pb-20 md:min-h-[90vh] bg-inherit"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {/* Circular Image Carousel */}
         <CardContent className="col-span-2 flex justify-center items-center relative h-[30rem] md:h-[22rem]">
           <div
@@ -249,7 +282,11 @@ const RadialIcons = () => {
             words="Alumni Testimonials"
             className="text-4xl hidden md:block md:text-5xl font-bold tracking-tight text-mainBlue sm:text-left mt-8 mb-0 md:mb-6 pl-6"
           />
-          <div className="p-0 pb-6 sm:p-6 rounded-md flex-grow w-full max-w-full sm:max-w-2xl mx-auto md:mx-0">
+          <div 
+            className={`p-0 pb-6 sm:p-6 rounded-md flex-grow w-full max-w-full sm:max-w-2xl mx-auto md:mx-0 transition-opacity duration-500 ${
+              isAnimating ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
             <div className="flex justify-center md:justify-start items-center mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star
