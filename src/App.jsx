@@ -22,7 +22,8 @@ import PlacementRecords from "@/components/placement/PlacementRecords";
 import PlacementTeam from "@/components/placement/PlacementTeam";
 import FPM from "@/components/admissions/FPM";
 import PGDMTPS from "@/components/admissions/PGDMTPS";
-
+import PGDMBIFS from "@/components/admissions/PGDMBIFS";
+import PGDMBA from "@/components/admissions/PGDMBA";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -101,6 +102,8 @@ export default function App() {
               />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
               <Route path="/admissions/pgdm-triple-specialisation" element={<PGDMTPS />} />
+              <Route path="/admissions/pgdm-bifs" element={<PGDMBIFS />} />
+              <Route path="/admissions/pgdm-ba" element={<PGDMBA />} />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}
             </Routes>

@@ -275,71 +275,44 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
 const Overview = () => (
   <div className="space-y-3 p-3">
     <p className="text-lg text-gray-700 font-semibold">
-      SSIM's Post Graduate Diploma in Management (PGDM) program is uniquely designed to develop managers with cross-functional skills blended with IT acumen, offering triple specialization opportunities.
+      SSIM offers Post Graduate Diploma in Management - Banking, Insurance and Financial Services (PGDM-BIFS), a specialized program designed to master the nuances of the BFSI sector.
     </p>
     <p className="text-lg text-gray-700">
-      The program focuses on specific leadership nuances of getting work done through teams. During the second year, students can customize their curriculum by choosing 10 electives across different areas apart from compulsory courses, preparing them with multifaceted functionality to meet future challenges.
+      The PGDM-BIFS program at Siva Sivani Institute of Management (SSIM) is uniquely crafted to equip management graduates with comprehensive knowledge of operations in the Banking, Finance services and Insurance (BFSI) sector. This sector plays a crucial role in fueling businesses by providing capital, covering risk, and strengthening financial security through various savings and investment avenues.
     </p>
 
-    <h3 className="font-bold text-mainBlue text-2xl">Triple Specialization Structure</h3>
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Major Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Finance</li>
-          <li>Marketing</li>
-          <li>Human Resources</li>
-          <li>Operations Management</li>
-          <li>Agribusiness Management</li>
-          <li>Technology Management</li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Minor Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Finance</li>
-          <li>Marketing</li>
-          <li>Human Resource</li>
-          <li>Operations Management</li>
-          <li>Technology Management</li>
-          <li>Agribusiness Management</li>
-          <li>Business Analytics</li>
-        </ul>
-      </div>
+    <h3 className="font-bold text-mainBlue text-2xl">Curriculum Structure</h3>
+    <p className="text-gray-700 text-lg">
+      The program follows a comprehensive two-year structure:
+    </p>
+    <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
+      <li>First Year: Foundation in business practices including Economics, Finance, Marketing, HR, Quantitative Techniques, IT, Communication, and Operations</li>
+      <li>Second Year: Specialized courses in Banking, Insurance, Security Analysis, Portfolio Management, and Capital Markets</li>
+      <li>Additional core courses in Strategy, Entrepreneurship, Project Management, Governance, and Ethics</li>
+    </ul>
 
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Sectoral Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Business Analytics</li>
-          <li>Banking</li>
-          <li>Digital Marketing</li>
-          <li>Retail Management</li>
-          <li>Entrepreneurship</li>
-          <li>Pharma Management</li>
-          <li>Real Estate Management</li>
-          <li>Insurance Management</li>
-          <li>Hospitality & Tourism Marketing</li>
-          <li>Liberal Arts</li>
-        </ul>
-      </div>
-    </div>
+    <h3 className="font-bold text-mainBlue text-2xl">Specialization Streams</h3>
+    <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
+      <li>Banking Stream: Retail banking, digital banking, risk and treasury management, mortgage banking, trade finance, AML & KYC</li>
+      <li>Insurance Stream: Insure-tech, fraud risk management, reinsurance management, pensions and annuities, group insurance</li>
+      <li>Analytical Stream: Fraud risk analytics, financial analytics, algo trading with Python, Blockchain and AI applications</li>
+    </ul>
 
-    <h3 className="font-bold text-mainBlue text-2xl mt-8">Program Highlights</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">Program Highlights</h3>
     <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
       {[
         {
-          title: "Accreditations",
-          description: "NBA and NAAC Accredited program with outcome-based education",
+          title: "Industry Recognition",
+          description: "Accredited by Insurance Institute of India (III) with state-of-the-art NSE Assisted Finance Lab",
           icon: Award
         },
         {
           title: "Experiential Learning",
-          description: "StratX, Equity Levers, and CESIM simulations for practical exposure",
+          description: "Hands-on experience through StratX, Equity Levers, and CESIM simulations",
           icon: BookOpen
         },
         {
-          title: "Global Connect",
+          title: "Global Exposure",
           description: "International exchange program with Herzing University, Atlanta (USA)",
           icon: Globe
         }
@@ -361,18 +334,19 @@ const Overview = () => (
       ))}
     </div>
 
-    <h3 className="font-bold text-mainBlue text-2xl mt-8">Learning Approach</h3>
+    <h3 className="font-bold text-mainBlue text-2xl mt-8">Career Opportunities</h3>
     <p className="text-gray-700 text-lg">
-      The program follows an experiential learning process where students:
+      Our graduates find excellent opportunities in:
     </p>
     <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-      <li>Engage in corporate interviews and industrial visits</li>
-      <li>Participate in simulation labs for practical experience</li>
-      <li>Develop entrepreneurial skills through hands-on projects</li>
-      <li>Learn from faculty with exceptional industry experience</li>
-      <li>Benefit from visiting faculty from leading corporates</li>
+      <li>Fintech Companies as NAV Analysts</li>
+      <li>Private & Public Sector Banks</li>
+      <li>Life, General & Health Insurance Companies</li>
+      <li>Insurance Intermediaries – Brokers/Corporate Agents</li>
+      <li>Stock Broking Firms and Mutual Fund Companies</li>
+      <li>Bancassurance channels as Unit Managers</li>
     </ul>
-
+    
     <p className="text-lg text-gray-700 mt-4">
       The program boasts a near 100% placement record with leading recruiters including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC, Factset Systems, Franklin Templeton, and InfoEdge.
     </p>
@@ -594,7 +568,7 @@ const Apply = () => (
 const Scholarships = () => <div>Scholarships content here</div>;
 
 // Main Component
-const PGDMTPS = () => {
+const PGDMBIFS = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
 
@@ -609,7 +583,7 @@ const PGDMTPS = () => {
             className="max-w-2xl"
           >
             <h1 className="text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
-              Begin Your Journey with PGDM Triple Specialisation Program
+              Begin Your Journey with PGDM-BIFS Program
             </h1>
             <p className="text-xl text-gray-900">
               Take the first step towards your future with our world-class
@@ -736,4 +710,4 @@ const PGDMTPS = () => {
   );
 };
 
-export default PGDMTPS;
+export default PGDMBIFS;

@@ -34,6 +34,7 @@ import {
   Info,
   Award,
   TrendingUp,
+  Code,
   Globe,
 } from "lucide-react";
 import {
@@ -275,72 +276,51 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
 const Overview = () => (
   <div className="space-y-3 p-3">
     <p className="text-lg text-gray-700 font-semibold">
-      SSIM's Post Graduate Diploma in Management (PGDM) program is uniquely designed to develop managers with cross-functional skills blended with IT acumen, offering triple specialization opportunities.
+      SSIM offers Post Graduate Diploma in Management - Business Analytics (PGDM-BA), a pioneering program in Telugu speaking states, designed to meet the growing demand for data analytics professionals.
     </p>
     <p className="text-lg text-gray-700">
-      The program focuses on specific leadership nuances of getting work done through teams. During the second year, students can customize their curriculum by choosing 10 electives across different areas apart from compulsory courses, preparing them with multifaceted functionality to meet future challenges.
+      In today's data-driven world, where 2.5 quintillion bytes of data are generated daily, organizations are shifting from intuition-based to data-driven decision-making. SSIM's PGDM-BA program uniquely combines Business Management, Analytical Mathematics, Statistics, and Computer Science to prepare professionals for this transformation.
     </p>
 
-    <h3 className="font-bold text-mainBlue text-2xl">Triple Specialization Structure</h3>
-    <div className="space-y-4">
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Major Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Finance</li>
-          <li>Marketing</li>
-          <li>Human Resources</li>
-          <li>Operations Management</li>
-          <li>Agribusiness Management</li>
-          <li>Technology Management</li>
-        </ul>
-      </div>
-      
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Minor Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Finance</li>
-          <li>Marketing</li>
-          <li>Human Resource</li>
-          <li>Operations Management</li>
-          <li>Technology Management</li>
-          <li>Agribusiness Management</li>
-          <li>Business Analytics</li>
-        </ul>
-      </div>
+    <h3 className="font-bold text-mainBlue text-2xl">Program Objectives</h3>
+    <p className="text-gray-700 text-lg">
+      The program aims to achieve the following specific objectives:
+    </p>
+    <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
+      <li>To develop understanding of how managers use business analytics for problem-solving and decision making</li>
+      <li>To apply principles of economics, marketing, and decision making in data science contexts</li>
+      <li>To build business intelligence capabilities through appropriate technology and software solutions</li>
+      <li>To provide leading-edge analytical skills across various functional areas of business</li>
+    </ul>
 
-      <div>
-        <h4 className="text-xl font-semibold text-red-600">Sectoral Specializations</h4>
-        <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-          <li>Business Analytics</li>
-          <li>Banking</li>
-          <li>Digital Marketing</li>
-          <li>Retail Management</li>
-          <li>Entrepreneurship</li>
-          <li>Pharma Management</li>
-          <li>Real Estate Management</li>
-          <li>Insurance Management</li>
-          <li>Hospitality & Tourism Marketing</li>
-          <li>Liberal Arts</li>
-        </ul>
-      </div>
-    </div>
+    <h3 className="font-bold text-mainBlue text-2xl">Program Focus Areas</h3>
+    <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
+      <li>Marketing Analytics</li>
+      <li>Financial Analytics</li>
+      <li>HR Analytics</li>
+      <li>Operational Analytics</li>
+      <li>Artificial Intelligence and Neural Networks</li>
+      <li>Advanced Machine Learning</li>
+      <li>Big Data Analytics</li>
+      <li>Cloud Computing Techniques</li>
+    </ul>
 
-    <h3 className="font-bold text-mainBlue text-2xl mt-8">Program Highlights</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">Program Highlights</h3>
     <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
       {[
         {
-          title: "Accreditations",
-          description: "NBA and NAAC Accredited program with outcome-based education",
+          title: "Harvard Certification",
+          description: "Embedded with Harvard Business School Online Business Analytics certification",
           icon: Award
         },
         {
-          title: "Experiential Learning",
-          description: "StratX, Equity Levers, and CESIM simulations for practical exposure",
-          icon: BookOpen
+          title: "Technical Expertise",
+          description: "Exposure to wide range of software, programming languages and big data processing tools",
+          icon: Code
         },
         {
-          title: "Global Connect",
-          description: "International exchange program with Herzing University, Atlanta (USA)",
+          title: "Global Exposure",
+          description: "Exchange programs with Herzing University, Atlanta (USA)",
           icon: Globe
         }
       ].map((item, index) => (
@@ -366,15 +346,15 @@ const Overview = () => (
       The program follows an experiential learning process where students:
     </p>
     <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
-      <li>Engage in corporate interviews and industrial visits</li>
-      <li>Participate in simulation labs for practical experience</li>
-      <li>Develop entrepreneurial skills through hands-on projects</li>
-      <li>Learn from faculty with exceptional industry experience</li>
-      <li>Benefit from visiting faculty from leading corporates</li>
+      <li>Engage in hands-on learning through simulations and gamifications</li>
+      <li>Learn from faculty with extensive industry, academia, and research experience</li>
+      <li>Participate in paid summer internships (Earn-while-you-learn)</li>
+      <li>Gain practical experience through corporate interviews and industrial visits</li>
+      <li>Develop entrepreneurial skills through real-world projects</li>
     </ul>
 
     <p className="text-lg text-gray-700 mt-4">
-      The program boasts a near 100% placement record with leading recruiters including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC, Factset Systems, Franklin Templeton, and InfoEdge.
+      With the demand for data analytics professionals projected to grow by 25% between 2020-2030, PGDM-BA graduates are well-positioned for successful careers in this rapidly expanding field.
     </p>
   </div>
 );
@@ -594,7 +574,7 @@ const Apply = () => (
 const Scholarships = () => <div>Scholarships content here</div>;
 
 // Main Component
-const PGDMTPS = () => {
+const PGDMBA = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
 
@@ -609,7 +589,7 @@ const PGDMTPS = () => {
             className="max-w-2xl"
           >
             <h1 className="text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
-              Begin Your Journey with PGDM Triple Specialisation Program
+              Begin Your Journey with PGDM-BA Program
             </h1>
             <p className="text-xl text-gray-900">
               Take the first step towards your future with our world-class
@@ -736,4 +716,4 @@ const PGDMTPS = () => {
   );
 };
 
-export default PGDMTPS;
+export default PGDMBA;
