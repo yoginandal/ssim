@@ -602,7 +602,7 @@ const FPM = () => {
                 </div>
 
                 {/* Section Content */}
-                <Card className="border-none shadow-lg">
+                <Card className="border">
                   <CardContent className="p-6">
                     {(() => {
                       switch (activeSection) {
