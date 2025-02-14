@@ -20,6 +20,7 @@ import Accreditations from "@/components/abouts/Accreditations";
 import Areas from "@/components/faculty&research/Areas";
 import PlacementRecords from "@/components/placement/PlacementRecords";
 import PlacementTeam from "@/components/placement/PlacementTeam";
+import FPM from "@/components/admissions/FPM";
 
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -97,6 +98,7 @@ export default function App() {
                 path="/students-life/life-at-ssim"
                 element={<LifeAtSsim />}
               />
+              <Route path="/admissions/fpm-efpm" element={<FPM />} />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}
             </Routes>
