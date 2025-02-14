@@ -31,9 +31,9 @@ export default function AcademicPrograms() {
       subtitle: "Triple Specialisation",
       icon: <GraduationCap className="w-6 h-6" />,
       description: [
-        "SSIM's two-year Post-Graduation Diploma in Management (PGDM) program is NBA accredited and uniquely designed to push our students to go beyond their boundaries to reach their aspirational careers.",
-        "The two-year PGDM program will prepare our students with various cross-functional skills and life skills: Communication skills, Decision making, Leadership Skills, Problem-solving, Teamwork, Experiential Learning and several industry-relevant skills to face this VUCA world.",
-        "These skills will help our students to achieve their career aspirations and learn to exhibit their best selves."
+        <span key="1">SSIM's two-year Post-Graduation Diploma in Management (PGDM) program is <strong className="text-red-600">NBA accredited</strong> and uniquely designed to push our students to go beyond their boundaries to reach their aspirational careers.</span>,
+        <span key="2">The two-year PGDM program will prepare our students with various <strong className="text-red-600">cross-functional skills and life skills</strong>: Communication skills, Decision making, Leadership Skills, Problem-solving, Teamwork, Experiential Learning and several industry-relevant skills to face this VUCA world.</span>,
+        <span key="3">These skills will help our students to achieve their career aspirations and learn to exhibit their best selves.</span>
       ],
       video: "https://www.youtube.com/watch?v=aurjFtjWkIc",
     },
@@ -42,9 +42,9 @@ export default function AcademicPrograms() {
       subtitle: "Banking, Insurance & Financial Services",
       icon: <Landmark className="w-6 h-6" />,
       description: [
-        "The Post-Graduation Diploma in Management – Banking, Insurance, and Financial Services (PGDM-BIFS) at Siva Sivani Institute of Management (SSIM) is designed to provide management graduates with in-depth knowledge of the Banking, Financial Services, and Insurance (BFSI) sectors. These industries play a vital role in driving economic growth, offering risk coverage, and ensuring financial security.",
-        "The BFSI sector, which is rapidly evolving with advancements in AI, Blockchain, and robotic process automation, presents significant career opportunities. However, there is a shortage of qualified professionals to meet the sector's growing demand.",
-        "To address this, SSIM offers an integrated curriculum with elective options that allow students to specialize in areas like investment banking, risk management, FinTech, and wealth management. The program combines academic theory with practical learning, ensuring that students are well-equipped for successful careers in BFSI. The electives provide flexibility, enhancing employability and preparing students for specialized roles in the industry."
+        <span key="1">The Post-Graduation Diploma in Management – Banking, Insurance, and Financial Services (PGDM-BIFS) at Siva Sivani Institute of Management (SSIM) is designed to provide management graduates with <strong className="text-red-600">in-depth knowledge of the Banking, Financial Services, and Insurance (BFSI) sectors</strong>. These industries play a vital role in driving economic growth, offering risk coverage, and ensuring financial security.</span>,
+        <span key="2">The BFSI sector, which is rapidly evolving with advancements in <strong className="text-red-600">AI, Blockchain, and robotic process automation</strong>, presents significant career opportunities. However, there is a shortage of qualified professionals to meet the sector's growing demand.</span>,
+        <span key="3">To address this, SSIM offers an <strong className="text-red-600">integrated curriculum with elective options</strong> that allow students to specialize in areas like investment banking, risk management, FinTech, and wealth management. The program combines academic theory with practical learning, ensuring that students are well-equipped for successful careers in BFSI. The electives provide flexibility, enhancing employability and preparing students for specialized roles in the industry.</span>
       ],
       video: "https://www.youtube.com/watch?v=beOxW30taGk",
     },
@@ -53,9 +53,9 @@ export default function AcademicPrograms() {
       subtitle: "Business Analytics",
       icon: <LineChart className="w-6 h-6" />,
       description: [
-        "Embark on a transformative journey with SSIMs Post Graduate Diploma in Management (PGDM – BA) in Business Analytics, meticulously crafted to mold future-ready business leaders adept in data-driven decision-making. This program offers a harmonious blend of comprehensive business education and cutting-edge analytical skills, ensuring students stand out in today's competitive landscape.",
-        "Our industry-aligned curriculum, designed in collaboration with seasoned professionals, encompasses core subjects such as Data Visualization, Machine Learning, Predictive Modelling, and Big Data Analytics. Gain proficiency in leading analytical tools, including R Programming, Python, SQL, and Tableau, through immersive, hands-on learning experiences.",
-        "Beyond the classroom, engage in real-world applications and internships, providing invaluable exposure to business challenges. Join us to unlock your potential and become a catalyst for strategic innovation in the dynamic realm of business analytics."
+        <span key="1">Embark on a transformative journey with SSIMs Post Graduate Diploma in Management (PGDM – BA) in Business Analytics, meticulously crafted to mold <strong className="text-red-600">future-ready business leaders adept in data-driven decision-making</strong>. This program offers a harmonious blend of comprehensive business education and cutting-edge analytical skills, ensuring students stand out in today's competitive landscape.</span>,
+        <span key="2">Our <strong className="text-red-600">industry-aligned curriculum</strong>, designed in collaboration with seasoned professionals, encompasses core subjects such as <strong className="text-red-600">Data Visualization, Machine Learning, Predictive Modelling, and Big Data Analytics</strong>. Gain proficiency in leading analytical tools, including R Programming, Python, SQL, and Tableau, through immersive, hands-on learning experiences.</span>,
+        <span key="3">Beyond the classroom, engage in <strong className="text-red-600">real-world applications and internships</strong>, providing invaluable exposure to business challenges. Join us to unlock your potential and become a catalyst for strategic innovation in the dynamic realm of business analytics.</span>
       ],
       video: "https://www.youtube.com/watch?v=-7EavtYSQrA",
     },
@@ -64,9 +64,9 @@ export default function AcademicPrograms() {
       subtitle: "Fellow Program In Management",
       icon: <Users className="w-6 h-6" />,
       description: [
-        "SSIM's two-year full-time PGDM program in Business Analytics (BA) is a brand new programme added to meet the industry requirement.",
-        "PGDM – BA at SSIM exemplifies the foresight in uniting Business management, Analytical Mathematics, Statistics and Computer science under one course.",
-        "SSIM is the first institute, among the Telugu-speaking states, to offer a PGDM program exclusively on Business Analytics."
+        <span key="1">SSIM's two-year full-time PGDM program in Business Analytics (BA) is a <strong className="text-red-600">brand new programme</strong> added to meet the industry requirement.</span>,
+        <span key="2">PGDM – BA at SSIM exemplifies the foresight in <strong className="text-red-600">uniting Business management, Analytical Mathematics, Statistics and Computer science</strong> under one course.</span>,
+        <span key="3">SSIM is the <strong className="text-red-600">first institute, among the Telugu-speaking states</strong>, to offer a PGDM program exclusively on Business Analytics.</span>
       ],
       video: "https://www.youtube.com/watch?v=y-GwG39jVZc",
     },

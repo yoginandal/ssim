@@ -99,29 +99,29 @@ export default function AboutSection() {
               <div className="space-y-6 text-gray-600">
                 <p className="text-lg leading-relaxed">
                   Located in the heart of Hyderabad and Secunderabad, Siva
-                  Sivani Institute of Management (SSIM) is a premier institution
-                  with over three decades of excellence in management education.
-                  Renowned for its strong ethical foundation, this SAQS, NBA,
-                  and NAAC accredited institution delivers industry-relevant
-                  learning through an innovative curriculum and experienced
-                  faculty blending academic and corporate insights.
+                  Sivani Institute of Management (SSIM) is a <strong>premier institution
+                  with over three decades of excellence</strong> in management education.
+                  Renowned for its <strong>strong ethical foundation</strong>, this <strong>SAQS, NBA,
+                  and NAAC accredited institution</strong> delivers industry-relevant
+                  learning through an <strong>innovative curriculum and experienced
+                  faculty blending academic and corporate insights</strong>.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  Recognized as an A<sup>+++</sup> B-School by Business India (2024), SSIM
-                  ranks 21st among private standalone B-Schools in India
-                  (Outlook 2024) and 2nd in Telangana (Outlook, CSR, and GHRDC
-                  Times 2024). Its vibrant, extremely qualified, and talented
-                  alumni network spans across the globe, fostering valuable
+                  Recognized as an <strong>A<sup>+++</sup> B-School by Business India (2024)</strong>, SSIM
+                  ranks <strong>21st among private standalone B-Schools in India
+                  (Outlook 2024) and 2nd in Telangana</strong> (Outlook, CSR, and GHRDC
+                  Times 2024). Its <strong>vibrant, extremely qualified, and talented
+                  alumni network spans across the globe</strong>, fostering valuable
                   professional connections and success stories across
                   industries, domains, and profiles.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  With a focus on holistic development of individuals with
-                  special inclination towards critical decision-making bordering
+                  With a focus on <strong>holistic development of individuals</strong> with
+                  special inclination towards <strong>critical decision-making bordering
                   on creativity, innovation, sustainability, ethics, and
-                  practical applicability, SSIM continues to shape future-ready
+                  practical applicability</strong>, SSIM continues to shape future-ready
                   leaders year-on-year.
                 </p>
 
