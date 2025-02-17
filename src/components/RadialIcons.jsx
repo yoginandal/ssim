@@ -10,9 +10,9 @@ import Testimonials4 from "../assets/user_images/jaideep.jpg";
 import Testimonials5 from "../assets/user_images/niraj.jpg";
 import Testimonials6 from "../assets/user_images/Parameshwar.jpg";
 import Testimonials7 from "../assets/user_images/swapnil.jpg";
-import Testimonials8 from "../assets/user_images/women1.jpg";
-import Testimonials9 from "../assets/user_images/women2.jpg";
-import Testimonials10 from "../assets/user_images/women3.jpg";
+import Testimonials8 from "../assets/user_images/Umesh.jpeg";
+import Testimonials9 from "../assets/user_images/Ankit.jpeg";
+import Testimonials10 from "../assets/user_images/Venkatesh.jpeg";
 import Testimonials11 from "../assets/user_images/women4.jpg";
 import goc from "../assets/user_images/goc.png";
 
@@ -72,25 +72,25 @@ const testimonials = [
     rating: 4,
   },
   {
-    name: "Mamatha Madireddy",
-    role: "Head & Managing Director",
+    name: "Umesh Golecha",
+    role: "Director",
     company:
-      "https://www.hsbc.com/-/files/hsbc/header/hsbc-logo-200x25.svg?la=en-GB&h=25&hash=EFB19274CD17649AE659D3351B595180",
+      "https://www.innovasolutions.com/wp-content/uploads/2025/01/Innova-Logo-New.svg",
     text: "Her designs are always fresh and creative, perfectly capturing the essence of every project.",
     rating: 5,
   },
   {
-    name: "Mr. Badri Vishal Katta",
-    role: "Senior Vice President",
+    name: "Ankit Bhadauriya",
+    role: "National Key Account Manager",
     company:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/330px-HDFC_Bank_Logo.svg.png",
+      "https://www.dabur.com/static/images/android-icon-72x72.png",
     text: "Has a knack for making our systems run smoothly. A key player in maintaining our infrastructure.",
     rating: 4,
   },
   {
-    name: "Kota Sai Santosh",
-    role: "Executive Director",
-    company: "https://happimobiles.in/images/happi-footer-logo.png",
+    name: "Venkatesh Dixit",
+    role: "Presales Consultant",
+    company: "https://cognizant.scene7.com/is/content/cognizant/COG-Logo-2022-1?fmt=png-alpha",
     text: "Consistently delivers exceptional results in improving our online presence and driving organic traffic.",
     rating: 5,
   },
@@ -105,9 +105,9 @@ const images = [
   Testimonials5,
   Testimonials6,
   Testimonials7,
-  "https://cdn.vectorstock.com/i/1000v/09/72/person-gray-photo-placeholder-woman-vector-25810972.jpg",
-  "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
-  "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+  Testimonials8,
+  Testimonials9,
+  Testimonials10,
 ];
 
 const RadialIcons = () => {
