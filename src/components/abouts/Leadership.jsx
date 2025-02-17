@@ -1,34 +1,87 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Quote, ChevronRight, ExternalLink } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Quote, ChevronRight, ExternalLink } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import sampathy from "@/assets/about/Sampathy.png";
 
 const leaders = [
   {
-    role: "Manager",
-    name: "Rev. Sr. Nilima",
-    image: "https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    role: "Founder",
+    name: "Late. Sri S.P. Sampathy",
+    image: sampathy,
+    quote: "Nothing is impossible for those who think they can",
+    quoteAuthor: "Sri S.P. Sampathy's Vision",
     content: [
-      "I am extremely delighted to welcome you to St. Teresa's College. A vision, which was planted by Sr. Teresa of Rose of Lima, our foundress and Mother, a women with extraordinary vision and foresight who believed that social transformation was possible through educating and empowering women.",
-      "We have been empowering and transforming lives since 1925 when the college was established in the heart of the Cochin city. The college provides exciting educational opportunities for students from all backgrounds and locations. The faculty and staff are dedicated professionals who excel in connecting with students and providing an overall educational experience.",
-      "St. Teresa's represents a way of life to the students, and creates a community of extended families and friends, fostering life long bonds, a shared sense of responsibility and reliance to each other."
-    ]
+      `Late. Sri S.P. Sampathy the founder of the Siva Sivani Group of Educational Institutions, was drawn towards imparting education by a twist of fate in 1961, when he started a school in a rented building in Sanathnagar. With a paltry amount of money in his pocket, our illustrious Founder braved all odds to establish and leave behind an empire with several thousand pupils across the globe and contributing their tiny bit towards the peace, progress and prosperity of the human society at large. In the words of Sri. S. P. Sampathy himself: "Being the Founder of this group and having a major role to play in its growth, my personality and mind-set have become one with that of the institution."`,
+      "Sri S.P. Sampathy believed that teamwork is the backbone of the colossal success that he achieved and discipline is its most important ingredient. Our founder was a man with a vision and believed that nothing is impossible for those who think they can.",
+      "Siva Sivani Institute of Management was started in 1992 with approval from the All India Council for Technical Education, Ministry of HRD, Govt. of India. SSIM is pioneer in early technology adopters. Our founder is always passionate and committed towards innovation and adaption of newer technologies to provide better education lead through paperless classroom way back in 2002.",
+      "Over a period of nearly six decades, Sri S.P. Sampathy and his organisation have contributed their mite towards making the Country and the World a better place to live in. There is no district in Andhra Pradesh, no state in India and no Country in the World where the alumni of Siva Sivani have not made their presence felt. There is no profession or sector from education to law, engineering to medicine, life sciences to social sciences, defence to business, Government to Private where the indelible stamp of Siva Sivani has not left its mark.",
+      "During his life time, Sri S.P .Sampathy held a lot of Honorary posts and recipient of the Arch of Excellence Award presented by her Excellency Smt. Kumud Ben Johsi to Sri S.P.Sampathy.",
+      "The saga of this noble soul came to an abrupt end on the 11th of February 2005.",
+      "The legacy left behind by Sri S.P. Sampathy in striving for the cause of education is unparalleled and a daunting task for his successors in office. It is probably one in millions of people who strives all his life for a noble cause, build an organization worth millions of times than the initial capital invested, brave all odds and leave the material world with not an inch of land to call their own.",
+      "We at Siva Sivani Institute of Management dedicate ourselves to working towards the realization of the dreams of our great Founder Late. Sri S.P. Sampathy.",
+    ],
   },
   {
-    role: "Director",
-    name: "Rev. Sr. Emeline CSST",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    quote: "The future belongs to those who believe in the beauty of their dreams",
-    quoteAuthor: "Eleanor Roosevelt",
+    role: "President & Chief Executive, SSGI.",
+    name: "SMT. S. AARATHY",
+    image:
+      "https://ssim.ac.in/wp-content/uploads/2022/09/Smt_Arathy_Sampathy.jpg",
+    quote:
+      "Learn to Serve - Shaping tomorrow's leaders through innovation, resilience, and excellence",
+    quoteAuthor: "SMT. S. AARATHY's Vision",
     content: [
-      "Holistic education paves the way to knowledge, skills, creativity and empowerment. Today's world demands that we think out of the box. The motto of St.Teresa's College is to empower today's women for tomorrow.",
-      "The seed that was sown by our foundress, Mother Teresa of St. Rose of Lima, has now grown into a gigantic tree which has provided guidance, solace and means of livelihood to thousands of young women.",
-      "Women, who form half of the population, are often marginalized due to lack of opportunities. The college offers the key to open doorways into a bright future where women can stand on their own feet, gain confidence and self esteem and speak up for their rights. The college provides a conducive ambience for learning and growing."
-    ]
-  }
+      "The Founder of our great institution, Sri S.P. Sampathy started the Siva Sivani Institute of Management with a purpose and had set clear goals. In our path of achieving success, we have been producing successful batches of young managers and we proudly admit that each batch has become better than the previous one. The industry has been readily accepting our students year after year. The alumni of this institute have risen to great heights in terms of glory and career and are seen as role models by successive batches of students.",
+      "SSIM since its inception (1992) has been championing the development of management education and shaping its students in line with the latest industry practices through unique programs and intensive industry interface, using state-of-the-art technologies and pedagogies. SSIM has been crafting the careers of management aspirants with the right skills and attitude.",
+      `The National Education Policy (NEP) 2020, launched by the Central Government is a landmark reformatory initiative that entails a paradigm shift in the education space. Furthermore, the cloud cast by the COVID-19 pandemic has caused disruption and chaos. Therefore, adaptation to the new normal calls for re-aligning the skillsets of the teaching fraternity and the students to the unpredictable environmental challenges. SSIM has proactively redesigned and realigned its teaching-learning process to the changing dynamics of the new world order. The pandemic has only strengthened the institute's commitment to its motto "Learn to Serve".`,
+      "No stone is left unturned to help students to get the learning as promised. The classes, examinations, and placements have taken place seamlessly unabated even during the trying times of the pandemic. SSIM has a strong Alumni of over 15000, holding positions of power, influence, responsibility and leadership in the corporate world and society and have brought laurels to the institute over the years. SSIM strives continuously to be the premier institute imparting the right knowledge, industry-required curriculum, and blended learning skills fine-tuned with management competency development inputs, firmly grounded on the foundation of discipline and ethics. Students are exposed to the best resources from industry, academia and alumni.",
+      "A learning campus, with all facilities, awaits each one of you and provides a world of opportunities to blossom as successful, securing, intelligent managers by the end of your stay on campus. I wish you the very best and look forward to welcoming you into the Siva Sivani Family.",
+    ],
+  },
+  {
+    role: "Vice President & Dy. Chief Executive, SSGI.",
+    name: "DR. SAILESH SAMPATHY",
+    image:
+      "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
+    quote:
+      "Building bridges across borders through quality education, creating global leaders of tomorrow",
+    quoteAuthor: "DR. SAILESH SAMPATHY's Vision",
+    content: [
+      "Greetings from SSIM, a dynamic, progressive and ever expanding institution, relentlessly surging ahead on our chosen path, excelling in providing quality education. SSIM has been the hall mark and an integral part of the more than six decades old Siva Sivani Group for three decades.",
+      "In the quest of its dream, SSIM has been successful in foraging ties in domestic and global arenas at individual and institutional levels. Faculty exchanges, Student exchanges, Joint Certification Programmes, Research, Training and Allied activities at these levels are now routine at SSIM.",
+      `In order to help our students seeking additional qualifications at institutions outside the country become easier, agreements of credit transfers, joint certification courses, acquiring foreign degrees and thereby creating opportunities of seeking employment in Europe, America and the rest of the globe are already in place.`,
+      "Arrangements for accomplished personalities both from the industry and academia inEurope and America, in addition to people with similar calibre in India, to handle courses in various programmes, thereby, enabling students of SSIM, to have ample global exposure at the campus itself have been made. Over a period of time, SSIM acquired many awards and recognitions. Few notable are Best Education brand 2022 from Economic Times, CSR awarded TOP Eminent B-School of Super Excellence 2022 etc. SSIM is NAAC accredited and PGDM Program is NBA accredited with AIU certification.",
+      "Goals are achieved at a rapid pace if more and more like minded people come together. With many initiatives undertaken and hundreds of like minded people being added each year to the already vast Siva Sivani family, we have moved that much closer to achieving our goals.",
+      "I invite you to become an integral part of this saga.",
+    ],
+  },
+  {
+    role: "Director, SSIM.",
+    name: "PROF. S.V. RAMANA RAO",
+    image:
+      "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_S.V._Raman_Rao.jpg",
+    quote:
+      "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
+    quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",
+    content: [
+      "Management education has evolved to be a premier choice among post-graduation degrees for students all over the world. The growing complexity of business, coupled with quantum leaps in technological advances has made this course, futuristic in its outlook, attracting the best minds to unravel and chart new directions for organizations. Business education provided by business schools should, therefore, integrate these vagaries into the environment to build a competent talent base.",
+      `Siva Sivani Institute of Management (SSIM) is one of the leading business schools in the country offering Post Graduation in Business Management since 1992. These programs are carefully designed in accordance with industry requirements offered by prominent professors from the industry as well as the academic fraternity. SSIM is striving to "achieve and sustain a reputation for excellence in teaching, learning, research and consultancy whilst upholding human values". These values are imbibed in every fibre of the operations at SSIM and leaders walk the talk to help students emulate these standards!`,
+      `SSIM is committed to shaping students' careers in a way that can be ready to take on entrepreneurial roles. It is our responsibility to offer more specialized and focused programs to meet the industry needs of PGDM-TPS, PGDM-BIFS, and PGDM-Business Analytics.`,
+      "PGDM at SSIM is an expedition which helps an individual get acquainted with business expertise and business functionalities. The degree confers one with prospects to broaden his/her aptitude and apply it on the job. The institute's faculty ensures that students acquire knowledge, analyse concepts in given organizational case studies, and overall personality development. The entire learning process provides an individual with a strong foundation to mould careers. These synergistic efforts result in significant changes in the life of a student's career at SSIM.",
+      "The benefits of studying PGDM are numerous, especially at SSIM since we provide a different experience in terms of learning through exceptionally qualified faculty members, teaching techniques, case studies and direct attention of faculty members.",
+      "We at Siva Sivani Institute of Management emphasize on Co-curricular activities of the student which include Personality Development, club activities, language skills, Book review sessions and so on. The goals behind these are to develop a holistic personality, effective enough to contribute to the organization. As we work to uncover the talent in each student, we look forward to finding creative ways to engage and empower future leaders! We give them opportunities to dream and platforms to excel!",
+    ],
+  },
 ];
 
 function LeaderCard({ leader }) {
@@ -52,8 +105,12 @@ function LeaderCard({ leader }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-xl font-semibold text-white drop-shadow-md">{leader.name}</h3>
-                <p className="text-sm text-white/80 drop-shadow-md">{leader.role}</p>
+                <h3 className="text-xl font-semibold text-white drop-shadow-md">
+                  {leader.name}
+                </h3>
+                <p className="text-sm text-white/80 drop-shadow-md">
+                  {leader.role}
+                </p>
               </div>
             </div>
             <div className="space-y-4">
@@ -65,7 +122,7 @@ function LeaderCard({ leader }) {
               </div>
               <Separator className="bg-primary/20" />
               {leader.quote && (
-                <motion.div 
+                <motion.div
                   className="relative mt-4 pl-6 border-l-4 border-primary/20"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -73,16 +130,20 @@ function LeaderCard({ leader }) {
                   <Quote className="absolute -left-[17px] -top-1 w-6 h-6 text-primary/40" />
                   <p className="italic text-lg">{leader.quote}</p>
                   {leader.quoteAuthor && (
-                    <p className="mt-2 text-sm text-muted-foreground">- {leader.quoteAuthor}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      - {leader.quoteAuthor}
+                    </p>
                   )}
                 </motion.div>
               )}
               <div className="text-muted-foreground">
-                <p className="text-base leading-relaxed line-clamp-3">{leader.content[0]}</p>
+                <p className="text-base leading-relaxed line-clamp-3">
+                  {leader.content[0]}
+                </p>
               </div>
               <Button
                 onClick={() => setIsDialogOpen(true)}
-                variant="ghost"
+                variant="outline"
                 className="group flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
                 aria-label={`Read more about ${leader.name}`}
               >
@@ -94,24 +155,37 @@ function LeaderCard({ leader }) {
         </CardContent>
       </Card>
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>{leader.name} - {leader.role}</DialogTitle>
-            <DialogDescription>Learn more about our college leadership</DialogDescription>
+        <DialogContent className="max-w-2xl h-[80vh]">
+          <DialogHeader className="pb-4">
+            <DialogTitle>
+              {leader.name} - {leader.role}
+            </DialogTitle>
+            <DialogDescription>
+              Learn more about our college leadership
+            </DialogDescription>
           </DialogHeader>
-          <div className="mt-4 space-y-4">
+          <div className="space-y-4">
             {leader.quote && (
               <div className="relative pl-6 border-l-4 border-primary/20">
                 <Quote className="absolute -left-[17px] -top-1 w-6 h-6 text-primary/40" />
                 <p className="italic text-lg">{leader.quote}</p>
                 {leader.quoteAuthor && (
-                  <p className="mt-2 text-sm text-muted-foreground">- {leader.quoteAuthor}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    - {leader.quoteAuthor}
+                  </p>
                 )}
               </div>
             )}
-            {leader.content.map((paragraph, index) => (
-              <p key={index} className="text-base leading-relaxed">{paragraph}</p>
-            ))}
+            <ScrollArea className="h-[calc(80vh-220px)] pr-4">
+              {leader.content.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-base leading-relaxed mb-4 last:mb-0"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </ScrollArea>
           </div>
         </DialogContent>
       </Dialog>
@@ -123,7 +197,7 @@ export default function Leadership() {
   return (
     <section className="w-full py-12 lg:py-16">
       <div className="container px-4 md:px-6 mx-auto max-w-5xl">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,7 +207,8 @@ export default function Leadership() {
             Our Leaders Message
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Meet the visionaries guiding Siva Sivani Institute of Management (SSIM) towards excellence and empowerment.
+            Meet the visionaries guiding Siva Sivani Institute of Management
+            (SSIM) towards excellence and empowerment.
           </p>
         </motion.div>
 
