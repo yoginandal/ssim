@@ -104,14 +104,6 @@ function LeaderCard({ leader }) {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-xl font-semibold text-white drop-shadow-md">
-                  {leader.name}
-                </h3>
-                <p className="text-sm text-white/80 drop-shadow-md">
-                  {leader.role}
-                </p>
-              </div>
             </div>
             <div className="space-y-4">
               <div>
