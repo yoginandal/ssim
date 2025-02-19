@@ -700,12 +700,14 @@ const Apply = () => (
           Ready to begin your journey? Click below to start your application.
           Make sure you have all necessary documents ready.
         </p>
-        <Button
-          size="lg"
-          className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
-        >
-          Begin Application
-        </Button>
+        <a target="_blank" href="https://apply.ssim.ac.in">
+          <Button
+            size="lg"
+            className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Begin Application
+          </Button>
+        </a>
       </div>
     </CardContent>
   </Card>

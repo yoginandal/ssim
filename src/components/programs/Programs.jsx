@@ -68,123 +68,123 @@ const programData = {
   "fpm/efpm": {
     name: "FPM/EFPM",
     keyInfo: {
-      duration: "2 years",
-      credits: "120",
-      startDate: "September 2023",
-      location: "On-campus & Online",
-      degree: "Master of Science in Computer Science",
+      duration: "3 years",
+      credits: "36",
+      startDate: "July 2024",
+      location: "Full-time On-campus",
+      degree: "Fellow Program in Management (FPM)",
     },
     specializations: [
       {
-        title: "Software Engineering",
-        description:
-          "Focus on advanced software development methodologies and practices",
-        skills: ["Agile", "DevOps", "Microservices", "Cloud-native"],
+        title: "Accounting & Finance",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/5410839.png",
       },
       {
-        title: "Cybersecurity",
-        description: "Explore advanced security techniques and threat analysis",
-        skills: [
-          "Network Security",
-          "Cryptography",
-          "Ethical Hacking",
-          "Risk Management",
-        ],
+        title: "Organizational Behavior / Human Resource",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/human-resource.png",
       },
       {
-        title: "Artificial Intelligence",
-        description: "Develop intelligent systems and machine learning models",
-        skills: [
-          "Machine Learning",
-          "Natural Language Processing",
-          "Computer Vision",
-          "Deep Learning",
-        ],
+        title: "Marketing",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/marketing.png",
+      },
+      {
+        title: "Economics",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/economics.png",
+      },
+      {
+        title: "Operations Management",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/OM.png",
+      },
+      {
+        title: "General Management",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/GM.png",
+      },
+      {
+        title: "Strategic Management",
+        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/SM.png",
       },
     ],
     differentiators: [
       {
-        title: "Industry Partnerships",
-        description: "Collaborate with leading tech companies",
+        title: "Research Focus",
+        description:
+          "Rigorous interdisciplinary research in contemporary areas of management",
       },
       {
-        title: "Research Opportunities",
-        description: "Engage in cutting-edge computer science research",
+        title: "Publication Support",
+        description:
+          "Focus on publishing 2 research papers in Scopus indexed journals and 1 case study",
       },
       {
-        title: "Interdisciplinary Approach",
-        description: "Combine CS with other fields like biology or economics",
+        title: "Financial Support",
+        description:
+          "Monthly stipend of ₹20,000-30,000 for qualified full-time scholars",
       },
     ],
     curriculum: [
       {
-        name: "Year 1",
+        name: "Module I (15 credits)",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Core Courses",
             courses: [
-              "Advanced Algorithms",
-              "Machine Learning",
-              "Database Systems",
-              "Software Engineering",
-            ],
-          },
-          {
-            name: "Spring Semester",
-            courses: [
-              "Artificial Intelligence",
-              "Computer Networks",
-              "Distributed Systems",
-              "Elective",
+              "Course 1",
+              "Course 2",
+              "Course 3",
+              "Course 4",
+              "Credit Seminar (Case Study)",
             ],
           },
         ],
       },
       {
-        name: "Year 2",
+        name: "Module II (12 credits)",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Specialization Phase",
             courses: [
-              "Cloud Computing",
-              "Data Mining",
-              "Computer Vision",
-              "Elective",
+              "Stream Specific Course 1",
+              "Stream Specific Course 2",
+              "Stream Specific Course 3",
+              "Credit Seminar (Specific)",
             ],
           },
+        ],
+      },
+      {
+        name: "Module III (9 credits)",
+        semesters: [
           {
-            name: "Spring Semester",
+            name: "Research Phase",
             courses: [
-              "Capstone Project",
-              "Ethics in Computer Science",
-              "Elective",
-              "Elective",
+              "Advanced Research Methodology",
+              "Design Thinking/Teaching Pedagogy",
+              "Review Paper (Research Area)",
             ],
           },
         ],
       },
     ],
     eligibility: [
-      "Bachelor's degree in Computer Science or related field",
-      "Minimum GPA of 3.0 on a 4.0 scale",
-      "GRE scores (optional)",
-      "TOEFL or IELTS scores for international students",
+      "MBA/PGDM/PG in allied subjects with first class aggregate marks",
+      "Graduate with CA/ICWA/CS qualification (minimum 60% aggregate)",
+      "Must complete comprehensive examination after coursework",
+      "Must submit thesis after minimum 2 years of registration",
     ],
     admission: [
-      "Submit online application",
-      "Provide official transcripts",
-      "Submit letters of recommendation",
-      "Write a statement of purpose",
-      "Pay application fee",
-      "Interview (if required)",
+      "Submit application form",
+      "Pay acceptance fee of ₹60,000 (non-refundable)",
+      "Complete course work and comprehensive examination",
+      "Submit research proposal to Research Advisory Committee",
+      "Complete thesis work and defense",
     ],
     stats: {
-      applicants: 1000,
-      enrolled: 200,
-      graduates: 180,
-      employmentRate: 95,
-      avgSalary: 95000,
-      avgTimeToGraduate: 2.2,
+      programFee: 300000,
+      stipendYear1: 240000,
+      stipendYear2: 300000,
+      stipendYear3: 360000,
+      maxDuration: 5,
+      minThesisPeriod: 2,
     },
   },
   "pgdm-ba": {
@@ -709,16 +709,18 @@ const Specializations = ({ specializations }) => {
       <h3 className="text-2xl font-semibold mb-4 text-red-600">
         Specializations
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {specializations.map((spec, index) => (
-          <Card key={index} className="overflow-hidden">
-            <CardHeader className="bg-mainBlue">
-              <CardTitle className="text-white">{spec.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <p className="mb-4 text-base">{spec.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {spec.skills.map((skill, skillIndex) => (
+          <Card
+            key={index}
+            className="overflow-hidden flex flex-row items-center gap-4 p-2"
+          >
+            <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
+            <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
+            {/* <CardContent className="p-6"> */}
+            {/* <p className="mb-4 text-base">{spec.icon}</p> */}
+            {/* <div className="flex flex-wrap gap-2">
+                {spec?.skills?.map((skill, skillIndex) => (
                   <Badge
                     key={skillIndex}
                     className={`${
@@ -745,8 +747,8 @@ const Specializations = ({ specializations }) => {
                     {skill}
                   </Badge>
                 ))}
-              </div>
-            </CardContent>
+              </div> */}
+            {/* </CardContent> */}
           </Card>
         ))}
       </div>
@@ -981,7 +983,7 @@ const ProgramsOverview = () => {
 
   return (
     <div className="container max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-20">
-      <h1 className="text-4xl font-bold mb-8 text-center text-primary">
+      <h1 className="text-4xl font-bold mb-16 text-center text-primary">
         Graduate Programs
       </h1>
       <Tabs

@@ -78,31 +78,36 @@ const processData = [
     step: 1,
     title: "Eligibility Check",
     description: "Verify if you meet the program requirements.",
-    details: "Must have MBA/PGDM/PG in Economics/Commerce/Statistics with first class, or CA/ICWA/CS with 60% aggregate.",
+    details:
+      "Must have MBA/PGDM/PG in Economics/Commerce/Statistics with first class, or CA/ICWA/CS with 60% aggregate.",
   },
   {
     step: 2,
     title: "Target Participant Profile",
     description: "Confirm you belong to eligible participant categories.",
-    details: "Open to faculty members, government/private executives, postgraduates, and graduates with CA/CMA/CS.",
+    details:
+      "Open to faculty members, government/private executives, postgraduates, and graduates with CA/CMA/CS.",
   },
   {
     step: 3,
     title: "Application & Research Proposal",
     description: "Submit application with research interest abstract.",
-    details: "Include a 5,000-word tentative research proposal along with complete application form.",
+    details:
+      "Include a 5,000-word tentative research proposal along with complete application form.",
   },
   {
     step: 4,
     title: "Entrance Test",
     description: "Take SRAT entrance test or submit UGC NET scores.",
-    details: "UGC NET scores after June 1, 2023 are valid for 2024 admission. SRAT is SSIM's admission test.",
+    details:
+      "UGC NET scores after June 1, 2023 are valid for 2024 admission. SRAT is SSIM's admission test.",
   },
   {
     step: 5,
     title: "Research Presentation & Interview",
     description: "Present proposal and attend personal interview.",
-    details: "Final selection based on entrance scores, academic records, proposal presentation and interview performance.",
+    details:
+      "Final selection based on entrance scores, academic records, proposal presentation and interview performance.",
   },
 ];
 
@@ -131,7 +136,7 @@ const feesData = {
       amount: "₹80,000",
       dueDate: "July 30, 2026",
       notes: "Final part of balance payment",
-    }
+    },
   ],
   stipendDetails: [
     {
@@ -151,8 +156,8 @@ const feesData = {
       amount: "₹30,000",
       frequency: "per month",
       notes: "For eligible full-time scholars",
-    }
-  ]
+    },
+  ],
 };
 
 const datesData = [
@@ -230,7 +235,12 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" className="bg-mainBlue hover:bg-mainBlue/80 text-white">Download Now</Button>
+          <Button
+            type="submit"
+            className="bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Download Now
+          </Button>
         </DialogFooter>
       </form>
     </DialogContent>
@@ -325,7 +335,9 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">{item.description}</p>
+          <p className="text-xl font-semibold text-gray-700">
+            {item.description}
+          </p>
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
@@ -345,24 +357,42 @@ const Fees = () => (
       <CardContent className="space-y-6">
         {/* Regular Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Regular Fee Structure</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Regular Fee Structure
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">Payment Type</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Due Date</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Notes</TableHead>
+                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
+                    Payment Type
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Due Date
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Notes
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.tuitionFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.type}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
-                    <TableCell className="text-black text-lg">{fee.dueDate}</TableCell>
-                    <TableCell className="text-black text-lg">{fee.notes}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.type}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {fee.dueDate}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {fee.notes}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -372,24 +402,42 @@ const Fees = () => (
 
         {/* Stipend Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Financial Support (Full-time Research Scholars)</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Financial Support (Full-time Research Scholars)
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">Year</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Frequency</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Notes</TableHead>
+                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
+                    Year
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Frequency
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Notes
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.stipendDetails.map((stipend, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{stipend.year}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{stipend.amount}</TableCell>
-                    <TableCell className="text-black text-lg">{stipend.frequency}</TableCell>
-                    <TableCell className="text-black text-lg">{stipend.notes}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {stipend.year}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {stipend.amount}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {stipend.frequency}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {stipend.notes}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -399,15 +447,31 @@ const Fees = () => (
 
         {/* Important Notes */}
         <div className="bg-[#002f87]/5 p-4 rounded-lg space-y-2">
-          <h4 className="font-semibold text-[#002f87] text-lg">Important Notes:</h4>
+          <h4 className="font-semibold text-[#002f87] text-lg">
+            Important Notes:
+          </h4>
           <ul className="list-disc list-inside space-y-1 text-lg text-black">
-            <li>25% fee waiver for Alumni of Siva Sivani Institute of Management (SSIM)</li>
-            <li>Eligible students for stipend are exempted from tuition fees</li>
-            <li>Stipend-eligible students need to pay only ₹70,000 (₹60,000 non-refundable acceptance fee + ₹10,000 refundable security deposit)</li>
-            <li>Stipend is subject to regular performance review every six months</li>
+            <li>
+              25% fee waiver for Alumni of Siva Sivani Institute of Management
+              (SSIM)
+            </li>
+            <li>
+              Eligible students for stipend are exempted from tuition fees
+            </li>
+            <li>
+              Stipend-eligible students need to pay only ₹70,000 (₹60,000
+              non-refundable acceptance fee + ₹10,000 refundable security
+              deposit)
+            </li>
+            <li>
+              Stipend is subject to regular performance review every six months
+            </li>
             <li>Maximum stipend duration is three years</li>
             <li>Students receive access to library and academic resources</li>
-            <li>Selected scholars must work as teaching/research assistants at SSIM</li>
+            <li>
+              Selected scholars must work as teaching/research assistants at
+              SSIM
+            </li>
           </ul>
         </div>
       </CardContent>
@@ -436,7 +500,9 @@ const Dates = () => (
             <time className="text-sm text-red-600 font-semibold">
               {item.date}
             </time>
-            <h3 className="text-lg font-semibold text-mainBlue mt-2">{item.event}</h3>
+            <h3 className="text-lg font-semibold text-mainBlue mt-2">
+              {item.event}
+            </h3>
             <p className="text-gray-700 text-lg mt-1">{item.description}</p>
           </motion.div>
         ))}
@@ -448,7 +514,9 @@ const Dates = () => (
 const Brochure = ({ setIsEnquireOpen }) => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-center text-red-600">Download Our Brochure</CardTitle>
+      <CardTitle className="text-3xl text-center text-red-600">
+        Download Our Brochure
+      </CardTitle>
       <CardDescription className="text-xl text-center text-gray-700">
         Get detailed information about our programs
       </CardDescription>
@@ -475,7 +543,9 @@ const Brochure = ({ setIsEnquireOpen }) => (
 const Apply = () => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-red-600 text-center">Apply Now</CardTitle>
+      <CardTitle className="text-3xl text-red-600 text-center">
+        Apply Now
+      </CardTitle>
       <CardDescription className="text-xl text-gray-700 text-center">
         Start your application process
       </CardDescription>
@@ -486,9 +556,14 @@ const Apply = () => (
           Ready to begin your journey? Click below to start your application.
           Make sure you have all necessary documents ready.
         </p>
-        <Button size="lg" className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white">
-          Begin Application
-        </Button>
+        <a target="_blank" href="https://apply.ssim.ac.in/fellowship-program-application-form">
+          <Button
+            size="lg"
+            className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Begin Application
+          </Button>
+        </a>
       </div>
     </CardContent>
   </Card>

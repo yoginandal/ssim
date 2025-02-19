@@ -82,32 +82,37 @@ const processData = [
     step: 1,
     title: "Eligibility Check",
     description: "Verify if you meet the program requirements.",
-    details: "Candidates with a minimum three-year Bachelor Degree from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
+    details:
+      "Candidates with a minimum three-year Bachelor Degree from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
   },
   {
     step: 2,
     title: "Entrance Test Scores",
     description: "Submit scores from accepted entrance exams.",
-    details: "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct.",
+    details:
+      "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct.",
   },
   {
     step: 3,
     title: "Application Submission",
     description: "Submit your complete application.",
-    details: "Submit the application form along with all required documents including academic records (X, XII, Graduation) and entrance test scores. Ensure all certificates and mark sheets are included.",
+    details:
+      "Submit the application form along with all required documents including academic records (X, XII, Graduation) and entrance test scores. Ensure all certificates and mark sheets are included.",
   },
   {
     step: 4,
     title: "SOP & Video Introduction",
     description: "Submit Statement of Purpose and self-introduction video.",
-    details: "Prepare and submit your Statement of Purpose (SOP) highlighting your career goals and interest in management studies, along with a self-introduction video that showcases your personality.",
+    details:
+      "Prepare and submit your Statement of Purpose (SOP) highlighting your career goals and interest in management studies, along with a self-introduction video that showcases your personality.",
   },
   {
     step: 5,
     title: "Selection Process",
     description: "Final evaluation based on multiple criteria.",
-    details: "The final selection is based on a cumulative score of: Entrance test scores, Academic records, Work Experience, SOP, Video Introduction, Personal Interview (online/offline), and Extra Curricular Activities/Certification Courses.",
-  }
+    details:
+      "The final selection is based on a cumulative score of: Entrance test scores, Academic records, Work Experience, SOP, Video Introduction, Personal Interview (online/offline), and Extra Curricular Activities/Certification Courses.",
+  },
 ];
 
 const feesData = {
@@ -146,7 +151,7 @@ const feesData = {
       type: "5th & 6th Installment",
       amount: "₹1,00,000",
       dueDate: "8th November 2026",
-    }
+    },
   ],
   transportFees: [
     {
@@ -160,7 +165,7 @@ const feesData = {
     {
       distance: "15+ kms",
       amount: "₹50,000",
-    }
+    },
   ],
   hostelFees: [
     {
@@ -178,7 +183,7 @@ const feesData = {
     {
       type: "Non A/C Double Occupancy",
       amount: "₹1,55,000",
-    }
+    },
   ],
   importantNotes: [
     "Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)",
@@ -186,10 +191,10 @@ const feesData = {
     "Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student",
     "Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)",
     "Names of defaulters will be removed from rolls after 15 days of due date",
-    "Students must report within 10 days of specified date or admission will be cancelled"
+    "Students must report within 10 days of specified date or admission will be cancelled",
   ],
   totalFee: "₹6,90,000",
-  batch: "2025-27"
+  batch: "2025-27",
 };
 
 const datesData = [
@@ -267,7 +272,12 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit" className="bg-mainBlue hover:bg-mainBlue/80 text-white">Download Now</Button>
+          <Button
+            type="submit"
+            className="bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Download Now
+          </Button>
         </DialogFooter>
       </form>
     </DialogContent>
@@ -278,16 +288,26 @@ const EnquireDialog = ({ isOpen, setIsOpen }) => (
 const Overview = () => (
   <div className="space-y-3 p-3">
     <p className="text-lg text-gray-700 font-semibold">
-      SSIM's Post Graduate Diploma in Management (PGDM) program is uniquely designed to develop managers with cross-functional skills blended with IT acumen, offering triple specialization opportunities.
+      SSIM's Post Graduate Diploma in Management (PGDM) program is uniquely
+      designed to develop managers with cross-functional skills blended with IT
+      acumen, offering triple specialization opportunities.
     </p>
     <p className="text-lg text-gray-700">
-      The program focuses on specific leadership nuances of getting work done through teams. During the second year, students can customize their curriculum by choosing 10 electives across different areas apart from compulsory courses, preparing them with multifaceted functionality to meet future challenges.
+      The program focuses on specific leadership nuances of getting work done
+      through teams. During the second year, students can customize their
+      curriculum by choosing 10 electives across different areas apart from
+      compulsory courses, preparing them with multifaceted functionality to meet
+      future challenges.
     </p>
 
-    <h3 className="font-bold text-mainBlue text-2xl">Triple Specialization Structure</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">
+      Triple Specialization Structure
+    </h3>
     <div className="space-y-4">
       <div>
-        <h4 className="text-xl font-semibold text-red-600">Major Specializations</h4>
+        <h4 className="text-xl font-semibold text-red-600">
+          Major Specializations
+        </h4>
         <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
           <li>Finance</li>
           <li>Marketing</li>
@@ -297,9 +317,11 @@ const Overview = () => (
           <li>Technology Management</li>
         </ul>
       </div>
-      
+
       <div>
-        <h4 className="text-xl font-semibold text-red-600">Minor Specializations</h4>
+        <h4 className="text-xl font-semibold text-red-600">
+          Minor Specializations
+        </h4>
         <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
           <li>Finance</li>
           <li>Marketing</li>
@@ -312,7 +334,9 @@ const Overview = () => (
       </div>
 
       <div>
-        <h4 className="text-xl font-semibold text-red-600">Sectoral Specializations</h4>
+        <h4 className="text-xl font-semibold text-red-600">
+          Sectoral Specializations
+        </h4>
         <ul className="list-disc ml-4 list-inside text-gray-700 text-lg">
           <li>Business Analytics</li>
           <li>Banking</li>
@@ -328,24 +352,29 @@ const Overview = () => (
       </div>
     </div>
 
-    <h3 className="font-bold text-mainBlue text-2xl mt-8">Program Highlights</h3>
+    <h3 className="font-bold text-mainBlue text-2xl mt-8">
+      Program Highlights
+    </h3>
     <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
       {[
         {
           title: "Accreditations",
-          description: "NBA and NAAC Accredited program with outcome-based education",
-          icon: Award
+          description:
+            "NBA and NAAC Accredited program with outcome-based education",
+          icon: Award,
         },
         {
           title: "Experiential Learning",
-          description: "StratX, Equity Levers, and CESIM simulations for practical exposure",
-          icon: BookOpen
+          description:
+            "StratX, Equity Levers, and CESIM simulations for practical exposure",
+          icon: BookOpen,
         },
         {
           title: "Global Connect",
-          description: "International exchange program with Herzing University, Atlanta (USA)",
-          icon: Globe
-        }
+          description:
+            "International exchange program with Herzing University, Atlanta (USA)",
+          icon: Globe,
+        },
       ].map((item, index) => (
         <motion.div
           key={index}
@@ -377,7 +406,9 @@ const Overview = () => (
     </ul>
 
     <p className="text-lg text-gray-700 mt-4">
-      The program boasts a near 100% placement record with leading recruiters including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC, Factset Systems, Franklin Templeton, and InfoEdge.
+      The program boasts a near 100% placement record with leading recruiters
+      including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC,
+      Factset Systems, Franklin Templeton, and InfoEdge.
     </p>
   </div>
 );
@@ -398,7 +429,9 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">{item.description}</p>
+          <p className="text-xl font-semibold text-gray-700">
+            {item.description}
+          </p>
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
@@ -406,19 +439,29 @@ const Process = () => (
 
     {/* Additional Information */}
     <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-      <h3 className="text-xl font-semibold text-mainBlue mb-4">Important Notes:</h3>
+      <h3 className="text-xl font-semibold text-mainBlue mb-4">
+        Important Notes:
+      </h3>
       <ul className="space-y-2 text-gray-700">
         <li className="flex items-start gap-2">
           <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>Testing Bodies have no role in the selection process or conduct of the PGDM Program</span>
+          <span>
+            Testing Bodies have no role in the selection process or conduct of
+            the PGDM Program
+          </span>
         </li>
         <li className="flex items-start gap-2">
           <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>Final year students can apply before completion of their degree</span>
+          <span>
+            Final year students can apply before completion of their degree
+          </span>
         </li>
         <li className="flex items-start gap-2">
           <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>Selection is based on overall profile evaluation including academics, entrance test scores, and extracurricular activities</span>
+          <span>
+            Selection is based on overall profile evaluation including
+            academics, entrance test scores, and extracurricular activities
+          </span>
         </li>
       </ul>
     </div>
@@ -429,7 +472,9 @@ const Fees = () => (
   <div className="space-y-8">
     <Card className="border-none shadow-none">
       <CardHeader>
-        <CardTitle className="text-3xl text-[#002f87]">Fee Structure (Batch 2025-27)</CardTitle>
+        <CardTitle className="text-3xl text-[#002f87]">
+          Fee Structure (Batch 2025-27)
+        </CardTitle>
         <CardDescription className="text-lg text-red-600 font-semibold">
           Total Program Fee: ₹6,90,000 (Six Lakhs Ninety Thousand only)
         </CardDescription>
@@ -437,22 +482,36 @@ const Fees = () => (
       <CardContent className="space-y-6">
         {/* Regular Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Regular Fee Structure</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Regular Fee Structure
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">Payment Type</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Due Date</TableHead>
+                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
+                    Payment Type
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Due Date
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.tuitionFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.type}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
-                    <TableCell className="text-black text-lg">{fee.dueDate}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.type}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
+                    <TableCell className="text-black text-lg">
+                      {fee.dueDate}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -462,7 +521,10 @@ const Fees = () => (
           <div className="mt-4 space-y-2 text-gray-700">
             <div className="flex items-center gap-2">
               <Info className="h-4 w-4 animate-pulse text-red-600 flex-shrink-0" />
-              <p>Admission Fee and Alumni Association Fee are to be paid at the time of Admission</p>
+              <p>
+                Admission Fee and Alumni Association Fee are to be paid at the
+                time of Admission
+              </p>
             </div>
             <div className="flex items-center gap-2">
               <Info className="h-4 w-4 animate-pulse text-red-600 flex-shrink-0" />
@@ -473,20 +535,30 @@ const Fees = () => (
 
         {/* Transport Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Transportation Charges</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Transportation Charges
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Distance</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Amount (Per Annum)</TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Distance
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Amount (Per Annum)
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.transportFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.distance}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.distance}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -496,31 +568,45 @@ const Fees = () => (
 
         {/* Hostel Fee Structure */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">Hostel Fee (Accommodation and Food)</h3>
+          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
+            Hostel Fee (Accommodation and Food)
+          </h3>
           <div className="rounded-lg overflow-hidden border">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Room Type</TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">Fee Per Annum</TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Room Type
+                  </TableHead>
+                  <TableHead className="bg-[#002f87] text-white text-lg">
+                    Fee Per Annum
+                  </TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {feesData.hostelFees.map((fee, index) => (
                   <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">{fee.type}</TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">{fee.amount}</TableCell>
+                    <TableCell className="font-medium text-black text-lg">
+                      {fee.type}
+                    </TableCell>
+                    <TableCell className="text-red-600 font-semibold text-lg">
+                      {fee.amount}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </div>
-          <p className="text-sm text-gray-600 mt-2">* Food Charges: Every year there will be an increase of 15%.</p>
+          <p className="text-sm text-gray-600 mt-2">
+            * Food Charges: Every year there will be an increase of 15%.
+          </p>
         </div>
 
         {/* Important Notes */}
         <div className="bg-[#002f87]/5 p-4 rounded-lg space-y-2">
-          <h4 className="font-semibold text-[#002f87] text-lg">Important Notes:</h4>
+          <h4 className="font-semibold text-[#002f87] text-lg">
+            Important Notes:
+          </h4>
           <ul className="list-disc list-inside space-y-1 text-lg text-black">
             {feesData.importantNotes.map((note, index) => (
               <li key={index}>{note}</li>
@@ -553,7 +639,9 @@ const Dates = () => (
             <time className="text-sm text-red-600 font-semibold">
               {item.date}
             </time>
-            <h3 className="text-lg font-semibold text-mainBlue mt-2">{item.event}</h3>
+            <h3 className="text-lg font-semibold text-mainBlue mt-2">
+              {item.event}
+            </h3>
             <p className="text-gray-700 text-lg mt-1">{item.description}</p>
           </motion.div>
         ))}
@@ -565,7 +653,9 @@ const Dates = () => (
 const Brochure = ({ setIsEnquireOpen }) => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-center text-red-600">Download Our Brochure</CardTitle>
+      <CardTitle className="text-3xl text-center text-red-600">
+        Download Our Brochure
+      </CardTitle>
       <CardDescription className="text-xl text-center text-gray-700">
         Get detailed information about our programs
       </CardDescription>
@@ -592,7 +682,9 @@ const Brochure = ({ setIsEnquireOpen }) => (
 const Apply = () => (
   <Card className="border-none shadow-none">
     <CardHeader>
-      <CardTitle className="text-3xl text-red-600 text-center">Apply Now</CardTitle>
+      <CardTitle className="text-3xl text-red-600 text-center">
+        Apply Now
+      </CardTitle>
       <CardDescription className="text-xl text-gray-700 text-center">
         Start your application process
       </CardDescription>
@@ -603,9 +695,14 @@ const Apply = () => (
           Ready to begin your journey? Click below to start your application.
           Make sure you have all necessary documents ready.
         </p>
-        <Button size="lg" className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white">
-          Begin Application
-        </Button>
+        <a target="_blank" href="https://apply.ssim.ac.in">
+          <Button
+            size="lg"
+            className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
+          >
+            Begin Application
+          </Button>
+        </a>
       </div>
     </CardContent>
   </Card>
