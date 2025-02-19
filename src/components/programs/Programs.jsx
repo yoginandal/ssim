@@ -674,21 +674,25 @@ const KeyInformation = ({ info }) => {
 
   return (
     <div>
-      <h3 className="text-2xl font-semibold mb-4">Key Information</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-red-600">
+        Key Information
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Object.entries(info).map(([key, value]) => {
           const Icon = iconMap[key];
           return (
             <Card key={key} className="overflow-hidden">
               <CardContent className="p-6 flex items-start space-x-4">
-                <div className="bg-primary rounded-full p-3 flex-shrink-0">
+                <div className="bg-mainBlue rounded-full p-3 flex-shrink-0">
                   <Icon className="h-6 w-6 text-primary-foreground" />
                 </div>
                 <div className="min-w-0">
-                  <h4 className="font-medium text-sm text-muted-foreground capitalize">
+                  <h4 className="font-medium text-base text-gray-800 capitalize">
                     {key}
                   </h4>
-                  <p className="text-lg font-semibold break-words">{value}</p>
+                  <p className="text-lg font-semibold text-red-600 break-words">
+                    {value}
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -702,18 +706,42 @@ const KeyInformation = ({ info }) => {
 const Specializations = ({ specializations }) => {
   return (
     <div>
-      <h3 className="text-2xl font-semibold mb-4">Specializations</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-red-600">
+        Specializations
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {specializations.map((spec, index) => (
           <Card key={index} className="overflow-hidden">
-            <CardHeader className="bg-secondary">
-              <CardTitle>{spec.title}</CardTitle>
+            <CardHeader className="bg-mainBlue">
+              <CardTitle className="text-white">{spec.title}</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
-              <p className="mb-4">{spec.description}</p>
+              <p className="mb-4 text-base">{spec.description}</p>
               <div className="flex flex-wrap gap-2">
                 {spec.skills.map((skill, skillIndex) => (
-                  <Badge key={skillIndex} variant="outline">
+                  <Badge
+                    key={skillIndex}
+                    className={`${
+                      [
+                        "bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700",
+                        "bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700",
+                        "bg-green-50 text-green-600 hover:bg-green-100 hover:text-green-700",
+                        "bg-purple-50 text-purple-600 hover:bg-purple-100 hover:text-purple-700",
+                        "bg-orange-50 text-orange-600 hover:bg-orange-100 hover:text-orange-700",
+                        "bg-teal-50 text-teal-600 hover:bg-teal-100 hover:text-teal-700",
+                        "bg-pink-50 text-pink-600 hover:bg-pink-100 hover:text-pink-700",
+                        "bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700",
+                        "bg-yellow-50 text-yellow-600 hover:bg-yellow-100 hover:text-yellow-700",
+                        "bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700",
+                        "bg-lime-50 text-lime-600 hover:bg-lime-100 hover:text-lime-700",
+                        "bg-emerald-50 text-emerald-600 hover:bg-emerald-100 hover:text-emerald-700",
+                        "bg-violet-50 text-violet-600 hover:bg-violet-100 hover:text-violet-700",
+                        "bg-fuchsia-50 text-fuchsia-600 hover:bg-fuchsia-100 hover:text-fuchsia-700",
+                        "bg-rose-50 text-rose-600 hover:bg-rose-100 hover:text-rose-700",
+                        "bg-amber-50 text-amber-600 hover:bg-amber-100 hover:text-amber-700",
+                      ][skillIndex % 16]
+                    } transition-colors inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-gray-500/10 ring-inset`}
+                  >
                     {skill}
                   </Badge>
                 ))}
@@ -735,17 +763,19 @@ const Differentiators = ({ differentiators }) => {
 
   return (
     <div>
-      <h3 className="text-2xl font-semibold mb-4">Program Differentiators</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-red-600">
+        Program Differentiators
+      </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {differentiators.map((diff, index) => {
           const Icon = iconMap[index] || Users;
           return (
             <Card key={index} className="overflow-hidden">
               <CardHeader className="flex flex-row items-center space-x-4 pb-2">
-                <div className="bg-primary rounded-full p-2">
+                <div className="bg-mainBlue rounded-full p-2">
                   <Icon className="h-6 w-6 text-primary-foreground" />
                 </div>
-                <CardTitle>{diff.title}</CardTitle>
+                <CardTitle className="text-red-600">{diff.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p>{diff.description}</p>
@@ -761,7 +791,9 @@ const Differentiators = ({ differentiators }) => {
 const Curriculum = ({ curriculum }) => {
   return (
     <div>
-      <h3 className="text-2xl font-semibold mb-4">Curriculum Overview</h3>
+      <h3 className="text-2xl font-semibold mb-4 text-red-600">
+        Curriculum Overview
+      </h3>
       <Accordion type="single" collapsible className="w-full">
         {curriculum.map((year, yearIndex) => (
           <AccordionItem key={yearIndex} value={`year-${yearIndex}`}>
@@ -797,7 +829,9 @@ const EligibilityAdmission = ({ eligibility, admission }) => {
   return (
     <div className="space-y-8">
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Eligibility Criteria</h3>
+        <h3 className="text-2xl font-semibold mb-4 text-red-600">
+          Eligibility Criteria
+        </h3>
         <Card>
           <CardContent className="p-6">
             <ul className="space-y-2">
@@ -812,7 +846,9 @@ const EligibilityAdmission = ({ eligibility, admission }) => {
         </Card>
       </div>
       <div>
-        <h3 className="text-2xl font-semibold mb-4">Admission Procedure</h3>
+        <h3 className="text-2xl font-semibold mb-4 text-red-600">
+          Admission Procedure
+        </h3>
         <Card>
           <CardContent className="p-6">
             <ol className="space-y-4">
@@ -840,7 +876,9 @@ const ProgramSection = ({ programId, activeSection }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-6">{program.name} Program</h2>
+      <h2 className="text-3xl font-bold mb-6 text-mainBlue">
+        {program.name} Program
+      </h2>
       {activeSection === "about" && <KeyInformation info={program.keyInfo} />}
       {activeSection === "specializations" && (
         <Specializations specializations={program.specializations} />
@@ -878,7 +916,7 @@ const ProgramsOverview = () => {
 
   const SidebarContent = () => (
     <>
-      <div className="mb-4 relative">
+      {/* <div className="mb-4 relative">
         <Input
           type="text"
           placeholder="Search sections..."
@@ -887,7 +925,7 @@ const ProgramsOverview = () => {
           className="pl-10"
         />
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-      </div>
+      </div> */}
       {/* <ScrollArea className="h-[calc(100vh-200px)] lg:h-auto"> */}
       <ul className="space-y-2">
         {filteredSections.map((section) => (
@@ -897,9 +935,9 @@ const ProgramsOverview = () => {
                 setActiveSection(section.id);
                 if (!isDesktop) setSidebarOpen(false);
               }}
-              className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+              className={`w-full text-left px-4 py-2 rounded-sm transition-colors ${
                 activeSection === section.id
-                  ? "bg-primary text-primary-foreground"
+                  ? "bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-primary-foreground"
                   : "hover:bg-secondary"
               }`}
             >
@@ -951,12 +989,12 @@ const ProgramsOverview = () => {
         onValueChange={setActiveProgram}
         className="mb-8"
       >
-        <TabsList className="w-full flex flex-wrap justify-center gap-2 p-1 h-auto">
+        <TabsList className="w-full flex flex-wrap text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 justify-center gap-2 p-1 h-auto">
           {programs.map((program) => (
             <TabsTrigger
               key={program.id}
               value={program.id}
-              className="flex-grow sm:flex-grow text-sm sm:text-base px-4 py-2 h-auto data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="flex-grow sm:flex-grow text-sm sm:text-base px-4 py-2 h-auto data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
               {program.name}
             </TabsTrigger>
