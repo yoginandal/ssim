@@ -224,33 +224,38 @@ const programData = {
       {
         title: "Cloud Computing",
         icon: "☁️",
-      }
+      },
     ],
     differentiators: [
       {
         title: "Harvard Business School Certification",
-        description: "Embedded with Harvard Business School Online Business Analytics certification",
+        description:
+          "Embedded with Harvard Business School Online Business Analytics certification",
       },
       {
         title: "Software Exposure",
-        description: "Exposure to wide range of software, programming languages and big data processing tools",
+        description:
+          "Exposure to wide range of software, programming languages and big data processing tools",
       },
       {
         title: "Experiential Learning",
-        description: "Learning through simulations, gamifications, and practical applications",
+        description:
+          "Learning through simulations, gamifications, and practical applications",
       },
       {
         title: "Expert Faculty",
-        description: "Eminent faculty members with industry, academia and research experience",
+        description:
+          "Eminent faculty members with industry, academia and research experience",
       },
       {
         title: "International Exchange",
-        description: "Exchange programs for students with Herzing University, Atlanta (USA)",
+        description:
+          "Exchange programs for students with Herzing University, Atlanta (USA)",
       },
       {
         title: "Paid Internships",
         description: "Earn-while-you-learn through paid summer internships",
-      }
+      },
     ],
     curriculum: [
       {
@@ -273,8 +278,8 @@ const programData = {
               "HR Analytics",
               "Operational Analytics",
             ],
-          }
-        ]
+          },
+        ],
       },
       {
         name: "Advanced Technologies",
@@ -286,33 +291,34 @@ const programData = {
               "Neural Networks",
               "Advanced Machine Learning",
               "Big Data Analytics",
-              "Cloud Computing Techniques"
+              "Cloud Computing Techniques",
             ],
-          }
-        ]
-      }
+          },
+        ],
+      },
     ],
     eligibility: [
       "Bachelor's degree in any discipline",
       "Strong analytical and quantitative skills",
       "Interest in data-driven decision making",
-      "Basic understanding of mathematics and statistics"
+      "Basic understanding of mathematics and statistics",
     ],
     admission: [
       "Submit online application",
       "Academic credentials review",
       "Entrance test scores",
       "Personal interview",
-      "Final selection based on overall profile"
+      "Final selection based on overall profile",
     ],
     stats: {
       programHighlights: {
         dataGenerated: "2.5 quintillion bytes daily",
         growthRate: "25%",
         growthPeriod: "2020-2030",
-        uniquePosition: "First institute in Telugu states offering specialized PGDM in Business Analytics"
-      }
-    }
+        uniquePosition:
+          "First institute in Telugu states offering specialized PGDM in Business Analytics",
+      },
+    },
   },
   "pgdm-bifs": {
     name: "PGDM BIFS",
@@ -321,50 +327,58 @@ const programData = {
       credits: "120",
       startDate: "2024",
       location: "Full-time On-campus",
-      degree: "Post Graduate Diploma in Management - Banking, Insurance and Financial Services",
+      degree:
+        "Post Graduate Diploma in Management - Banking, Insurance and Financial Services",
     },
     specializations: [
       {
         title: "Banking Stream",
         icon: "🏦",
-        description: "Retail banking, Digital banking, Risk and Treasury management in banks"
+        description:
+          "Retail banking, Digital banking, Risk and Treasury management in banks",
       },
       {
         title: "Insurance Stream",
         icon: "🛡️",
-        description: "Insure-tech, Fraud risk management in insurance reinsurance management"
+        description:
+          "Insure-tech, Fraud risk management in insurance reinsurance management",
       },
       {
         title: "Analytical Stream",
         icon: "📊",
-        description: "Fraud risk analytics, Financial analytics and Algo trading with Python"
-      }
+        description:
+          "Fraud risk analytics, Financial analytics and Algo trading with Python",
+      },
     ],
     differentiators: [
       {
         title: "III Accreditation",
-        description: "Program is accredited by Insurance Institute of India (III)"
+        description:
+          "Program is accredited by Insurance Institute of India (III)",
       },
       {
         title: "Advanced Labs",
-        description: "NSE Assisted Finance Lab, Equity Levers Certification, CESIM Simulations"
+        description:
+          "NSE Assisted Finance Lab, Equity Levers Certification, CESIM Simulations",
       },
       {
         title: "Experiential Learning",
-        description: "Corporate interviews, Industrial Visits, NGO Visits, and Simulations"
+        description:
+          "Corporate interviews, Industrial Visits, NGO Visits, and Simulations",
       },
       {
         title: "International Exchange",
-        description: "Exchange programs with Herzing University, Atlanta (USA)"
+        description: "Exchange programs with Herzing University, Atlanta (USA)",
       },
       {
         title: "Industry Integration",
-        description: "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations"
+        description:
+          "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations",
       },
       {
         title: "Outcome Based Education",
-        description: "Focus on practical skills and industry readiness"
-      }
+        description: "Focus on practical skills and industry readiness",
+      },
     ],
     curriculum: [
       {
@@ -380,10 +394,10 @@ const programData = {
               "Quantitative Techniques",
               "Information Technology",
               "Communication",
-              "Operations"
-            ]
-          }
-        ]
+              "Operations",
+            ],
+          },
+        ],
       },
       {
         name: "Year 2",
@@ -399,24 +413,24 @@ const programData = {
               "Strategy",
               "Entrepreneurship",
               "Project Management",
-              "Governance and Ethics"
-            ]
-          }
-        ]
-      }
+              "Governance and Ethics",
+            ],
+          },
+        ],
+      },
     ],
     eligibility: [
       "Bachelor's degree in any discipline",
       "Strong interest in Banking, Insurance and Financial Services",
       "Analytical and quantitative aptitude",
-      "Good communication skills"
+      "Good communication skills",
     ],
     admission: [
       "Submit online application",
       "Academic credentials review",
       "Entrance test scores",
       "Personal interview",
-      "Final selection based on overall profile"
+      "Final selection based on overall profile",
     ],
     stats: {
       careerOptions: [
@@ -428,7 +442,7 @@ const programData = {
         "Stock Broking Firms",
         "Mutual Fund Companies",
         "Marketing Research Companies",
-        "Bancassurance channels"
+        "Bancassurance channels",
       ],
       topRecruiters: [
         "Deloitte",
@@ -439,10 +453,10 @@ const programData = {
         "ITC",
         "Factset Systems",
         "Franklin Templeton",
-        "InfoEdge"
+        "InfoEdge",
       ],
-      placementRate: 100
-    }
+      placementRate: 100,
+    },
   },
   "pgdm-triple-specialisation": {
     name: "PGDM Triple Specialisation",
@@ -456,78 +470,80 @@ const programData = {
     specializations: [
       {
         title: "Finance",
-        icon: "💰"
+        icon: "💰",
       },
       {
         title: "Marketing",
-        icon: "📊"
+        icon: "📊",
       },
       {
         title: "Human Resource",
-        icon: "👥"
+        icon: "👥",
       },
       {
         title: "Operations Management",
-        icon: "⚙️"
+        icon: "⚙️",
       },
       {
         title: "Business Analytics",
-        icon: "📈"
+        icon: "📈",
       },
       {
         title: "Digital Marketing",
-        icon: "🌐"
+        icon: "🌐",
       },
       {
         title: "Banking & Insurance",
-        icon: "🏦"
+        icon: "🏦",
       },
       {
         title: "Retail Management",
-        icon: "🏪"
+        icon: "🏪",
       },
       {
         title: "Entrepreneurship",
-        icon: "🚀"
+        icon: "🚀",
       },
       {
         title: "Agribusiness Management",
-        icon: "🌾"
+        icon: "🌾",
       },
       {
         title: "Technology Management",
-        icon: "💻"
+        icon: "💻",
       },
       {
         title: "Pharma Management",
-        icon: "💊"
-      }
+        icon: "💊",
+      },
     ],
     differentiators: [
       {
         title: "NBA & NAAC Accreditation",
-        description: "Program is accredited by NBA and NAAC"
+        description: "Program is accredited by NBA and NAAC",
       },
       {
         title: "Triple Specialization",
-        description: "Unique opportunity to specialize in three different areas"
+        description:
+          "Unique opportunity to specialize in three different areas",
       },
       {
         title: "Cross Functional Skills",
-        description: "Develop skills across multiple business domains"
+        description: "Develop skills across multiple business domains",
       },
       {
         title: "Entrepreneurial Focus",
-        description: "Greater scope to develop entrepreneurial skills"
+        description: "Greater scope to develop entrepreneurial skills",
       },
       {
         title: "Simulation Labs",
-        description: "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations"
+        description:
+          "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations",
       },
       {
         title: "International Exchange",
-        description: "Exchange programs with Herzing University, Atlanta (USA)"
-      }
+        description: "Exchange programs with Herzing University, Atlanta (USA)",
+      },
     ],
     curriculum: [
       {
@@ -541,39 +557,40 @@ const programData = {
               "Financial Management",
               "Human Resource Management",
               "Operations Management",
-              "Business Analytics"
-            ]
-          }
-        ]
+              "Business Analytics",
+            ],
+          },
+        ],
       },
       {
         name: "Year 2",
         semesters: [
           {
             name: "Specialization Phase",
-            description: "Students choose 10 electives across different areas apart from compulsory courses"
-          }
-        ]
-      }
+            description:
+              "Students choose 10 electives across different areas apart from compulsory courses",
+          },
+        ],
+      },
     ],
     eligibility: [
       "Bachelor's degree in any discipline",
       "Strong academic background",
       "Leadership potential",
-      "Good communication skills"
+      "Good communication skills",
     ],
     admission: [
       "Submit online application",
       "Academic credentials review",
       "Entrance test scores",
       "Personal interview",
-      "Final selection based on overall profile"
+      "Final selection based on overall profile",
     ],
     stats: {
       placementRate: 100,
       facultyCount: {
         fullTime: "25+",
-        visiting: "50+"
+        visiting: "50+",
       },
       topRecruiters: [
         "Deloitte",
@@ -584,7 +601,7 @@ const programData = {
         "ITC",
         "Factset Systems",
         "Franklin Templeton",
-        "InfoEdge"
+        "InfoEdge",
       ],
       experientialLearning: [
         "Corporate Interviews",
@@ -592,9 +609,9 @@ const programData = {
         "NGO Visits",
         "Simulations",
         "Student Clubs",
-        "Event Organization"
-      ]
-    }
+        "Event Organization",
+      ],
+    },
   },
 };
 
@@ -659,22 +676,26 @@ const ProgramComparison = ({ programs }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-6">Program Comparison</h2>
+      <h2 className="text-3xl font-bold mb-6 text-mainBlue">
+        Program Comparison
+      </h2>
       <Table>
-        <TableHeader>
+        <TableHeader className="bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
           <TableRow>
-            <TableHead>Feature</TableHead>
+            <TableHead className="text-[#293794]">Feature</TableHead>
             {programs.map((program) => (
-              <TableHead key={program.id}>{program.name}</TableHead>
+              <TableHead className="text-[#293794]" key={program.id}>
+                {program.name}
+              </TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
           {comparisonData.map(({ feature, key }) => (
             <TableRow key={key}>
-              <TableCell className="font-medium">{feature}</TableCell>
+              <TableCell className="font-medium text-base">{feature}</TableCell>
               {programs.map((program) => (
-                <TableCell key={program.id}>
+                <TableCell className="text-base" key={program.id}>
                   {key in programData[program.id].keyInfo
                     ? programData[program.id].keyInfo[key]
                     : key in programData[program.id].stats
@@ -748,7 +769,7 @@ const Specializations = ({ specializations }) => {
             key={index}
             className="overflow-hidden flex flex-row items-center gap-4 p-2"
           >
-            {spec.icon.startsWith('http') ? (
+            {spec.icon.startsWith("http") ? (
               <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
             ) : (
               <div className="w-20 h-20 flex items-center justify-center text-4xl bg-gray-50 rounded-lg">
@@ -963,28 +984,22 @@ const ProgramsOverview = () => {
         ))}
       </ul>
       {/* </ScrollArea> */}
-      {/* <div className="flex flex-col sm:flex-row gap-2 mt-4">
+      <div className="flex flex-col sm:flex-row gap-2 mt-4">
         <Button
           onClick={() => {
             setShowComparison(!showComparison);
             if (!isDesktop) setSidebarOpen(false);
           }}
-          className="w-full sm:flex-1"
+          className="w-full sm:flex-1 bg-gradient-to-r from-mainBlue via-[#2f65ca] to-mainBlue text-white hover:bg-mainBlue/80"
         >
           {showComparison ? "Hide Comparison" : "Compare Programs"}
         </Button>
         <Overlay>
-          <OverlayContent className="sm:max-w-[425px]">
+          <OverlayContent className="">
             <ProgramStats programId={activeProgram} />
           </OverlayContent>
-          <DialogTrigger asChild>
-            <Button variant="outline" className="w-full sm:w-auto">
-              <BarChart2 className="h-4 w-4 mr-2" />
-              <span>View Statistics</span>
-            </Button>
-          </DialogTrigger>
         </Overlay>
-      </div> */}
+      </div>
     </>
   );
 
