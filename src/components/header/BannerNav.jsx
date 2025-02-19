@@ -17,18 +17,18 @@ export default function BannerNav() {
         </div>
         <div className="flex justify-end sm:items-center space-x-4">
           <a
-            href="https://maps.app.goo.gl/NL7WpXRs7wDYNTEu5"
+            href="https://maps.app.goo.gl/HhbEn3qSWAFCeuKR7"
             target="_blank"
             className="flex items-center"
           >
             <MapPin size={16} className="text-blue-800 mr-1" />
             <span>NH 44, Kompally,Secunderabad, Telangana - 500100.</span>
           </a>
-          <a href="mailto:contact@igef.net" className="flex items-center">
+          <a href="mailto:info@ssim.ac.in" className="flex items-center">
             <Mail size={16} className="text-blue-800 mr-1" />
             <span>info@ssim.ac.in</span>
           </a>
-          <a href="tel:+91-7307211222" className="flex items-center">
+          <a href="tel:+91-040-27165451" className="flex items-center">
             <Phone size={16} className="text-blue-800 mr-1" />
             <span>040-2716 5451/53/54</span>
           </a>
