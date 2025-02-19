@@ -190,378 +190,411 @@ const programData = {
   "pgdm-ba": {
     name: "PGDM BA",
     keyInfo: {
-      duration: "1.5 years",
-      credits: "90",
-      startDate: "January 2024",
-      location: "On-campus",
-      degree: "Master of Science in Data Science",
+      duration: "2 years",
+      credits: "120",
+      startDate: "2024",
+      location: "Full-time On-campus",
+      degree: "Post Graduate Diploma in Management - Business Analytics",
     },
     specializations: [
       {
+        title: "Marketing Analytics",
+        icon: "📊",
+      },
+      {
+        title: "Financial Analytics",
+        icon: "💹",
+      },
+      {
+        title: "HR Analytics",
+        icon: "👥",
+      },
+      {
+        title: "Operational Analytics",
+        icon: "⚙️",
+      },
+      {
+        title: "Artificial Intelligence",
+        icon: "🤖",
+      },
+      {
         title: "Big Data Analytics",
-        description:
-          "Master techniques for processing and analyzing large-scale datasets",
-        skills: ["Hadoop", "Spark", "NoSQL", "Data Warehousing"],
+        icon: "📈",
       },
       {
-        title: "Machine Learning",
-        description: "Develop advanced machine learning models and algorithms",
-        skills: [
-          "Supervised Learning",
-          "Unsupervised Learning",
-          "Reinforcement Learning",
-          "Deep Learning",
-        ],
-      },
-      {
-        title: "Data Visualization",
-        description: "Create compelling visual representations of complex data",
-        skills: ["D3.js", "Tableau", "Power BI", "Data Storytelling"],
-      },
+        title: "Cloud Computing",
+        icon: "☁️",
+      }
     ],
     differentiators: [
       {
-        title: "Real-world Projects",
-        description:
-          "Work on actual data science problems from industry partners",
+        title: "Harvard Business School Certification",
+        description: "Embedded with Harvard Business School Online Business Analytics certification",
       },
       {
-        title: "Data Science Lab",
-        description:
-          "Access to high-performance computing resources for big data processing",
+        title: "Software Exposure",
+        description: "Exposure to wide range of software, programming languages and big data processing tools",
       },
       {
-        title: "Interdisciplinary Approach",
-        description:
-          "Combine data science with domain expertise in various fields",
+        title: "Experiential Learning",
+        description: "Learning through simulations, gamifications, and practical applications",
       },
+      {
+        title: "Expert Faculty",
+        description: "Eminent faculty members with industry, academia and research experience",
+      },
+      {
+        title: "International Exchange",
+        description: "Exchange programs for students with Herzing University, Atlanta (USA)",
+      },
+      {
+        title: "Paid Internships",
+        description: "Earn-while-you-learn through paid summer internships",
+      }
     ],
     curriculum: [
       {
-        name: "Year 1",
+        name: "Core Areas",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Business Foundation",
             courses: [
-              "Statistical Methods",
-              "Machine Learning",
-              "Big Data Systems",
-              "Data Visualization",
+              "Business Management",
+              "Analytical Mathematics",
+              "Statistics",
+              "Computer Science",
             ],
           },
           {
-            name: "Spring Semester",
+            name: "Analytics Applications",
             courses: [
-              "Deep Learning",
-              "Natural Language Processing",
-              "Time Series Analysis",
-              "Elective",
+              "Marketing Analytics",
+              "Financial Analytics",
+              "HR Analytics",
+              "Operational Analytics",
             ],
-          },
-        ],
+          }
+        ]
       },
       {
-        name: "Year 2",
+        name: "Advanced Technologies",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Emerging Technologies",
             courses: [
-              "Capstone Project",
-              "Ethics in Data Science",
-              "Elective",
-              "Elective",
+              "Artificial Intelligence",
+              "Neural Networks",
+              "Advanced Machine Learning",
+              "Big Data Analytics",
+              "Cloud Computing Techniques"
             ],
-          },
-        ],
-      },
+          }
+        ]
+      }
     ],
     eligibility: [
-      "Bachelor's degree in Data Science, Statistics, Computer Science, or related field",
-      "Minimum GPA of 3.2 on a 4.0 scale",
-      "GRE scores required",
-      "TOEFL or IELTS scores for international students",
+      "Bachelor's degree in any discipline",
+      "Strong analytical and quantitative skills",
+      "Interest in data-driven decision making",
+      "Basic understanding of mathematics and statistics"
     ],
     admission: [
       "Submit online application",
-      "Provide official transcripts",
-      "Submit letters of recommendation",
-      "Write a statement of purpose",
-      "Submit a portfolio of data science projects (optional)",
-      "Pay application fee",
-      "Interview (if shortlisted)",
+      "Academic credentials review",
+      "Entrance test scores",
+      "Personal interview",
+      "Final selection based on overall profile"
     ],
     stats: {
-      applicants: 800,
-      enrolled: 150,
-      graduates: 140,
-      employmentRate: 97,
-      avgSalary: 100000,
-      avgTimeToGraduate: 1.8,
-    },
+      programHighlights: {
+        dataGenerated: "2.5 quintillion bytes daily",
+        growthRate: "25%",
+        growthPeriod: "2020-2030",
+        uniquePosition: "First institute in Telugu states offering specialized PGDM in Business Analytics"
+      }
+    }
   },
   "pgdm-bifs": {
     name: "PGDM BIFS",
     keyInfo: {
       duration: "2 years",
       credits: "120",
-      startDate: "September 2023",
-      location: "On-campus & Online",
-      degree: "Master of Science in Artificial Intelligence",
+      startDate: "2024",
+      location: "Full-time On-campus",
+      degree: "Post Graduate Diploma in Management - Banking, Insurance and Financial Services",
     },
     specializations: [
       {
-        title: "Natural Language Processing",
-        description:
-          "Develop systems that can understand, interpret, and generate human language",
-        skills: [
-          "Text Analysis",
-          "Speech Recognition",
-          "Machine Translation",
-          "Chatbots",
-        ],
+        title: "Banking Stream",
+        icon: "🏦",
+        description: "Retail banking, Digital banking, Risk and Treasury management in banks"
       },
       {
-        title: "Computer Vision",
-        description:
-          "Create AI systems that can process, analyze, and understand visual information",
-        skills: [
-          "Image Processing",
-          "Object Detection",
-          "Facial Recognition",
-          "Scene Understanding",
-        ],
+        title: "Insurance Stream",
+        icon: "🛡️",
+        description: "Insure-tech, Fraud risk management in insurance reinsurance management"
       },
       {
-        title: "Robotics",
-        description: "Design and develop intelligent robotic systems",
-        skills: [
-          "Robot Kinematics",
-          "Perception",
-          "Path Planning",
-          "Human-Robot Interaction",
-        ],
-      },
+        title: "Analytical Stream",
+        icon: "📊",
+        description: "Fraud risk analytics, Financial analytics and Algo trading with Python"
+      }
     ],
     differentiators: [
       {
-        title: "AI Research Center",
-        description:
-          "Collaborate with leading AI researchers on cutting-edge projects",
+        title: "III Accreditation",
+        description: "Program is accredited by Insurance Institute of India (III)"
       },
       {
-        title: "Industry Internships",
-        description: "Gain hands-on experience with AI in real-world settings",
+        title: "Advanced Labs",
+        description: "NSE Assisted Finance Lab, Equity Levers Certification, CESIM Simulations"
       },
       {
-        title: "Ethical AI Focus",
-        description:
-          "Learn to develop AI systems with a strong emphasis on ethics and societal impact",
+        title: "Experiential Learning",
+        description: "Corporate interviews, Industrial Visits, NGO Visits, and Simulations"
       },
+      {
+        title: "International Exchange",
+        description: "Exchange programs with Herzing University, Atlanta (USA)"
+      },
+      {
+        title: "Industry Integration",
+        description: "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations"
+      },
+      {
+        title: "Outcome Based Education",
+        description: "Focus on practical skills and industry readiness"
+      }
     ],
     curriculum: [
       {
         name: "Year 1",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Foundation Courses",
             courses: [
-              "Machine Learning",
-              "Neural Networks",
-              "AI Ethics",
-              "Probability and Statistics for AI",
-            ],
-          },
-          {
-            name: "Spring Semester",
-            courses: [
-              "Deep Learning",
-              "Natural Language Processing",
-              "Computer Vision",
-              "Reinforcement Learning",
-            ],
-          },
-        ],
+              "Economics",
+              "Finance",
+              "Marketing",
+              "Human Resources",
+              "Quantitative Techniques",
+              "Information Technology",
+              "Communication",
+              "Operations"
+            ]
+          }
+        ]
       },
       {
         name: "Year 2",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Specialization Courses",
             courses: [
-              "Advanced AI Algorithms",
-              "Robotics",
-              "AI in Healthcare",
-              "Elective",
-            ],
-          },
-          {
-            name: "Spring Semester",
-            courses: [
-              "AI Capstone Project",
-              "AI and Society",
-              "Elective",
-              "Elective",
-            ],
-          },
-        ],
-      },
+              "Banking",
+              "Insurance",
+              "Security Analysis",
+              "Portfolio Management",
+              "Capital Markets",
+              "Strategy",
+              "Entrepreneurship",
+              "Project Management",
+              "Governance and Ethics"
+            ]
+          }
+        ]
+      }
     ],
     eligibility: [
-      "Bachelor's degree in Computer Science, AI, or related field",
-      "Minimum GPA of 3.2 on a 4.0 scale",
-      "GRE scores required",
-      "TOEFL or IELTS scores for international students",
-      "Strong programming skills (Python, C++)",
+      "Bachelor's degree in any discipline",
+      "Strong interest in Banking, Insurance and Financial Services",
+      "Analytical and quantitative aptitude",
+      "Good communication skills"
     ],
     admission: [
       "Submit online application",
-      "Provide official transcripts",
-      "Submit letters of recommendation",
-      "Write a statement of purpose",
-      "Submit a portfolio of AI projects (optional)",
-      "Pay application fee",
-      "Technical interview (if shortlisted)",
+      "Academic credentials review",
+      "Entrance test scores",
+      "Personal interview",
+      "Final selection based on overall profile"
     ],
     stats: {
-      applicants: 1200,
-      enrolled: 180,
-      graduates: 160,
-      employmentRate: 98,
-      avgSalary: 110000,
-      avgTimeToGraduate: 2.1,
-    },
+      careerOptions: [
+        "NAV Analysts in Fintech Companies",
+        "Private & Public Sector Banks",
+        "Life Insurance Companies",
+        "General Insurance & Health Insurance Companies",
+        "Insurance Intermediaries",
+        "Stock Broking Firms",
+        "Mutual Fund Companies",
+        "Marketing Research Companies",
+        "Bancassurance channels"
+      ],
+      topRecruiters: [
+        "Deloitte",
+        "Accenture",
+        "Aditya Birla",
+        "ICICI",
+        "Asian Paints",
+        "ITC",
+        "Factset Systems",
+        "Franklin Templeton",
+        "InfoEdge"
+      ],
+      placementRate: 100
+    }
   },
   "pgdm-triple-specialisation": {
     name: "PGDM Triple Specialisation",
     keyInfo: {
       duration: "2 years",
       credits: "120",
-      startDate: "September 2023",
-      location: "On-campus & Online",
-      degree: "Master of Science in Artificial Intelligence",
+      startDate: "2024",
+      location: "Full-time On-campus",
+      degree: "Post Graduate Diploma in Management",
     },
     specializations: [
       {
-        title: "Natural Language Processing",
-        description:
-          "Develop systems that can understand, interpret, and generate human language",
-        skills: [
-          "Text Analysis",
-          "Speech Recognition",
-          "Machine Translation",
-          "Chatbots",
-        ],
+        title: "Finance",
+        icon: "💰"
       },
       {
-        title: "Computer Vision",
-        description:
-          "Create AI systems that can process, analyze, and understand visual information",
-        skills: [
-          "Image Processing",
-          "Object Detection",
-          "Facial Recognition",
-          "Scene Understanding",
-        ],
+        title: "Marketing",
+        icon: "📊"
       },
       {
-        title: "Robotics",
-        description: "Design and develop intelligent robotic systems",
-        skills: [
-          "Robot Kinematics",
-          "Perception",
-          "Path Planning",
-          "Human-Robot Interaction",
-        ],
+        title: "Human Resource",
+        icon: "👥"
       },
+      {
+        title: "Operations Management",
+        icon: "⚙️"
+      },
+      {
+        title: "Business Analytics",
+        icon: "📈"
+      },
+      {
+        title: "Digital Marketing",
+        icon: "🌐"
+      },
+      {
+        title: "Banking & Insurance",
+        icon: "🏦"
+      },
+      {
+        title: "Retail Management",
+        icon: "🏪"
+      },
+      {
+        title: "Entrepreneurship",
+        icon: "🚀"
+      },
+      {
+        title: "Agribusiness Management",
+        icon: "🌾"
+      },
+      {
+        title: "Technology Management",
+        icon: "💻"
+      },
+      {
+        title: "Pharma Management",
+        icon: "💊"
+      }
     ],
     differentiators: [
       {
-        title: "AI Research Center",
-        description:
-          "Collaborate with leading AI researchers on cutting-edge projects",
+        title: "NBA & NAAC Accreditation",
+        description: "Program is accredited by NBA and NAAC"
       },
       {
-        title: "Industry Internships",
-        description: "Gain hands-on experience with AI in real-world settings",
+        title: "Triple Specialization",
+        description: "Unique opportunity to specialize in three different areas"
       },
       {
-        title: "Ethical AI Focus",
-        description:
-          "Learn to develop AI systems with a strong emphasis on ethics and societal impact",
+        title: "Cross Functional Skills",
+        description: "Develop skills across multiple business domains"
       },
+      {
+        title: "Entrepreneurial Focus",
+        description: "Greater scope to develop entrepreneurial skills"
+      },
+      {
+        title: "Simulation Labs",
+        description: "StratX simulations (Marketing), Equity Levers (Finance Lab), CESIM Simulations"
+      },
+      {
+        title: "International Exchange",
+        description: "Exchange programs with Herzing University, Atlanta (USA)"
+      }
     ],
     curriculum: [
       {
         name: "Year 1",
         semesters: [
           {
-            name: "Fall Semester",
+            name: "Core Courses",
             courses: [
-              "Machine Learning",
-              "Neural Networks",
-              "AI Ethics",
-              "Probability and Statistics for AI",
-            ],
-          },
-          {
-            name: "Spring Semester",
-            courses: [
-              "Deep Learning",
-              "Natural Language Processing",
-              "Computer Vision",
-              "Reinforcement Learning",
-            ],
-          },
-        ],
+              "Business Management Fundamentals",
+              "Marketing Management",
+              "Financial Management",
+              "Human Resource Management",
+              "Operations Management",
+              "Business Analytics"
+            ]
+          }
+        ]
       },
       {
         name: "Year 2",
         semesters: [
           {
-            name: "Fall Semester",
-            courses: [
-              "Advanced AI Algorithms",
-              "Robotics",
-              "AI in Healthcare",
-              "Elective",
-            ],
-          },
-          {
-            name: "Spring Semester",
-            courses: [
-              "AI Capstone Project",
-              "AI and Society",
-              "Elective",
-              "Elective",
-            ],
-          },
-        ],
-      },
+            name: "Specialization Phase",
+            description: "Students choose 10 electives across different areas apart from compulsory courses"
+          }
+        ]
+      }
     ],
     eligibility: [
-      "Bachelor's degree in Computer Science, AI, or related field",
-      "Minimum GPA of 3.2 on a 4.0 scale",
-      "GRE scores required",
-      "TOEFL or IELTS scores for international students",
-      "Strong programming skills (Python, C++)",
+      "Bachelor's degree in any discipline",
+      "Strong academic background",
+      "Leadership potential",
+      "Good communication skills"
     ],
     admission: [
       "Submit online application",
-      "Provide official transcripts",
-      "Submit letters of recommendation",
-      "Write a statement of purpose",
-      "Submit a portfolio of AI projects (optional)",
-      "Pay application fee",
-      "Technical interview (if shortlisted)",
+      "Academic credentials review",
+      "Entrance test scores",
+      "Personal interview",
+      "Final selection based on overall profile"
     ],
     stats: {
-      applicants: 1200,
-      enrolled: 180,
-      graduates: 160,
-      employmentRate: 98,
-      avgSalary: 110000,
-      avgTimeToGraduate: 2.1,
-    },
+      placementRate: 100,
+      facultyCount: {
+        fullTime: "25+",
+        visiting: "50+"
+      },
+      topRecruiters: [
+        "Deloitte",
+        "Accenture",
+        "Aditya Birla",
+        "ICICI",
+        "Asian Paints",
+        "ITC",
+        "Factset Systems",
+        "Franklin Templeton",
+        "InfoEdge"
+      ],
+      experientialLearning: [
+        "Corporate Interviews",
+        "Industrial Visits",
+        "NGO Visits",
+        "Simulations",
+        "Student Clubs",
+        "Event Organization"
+      ]
+    }
   },
 };
 
@@ -715,40 +748,14 @@ const Specializations = ({ specializations }) => {
             key={index}
             className="overflow-hidden flex flex-row items-center gap-4 p-2"
           >
-            <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
+            {spec.icon.startsWith('http') ? (
+              <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
+            ) : (
+              <div className="w-20 h-20 flex items-center justify-center text-4xl bg-gray-50 rounded-lg">
+                {spec.icon}
+              </div>
+            )}
             <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
-            {/* <CardContent className="p-6"> */}
-            {/* <p className="mb-4 text-base">{spec.icon}</p> */}
-            {/* <div className="flex flex-wrap gap-2">
-                {spec?.skills?.map((skill, skillIndex) => (
-                  <Badge
-                    key={skillIndex}
-                    className={`${
-                      [
-                        "bg-blue-50 text-blue-600 hover:bg-blue-100 hover:text-blue-700",
-                        "bg-red-50 text-red-600 hover:bg-red-100 hover:text-red-700",
-                        "bg-green-50 text-green-600 hover:bg-green-100 hover:text-green-700",
-                        "bg-purple-50 text-purple-600 hover:bg-purple-100 hover:text-purple-700",
-                        "bg-orange-50 text-orange-600 hover:bg-orange-100 hover:text-orange-700",
-                        "bg-teal-50 text-teal-600 hover:bg-teal-100 hover:text-teal-700",
-                        "bg-pink-50 text-pink-600 hover:bg-pink-100 hover:text-pink-700",
-                        "bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:text-indigo-700",
-                        "bg-yellow-50 text-yellow-600 hover:bg-yellow-100 hover:text-yellow-700",
-                        "bg-cyan-50 text-cyan-600 hover:bg-cyan-100 hover:text-cyan-700",
-                        "bg-lime-50 text-lime-600 hover:bg-lime-100 hover:text-lime-700",
-                        "bg-emerald-50 text-emerald-600 hover:bg-emerald-100 hover:text-emerald-700",
-                        "bg-violet-50 text-violet-600 hover:bg-violet-100 hover:text-violet-700",
-                        "bg-fuchsia-50 text-fuchsia-600 hover:bg-fuchsia-100 hover:text-fuchsia-700",
-                        "bg-rose-50 text-rose-600 hover:bg-rose-100 hover:text-rose-700",
-                        "bg-amber-50 text-amber-600 hover:bg-amber-100 hover:text-amber-700",
-                      ][skillIndex % 16]
-                    } transition-colors inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-gray-500/10 ring-inset`}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div> */}
-            {/* </CardContent> */}
           </Card>
         ))}
       </div>
@@ -807,7 +814,7 @@ const Curriculum = ({ curriculum }) => {
                 <div key={semesterIndex} className="mb-4">
                   <h4 className="font-semibold mb-2">{semester.name}</h4>
                   <ul className="space-y-2">
-                    {semester.courses.map((course, courseIndex) => (
+                    {semester?.courses?.map((course, courseIndex) => (
                       <li
                         key={courseIndex}
                         className="flex items-center space-x-2"
