@@ -18,13 +18,14 @@ import BoardOfGovernors from "@/components/abouts/BoardOfGovernors";
 import BoardOfStudies from "@/components/abouts/BoardOfStudies";
 import Accreditations from "@/components/abouts/Accreditations";
 import Areas from "@/components/faculty&research/Areas";
-import PlacementRecords from "@/components/placement/PlacementRecords";
+import PlacementSection from "@/components/placement/PlacementSection";
 import PlacementTeam from "@/components/placement/PlacementTeam";
 import FPM from "@/components/admissions/FPM";
 import PGDMTPS from "@/components/admissions/PGDMTPS";
 import PGDMBIFS from "@/components/admissions/PGDMBIFS";
 import PGDMBA from "@/components/admissions/PGDMBA";
 import Programs from "@/components/programs/Programs";
+
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -94,7 +95,8 @@ export default function App() {
                 element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
               >
                 <Route path="" element={<Navigate to="message" replace />} />
-                <Route path="records" element={<PlacementRecords />} />
+                {/* <Route path="records" element={<PlacementRecords />} /> */}
+                <Route path="records" element={<PlacementSection />} />
                 <Route path="team" element={<PlacementTeam />} />
               </Route>
               <Route

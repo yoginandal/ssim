@@ -151,3 +151,25 @@ img {
 	grid-row: span 2;
 }
 
+/* Add this to your existing @index.css */
+.invisible-scrollbar {
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  
+}
+
+.invisible-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  scrollbar-width: none;
+}
+
+.invisible-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  scrollbar-width: none;
+
+}
+

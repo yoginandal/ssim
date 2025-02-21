@@ -34,7 +34,7 @@ const AboutLayout = () => {
       <div className="mt-8">
         {/* <AboutSidebar sidebarLinks={sidebarLinks} /> */}
         {/* Content Area for Subpages */}
-        <div className="bg-white p-6">
+        <div className="bg-white">
           <Outlet />
         </div>
       </div>
