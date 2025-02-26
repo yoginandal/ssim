@@ -314,8 +314,24 @@ function EnhancedFeaturesCarousel() {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(min-width: 641px) and (max-width: 1024px)");
+
+  // Auto-slide effect
+  useEffect(() => {
+    if (!api || !autoPlay) return;
+
+    const intervalId = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // Slides every 3 seconds
+
+    return () => clearInterval(intervalId);
+  }, [api, autoPlay]);
+
+  // Pause auto-slide on hover
+  const handleMouseEnter = () => setAutoPlay(false);
+  const handleMouseLeave = () => setAutoPlay(true);
 
   useEffect(() => {
     if (!api) {
@@ -350,15 +366,18 @@ function EnhancedFeaturesCarousel() {
 
   return (
     <section className="w-full py-16 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Explore Our Amazing Features
+            Explore Our Latest Research News
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Discover how our innovative tools can streamline your workflow and
-            boost productivity.
+            Stay updated with groundbreaking research, innovative discoveries, and academic achievements from our distinguished faculty and research teams.
           </p>
         </div>
 
