@@ -25,7 +25,7 @@ import PGDMTPS from "@/components/admissions/PGDMTPS";
 import PGDMBIFS from "@/components/admissions/PGDMBIFS";
 import PGDMBA from "@/components/admissions/PGDMBA";
 import Programs from "@/components/programs/Programs";
-
+import Research from "@/components/faculty&research/Research";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -89,6 +89,12 @@ export default function App() {
               >
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="areas" element={<Areas />} />
+              </Route>
+              <Route
+                path="/research"
+              >
+                <Route path="" element={<Navigate to="message" replace />} />
+                <Route path="case-research-center" element={<Research />} />
               </Route>
               <Route
                 path="/placement"

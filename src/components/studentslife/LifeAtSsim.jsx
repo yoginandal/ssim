@@ -213,7 +213,7 @@ const ImageDialog = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-7xl p-0 pt-6">
+      <DialogContent className="max-w-7xl p-0 pt-6 bg-transparent border-none">
         <DialogDescription className="sr-only">
           Image gallery viewer showing {currentImage.title}
         </DialogDescription>
