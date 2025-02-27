@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+import chandra from "../../assets/faculty&research/faculty/SF Chandra.webp";
+import Thirumal from "../../assets/faculty&research/faculty/THIRUMALREDDY.webp";
+import DrArij from "../../assets/faculty&research/faculty/DR Arijit.webp";
 
 export default function BoardOfGovernors() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -24,12 +28,11 @@ export default function BoardOfGovernors() {
     },
     {
       id: 3,
-      name: "Dr. S.V. Raman Rao",
+      name: "Dr. S.V. Ramana Rao",
       role: "Board Member",
       description:
         "Contributing valuable insights to SSIM's governance and development.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_S.V._Raman_Rao.jpg",
+      image: Ramana,
     },
     {
       id: 4,
@@ -59,16 +62,14 @@ export default function BoardOfGovernors() {
       name: "Dr. S.F. Chandrasekhar",
       role: "Board Member",
       description: "Guiding academic and administrative excellence.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/SF_Chandrasekhar.jpg",
+      image: chandra,
     },
     {
       id: 8,
       name: "Dr. Arijit Santikary",
       role: "Board Member",
       description: "Contributing to research and academic development.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Arijit_Santikary.jpg",
+      image: DrArij,
     },
     {
       id: 9,
@@ -90,8 +91,7 @@ export default function BoardOfGovernors() {
       name: "T. Thirumal Reddy",
       role: "Board Member",
       description: "Supporting institutional development and growth.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/T_Thirumal_Reddy.jpg",
+      image: Thirumal,
     },
     {
       id: 12,

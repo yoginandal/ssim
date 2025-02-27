@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 
 export default function BoardOfStudies() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -21,10 +22,10 @@ export default function BoardOfStudies() {
     },
     {
       id: 3,
-      name: "Dr. S.V. Raman Rao",
+      name: "Dr. S.V. Ramana Rao",
       role: "Member",
       description: "Providing valuable insights for academic growth and innovation.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_S.V._Raman_Rao.jpg"
+      image: Ramana,
     },
     {
       id: 4,

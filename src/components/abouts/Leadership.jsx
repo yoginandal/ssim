@@ -13,6 +13,7 @@ import {
 import { Quote, ChevronRight, ExternalLink } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import sampathy from "@/assets/about/Sampathy.png";
+import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 
 const leaders = [
   {
@@ -68,8 +69,7 @@ const leaders = [
   {
     role: "Director, SSIM.",
     name: "PROF. S.V. RAMANA RAO",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_S.V._Raman_Rao.jpg",
+    image: Ramana,
     quote:
       "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
     quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",

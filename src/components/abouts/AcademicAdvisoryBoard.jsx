@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+
 
 export default function AcademicAdvisoryBoard() {
   const teamMembers = [
@@ -17,11 +19,10 @@ export default function AcademicAdvisoryBoard() {
         "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
     },
     {
-      name: "Dr. S.V. Raman Rao",
+      name: "Dr. S.V. Ramana Rao",
       role: "Director",
       bio: "Director, Siva Sivani Institute of Management",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_S.V._Raman_Rao.jpg",
+      image: Ramana,
     },
     {
       name: "Prof. S. Abhirama Krishna",
@@ -209,7 +210,7 @@ export default function AcademicAdvisoryBoard() {
               key={index}
               className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 sm:p-6 bg-white rounded-lg"
             >
-              <div className="max-w-[180px] flex-shrink-0">
+              <div className="max-w-[200px] flex-shrink-0">
                 <img
                   src={member.image}
                   alt={member.name}
