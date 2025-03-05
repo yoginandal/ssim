@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { CheckCheckIcon } from "lucide-react";
 
 const features = [
@@ -20,10 +19,9 @@ const features = [
 const FeaturedItem = ({ feature, index, image }) => {
   return (
     <div
-      className={classNames(
-        "bg-blue-100 dark:bg-slate-700 flex items-center rounded-xl p-2",
-        { "mb-4": index !== features.length - 1 }
-      )}
+      className={`bg-blue-100 dark:bg-slate-700 flex items-center rounded-xl p-2 ${
+        index !== features.length - 1 ? "mb-4" : ""
+      }`}
     >
       <div className="flex justify-center items-center text-lg min-w-16 h-16 bg-gray-100 text-white rounded-xl mr-3">
         <img src={image} alt="" className="w-12 h-12" />
