@@ -16,7 +16,7 @@ import VisionMission from "@/components/abouts/VisionMission";
 import Leadership from "@/components/abouts/Leadership";
 import BoardOfGovernors from "@/components/abouts/BoardOfGovernors";
 import BoardOfStudies from "@/components/abouts/BoardOfStudies";
-import Accreditations from "@/components/abouts/Accreditations";
+import AccreditationsRankings from "@/components/abouts/AccreditationsRankings";
 import Areas from "@/components/faculty&research/Areas";
 import PlacementSection from "@/components/placement/PlacementSection";
 import PlacementTeam from "@/components/placement/PlacementTeam";
@@ -81,7 +81,7 @@ export default function App() {
                 <Route path="leadership" element={<Leadership />} />
                 <Route path="board-of-governors" element={<BoardOfGovernors />} />
                 <Route path="board-of-studies" element={<BoardOfStudies />} />
-                <Route path="accreditations-rankings" element={<Accreditations />} />
+                <Route path="accreditations-rankings" element={<AccreditationsRankings />} />
               </Route>
               <Route
                 path="/faculty"
