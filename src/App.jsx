@@ -19,7 +19,8 @@ import BoardOfStudies from "@/components/abouts/BoardOfStudies";
 import AccreditationsRankings from "@/components/abouts/AccreditationsRankings";
 import Areas from "@/components/faculty&research/Areas";
 import PlacementSection from "@/components/placement/PlacementSection";
-import PlacementTeam from "@/components/placement/PlacementTeam";
+// import PlacementTeam from "@/components/placement/PlacementTeam";
+import PlacementTeams from "@/components/placement/PlacementTeams";
 import FPM from "@/components/admissions/FPM";
 import PGDMTPS from "@/components/admissions/PGDMTPS";
 import PGDMBIFS from "@/components/admissions/PGDMBIFS";
@@ -103,7 +104,7 @@ export default function App() {
                 <Route path="" element={<Navigate to="message" replace />} />
                 {/* <Route path="records" element={<PlacementRecords />} /> */}
                 <Route path="records" element={<PlacementSection />} />
-                <Route path="team" element={<PlacementTeam />} />
+                <Route path="team" element={<PlacementTeams />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"
