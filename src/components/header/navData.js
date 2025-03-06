@@ -94,10 +94,9 @@ export const navlinks = [
   {
     name: "Placement",
     dropdown: [
-      { name: "Overview", path: "/placement/overview" },
       { name: "Placement Records", path: "/placement/records" },
       { name: "Placement Team", path: "/placement/team" },
-      { name: "Statistics", path: "/placement/statistics" },
+      { name: "Internship Placement", path: "/placement/records" },
     ],
   },
   {
@@ -105,12 +104,7 @@ export const navlinks = [
     dropdown: [
       {
         name: "FPM/EFPM",
-        subDropdown: [
-          {
-            name: "FPM/EFPM",
-            path: "/programs/fpm-efpm",
-          },
-        ],
+        path: "/programs/fpm-efpm",
       },
       {
         name: "PGDM",
