@@ -28,6 +28,7 @@ import PGDMBA from "@/components/admissions/PGDMBA";
 import Programs from "@/components/programs/Programs";
 import Research from "@/components/faculty&research/Research";
 import AlumniSection from "@/components/alumni/Alumni";
+import InternationRelations from "@/components/internation relations/InternationRelations";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -86,6 +87,7 @@ export default function App() {
                 <Route path="accreditations-rankings" element={<AccreditationsRankings />} />
               </Route>
               <Route path="/alumni" element={<AlumniSection />} />
+              <Route path="/international-relations" element={<InternationRelations />} />
               <Route
                 path="/faculty"
                 element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
