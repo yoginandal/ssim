@@ -33,16 +33,20 @@ const Drawer = () => {
         </CollapsibleTrigger>
         <CollapsibleContent>
           <ul className="pl-4 space-y-1">
-            {item.dropdown.map((subItem, subIndex) => (
+            {item.dropdown?.map((subItem, subIndex) => (
               <li key={subIndex}>
-                <SheetClose asChild>
-                  <Link
-                    to={subItem.path}
-                    className="block py-2 px-4 w-full text-sm text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded transition-colors"
-                  >
-                    {subItem.name}
-                  </Link>
-                </SheetClose>
+                {subItem.subDropdown ? (
+                  <CollapsibleNavItem item={{ name: subItem.name, dropdown: subItem.subDropdown }} />
+                ) : (
+                  <SheetClose asChild>
+                    <Link
+                      to={subItem.path}
+                      className="block py-2 px-4 w-full text-sm text-gray-700 hover:text-red-600 hover:bg-gray-50 rounded transition-colors"
+                    >
+                      {subItem.name}
+                    </Link>
+                  </SheetClose>
+                )}
               </li>
             ))}
           </ul>
