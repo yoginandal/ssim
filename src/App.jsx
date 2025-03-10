@@ -29,6 +29,7 @@ import Programs from "@/components/programs/Programs";
 import Research from "@/components/faculty&research/Research";
 import AlumniSection from "@/components/alumni/Alumni";
 import InternationRelations from "@/components/internation relations/InternationRelations";
+import StudentsAchievements from "@/components/studentslife/StudentsAchievements";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -78,16 +79,28 @@ export default function App() {
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="directors-message" element={<AboutMessage />} />
                 <Route path="values" element={<AboutValues />} />
-                <Route path="academic-advisory-board" element={<AcademicAdvisoryBoard />} />
+                <Route
+                  path="academic-advisory-board"
+                  element={<AcademicAdvisoryBoard />}
+                />
                 <Route path="set-us-apart" element={<AboutSetUsApart />} />
                 <Route path="vision-mission" element={<VisionMission />} />
                 <Route path="leadership" element={<Leadership />} />
-                <Route path="board-of-governors" element={<BoardOfGovernors />} />
+                <Route
+                  path="board-of-governors"
+                  element={<BoardOfGovernors />}
+                />
                 <Route path="board-of-studies" element={<BoardOfStudies />} />
-                <Route path="accreditations-rankings" element={<AccreditationsRankings />} />
+                <Route
+                  path="accreditations-rankings"
+                  element={<AccreditationsRankings />}
+                />
               </Route>
               <Route path="/alumni" element={<AlumniSection />} />
-              <Route path="/international-relations" element={<InternationRelations />} />
+              <Route
+                path="/international-relations"
+                element={<InternationRelations />}
+              />
               <Route
                 path="/faculty"
                 element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
@@ -95,9 +108,7 @@ export default function App() {
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="areas" element={<Areas />} />
               </Route>
-              <Route
-                path="/research"
-              >
+              <Route path="/research">
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="case-research-center" element={<Research />} />
               </Route>
@@ -114,8 +125,15 @@ export default function App() {
                 path="/students-life/life-at-ssim"
                 element={<LifeAtSsim />}
               />
+              <Route
+                path="/students-life/achievements"
+                element={<StudentsAchievements />}
+              />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
-              <Route path="/admissions/pgdm-triple-specialisation" element={<PGDMTPS />} />
+              <Route
+                path="/admissions/pgdm-triple-specialisation"
+                element={<PGDMTPS />}
+              />
               <Route path="/admissions/pgdm-bifs" element={<PGDMBIFS />} />
               <Route path="/admissions/pgdm-ba" element={<PGDMBA />} />
               <Route path="/programs/:id" element={<Programs />} />

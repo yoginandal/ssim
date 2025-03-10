@@ -122,10 +122,10 @@ export const navlinks = [
   {
     name: "Student's Life",
     dropdown: [
-      { name: "Activities", path: "/students-life/activities" },
-      { name: "Campus Life", path: "/students-life/campus" },
+      // { name: "Activities", path: "/students-life/activities" },
+      // { name: "Campus Life", path: "/students-life/campus" },
       {
-        name: "Events",
+        name: "Events & Activities",
         subDropdown: [
           { name: "News & Announcements", path: "/students-life/news" },
           {
