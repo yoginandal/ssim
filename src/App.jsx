@@ -30,6 +30,7 @@ import Research from "@/components/faculty&research/Research";
 import AlumniSection from "@/components/alumni/Alumni";
 import InternationRelations from "@/components/internation relations/InternationRelations";
 import StudentsAchievements from "@/components/studentslife/StudentsAchievements";
+import NewsEvents from "@/components/studentslife/NewsEvents";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -128,6 +129,10 @@ export default function App() {
               <Route
                 path="/students-life/achievements"
                 element={<StudentsAchievements />}
+              />
+              <Route
+                path="/students-life/news"
+                element={<NewsEvents />}
               />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
               <Route
