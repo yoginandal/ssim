@@ -87,7 +87,7 @@ export default function Navbar() {
                           {link.dropdown.map((dropdownLink) => (
                             <div
                               key={dropdownLink.name}
-                              className="relativ group"
+                              className="relative group"
                               onMouseEnter={(e) => handleSubDropdownPosition(e, dropdownLink.name)}
                             >
                               {dropdownLink.subDropdown ? (

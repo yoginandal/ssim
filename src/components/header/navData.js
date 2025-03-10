@@ -123,7 +123,6 @@ export const navlinks = [
     name: "Student's Life",
     dropdown: [
       { name: "Activities", path: "/students-life/activities" },
-      { name: "Campus", path: "/students-life/campus-overview" },
       { name: "Campus Life", path: "/students-life/campus" },
       {
         name: "Events",
