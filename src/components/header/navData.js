@@ -134,10 +134,6 @@ export const navlinks = [
           },
         ],
       },
-      {
-        name: "International Immersions",
-        path: "/students-life/international-immersions",
-      },
       { name: "Life at SSIM", path: "/students-life/life-at-ssim" },
     ],
   },
