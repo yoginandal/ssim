@@ -8,9 +8,9 @@ export const footerData = {
   },
 
   socialLinks: [
-    { name: "Facebook", icon: Facebook, url: "#" },
-    { name: "Instagram", icon: Instagram, url: "#" },
-    { name: "Twitter", icon: Twitter, url: "#" },
+    { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/SivaSivaniInstituteofManagementHyderabad/" },
+    { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/ssim_b_school/?hl=en" },
+    { name: "Twitter", icon: Twitter, url: "https://x.com/SSIMHyderabad" },
     { name: "LinkedIn", icon: Linkedin, url: "#" },
     { name: "YouTube", icon: Youtube, url: "#" },
   ],

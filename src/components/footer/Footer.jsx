@@ -11,21 +11,29 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import aicteapprovals from "@/assets/footer/SSIM-AICTE-EOA-1992-2023.pdf";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   const footerSections = [
     {
       label: "Useful Links",
       items: [
-        { name: "About Us", path: "/about-us" },
-        { name: "Rankings & Awards", path: "/rankings-awards" },
+        { name: "About Us", path: "/about/vision-mission" },
+        { name: "Rankings & Awards", path: "/about/accreditations-rankings" },
         { name: "Accreditations", path: "/accreditations" },
-        { name: "Events", path: "/events" },
+        { name: "Events", path: "/students-life/life-at-ssim" },
         { name: "Media", path: "/media" },
         { name: "Blog", path: "/blog" },
         { name: "Careers", path: "/careers" },
         { name: "AICTE Feedback", path: "/aicte-feedback" },
-        { name: "AICTE Approvals", path: "/aicte-approvals" },
+        { name: "AICTE Approvals", path: aicteapprovals },
       ],
     },
     {
@@ -48,10 +56,10 @@ export default function Footer() {
     {
       label: "S P Sampathys Siva Sivani Educational Society",
       items: [
-        { name: "Siva Sivani Institute of Management", path: "/ssim" },
-        { name: "Siva Sivani Degree College", path: "/degree-college" },
-        { name: "Siva Sivani Junior College", path: "/junior-college" },
-        { name: "Siva Sivani High School", path: "/high-school" },
+        { name: "Siva Sivani Institute of Management", path: "/" },
+        { name: "Siva Sivani Degree College", path: "https://ssdc.ac.in" },
+        { name: "Siva Sivani Junior College", path: "https://ssjc.ac.in" },
+        { name: "Siva Sivani High School", path: "https://ssjc.ac.in" },
       ],
     },
   ];
@@ -75,7 +83,11 @@ export default function Footer() {
           {/* Logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
-              <Link to="/" className="flex items-center gap-3 group">
+              <Link 
+                to="/" 
+                className="flex items-center gap-3 group"
+                onClick={scrollToTop}
+              >
                 <img
                   src={logo}
                   alt="SSIM Logo"
@@ -88,36 +100,43 @@ export default function Footer() {
                     icon: Facebook,
                     bgColor: "bg-blue-600",
                     label: "Facebook",
+                    href: "https://www.facebook.com/SivaSivaniInstituteofManagementHyderabad/",
                   },
                   {
                     icon: Instagram,
                     bgColor: "bg-pink-600",
                     label: "Instagram",
+                    href: "https://www.instagram.com/ssim_b_school/?hl=en",
                   },
                   {
                     icon: Twitter,
                     bgColor: "bg-sky-500",
                     label: "Twitter",
+                    href: "https://x.com/SSIMHyderabad",
                   },
                   {
                     icon: Linkedin,
                     bgColor: "bg-blue-700",
                     label: "LinkedIn",
+                    href: "https://www.linkedin.com/school/siva-sivani-institute-of-management/",
                   },
                   {
                     icon: Youtube,
                     bgColor: "bg-red-600",
                     label: "YouTube",
+                    href: "https://www.youtube.com/@sivasivaniinstituteofmanag3545",
                   },
                 ].map((social, index) => (
-                  <Button
-                    key={index}
-                    size="icon"
-                    className={`rounded-full transition-all hover:scale-110 text-white ${social.bgColor} hover:bg-${social.bgColor}/80`}
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </Button>
+                  <a href={social.href} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      key={index}
+                      size="icon"
+                      className={`rounded-full transition-all hover:scale-110 text-white ${social.bgColor} hover:bg-${social.bgColor}/80`}
+                      aria-label={social.label}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </Button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -125,10 +144,12 @@ export default function Footer() {
               <p className="text-sm text-black font-medium mb-3">
                 24/7 Women Helpline Number
               </p>
+              <a href="tel:+919133305062">
               <Button className="gap-2 bg-mainBlue rounded-full hover:bg-mainBlue/80 hover:text-primary-foreground transition-colors">
                 <Phone className="h-4 w-4" />
                 91333 05062
               </Button>
+              </a>
             </div>
           </div>
 
@@ -142,13 +163,24 @@ export default function Footer() {
                 <ul className="space-y-3 text-base">
                   {section.items.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.path}
-                        className="group inline-flex items-center gap-1 text-[#293794] hover:text-primary transition-colors duration-200"
-                      >
-                        {item.name}
-                        {/* <ExternalLink className="h-3 w-3 opacity-0 -translate-y-1 transition-all group-hover:opacity-100 group-hover:translate-y-0" /> */}
-                      </a>
+                      {item.path.startsWith('https:') || item.path === aicteapprovals ? (
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group inline-flex items-center gap-1 text-[#293794] hover:text-primary transition-colors duration-200"
+                        >
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link
+                          to={item.path}
+                          onClick={scrollToTop}
+                          className="group inline-flex items-center gap-1 text-[#293794] hover:text-primary transition-colors duration-200"
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -164,18 +196,26 @@ export default function Footer() {
             Copyright © SSIM {new Date().getFullYear()}
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
               className="hover:text-primary text-mainBlue transition-colors"
             >
               Privacy Policy
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/terms-of-service"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToTop();
+              }}
               className="hover:text-primary text-mainBlue transition-colors"
             >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

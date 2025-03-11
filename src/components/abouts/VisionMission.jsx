@@ -1,4 +1,8 @@
 import { Eye, MapPin, Target } from "lucide-react";
+import vm1 from "@/assets/about/vm1.webp";
+import vm2 from "@/assets/about/vm2.webp";
+import vm3 from "@/assets/about/vm3.webp";
+import vm4 from "@/assets/about/vm4.webp";
 
 const missionItems = [
   {
@@ -23,19 +27,19 @@ const missionItems = [
 
 const images = [
   {
-    url: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80",
+    url: vm1,
     position: "top-0 left-1/2 -translate-x-1/2 -translate-y-4",
   },
   {
-    url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80",
+    url: vm2,
     position: "top-1/2 left-0 -translate-y-1/2 -translate-x-4",
   },
   {
-    url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80",
+    url: vm3,
     position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-4",
   },
   {
-    url: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80",
+    url: vm4,
     position: "top-1/2 right-0 -translate-y-1/2 translate-x-4",
   },
 ];
