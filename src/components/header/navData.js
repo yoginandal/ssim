@@ -127,7 +127,7 @@ export const navlinks = [
       {
         name: "Events & Activities",
         subDropdown: [
-          { name: "News & Announcements", path: "/students-life/news" },
+          { name: "News & Announcements", path: "/students-life/news-announcements" },
           {
             name: "Student's Achievements",
             path: "/students-life/achievements",

@@ -32,7 +32,7 @@ export default function Footer() {
         { name: "Media", path: "/media" },
         { name: "Blog", path: "/blog" },
         { name: "Careers", path: "/careers" },
-        { name: "AICTE Feedback", path: "/aicte-feedback" },
+        { name: "AICTE Feedback", path: "https://www.aicte-india.org/feedback/" },
         { name: "AICTE Approvals", path: aicteapprovals },
       ],
     },
