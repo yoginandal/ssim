@@ -1,61 +1,64 @@
-import React, { useState, useEffect, useCallback } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import React, { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import WordPullUp from "./ui/word-pull-up";
 
 const images = [
   "https://pagedone.io/asset/uploads/1713943683.png",
   "https://pagedone.io/asset/uploads/1713943709.png",
   "https://pagedone.io/asset/uploads/1713943720.png",
   "https://pagedone.io/asset/uploads/1713943731.png",
-]
+];
 
-const AUTO_SLIDE_INTERVAL = 1000 // 5 seconds
+const AUTO_SLIDE_INTERVAL = 1000; // 5 seconds
 
 export default function Gallery() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [lightboxImage, setLightboxImage] = useState("")
-  const [isAutoSliding, setIsAutoSliding] = useState(true)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState("");
+  const [isAutoSliding, setIsAutoSliding] = useState(true);
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }, [])
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, []);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }, [])
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  }, []);
 
   const openLightbox = (image) => {
-    setLightboxImage(image)
-    setLightboxOpen(true)
-    setIsAutoSliding(false)
-  }
+    setLightboxImage(image);
+    setLightboxOpen(true);
+    setIsAutoSliding(false);
+  };
 
   useEffect(() => {
-    let intervalId = null
+    let intervalId = null;
 
     if (isAutoSliding) {
-      intervalId = setInterval(nextSlide, AUTO_SLIDE_INTERVAL)
+      intervalId = setInterval(nextSlide, AUTO_SLIDE_INTERVAL);
     }
 
     return () => {
-      if (intervalId) clearInterval(intervalId)
-    }
-  }, [isAutoSliding, nextSlide])
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, [isAutoSliding, nextSlide]);
 
   const handleThumbnailClick = (index) => {
-    setCurrentIndex(index)
-    setIsAutoSliding(false)
-  }
+    setCurrentIndex(index);
+    setIsAutoSliding(false);
+  };
 
-  const handleMouseEnter = () => setIsAutoSliding(false)
-  const handleMouseLeave = () => setIsAutoSliding(true)
+  const handleMouseEnter = () => setIsAutoSliding(false);
+  const handleMouseLeave = () => setIsAutoSliding(true);
 
   const variants = {
     enter: (direction) => {
       return {
         x: direction > 0 ? 1000 : -1000,
         opacity: 0,
-      }
+      };
     },
     center: {
       zIndex: 1,
@@ -67,22 +70,23 @@ export default function Gallery() {
         zIndex: 0,
         x: direction < 0 ? 1000 : -1000,
         opacity: 0,
-      }
+      };
     },
-  }
+  };
 
-  const swipeConfidenceThreshold = 10000
+  const swipeConfidenceThreshold = 10000;
   const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity
-  }
+    return Math.abs(offset) * velocity;
+  };
 
   return (
     <section className="pt-16 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
         <div className="mb-16">
-          <h2 className="w-full text-center text-gray-900 text-4xl font-bold font-manrope leading-normal pb-2.5">
-            Our Gallery
-          </h2>
+          <WordPullUp
+            words="Upcoming Events"
+            className="text-4xl md:text-5xl text-left sm:text-center font-bold tracking-tight text-mainBlue mt-8 mb-4 md:mb-6"
+          />
           <p className="w-full text-center text-gray-600 text-lg font-normal leading-8">
             Explore the essence of beauty in our gallery's intimate space.
           </p>
@@ -115,12 +119,12 @@ export default function Gallery() {
                     dragConstraints={{ left: 0, right: 0 }}
                     dragElastic={1}
                     onDragEnd={(e, { offset, velocity }) => {
-                      const swipe = swipePower(offset.x, velocity.x)
+                      const swipe = swipePower(offset.x, velocity.x);
 
                       if (swipe < -swipeConfidenceThreshold) {
-                        nextSlide()
+                        nextSlide();
                       } else if (swipe > swipeConfidenceThreshold) {
-                        prevSlide()
+                        prevSlide();
                       }
                     }}
                   />
@@ -171,5 +175,5 @@ export default function Gallery() {
         />
       )} */}
     </section>
-  )
+  );
 }

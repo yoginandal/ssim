@@ -31,6 +31,7 @@ import AlumniSection from "@/components/alumni/Alumni";
 import InternationRelations from "@/components/internation relations/InternationRelations";
 import StudentsAchievements from "@/components/studentslife/StudentsAchievements";
 import NewsEvents from "@/components/studentslife/NewsEvents";
+import Accreditations from "@/components/footer/Accreditations";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -144,6 +145,7 @@ export default function App() {
               <Route path="/programs/:id" element={<Programs />} />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}
+              <Route path="/accreditations" element={<Accreditations />} />
             </Routes>
             <Footer />
             {isVisible && (

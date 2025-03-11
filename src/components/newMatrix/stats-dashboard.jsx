@@ -26,7 +26,7 @@ export default function StatsDashboard() {
         </div>
 
         {/* Package Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 bg-gradient-to-br from-blue-200 via-blue-100 to-blue-200 rounded-lg shadow-lg">
+        <div className="grid grid-cols-2 lg:grid-cols-5 bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 rounded-lg shadow-lg">
           <PackageMetric lpa="10.70" companies="10+" />
           <PackageMetric lpa="9.25" companies="20+" />
           <PackageMetric lpa="7.83" companies="50+" />

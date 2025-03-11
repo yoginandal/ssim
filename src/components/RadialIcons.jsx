@@ -318,14 +318,14 @@ const RadialIcons = () => {
             <Button
               size="icon"
               onClick={handlePrevious}
-              className="rounded-full bg-red-600"
+              className="rounded-full bg-red-600 hover:bg-red-600/80"
             >
               <ArrowLeft className="h-6 w-6" />
             </Button>
             <Button
               size="icon"
               onClick={handleNext}
-              className="rounded-full bg-red-600"
+              className="rounded-full bg-red-600 hover:bg-red-600/80"
             >
               <ArrowRight className="h-6 w-6" />
             </Button>

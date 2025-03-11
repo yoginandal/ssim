@@ -53,7 +53,7 @@ export default function HomePage() {
           <LatestBlogsAndEvents key="latest-blogs-and-events" />,
           <RadialIcons key="testimonial" />,
           <Events key="events" />,
-          <UpcomingEvents key="upcoming-events" />,
+          // <UpcomingEvents key="upcoming-events" />,
           <LiveProjects key="live-projects" />,
         ].map((Section, index) => (
           <SectionWrapper key={index}>{Section}</SectionWrapper>
