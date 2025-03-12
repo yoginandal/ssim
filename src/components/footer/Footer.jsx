@@ -29,7 +29,7 @@ export default function Footer() {
         { name: "Rankings & Awards", path: "/about/accreditations-rankings" },
         { name: "Accreditations", path: "/accreditations" },
         { name: "Events", path: "/students-life/life-at-ssim" },
-        { name: "Media", path: "/media" },
+        { name: "Media", path: "/students-life/news-announcements" },
         { name: "Blog", path: "/blog" },
         { name: "Careers", path: "/careers" },
         { name: "AICTE Feedback", path: "https://www.aicte-india.org/feedback/" },

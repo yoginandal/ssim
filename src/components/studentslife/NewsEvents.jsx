@@ -9,7 +9,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const AnnouncementCard = ({ image, alt, date, title, description }) => (
   <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
@@ -48,7 +48,7 @@ const AnnouncementCard = ({ image, alt, date, title, description }) => (
 );
 
 const NewsEvents = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
 
   const announcements = [
     {
@@ -117,6 +117,18 @@ const NewsEvents = () => {
     // Add more images as needed
   ];
 
+  const handlePrevious = () => {
+    setSelectedImageIndex((prev) => 
+      prev === 0 ? newsImages.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prev) => 
+      prev === newsImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
   return (
     <div className="bg-white py-10 lg:py-20">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -148,12 +160,12 @@ const NewsEvents = () => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="news">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 sm:mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-4 mt-10 sm:mt-16">
               {newsImages.map((image, index) => (
                 <div
                   key={index}
                   className="border border-gray-300 rounded-lg cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
+                  onClick={() => setSelectedImageIndex(index)}
                 >
                   <img
                     className="h-auto max-w-full rounded-lg aspect-[4/3] object-cover"
@@ -175,17 +187,45 @@ const NewsEvents = () => {
       </div>
 
       <Dialog
-        open={!!selectedImage}
-        onOpenChange={() => setSelectedImage(null)}
+        open={selectedImageIndex !== null}
+        onOpenChange={() => setSelectedImageIndex(null)}
       >
         <DialogContent className="max-w-screen h-screen p-0 bg-transparent border-0">
-          <div className="flex justify-center items-center overflow-hidden rounded-xl">
+          <div className="flex justify-center items-center overflow-hidden rounded-xl relative">
             <img
-              src={selectedImage?.src}
-              alt={selectedImage?.alt}
+              src={newsImages[selectedImageIndex]?.src}
+              alt={newsImages[selectedImageIndex]?.alt}
               className="w-full h-[80vh] object-contain rounded-xl"
             />
+            
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-medium">
+              {selectedImageIndex !== null ? `${selectedImageIndex + 1} / ${newsImages.length}` : ''}
+            </div>
+
+            {/* Navigation Buttons */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-red-600/10 hover:bg-red-600/30 border-none text-white"
+              onClick={handlePrevious}
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-red-600/10 hover:bg-red-600/30 border-none text-white"
+              onClick={handleNext}
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </Button>
           </div>
+
+          {/* Close Button */}
           <DialogClose asChild>
             <Button
               variant="ghost"
