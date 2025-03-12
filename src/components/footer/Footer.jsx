@@ -17,7 +17,7 @@ export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -32,7 +32,10 @@ export default function Footer() {
         { name: "Media", path: "/students-life/news-announcements" },
         { name: "Blog", path: "/blog" },
         { name: "Careers", path: "/careers" },
-        { name: "AICTE Feedback", path: "https://www.aicte-india.org/feedback/" },
+        {
+          name: "AICTE Feedback",
+          path: "https://www.aicte-india.org/feedback/",
+        },
         { name: "AICTE Approvals", path: aicteapprovals },
       ],
     },
@@ -59,7 +62,10 @@ export default function Footer() {
         { name: "Siva Sivani Institute of Management", path: "/" },
         { name: "Siva Sivani Degree College", path: "https://ssdc.ac.in" },
         { name: "Siva Sivani Junior College", path: "https://ssjc.ac.in" },
-        { name: "Siva Sivani High School", path: "https://ssjc.ac.in" },
+        {
+          name: "Siva Sivani High School",
+          path: "https://www.spsschool.ac.in",
+        },
       ],
     },
   ];
@@ -83,8 +89,8 @@ export default function Footer() {
           {/* Logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="flex items-center gap-3 group"
                 onClick={scrollToTop}
               >
@@ -127,7 +133,11 @@ export default function Footer() {
                     href: "https://www.youtube.com/@sivasivaniinstituteofmanag3545",
                   },
                 ].map((social, index) => (
-                  <a href={social.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button
                       key={index}
                       size="icon"
@@ -145,10 +155,10 @@ export default function Footer() {
                 24/7 Women Helpline Number
               </p>
               <a href="tel:+919133305062">
-              <Button className="gap-2 bg-mainBlue rounded-full hover:bg-mainBlue/80 hover:text-primary-foreground transition-colors">
-                <Phone className="h-4 w-4" />
-                91333 05062
-              </Button>
+                <Button className="gap-2 bg-mainBlue rounded-full hover:bg-mainBlue/80 hover:text-primary-foreground transition-colors">
+                  <Phone className="h-4 w-4" />
+                  91333 05062
+                </Button>
               </a>
             </div>
           </div>
@@ -163,7 +173,8 @@ export default function Footer() {
                 <ul className="space-y-3 text-base">
                   {section.items.map((item) => (
                     <li key={item.name}>
-                      {item.path.startsWith('https:') || item.path === aicteapprovals ? (
+                      {item.path.startsWith("https:") ||
+                      item.path === aicteapprovals ? (
                         <a
                           href={item.path}
                           target="_blank"

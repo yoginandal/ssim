@@ -81,14 +81,14 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <Card className="border-none shadow-2xl overflow-hidden">
-          <CardHeader className="bg-primary text-primary-foreground p-6 md:p-10">
+          <CardHeader className="bg-gradient-to-r from-blue-900 via-blue-400 to-blue-900 text-primary-foreground p-6 md:p-10">
             <CardTitle className="text-3xl md:text-4xl font-extrabold">
               Contact Us
             </CardTitle>
-            <CardDescription className="text-lg md:text-xl mt-2">
+            <CardDescription className="text-lg text-gray-200 md:text-xl mt-2">
               We&apos;d love to hear from you!
             </CardDescription>
           </CardHeader>
@@ -98,7 +98,7 @@ const ContactUs = () => {
               <div className="space-y-6">
                 <Card>
                   <CardContent className="flex items-center space-x-4 p-6">
-                    <MapPin className="h-6 w-6 text-primary" />
+                    <MapPin className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
                       <h3 className="font-semibold">Our Location</h3>
                       <p className="text-sm text-muted-foreground">
@@ -110,7 +110,7 @@ const ContactUs = () => {
                 </Card>
                 <Card>
                   <CardContent className="flex items-center space-x-4 p-6">
-                    <Phone className="h-6 w-6 text-primary" />
+                    <Phone className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
                       <h3 className="font-semibold">Phone Number</h3>
                       <p className="text-sm text-muted-foreground">
@@ -121,7 +121,7 @@ const ContactUs = () => {
                 </Card>
                 <Card>
                   <CardContent className="flex items-center space-x-4 p-6">
-                    <Mail className="h-6 w-6 text-primary" />
+                    <Mail className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
                       <h3 className="font-semibold">Email Address</h3>
                       <p className="text-sm text-muted-foreground">
@@ -134,7 +134,9 @@ const ContactUs = () => {
               {/* Contact Form */}
               <Card className="lg:col-span-2">
                 <CardHeader>
-                  <CardTitle>Send us a message</CardTitle>
+                  <CardTitle className="text-red-600">
+                    Send us a message
+                  </CardTitle>
                   <CardDescription>
                     Fill out the form below and we&apos;ll get back to you as
                     soon as possible.
@@ -200,7 +202,7 @@ const ContactUs = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-                    <Button className="w-full">Send Message</Button>
+                    <Button className="w-full bg-mainBlue">Send Message</Button>
                   </form>
                 </CardContent>
               </Card>
