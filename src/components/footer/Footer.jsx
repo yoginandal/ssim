@@ -1,25 +1,20 @@
-import logo from "@/assets/ssimlogo.webp";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Linkedin,
-  Youtube,
-  Phone,
-  ExternalLink,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Link } from "react-router-dom";
-import aicteapprovals from "@/assets/footer/SSIM-AICTE-EOA-1992-2023.pdf";
+"use client"
+
+import logo from "@/assets/ssimlogo.webp"
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Phone } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { Link } from "react-router-dom"
+import aicteapprovals from "@/assets/footer/SSIM-AICTE-EOA-1992-2023.pdf"
+import { Input } from "@/components/ui/input"
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   const footerSections = [
     {
@@ -68,7 +63,7 @@ export default function Footer() {
         },
       ],
     },
-  ];
+  ]
 
   return (
     <footer className="relative bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 pt-16 pb-10 px-4 md:px-6 lg:px-8 overflow-hidden">
@@ -77,8 +72,7 @@ export default function Footer() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, black 1px, transparent 0)",
+            backgroundImage: "radial-gradient(circle at 1px 1px, black 1px, transparent 0)",
             backgroundSize: "40px 40px",
           }}
         />
@@ -89,13 +83,9 @@ export default function Footer() {
           {/* Logo and Social Section */}
           <div className="lg:col-span-3 space-y-8">
             <div className="space-y-6">
-              <Link
-                to="/"
-                className="flex items-center gap-3 group"
-                onClick={scrollToTop}
-              >
+              <Link to="/" className="flex items-center gap-3 group" onClick={scrollToTop}>
                 <img
-                  src={logo}
+                  src={logo || "/placeholder.svg"}
                   alt="SSIM Logo"
                   className="h-14 cursor-pointer w-auto transition-transform group-hover:scale-105"
                 />
@@ -133,11 +123,7 @@ export default function Footer() {
                     href: "https://www.youtube.com/@sivasivaniinstituteofmanag3545",
                   },
                 ].map((social, index) => (
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={social.href} target="_blank" rel="noopener noreferrer">
                     <Button
                       key={index}
                       size="icon"
@@ -151,9 +137,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="space-y-3">
-              <p className="text-sm text-black font-medium mb-3">
-                24/7 Women Helpline Number
-              </p>
+              <p className="text-sm text-black font-medium mb-3">24/7 Women Helpline Number</p>
               <a href="tel:+919133305062">
                 <Button className="gap-2 bg-mainBlue rounded-full hover:bg-mainBlue/80 hover:text-primary-foreground transition-colors">
                   <Phone className="h-4 w-4" />
@@ -167,14 +151,11 @@ export default function Footer() {
           <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-4 gap-8">
             {footerSections.map((section) => (
               <div key={section.label} className="space-y-6">
-                <h3 className="text-lg font-semibold text-mainBlue tracking-wide">
-                  {section.label}
-                </h3>
+                <h3 className="text-lg font-semibold text-mainBlue tracking-wide">{section.label}</h3>
                 <ul className="space-y-3 text-base">
                   {section.items.map((item) => (
                     <li key={item.name}>
-                      {item.path.startsWith("https:") ||
-                      item.path === aicteapprovals ? (
+                      {item.path.startsWith("https:") || item.path === aicteapprovals ? (
                         <a
                           href={item.path}
                           target="_blank"
@@ -200,18 +181,45 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Newsletter Section */}
+        <div className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-xl border border-blue-100 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="lg:col-span-8">
+              <h3 className="text-xl font-semibold text-mainBlue mb-2">Stay Updated with SSIM</h3>
+              <p className="text-[#293794]/80">
+              Stay updated with our latest news and events
+              </p>
+            </div>
+            <div className="lg:col-span-4">
+              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col sm:flex-row gap-3">
+                <Input
+                  type="email"
+                  placeholder="Your email address"
+                  className="flex-1 border-blue-200 focus:border-mainBlue focus:ring-mainBlue"
+                  required
+                />
+                <Button type="submit" className="bg-mainBlue hover:bg-mainBlue/90 text-white font-medium">
+                  Subscribe
+                </Button>
+              </form>
+              {/* <p className="text-xs text-[#293794]/70 mt-2">
+                By subscribing, you agree to our privacy policy. We respect your privacy and will never share your
+                information.
+              </p> */}
+            </div>
+          </div>
+        </div>
+
         <Separator className="my-12 bg-[#293794]" />
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-base text-muted-foreground">
-          <p className="text-mainBlue">
-            Copyright © SSIM {new Date().getFullYear()}
-          </p>
+          <p className="text-mainBlue">Copyright © SSIM {new Date().getFullYear()}</p>
           <div className="flex gap-6">
             <Link
               to="/privacy-policy"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToTop();
+                e.preventDefault()
+                scrollToTop()
               }}
               className="hover:text-primary text-mainBlue transition-colors"
             >
@@ -220,8 +228,8 @@ export default function Footer() {
             <Link
               to="/terms-of-service"
               onClick={(e) => {
-                e.preventDefault();
-                scrollToTop();
+                e.preventDefault()
+                scrollToTop()
               }}
               className="hover:text-primary text-mainBlue transition-colors"
             >
@@ -231,8 +239,10 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
+
+
 
 // import { Link } from "react-router-dom";
 // import { Linkedin, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
