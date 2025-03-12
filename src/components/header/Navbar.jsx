@@ -53,7 +53,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="bg-white border-b border-gray-200 lg:bg-blue-900 px-4 py-4">
+    <div className="bg-white border-b sm:border-none border-gray-200 lg:bg-blue-900 px-4 py-4">
       <div className="container mx-auto">
         <nav>
           <div className="flex justify-between items-center lg:hidden">

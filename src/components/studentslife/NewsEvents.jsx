@@ -1,184 +1,203 @@
-import React from "react";
+import React, { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Button } from "../ui/button";
+import { X } from "lucide-react";
+
+const AnnouncementCard = ({ image, alt, date, title, description }) => (
+  <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
+    <a
+      href="#"
+      className="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
+    >
+      <img
+        src={image}
+        loading="lazy"
+        alt={alt}
+        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+      />
+    </a>
+    <div className="flex flex-col gap-2">
+      <span className="text-sm text-gray-400">{date}</span>
+      <h2 className="text-xl font-bold text-gray-800">
+        <a
+          href="#"
+          className="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+        >
+          {title}
+        </a>
+      </h2>
+      <p className="text-gray-500">{description}</p>
+      <div>
+        <a
+          href="#"
+          className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
+        >
+          Read more
+        </a>
+      </div>
+    </div>
+  </div>
+);
 
 const NewsEvents = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const announcements = [
+    {
+      image:
+        "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600",
+      alt: "Photo by Minh Pham",
+      date: "July 19, 2021",
+      title: "New trends in Tech",
+      description:
+        "This is a section of some simple filler text, also known as placeholder text.",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600",
+      alt: "Photo by Lorenzo Herrera",
+      date: "April 07, 2021",
+      title: "Working with legacy stacks",
+      description:
+        "This is a section of some simple filler text, also known as placeholder text.",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600",
+      alt: "Photo by Magicle",
+      date: "March 15, 2021",
+      title: "10 best smartphones for devs",
+      description:
+        "This is a section of some simple filler text, also known as placeholder text.",
+    },
+    {
+      image:
+        "https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600",
+      alt: "Photo by Martin Sanchez",
+      date: "January 27, 2021",
+      title: "8 High performance Notebooks",
+      description:
+        "This is a section of some simple filler text, also known as placeholder text.",
+    },
+  ];
+
+  const newsImages = [
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/6354a728cd00f.jpg",
+      alt: "Description of image 1",
+    },
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/2383b5c1_09-crop-cbaa80.jpg",
+      alt: "Description of image 2",
+    },
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/466f36a9_03-crop-80dd5c.jpg",
+      alt: "Description of image 3",
+    },
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/5aec74b8-5744-4ca1-b334-c8ce4fbf4611.jpg",
+      alt: "Description of image 4",
+    },
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/4dd27887_20-crop-9f20f2.jpg",
+      alt: "Description of image 5",
+    },
+    {
+      src: "https://ssim.ac.in/wp-content/uploads/4d99ea3f_06-crop-b02560.jpg",
+      alt: "Description of image 6",
+    },
+    // Add more images as needed
+  ];
+
   return (
-    <div class="bg-white py-10 lg:py-20">
-      <div class="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div class="mb-10 md:mb-16">
-          <h2 class="mb-4 text-center font-bold text-gray-800 md:mb-6 text-3xl sm:text-5xl">
+    <div className="bg-white py-10 lg:py-20">
+      <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+        <div className="mb-10 md:mb-14">
+          <h2 className="mb-4 text-center font-bold text-gray-800 md:mb-6 text-3xl sm:text-5xl">
             News & Announcements
           </h2>
 
-          <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+          <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
             This is a section of some simple filler text, also known as
             placeholder text. It shares some characteristics of a real written
             text but is random or otherwise generated.
           </p>
         </div>
 
-        <div class="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16">
-          <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
+        <Tabs defaultValue="news" className="w-full">
+          <TabsList className="grid w-full h-full grid-cols-2 text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
+            <TabsTrigger
+              value="news"
+              className="text-lg font-semibold data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
-              <img
-                src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Minh Pham"
-                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-gray-400">July 19, 2021</span>
-
-              <h2 class="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  New trends in Tech
-                </a>
-              </h2>
-
-              <p class="text-gray-500">
-                This is a section of some simple filler text, also known as
-                placeholder text.
-              </p>
-
-              <div>
-                <a
-                  href="#"
-                  class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
+              News
+            </TabsTrigger>
+            <TabsTrigger
+              value="announcements"
+              className="text-lg font-semibold data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
-              <img
-                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Lorenzo Herrera"
-                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-gray-400">April 07, 2021</span>
-
-              <h2 class="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+              Announcements
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="news">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10 sm:mt-16">
+              {newsImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded-lg cursor-pointer"
+                  onClick={() => setSelectedImage(image)}
                 >
-                  Working with legacy stacks
-                </a>
-              </h2>
-
-              <p class="text-gray-500">
-                This is a section of some simple filler text, also known as
-                placeholder text.
-              </p>
-
-              <div>
-                <a
-                  href="#"
-                  class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  Read more
-                </a>
-              </div>
+                  <img
+                    className="h-auto max-w-full rounded-lg aspect-[4/3] object-cover"
+                    src={image.src}
+                    alt={image.alt}
+                  />
+                </div>
+              ))}
             </div>
-          </div>
-          <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1542759564-7ccbb6ac450a?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Magicle"
-                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-gray-400">March 15, 2021</span>
-
-              <h2 class="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  10 best smartphones for devs
-                </a>
-              </h2>
-
-              <p class="text-gray-500">
-                This is a section of some simple filler text, also known as
-                placeholder text.
-              </p>
-
-              <div>
-                <a
-                  href="#"
-                  class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  Read more
-                </a>
-              </div>
+          </TabsContent>
+          <TabsContent value="announcements">
+            <div className="grid gap-8 sm:grid-cols-2 sm:gap-12 lg:grid-cols-2 xl:grid-cols-2 xl:gap-16 mt-10 sm:mt-16">
+              {announcements.map((item, index) => (
+                <AnnouncementCard key={index} {...item} />
+              ))}
             </div>
-          </div>
-          <div class="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
-            <a
-              href="#"
-              class="group relative block h-56 w-full shrink-0 self-start overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-24 md:w-24 lg:h-40 lg:w-40"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?auto=format&q=75&fit=crop&w=600"
-                loading="lazy"
-                alt="Photo by Martin Sanchez"
-                class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-              />
-            </a>
-
-            <div class="flex flex-col gap-2">
-              <span class="text-sm text-gray-400">January 27, 2021</span>
-
-              <h2 class="text-xl font-bold text-gray-800">
-                <a
-                  href="#"
-                  class="transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-                >
-                  8 High performance Notebooks
-                </a>
-              </h2>
-
-              <p class="text-gray-500">
-                This is a section of some simple filler text, also known as
-                placeholder text.
-              </p>
-
-              <div>
-                <a
-                  href="#"
-                  class="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
-                >
-                  Read more
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+          </TabsContent>
+        </Tabs>
       </div>
+
+      <Dialog
+        open={!!selectedImage}
+        onOpenChange={() => setSelectedImage(null)}
+      >
+        <DialogContent className="max-w-screen h-screen p-0 bg-transparent border-0">
+          <div className="flex justify-center items-center overflow-hidden rounded-xl">
+            <img
+              src={selectedImage?.src}
+              alt={selectedImage?.alt}
+              className="w-full h-[80vh] object-contain rounded-xl"
+            />
+          </div>
+          <DialogClose asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-1 top-1 rounded-full bg-white/10 hover:bg-white/30 border-none text-white z-10"
+              aria-label="Close dialog"
+            >
+              <X className="h-5 w-5" />
+            </Button>
+          </DialogClose>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
