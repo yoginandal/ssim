@@ -135,6 +135,7 @@ export const navlinks = [
         ],
       },
       { name: "Life at SSIM", path: "/students-life/life-at-ssim" },
+      { name: "Students Feedback", path: "/students-life/students-feedback" },
     ],
   },
   { name: "Contact Us", path: "/contact-us" }, // Added Contact Us link

@@ -10,11 +10,12 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Quote, ChevronRight, ExternalLink } from "lucide-react";
+import { Quote, ChevronRight } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import sampathy from "@/assets/about/Sampathy.png";
-import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+import ramana from "@/assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 
+// Leaders data (unchanged)
 const leaders = [
   {
     role: "Founder",
@@ -69,7 +70,7 @@ const leaders = [
   {
     role: "Director, SSIM.",
     name: "PROF. S.V. RAMANA RAO",
-    image: Ramana,
+    image: ramana,
     quote:
       "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
     quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",
@@ -98,7 +99,7 @@ function LeaderCard({ leader }) {
           <div className="grid gap-8 md:grid-cols-[250px_1fr] items-start">
             <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
               <img
-                src={leader.image}
+                src={leader.image || "/placeholder.svg"}
                 alt={`${leader.role} - ${leader.name}`}
                 className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
@@ -147,7 +148,7 @@ function LeaderCard({ leader }) {
         </CardContent>
       </Card>
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-2xl h-[80vh]">
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-hidden">
           <DialogHeader className="pb-4">
             <DialogTitle>
               {leader.name} - {leader.role}
@@ -156,7 +157,7 @@ function LeaderCard({ leader }) {
               Learn more about our college leadership
             </DialogDescription>
           </DialogHeader>
-          <div className="space-y-4">
+          <div className="flex flex-col space-y-4 h-[calc(80vh-120px)]">
             {leader.quote && (
               <div className="relative pl-6 border-l-4 border-primary/20">
                 <Quote className="absolute -left-[17px] -top-1 w-6 h-6 text-primary/40" />
@@ -168,15 +169,14 @@ function LeaderCard({ leader }) {
                 )}
               </div>
             )}
-            <ScrollArea className="h-[calc(80vh-220px)] pr-4">
-              {leader.content.map((paragraph, index) => (
-                <p
-                  key={index}
-                  className="text-base leading-relaxed mb-4 last:mb-0"
-                >
-                  {paragraph}
-                </p>
-              ))}
+            <ScrollArea className="flex-1 overflow-y-auto pr-4">
+              <div className="space-y-4">
+                {leader.content.map((paragraph, index) => (
+                  <p key={index} className="text-base leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </ScrollArea>
           </div>
         </DialogContent>

@@ -34,6 +34,7 @@ import NewsEvents from "@/components/studentslife/NewsEvents";
 import Accreditations from "@/components/footer/Accreditations";
 import Blog from "@/components/blog/blog";
 import Careers from "@/components/footer/Careers";
+import StudentsFeedback from "@/components/studentslife/StudentsFeedback";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -136,6 +137,10 @@ export default function App() {
               <Route
                 path="/students-life/news-announcements"
                 element={<NewsEvents />}
+              />
+              <Route
+                path="/students-life/students-feedback"
+                element={<StudentsFeedback />}
               />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
               <Route
