@@ -48,7 +48,7 @@ const StudentsAchievements = () => {
   };
 
   return (
-    <section className="relative min-h-screen py-10 sm:py-20">
+    <section className="relative py-10 sm:py-20">
       <div className="container max-w-7xl mx-auto grid gap-14 relative">
         <div className="col-span-1">
           <div className="events grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -63,7 +63,7 @@ const StudentsAchievements = () => {
                   className="w-full h-auto aspect-video object-cover scale-110"
                 />
                 <CardContent className="p-4 mt-4 space-y-3">
-                  <h3 className="text-2xl font-bold line-clamp-1">
+                  <h3 className="text-2xl font-bold line-clamp-2">
                     {event.title}
                   </h3>
                   {/* <p className="text-gray-500 text-xs">{event.date}</p>
@@ -92,7 +92,7 @@ const StudentsAchievements = () => {
         </div>
       </div>
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen} modal={true}>
-        <DialogContent className="w-[95%] max-w-[600px] rounded-lg hide-scrollbar overflow-y-auto max-h-[90vh]">
+        <DialogContent className="w-[95%] max-w-3xl rounded-lg hide-scrollbar overflow-y-auto max-h-[90vh]">
           {selectedEvent && (
             <>
               <DialogHeader className="px-1">
