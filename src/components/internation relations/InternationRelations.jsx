@@ -283,7 +283,7 @@ Human Resources`,
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="max-w-5xl mx-auto"
+              className="max-w-[1100px] mx-auto"
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 overflow-hidden">
                 <div className="flex flex-col md:flex-row gap-8">
