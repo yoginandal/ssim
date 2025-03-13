@@ -62,141 +62,41 @@ const scrollbarStyles = `
 `;
 
 export default function TestimonialSection() {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(0);
   const constraintsRef = useRef(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const testimonials = [
     {
       id: 1,
-      name: "Emmily Patel",
+      name: "Damandeep Johar",
       experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations. Her research on cross-border cooperation has been recognized in multiple academic journals. Emily has spent the last five years working on developing frameworks for sustainable international development, with a focus on education and healthcare initiatives in developing nations. She has participated in numerous field studies across Southeast Asia and Sub-Saharan Africa, documenting the impact of international aid programs and suggesting improvements based on local feedback and cultural contexts. Her approach combines rigorous academic analysis with practical, on-the-ground insights, making her work particularly valuable for policy makers and international organizations seeking to maximize the effectiveness of their programs.",
-      course: "International Relations",
-    },
-    {
-      id: 2,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 3,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 4,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 5,
-      name: "Zara Mbeki",
-      experience: "6 Years",
       image:
-        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
-      area: "Cape Town, South Africa",
-      phone: "+27 82 123 4567",
-      email: "zara.mbeki@example.com",
-      biography:
-        "Focused on African Union diplomacy and regional development. Leading research on sustainable economic partnerships between African nations. Her work has been instrumental in developing new frameworks for cross-continental cooperation, with a particular emphasis on trade agreements that prioritize environmental sustainability and social equity. Zara has presented her findings at numerous international conferences and has been invited to consult with policy makers across the African continent. Her approach combines traditional diplomatic principles with innovative economic models, creating pathways for development that respect both cultural heritage and future sustainability. Through her research and advocacy, she has helped to establish several pilot programs that demonstrate the viability of her proposed frameworks, providing tangible evidence of their potential impact on regional economies and communities. Focused on African Union diplomacy and regional development. Leading research on sustainable economic partnerships between African nations. Her work has been instrumental in developing new frameworks for cross-continental cooperation, with a particular emphasis on trade agreements that prioritize environmental sustainability and social equity. Zara has presented her findings at numerous international conferences and has been invited to consult with policy makers across the African continent. Her approach combines traditional diplomatic principles with innovative economic models, creating pathways for development that respect both cultural heritage and future sustainability. Through her research and advocacy, she has helped to establish several pilot programs that demonstrate the viability of her proposed frameworks, providing tangible evidence of their potential impact on regional economies and communities.",
-      course: "International Relations",
-    },
-    {
-      id: 1,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 2,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 3,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 4,
-      name: "Emmily Patel",
-      experience: "12 Years",
-      image: "/placeholder.svg?height=300&width=300",
-      area: "New York, USA",
-      phone: "+1 (555) 123-4567",
-      email: "emily.patel@example.com",
-      biography:
-        "A passionate student with a keen interest in international relations and global affairs. Active participant in Model UN and various diplomatic simulations.",
-      course: "International Relations",
-    },
-    {
-      id: 5,
-      name: "Zara Mbeki",
-      experience: "6 Years",
-      image:
-        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80",
-      area: "Cape Town, South Africa",
-      phone: "+27 82 123 4567",
-      email: "zara.mbeki@example.com",
-      biography:
-        "Focused on African Union diplomacy and regional development. Leading research on sustainable economic partnerships between African nations.",
-      course: "International Relations",
+        "https://ssim.ac.in/wp-content/uploads/2022/09/Daman-Johar-1-e1670679117895.jpg",
+      area: "International Relations",
+      phone: "+91-9030397737",
+      email: "damanjohar@ssim.ac.in",
+      biography: `She has completed her post graduate diploma in business administration (PGDBA) from Siva Sivani Institute of Management, with specialization in HR and Marketing. She comes with over 14 years of experience, both in industry and academics. She has completed a course in Human Resources Management from XLRI, Jamshedpur and SHRM, India. 
+
+She is currently pursuing her Ph.D. Ms Daman is also an established trainer and facilitator with expertise in Communication skills, Soft skills and Behavioral skills. She works across industries and educational institutions running short and long term training workshops and programs. She is passionate about transforming young minds and making them industry ready through her training skills. In her capacity as Chairperson Admissions and Promotions, she aims to recruit students from all across India, to have a culturally diverse pool of students.
+
+She believes that by recruiting students from diverse backgrounds it helps students in developing their creative thinking skills, knowledge on interacting with culturally different back grounds, work in global society, promotes self-awareness, promotes understanding patience’s and cooperation, promotes civic engagement and responsibility. She previously worked in the Indian School of Business (ISB) as an HR Manager.
+
+Teaching
+Business Communications
+Human Resources`,
+        course: "PGDM",
     },
   ];
 
   const handlePrev = () => {
+    if (testimonials.length === 0) return;
     setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
     setIsDrawerOpen(false);
   };
 
   const handleNext = () => {
+    if (testimonials.length === 0) return;
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
     setIsDrawerOpen(false);
   };
@@ -243,13 +143,35 @@ export default function TestimonialSection() {
     setIsDrawerOpen(false);
   }, [activeIndex]);
 
+  // Add validation for activeIndex
+  useEffect(() => {
+    if (activeIndex >= testimonials.length) {
+      setActiveIndex(0);
+    }
+  }, [testimonials.length]);
+
   // Function to check if biography is longer than 3 lines (approximate)
   const isBiographyLong = (text) => {
     return text.length > 180; // Approximate character count for 3 lines
   };
 
-  const currentBiography = testimonials[activeIndex].biography || "";
+  const currentBiography = testimonials[activeIndex]?.biography || "";
   const showReadMoreButton = isBiographyLong(currentBiography);
+
+  // Add early return if no testimonials
+  if (testimonials.length === 0) {
+    return (
+      <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+              No testimonials available
+            </h2>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
@@ -266,8 +188,8 @@ export default function TestimonialSection() {
             transition={{ duration: 0.5 }}
             className="text-center mb-2"
           >
-            <span className="text-indigo-600 text-lg font-semibold tracking-wide uppercase">
-              Testimonial
+            <span className="text-mainBlue text-lg font-semibold tracking-wide uppercase">
+              International Relations
             </span>
           </motion.div>
 
@@ -278,78 +200,80 @@ export default function TestimonialSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-16 leading-tight"
           >
-            Our Students Share Their Success
+            International Relations
           </motion.h2>
 
           {/* Testimonial Carousel */}
-          <div
-            className="flex items-center justify-center mb-16 gap-4"
-            ref={constraintsRef}
-          >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={handlePrev}
-              className="text-3xl text-indigo-600 hover:text-indigo-800 focus:outline-none transition-colors duration-300 z-10"
-              aria-label="Previous testimonial"
+          {testimonials.length > 1 && (
+            <div
+              className="flex items-center justify-center mb-16 gap-4"
+              ref={constraintsRef}
             >
-              <ArrowLeft />
-            </motion.button>
-
-            <div className="relative w-full max-w-3xl overflow-hidden px-4">
-              <div
-                id="testimonialScroller"
-                className="flex gap-8 overflow-x-auto scrollbar-thin py-2 px-1 no-scrollbar"
-                style={{
-                  scrollBehavior: "smooth",
-                  padding: "30px",
-                  msOverflowStyle: "none",
-                  scrollbarWidth: "none",
-                }}
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handlePrev}
+                className="text-3xl text-mainBlue hover:text-mainBlue/80 focus:outline-none transition-colors duration-300 z-10"
+                aria-label="Previous testimonial"
               >
-                {testimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={`${testimonial.id}-${index}`}
-                    className={`w-16 h-16 rounded-lg overflow-hidden cursor-pointer border flex-shrink-0 ${
-                      index === activeIndex
-                        ? "ring-4 ring-indigo-500 ring-offset-4"
-                        : ""
-                    }`}
-                    onClick={() => setActiveIndex(index)}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    animate={
-                      index === activeIndex ? { scale: [1, 1.1, 1] } : {}
-                    }
-                    transition={{
-                      duration: 0.5,
-                      repeat:
-                        index === activeIndex ? Number.POSITIVE_INFINITY : 0,
-                      repeatType: "reverse",
-                    }}
-                  >
-                    <img
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                <ArrowLeft />
+              </motion.button>
 
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={handleNext}
-              className="text-3xl text-indigo-600 hover:text-indigo-800 focus:outline-none transition-colors duration-300 z-10"
-              aria-label="Next testimonial"
-            >
-              <ArrowRight />
-            </motion.button>
-          </div>
+              <div className="relative w-min max-w-3xl overflow-hidden px-4">
+                <div
+                  id="testimonialScroller"
+                  className="flex gap-8 overflow-x-auto scrollbar-thin py-2 px-1 no-scrollbar"
+                  style={{
+                    scrollBehavior: "smooth",
+                    padding: "30px",
+                    msOverflowStyle: "none",
+                    scrollbarWidth: "none",
+                  }}
+                >
+                  {testimonials.map((testimonial, index) => (
+                    <motion.div
+                      key={`${testimonial?.id}-${index}`}
+                      className={`w-16 h-16 rounded-lg overflow-hidden cursor-pointer border flex-shrink-0 ${
+                        index === activeIndex
+                          ? "ring-4 ring-blue-400 ring-offset-4"
+                          : ""
+                      }`}
+                      onClick={() => setActiveIndex(index)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      animate={
+                        index === activeIndex ? { scale: [1, 1.1, 1] } : {}
+                      }
+                      transition={{
+                        duration: 0.5,
+                        repeat:
+                          index === activeIndex ? Number.POSITIVE_INFINITY : 0,
+                        repeatType: "reverse",
+                      }}
+                    >
+                      <img
+                        src={testimonial?.image || "/placeholder.svg"}
+                        alt={testimonial?.name}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handleNext}
+                className="text-3xl text-mainBlue hover:text-mainBlue/80 focus:outline-none transition-colors duration-300 z-10"
+                aria-label="Next testimonial"
+              >
+                <ArrowRight />
+              </motion.button>
+            </div>
+          )}
 
           {/* Featured Testimonial */}
           <AnimatePresence mode="wait">
@@ -377,14 +301,14 @@ export default function TestimonialSection() {
                       >
                         <img
                           src={
-                            testimonials[activeIndex].image ||
+                            testimonials[activeIndex]?.image ||
                             "/placeholder.svg" ||
                             "/placeholder.svg"
                           }
-                          alt={testimonials[activeIndex].name}
+                          alt={testimonials[activeIndex]?.name}
                           width={300}
                           height={300}
-                          className="w-full h-auto object-cover"
+                          className="w-full h-full object-cover"
                         />
                       </motion.div>
                     </div>
@@ -399,7 +323,7 @@ export default function TestimonialSection() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="text-3xl font-bold mb-4 text-gray-900"
                       >
-                        {testimonials[activeIndex].name || "Amazing Experience"}
+                        {testimonials[activeIndex]?.name || "Amazing Experience"}
                       </motion.h3>
 
                       {/* Personal Details Section */}
@@ -412,7 +336,7 @@ export default function TestimonialSection() {
                         <div className="flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 min-w-5 text-indigo-600"
+                            className="h-5 min-w-5 text-blue-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -420,14 +344,14 @@ export default function TestimonialSection() {
                           </svg>
                           <span>
                             Course:{" "}
-                            {testimonials[activeIndex].course ||
+                            {testimonials[activeIndex]?.course ||
                               "International Relations"}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 min-w-5 text-indigo-600"
+                            className="h-5 min-w-5 text-blue-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -439,13 +363,13 @@ export default function TestimonialSection() {
                           </svg>
                           <span>
                             Area:{" "}
-                            {testimonials[activeIndex].area || "New York, USA"}
+                              {testimonials[activeIndex]?.area || "New York, USA"}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 min-w-5 text-indigo-600"
+                            className="h-5 min-w-5 text-blue-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -453,14 +377,14 @@ export default function TestimonialSection() {
                           </svg>
                           <span>
                             Phone:{" "}
-                            {testimonials[activeIndex].phone ||
+                            {testimonials[activeIndex]?.phone ||
                               "+1 (555) 123-4567"}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 min-w-5 text-indigo-600"
+                            className="h-5 min-w-5 text-blue-400"
                             viewBox="0 0 20 20"
                             fill="currentColor"
                           >
@@ -469,15 +393,15 @@ export default function TestimonialSection() {
                           </svg>
                           <span>
                             Email:{" "}
-                            {testimonials[activeIndex].email ||
+                            {testimonials[activeIndex]?.email ||
                               "student@example.com"}
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <BookCheck className="h-5 w-5 text-indigo-600" />
+                          <BookCheck className="h-5 w-5 text-blue-400" />
                           <span>
                             Experience:{" "}
-                            {testimonials[activeIndex].experience ||
+                            {testimonials[activeIndex]?.experience ||
                               "student@example.com"}
                           </span>
                         </div>
@@ -490,8 +414,8 @@ export default function TestimonialSection() {
                         transition={{ duration: 0.5, delay: 0.45 }}
                         className=""
                       >
-                        <h5 className="font-semibold text-indigo-600 mb-2 flex items-center gap-2">
-                          <BookUser className="h-5 w-5 text-indigo-600" />
+                        <h5 className="font-semibold text-blue-400 mb-2 flex items-center gap-2">
+                          <BookUser className="h-5 w-5 text-blue-400" />
                           Biography
                         </h5>
                         <div className="relative">
@@ -505,7 +429,7 @@ export default function TestimonialSection() {
                           {showReadMoreButton && (
                             <button
                               onClick={() => setIsDrawerOpen(true)}
-                              className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-1 mt-1"
+                              className="text-blue-400 hover:text-blue-800 font-medium flex items-center gap-1 mt-1"
                             >
                               Read more <ChevronDown className="h-4 w-4" />
                             </button>
@@ -534,7 +458,7 @@ export default function TestimonialSection() {
               </ScrollArea>
               <DrawerFooter>
                 <DrawerClose asChild>
-                  <button className="w-full max-w-4xl mx-auto inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                  <button className="w-full max-w-4xl mx-auto inline-flex items-center justify-center rounded-md bg-mainBlue px-4 py-2 text-sm font-medium text-white hover:bg-mainBlue/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
                     Close
                   </button>
                 </DrawerClose>
