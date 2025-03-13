@@ -36,6 +36,7 @@ import Blog from "@/components/blog/blog";
 import Careers from "@/components/footer/Careers";
 import StudentsFeedback from "@/components/studentslife/StudentsFeedback";
 import BlogDetail from "@/components/blog/BlogDetail";
+import Conferences from "@/components/faculty&research/Conferences";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -143,6 +144,7 @@ export default function App() {
                 path="/students-life/students-feedback"
                 element={<StudentsFeedback />}
               />
+              <Route path="/research/conferences" element={<Conferences />} />
               <Route path="/admissions/fpm-efpm" element={<FPM />} />
               <Route
                 path="/admissions/pgdm-triple-specialisation"
