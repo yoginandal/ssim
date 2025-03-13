@@ -1,36 +1,38 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Clock, Calendar, ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Clock, Calendar, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function BlogSection() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight
-      const elementPosition = document.getElementById("blog-section")?.offsetTop || 0
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const elementPosition =
+        document.getElementById("blog-section")?.offsetTop || 0;
 
       if (scrollPosition > elementPosition) {
-        setIsVisible(true)
+        setIsVisible(true);
       }
-    }
+    };
 
     // Set visible immediately if at top of page
-    handleScroll()
+    handleScroll();
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  }
+  };
 
   const blogPosts = [
     {
@@ -54,7 +56,8 @@ export default function BlogSection() {
       title: "Tile Renovation Services: Transforming Your Space with Expert",
       description:
         "This blog explores how expert tile renovation services can breathe new life into kitchens, bathrooms, floors, and more.",
-      image: "https://ssim.ac.in/wp-content/uploads/2023/03/7U5A9291-Small-jpg.webp",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2023/03/7U5A9291-Small-jpg.webp",
       imageAlt: "Person installing floor tiles",
       author: {
         name: "Emily Johnson",
@@ -65,7 +68,7 @@ export default function BlogSection() {
       readTime: "4 min read",
       category: "Home Improvement",
     },
-  ]
+  ];
 
   return (
     <section
@@ -85,7 +88,8 @@ export default function BlogSection() {
           </h2>
           <div className="w-20 h-1 bg-mainBlue mx-auto mb-6"></div>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-            Discover insights and knowledge from our expert contributors on topics that matter to you.
+            Discover insights and knowledge from our expert contributors on
+            topics that matter to you.
           </p>
         </motion.div>
 
@@ -99,7 +103,11 @@ export default function BlogSection() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="group bg-white dark:bg-gray-800/80 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
+                <div
+                  className={`flex flex-col ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                >
                   {/* Image container - Fixed the overflow issue */}
                   <div className="md:w-1/2 relative overflow-hidden">
                     <div className="aspect-video md:h-full">
@@ -117,7 +125,9 @@ export default function BlogSection() {
                       {post.title}
                     </h3>
 
-                    <p className="text-muted-foreground mb-6 leading-relaxed line-clamp-3">{post.description}</p>
+                    <p className="text-muted-foreground mb-6 leading-relaxed line-clamp-3">
+                      {post.description}
+                    </p>
 
                     <div className="flex items-center gap-4 mb-6 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
@@ -133,7 +143,10 @@ export default function BlogSection() {
                     <div className="flex items-center justify-between mb-6">
                       <div className="flex items-center gap-3">
                         <Avatar className="h-10 w-10 border-2 border-indigo-100 dark:border-gray-700">
-                          <AvatarImage src={post.author.avatar} alt={post.author.name} />
+                          <AvatarImage
+                            src={post.author.avatar}
+                            alt={post.author.name}
+                          />
                           <AvatarFallback className="bg-indigo-100 text-indigo-800 dark:bg-gray-700 dark:text-indigo-300">
                             {post.author.initials}
                           </AvatarFallback>
@@ -142,7 +155,14 @@ export default function BlogSection() {
                       </div>
                     </div>
 
-                    <div className="mt-auto">
+                    <Link
+                      to={`/blog/${post.id}`}
+                      onClick={() => {
+                        window.scrollTo(0, 0);
+                        behavior: "smooth";
+                      }}
+                      className="mt-auto"
+                    >
                       <Button
                         className="bg-red-600 hover:bg-red-500 text-white px-6 transition-all duration-300 overflow-hidden group-hover:pl-7 group-hover:pr-9"
                         aria-label={`Read more about ${post.title}`}
@@ -150,7 +170,7 @@ export default function BlogSection() {
                         <span>Read More</span>
                         <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </Button>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -159,12 +179,8 @@ export default function BlogSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-
-
-
 
 // import { motion } from "framer-motion";
 // import { useState } from "react";

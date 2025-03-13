@@ -35,6 +35,7 @@ import Accreditations from "@/components/footer/Accreditations";
 import Blog from "@/components/blog/blog";
 import Careers from "@/components/footer/Careers";
 import StudentsFeedback from "@/components/studentslife/StudentsFeedback";
+import BlogDetail from "@/components/blog/BlogDetail";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -154,6 +155,7 @@ export default function App() {
               {/* Contact Us page route */}
               <Route path="/accreditations" element={<Accreditations />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/careers" element={<Careers />} />
             </Routes>
             <Footer />
