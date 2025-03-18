@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 
 import {
@@ -28,6 +29,8 @@ import {
   Mail,
   ChevronDown,
   ChevronUp,
+  SchoolIcon,
+  GraduationCapIcon,
 } from "lucide-react";
 import {
   Table,
@@ -40,6 +43,7 @@ import {
 import Heading from "../Heading";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 
 // Navigation Data
 const navigationSections = [
@@ -761,6 +765,7 @@ const Conferences = () => {
         </div>
       </div>
       <TeamSection />
+      <Tourists />
     </div>
   );
 };
@@ -1191,3 +1196,147 @@ const TeamSection = () => {
     </section>
   );
 };
+
+const team = [
+  {
+    name: "CHARMINAR",
+    area: "Finance",
+    qualification: "Ph.D, MBA",
+    experience: 30,
+    image: "https://ssim.ac.in/wp-content/uploads/1-1.png",
+    description:
+      "A historic monument located in the heart of Hyderabad, India, built in 1591 by Sultan Muhammad Quli Qutb Shah. It is a stunning architectural masterpiece featuring four grand arches and minarets, and it remains an iconic symbol of Hyderabad’s rich cultural heritage.",
+  },
+  {
+    name: "GOLKONDA FORT",
+    area: "HR & Strategy",
+    qualification: "Ph.D, MBA",
+    experience: 36,
+    image: "https://ssim.ac.in/wp-content/uploads/2-1.png",
+    description:
+      "A historic citadel known for its architectural brilliance and rich history dating back to the medieval era. Renowned for its impressive acoustics, fascinating engineering, and once housing the world-famous Koh-i-Noor and Hope diamonds, Golkonda stands as a testament to the regions.",
+  },
+  {
+    name: "BIRLA TEMPLE",
+    area: "HR & Strategy",
+    qualification: "Ph.D, MIRPM",
+    experience: 36,
+    image: "https://ssim.ac.in/wp-content/uploads/3-1.png",
+    description:
+      "A prominent Hindu temple in Hyderabad, India, dedicated to Lord Venkateswara. Constructed with white marble atop a hill, this architectural marvel offers breath-taking views of the city and attracts devotees and tourists alike due to its intricate carvings and religious significance.",
+  },
+  {
+    name: "CHOWMAHALLA PALACE",
+    area: "Data Science",
+    qualification: "Ph.D, M.Sc.",
+    experience: 36,
+    image: "https://ssim.ac.in/wp-content/uploads/5.png",
+    description:
+      "A grand palace exhibiting the opulence and grandeur of the Nizams, featuring beautiful architecture and historic artifacts.",
+  },
+  {
+    name: "SALAR JUNG MUSEUM",
+    area: "Data Science",
+    qualification: "MCA, M.Tech, M.Sc.",
+    experience: 36,
+    image: "https://ssim.ac.in/wp-content/uploads/6.png",
+    description:
+      "Home to an extensive collection of art, sculptures, manuscripts, and artifacts from various civilizations across the world.",
+  },
+];
+
+function Tourists() {
+  const [hoveredMember, setHoveredMember] = useState(null);
+
+  return (
+    <section className="w-full pt-4 !py-16">
+      <div className="container mx-auto px-4 md:px-6">
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
+        >
+          <Badge variant="outline" className="border-blue-500 text-blue-600">
+            Our Amazing Team
+          </Badge>
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-gray-900">
+            Meet the Innovators
+          </h2>
+          <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Passionate individuals working together to create extraordinary
+            experiences
+          </p>
+        </motion.div> */}
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          {team.map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card
+                className={`group relative overflow-hidden bg-white/50 border-gray-200 backdrop-blur-sm transition-all duration-500
+                  ${
+                    hoveredMember === index
+                      ? "scale-105 shadow-2xl shadow-blue-500/20"
+                      : "hover:shadow-xl"
+                  }`}
+                onMouseEnter={() => setHoveredMember(index)}
+                onMouseLeave={() => setHoveredMember(null)}
+              >
+                <CardContent className="p-8">
+                  <div className="flex flex-col md:flex-row items-center gap-8">
+                    <div className="relative">
+                      <div
+                        className="w-40 h-40 rounded-full overflow-hidden ring-2 ring-blue-500/50 ring-offset-4 ring-offset-white
+                        transition-all duration-500 group-hover:ring-blue-500 group-hover:ring-offset-8"
+                      >
+                        <img
+                          alt={member.name}
+                          src={member.image || "/placeholder.svg"}
+                          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex-1 text-center md:text-left space-y-6">
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {member.name}
+                        </h3>
+                      </div>
+
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {member.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-14 text-2xl font-bold text-mainBlue mb-2">
+          MANY MORE TO VISIT ..........
+        </div>
+        <div className="flex justify-center gap-4 items-center mt-12 text-4xl font-bold text-mainBlue mb-2">
+          Click Here for
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRGLfK3Sm-kHebrzupY8OFywkmXG-oGuCXnXBH0e4-ZQd6fg/viewform" className="flex items-center">
+          <Button className="group gap-0 mt-[2px] px-0 py-0 h-0 rounded-none" size="lg">
+            <div className="bg-red-600 mt-[2px] h-11 flex items-center px-4 hover:bg-red-700">
+              Online Registration Form
+            </div>
+            <div className="bg-mainBlue mt-[2px] h-11 flex items-center px-4">
+              <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
+            </div>
+          </Button>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
