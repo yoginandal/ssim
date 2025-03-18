@@ -48,144 +48,14 @@ import Heading from "../Heading";
 
 // Navigation Data
 const navigationSections = [
-  { id: "overview", label: "ABOUT SSIM", icon: Building },
-  { id: "process", label: "ABOUT THE CONFERENCE", icon: Users },
-  { id: "fees", label: "THEMES FOR SAMAROH 2025", icon: ListTodo },
-  { id: "dates", label: "CONFERENCE NOTE", icon: FileText },
-  { id: "brochure", label: "PUBLISHING OPPORTUNITIES", icon: BookOpen },
-  { id: "apply", label: "ONLINE REGISTRATION", icon: FormInput },
+  { id: "about-ssim", label: "ABOUT SSIM", icon: Building },
+  { id: "about-conference", label: "ABOUT THE CONFERENCE", icon: Users },
+  { id: "themes-for-samaroh", label: "THEMES FOR SAMAROH 2025", icon: ListTodo },
+  { id: "conference-note", label: "CONFERENCE NOTE", icon: FileText },
+  { id: "publishing-opportunities", label: "PUBLISHING OPPORTUNITIES", icon: BookOpen },
+  { id: "online-registration", label: "ONLINE REGISTRATION", icon: FormInput },
 ];
 
-// Section Data
-const overviewData = [
-  {
-    title: "",
-    description: "Publication of Case Study",
-    icon: FileText, // Changed to FileText since it's about publishing a case study
-  },
-  {
-    title: "",
-    description:
-      "Two Paper Presentation in National / International Conferences",
-    icon: GraduationCap, // Changed to GraduationCap for academic presentations
-  },
-  {
-    title: "",
-    description:
-      "Publication of 2 research papers in SCOPUS / ABDC Indexed Journals",
-    icon: BookOpen, // Changed to BookOpen for research paper publications
-  },
-];
-
-const processData = [
-  {
-    step: 1,
-    title: "Eligibility Check",
-    description: "Verify if you meet the program requirements.",
-    details:
-      "Must have MBA/PGDM/PG in Economics/Commerce/Statistics with first class, or CA/ICWA/CS with 60% aggregate.",
-  },
-  {
-    step: 2,
-    title: "Target Participant Profile",
-    description: "Confirm you belong to eligible participant categories.",
-    details:
-      "Open to faculty members, government/private executives, postgraduates, and graduates with CA/CMA/CS.",
-  },
-  {
-    step: 3,
-    title: "Application & Research Proposal",
-    description: "Submit application with research interest abstract.",
-    details:
-      "Include a 5,000-word tentative research proposal along with complete application form.",
-  },
-  {
-    step: 4,
-    title: "Entrance Test",
-    description: "Take SRAT entrance test or submit UGC NET scores.",
-    details:
-      "UGC NET scores after June 1, 2023 are valid for 2024 admission. SRAT is SSIM's admission test.",
-  },
-  {
-    step: 5,
-    title: "Research Presentation & Interview",
-    description: "Present proposal and attend personal interview.",
-    details:
-      "Final selection based on entrance scores, academic records, proposal presentation and interview performance.",
-  },
-];
-
-const feesData = {
-  tuitionFees: [
-    {
-      type: "Acceptance Fee (Non-refundable)",
-      amount: "₹60,000",
-      dueDate: "July 30, 2024",
-      notes: "Initial payment before program commencement",
-    },
-    {
-      type: "First Installment",
-      amount: "₹80,000",
-      dueDate: "January 30, 2025",
-      notes: "First part of balance payment",
-    },
-    {
-      type: "Second Installment",
-      amount: "₹80,000",
-      dueDate: "July 30, 2025",
-      notes: "Second part of balance payment",
-    },
-    {
-      type: "Third Installment",
-      amount: "₹80,000",
-      dueDate: "July 30, 2026",
-      notes: "Final part of balance payment",
-    },
-  ],
-  stipendDetails: [
-    {
-      year: "First Year",
-      amount: "₹20,000",
-      frequency: "per month",
-      notes: "For eligible full-time scholars",
-    },
-    {
-      year: "Second Year",
-      amount: "₹25,000",
-      frequency: "per month",
-      notes: "For eligible full-time scholars",
-    },
-    {
-      year: "Third Year",
-      amount: "₹30,000",
-      frequency: "per month",
-      notes: "For eligible full-time scholars",
-    },
-  ],
-};
-
-const datesData = [
-  {
-    date: "September 1, 2024",
-    event: "Application Opens",
-    description: "Start your application process",
-  },
-  {
-    date: "November 15, 2024",
-    event: "Early Decision Deadline",
-    description: "Submit for early consideration",
-  },
-  {
-    date: "January 15, 2025",
-    event: "Regular Decision Deadline",
-    description: "Final application deadline",
-  },
-  {
-    date: "March 31, 2025",
-    event: "Decisions Released",
-    description: "Check your application status",
-  },
-];
 
 // Navigation Component
 const NavContent = ({ activeSection, setActiveSection, sections }) => (
@@ -213,46 +83,8 @@ const NavContent = ({ activeSection, setActiveSection, sections }) => (
   </div>
 );
 
-// Enquire Dialog Component
-const EnquireDialog = ({ isOpen, setIsOpen }) => (
-  <Dialog open={isOpen} onOpenChange={setIsOpen}>
-    <DialogContent className="sm:max-w-md">
-      <DialogHeader>
-        <DialogTitle>Download Brochure</DialogTitle>
-        <DialogDescription>
-          Please provide your details to receive our comprehensive brochure.
-        </DialogDescription>
-      </DialogHeader>
-      <form className="space-y-4">
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="name">Full Name</Label>
-            <Input id="name" placeholder="John Doe" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="john@example.com" />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="phone">Phone Number</Label>
-            <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" />
-          </div>
-        </div>
-        <DialogFooter>
-          <Button
-            type="submit"
-            className="bg-mainBlue hover:bg-mainBlue/80 text-white"
-          >
-            Download Now
-          </Button>
-        </DialogFooter>
-      </form>
-    </DialogContent>
-  </Dialog>
-);
-
 // Section Components
-const Overview = () => (
+const AboutSsim= () => (
   <div className="space-y-3 p-3">
     <h3 className="font-bold text-mainBlue text-2xl">
       About Siva Sivani Institute of Management
@@ -336,263 +168,456 @@ const Overview = () => (
   </div>
 );
 
-const Process = () => (
-  <div className="space-y-8">
-    {processData.map((item, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: index * 0.1 }}
-        className="relative pl-12 group"
-      >
-        <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center font-bold">
-          {item.step}
-        </div>
-        <div className="space-y-2">
-          <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">
-            {item.description}
-          </p>
-          <p className="text-lg text-gray-700">{item.details}</p>
-        </div>
-      </motion.div>
-    ))}
+const AboutConference = () => (
+  <div className="space-y-3">
+    <h3 className="font-bold text-mainBlue text-2xl">
+      About Siva Sivani Institute of Management
+    </h3>
+    <p className="text-lg text-gray-700">
+      Siva Sivani Institute of Management (SSIM) is an autonomous B-School
+      established in 1992 duly approved by All India Council for Technical
+      Education (AICTE) and the first standalone B-School in both the Telugu
+      speaking state. SSIM is accredited by the prestigious international agency
+      South Asian Quality Assurance System (SAQS), as well as accredited by
+      National Agencies like: NBA for PGDM Program, NAAC offering PGDM,
+      PGDM-BIFS and PGDM-BA. The institute has a rich tradition of pursuing
+      academic excellence and overall personal growth. SSIM is consistently
+      working on its course to offer the latest and most effective approach
+      towards imparting quality education. The courses are designed and updated
+      at frequent intervals with the inputs provided by stalwarts both from
+      industry and academia to meet the needs of the industry. SSIM located
+      amidst greenery as well as far from the madding crowd, SSIM has an
+      enviable environment, Serene, Spacious and stupendous. It offers an ideal
+      environment for imparting value-based management education.
+    </p>
   </div>
 );
 
-const Fees = () => (
-  <div className="space-y-8">
-    <Card className="border-none shadow-none">
-      <CardHeader>
-        <CardTitle className="text-3xl text-[#002f87]">Fee Structure</CardTitle>
-        <CardDescription className="text-lg text-red-600 font-semibold">
-          Total Program Fee: ₹3,00,000 (Three Lakhs only)
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-6">
-        {/* Regular Fee Structure */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
-            Regular Fee Structure
-          </h3>
-          <div className="rounded-lg overflow-hidden border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
-                    Payment Type
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Amount
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Due Date
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Notes
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {feesData.tuitionFees.map((fee, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">
-                      {fee.type}
-                    </TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">
-                      {fee.amount}
-                    </TableCell>
-                    <TableCell className="text-black text-lg">
-                      {fee.dueDate}
-                    </TableCell>
-                    <TableCell className="text-black text-lg">
-                      {fee.notes}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </div>
-
-        {/* Stipend Structure */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#002f87]">
-            Financial Support (Full-time Research Scholars)
-          </h3>
-          <div className="rounded-lg overflow-hidden border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[250px] bg-[#002f87] text-white text-lg">
-                    Year
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Amount
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Frequency
-                  </TableHead>
-                  <TableHead className="bg-[#002f87] text-white text-lg">
-                    Notes
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {feesData.stipendDetails.map((stipend, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="font-medium text-black text-lg">
-                      {stipend.year}
-                    </TableCell>
-                    <TableCell className="text-red-600 font-semibold text-lg">
-                      {stipend.amount}
-                    </TableCell>
-                    <TableCell className="text-black text-lg">
-                      {stipend.frequency}
-                    </TableCell>
-                    <TableCell className="text-black text-lg">
-                      {stipend.notes}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
-        </div>
-
-        {/* Important Notes */}
-        <div className="bg-[#002f87]/5 p-4 rounded-lg space-y-2">
-          <h4 className="font-semibold text-[#002f87] text-lg">
-            Important Notes:
-          </h4>
-          <ul className="list-disc list-inside space-y-1 text-lg text-black">
-            <li>
-              25% fee waiver for Alumni of Siva Sivani Institute of Management
-              (SSIM)
-            </li>
-            <li>
-              Eligible students for stipend are exempted from tuition fees
-            </li>
-            <li>
-              Stipend-eligible students need to pay only ₹70,000 (₹60,000
-              non-refundable acceptance fee + ₹10,000 refundable security
-              deposit)
-            </li>
-            <li>
-              Stipend is subject to regular performance review every six months
-            </li>
-            <li>Maximum stipend duration is three years</li>
-            <li>Students receive access to library and academic resources</li>
-            <li>
-              Selected scholars must work as teaching/research assistants at
-              SSIM
-            </li>
-          </ul>
-        </div>
-      </CardContent>
-    </Card>
-  </div>
-);
-
-const Dates = () => (
-  <Card className="border-none shadow-none">
-    <CardHeader>
-      <CardTitle className="text-3xl text-mainBlue">Important Dates</CardTitle>
-      <CardDescription className="text-lg text-red-600">
-        Mark these key dates in your calendar
-      </CardDescription>
-    </CardHeader>
-    <CardContent>
-      <div className="grid md:grid-cols-2 gap-6">
-        {datesData.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="p-6 bg-card rounded-lg shadow"
-          >
-            <time className="text-sm text-red-600 font-semibold">
-              {item.date}
-            </time>
-            <h3 className="text-lg font-semibold text-mainBlue mt-2">
-              {item.event}
-            </h3>
-            <p className="text-gray-700 text-lg mt-1">{item.description}</p>
-          </motion.div>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
-);
-
-const Brochure = ({ setIsEnquireOpen }) => (
-  <Card className="border-none shadow-none">
-    <CardHeader>
-      <CardTitle className="text-3xl text-center text-red-600">
-        Download Our Brochure
-      </CardTitle>
-      <CardDescription className="text-xl text-center text-gray-700">
-        Get detailed information about our programs
-      </CardDescription>
-    </CardHeader>
-    <CardContent className="flex flex-col items-center text-center">
-      <div className="max-w-md mx-auto space-y-4">
-        <p className="text-gray-700 text-lg">
-          Our comprehensive brochure provides in-depth information about our
-          academic programs, campus life, and admissions process.
-        </p>
-        <Button
-          size="lg"
-          onClick={() => setIsEnquireOpen(true)}
-          className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
-        >
-          <BookOpen className="mr-2 h-4 w-4" />
-          Download Brochure
-        </Button>
-      </div>
-    </CardContent>
-  </Card>
-);
-
-const Apply = () => (
-  <Card className="border-none shadow-none">
-    <CardHeader>
-      <CardTitle className="text-3xl text-red-600 text-center">
-        Apply Now
-      </CardTitle>
-      <CardDescription className="text-xl text-gray-700 text-center">
-        Start your application process
-      </CardDescription>
-    </CardHeader>
-    <CardContent className="flex flex-col items-center text-center">
-      <div className="max-w-md mx-auto space-y-4">
-        <p className="text-gray-700 text-lg">
-          Ready to begin your journey? Click below to start your application.
-          Make sure you have all necessary documents ready.
-        </p>
+const ThemesForSamaroh = () => (
+  <>
+    <div className="space-y-3">
+      <h3 className="font-bold text-mainBlue text-2xl">
+        About Siva Sivani Institute of Management
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Risk management and resilience in Industry 5.0</li>
+        <li>Circular economy business models and financial valuation</li>
+        <li>
+          Green Finance and Digital Transformation for Sustainable Growth
+          Sustainable finance and impact investing
+        </li>
+        <li>
+          ESG (Environmental, Social, Governance) reporting and disclosure
+        </li>
+        <li>Green bonds and sustainable debt financing</li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Marketing
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Sustainable marketing and green branding</li>
+        <li>Ethical consumerism and conscious consumption</li>
+        <li>Storytelling and purpose-driven marketing</li>
+        <li>Customer experience and satisfaction in Industry 5.0</li>
+        <li>Sustainable Marketing and Customer Experience in Industry 5.0</li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Human Resources Management
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Talent management and skills development for Industry 5.0</li>
+        <li>Employee engagement and well-being in sustainable organizations</li>
+        <li>Diversity, equity, and inclusion in Industry 5.0</li>
+        <li>Ethical leadership and corporate social responsibility</li>
+        <li>Work-life balance and flexible work arrangements</li>
+        <li>
+          Transforming HR Practices for a Sustainable, Technology-Driven
+          Workplace
+        </li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Business Analytics
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Data-driven decision-making for sustainability</li>
+        <li>Predictive analytics and scenario planning</li>
+        <li>Sustainabilitymetrics and performance measurement</li>
+        <li>
+          <strong>Al </strong>and machine learning for sustainable operations
+        </li>
+        <li>Big data analytics for circular economy</li>
+        <li>
+          Sustainable Supply Chain and Operations Management in the Digital Era
+        </li>
+        <li>
+          Leveraging Emerging Technologies for Sustainable Business Innovation
+        </li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Communication
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Stakeholder engagement and communication strategies</li>
+        <li>Corporate storytelling and brand reputation</li>
+        <li>Crisis communication and reputation management</li>
+        <li>Internal communication and employee engagement</li>
+        <li>Digital communication and social media for sustainability</li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Entrepreneurship
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Sustainable entrepreneurship and social enterprises</li>
+        <li>Innovation and technology development for sustainability</li>
+        <li>Venture capital and impact investing for sustainable startup</li>
+        <li>Scaling sustainable businesses and global markets</li>
+        <li>Entrepreneurial leadership and ethical decision-making</li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Operations
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Sustainable operations and supply chain management</li>
+        <li>Lean manufacturing and waste reduction</li>
+        <li>Energy efficiency and resource conservation</li>
+        <li>Quality management and sustainability certification</li>
+        <li>
+          Strategic Leadership and Corporate Responsibility for Industry 5.0
+        </li>
+        <li>Circular Economy and Green Business Models</li>
+      </ul>
+      <h3 className="font-bold text-mainBlue text-2xl">
+        Sustainable Management
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Strategic management for sustainability</li>
+        <li>Corporate governance and ethics</li>
+        <li>Leadership for a sustainable future</li>
+        <li>Organizational culture and values</li>
+        <li>Business models for sustainable development</li>
+      </ul>
+      <p className="text-lg text-gray-700">
+        SAMAROH 2025 aims to shape the future of management by fostering thought
+        leadership and promoting sustainable business solutions in the era of
+        Industry 5.0. Join us in redefining management practices for a more
+        sustainable and technologically driven world for human centric approach.
+      </p>
+      <p className="text-lg text-gray-700">
+        Submissions in the form of extended abstracts, in the prescribed format,
+        can be made through the following email:{" "}
         <a
-          target="_blank"
-          href="https://apply.ssim.ac.in/fellowship-program-application-form"
+          href="mailto:samaroh2025@ssim.ac.in"
+          className="text-red-600 font-semibold"
         >
-          <Button
-            size="lg"
-            className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"
-          >
-            Begin Application
-          </Button>
-        </a>
-      </div>
-    </CardContent>
-  </Card>
+          samaroh2025@ssim.ac.in.
+        </a>{" "}
+        The screening of research papers for presentation at the conference will
+        be based on the review of abstracts. Full papers will be reviewed only
+        for publication in the conference book of proceedings, book chapter and
+        journals.
+      </p>
+    </div>
+  </>
+);
+
+const ConferenceNote = () => (
+  <>
+    <div className="space-y-3">
+      <h3 className="text-2xl font-bold text-mainBlue">Industry 5.0</h3>
+      <p className="text-lg text-gray-700">
+        Industry 5.0. a paradigm shift from automation-centric Industry 4.0,
+        emphasizes human-centered and sustainable production. This
+        transformative approach offers a promising avenue for achieving
+        inclusive growth and sustainable development. By prioritizing human
+        well-being, collaboration, and environmental stewardship, Industry 5.0
+        can create a more equitable and resilient society.
+      </p>
+      <p className="text-lg text-gray-700">
+        This conference note explores the key principles and potential benefits
+        of Industry 5.It delves into how Industry 5.0 can foster inclusive
+        growth by creating new job opportunities, promoting social equity, and
+        empowering marginalized communities. Additionally, the note discusses
+        the sustainability aspects of Industry 5.0, including its potential to
+        reduce environmental impact, conserve resources, and promote circular
+        economy practices.
+      </p>
+      <p className="text-lg text-gray-700">
+        By embracing Industry 5.0, businesses and governments can contribute to
+        a more sustainable and equitable future. This conference aims to foster
+        dialogue, share knowledge, and inspire action towards realizing the full
+        potential of Industry 5.0 for inclusive growth and sustainable
+        development.
+      </p>
+      <h3 className="text-2xl font-bold text-mainBlue">
+        PANEL DISCUSSION THEME:
+      </h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>
+          Humanistic Solutions for the Business (Insights from the manufacturing
+          and service sector)
+        </li>
+        <li>
+          ESG and Industry 5.0 (Role of various stakeholders in promoting ESG
+          practicus)
+        </li>
+        <li>
+          Co-Creation of Talent (Integration of Industry and Business School in
+          the Industry 5.0 Era)
+        </li>
+      </ul>
+      <h3 className="text-2xl font-bold text-mainBlue">CONFIRMED JOURNALS</h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>
+          <strong>Finance India</strong> a Scopus Indexed and ABDC Journal.
+        </li>
+        <li>
+          Emerald Publishing – <strong>Rajagiri Management Journal –</strong>{" "}
+          UGC Care 1.
+        </li>
+        <li>Publication Charge as per the Journal norms</li>
+        <li>
+          Few mors Scopus and UGC Care listed Joumiils will be communicated
+          soon.
+        </li>
+      </ul>
+    </div>
+  </>
+);
+
+const PublishingOpportunities = ({ setIsEnquireOpen }) => (
+  <>
+    <div className="space-y-3">
+      <h3 className="text-2xl font-bold text-mainBlue">
+        PUBLISHING&nbsp; OPPORTUNITIES
+      </h3>
+      <p className="text-lg text-gray-700">
+        The papers must be based on original research work neither been
+        published nor submitted for publication
+      </p>
+      <p className="text-lg text-gray-700">
+        The abstract of all the research paper along with author profile will be
+        published in conference proceeding with ISBN which will be released on
+        the day of conference.
+      </p>
+      <p className="text-lg text-gray-700">
+        On the approval of the peer-review committee, the full research paper
+        can be considered for publication after taking the consent of the
+        author(s).
+      </p>
+      <p className="text-lg text-gray-700">
+        We will connect you to Scopus Indexed Publishers, UGC Care-01 Journals
+        for your publication after peer-review
+      </p>
+      <p className="text-lg text-gray-700">
+        We provide publishing opportunities in “SuGyaan Management Journal of
+        Siva Sivani institute of Management, ISSN 0975-4032.
+      </p>
+      <h3 className="text-2xl font-bold text-mainBlue">CONFIRMED JOURNALS</h3>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>
+          <strong>Finance India</strong> a Scopus Indexed and ABDC Journal.
+        </li>
+        <li>
+          Emerald Publishing – <strong>Rajagiri Management Journal –</strong>{" "}
+          UGC Care 1.
+        </li>
+        <li>Publication Charge as per the Journal norms</li>
+        <li>
+          Few mors Scopus and UGC Care listed Joumiils will be communicated
+          soon.
+        </li>
+      </ul>
+      <h3 className="text-2xl font-bold text-mainBlue">
+        PAPER SUBMISSION GUIDELINES
+      </h3>
+      <p className="text-lg text-gray-700">
+        Papers must be formatted according to the following guidelines:
+      </p>
+      <ul className="list-disc list-inside ml-5 space-y-1 text-lg text-black">
+        <li>Abstract: 250-300 words</li>
+        <li>Word limit: 4000-6000 words</li>
+        <li>Font: Times New Roman, 12 points</li>
+        <li>Margins: 1 inch all around</li>
+        <li>Spacing: Double spaced</li>
+        <li>Tables, graphs, and figures: Black and white, properly numbered</li>
+        <li>References: APA style</li>
+        <li>Similarity Index: Not more than 10%</li>
+      </ul>
+      <p className="text-lg text-gray-700">
+        <strong>Submission</strong>: The author(s) are suggested to email the
+        complete research paper along with the abstract and authors profile to:{" "}
+        <strong>samaroh2025@ssim.ac.in</strong>
+      </p>
+      <ol className="list-decimal list-inside ml-5 space-y-1 text-lg text-black">
+        <li>
+          The author(s) must clearly mention the theme under which their article
+          is to be considered for presentation.
+        </li>
+        <li>
+          Paper must have a title page, author affiliation, an abstract of 250
+          words, 5 related key words, introduction, review of literature,
+          methodology, analysis, results, discussion and bibliography.
+        </li>
+        <li>
+          All papers will undergo a double-blind peer review process. Please
+          note that the SAMAROH-2025 reserves the right to not accept any paper
+          that does not meet the submission guidelines
+        </li>
+      </ol>
+    </div>
+  </>
+);
+
+const OnlineRegistration = () => (
+  <>
+    <div className="space-y-3">
+      <p>
+        <img
+          fetchpriority="high"
+          decoding="async"
+          class="aligncenter wp-image-12109 size-full"
+          src="https://ssim.ac.in/wp-content/uploads/AAA.png"
+          alt=""
+          width="1030"
+          height="281"
+          srcset="https://ssim.ac.in/wp-content/uploads/AAA.png 1030w, https://ssim.ac.in/wp-content/uploads/AAA-300x82.png 300w, https://ssim.ac.in/wp-content/uploads/AAA-1024x279.png 1024w, https://ssim.ac.in/wp-content/uploads/AAA-768x210.png 768w"
+          sizes="(max-width: 1030px) 100vw, 1030px"
+        />
+      </p>
+      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">IMPORTANT DATES</h3>
+      <Table className="bg-blue-50 border border-gray-300">
+        <TableBody>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Submission of Extended Abstracts</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>February 01, 2025</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Communication of Acceptance</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>February 03, 2025</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Submission of Full Papers</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>February 05, 2025</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Submission of Presentations</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>February 10, 2025</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Conference</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>February 11-12, 2025</p>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">PRIZES</h3>
+      <Table className="bg-blue-50 border border-gray-300">
+        <TableBody>
+          <TableRow>
+            <TableCell width="330" className="border border-gray-300">
+              <p className="text-lg text-gray-700 mb-5">
+                <strong>AWARDS FOR BEST PAPERS</strong>
+              </p>
+              <Table className="bg-blue-50 border border-gray-300">
+                <TableBody>
+                  <TableRow>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>1st Prize</p>
+                    </TableCell>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>₹&nbsp;10,000</p>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>2nd Prize</p>
+                    </TableCell>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>₹&nbsp;7,000</p>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>3rd Prize</p>
+                    </TableCell>
+                    <TableCell width="301" className="border border-gray-300">
+                      <p>₹&nbsp;5,000</p>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">REGISTRATION FEE</h3>
+      <p className="text-lg text-gray-700">
+        <strong>The registration fee is non-refundable.</strong>
+      </p>
+      <Table className="bg-blue-50 border border-gray-300">
+        <TableBody>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>MBA/MA/PGDM/Research Scholars</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>₹&nbsp;1000</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Academicians</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>₹ 2000</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Corporate Attendees</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>₹ 4000</p>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell width="301" className="border border-gray-300">
+              <p>Foreign Delegates (Academicians/Students)</p>
+            </TableCell>
+            <TableCell width="301" className="border border-gray-300">
+              <p>$50</p>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </div>
+  </>
 );
 
 // const Scholarships = () => <div>Scholarships content here</div>;
 
 // Main Component
 const Conferences = () => {
-  const [activeSection, setActiveSection] = useState("overview");
+  const [activeSection, setActiveSection] = useState("about-ssim");
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
 
   return (
@@ -703,20 +728,20 @@ const Conferences = () => {
                   <CardContent className="p-6">
                     {(() => {
                       switch (activeSection) {
-                        case "overview":
-                          return <Overview />;
-                        case "process":
-                          return <Process />;
-                        case "fees":
-                          return <Fees />;
-                        case "dates":
-                          return <Dates />;
-                        case "brochure":
+                        case "about-ssim":
+                          return <AboutSsim/>;
+                        case "about-conference":
+                          return <AboutConference />;
+                        case "themes-for-samaroh":
+                          return <ThemesForSamaroh />;
+                        case "conference-note":
+                          return <ConferenceNote />;
+                        case "publishing-opportunities":
                           return (
-                            <Brochure setIsEnquireOpen={setIsEnquireOpen} />
+                            <PublishingOpportunities setIsEnquireOpen={setIsEnquireOpen} />
                           );
-                        case "apply":
-                          return <Apply />;
+                        case "online-registration":
+                          return <OnlineRegistration />;
                         // case "scholarships":
                         //   return <Scholarships />;
                         default:
@@ -730,9 +755,6 @@ const Conferences = () => {
           </main>
         </div>
       </div>
-
-      {/* Enquire Dialog */}
-      <EnquireDialog isOpen={isEnquireOpen} setIsOpen={setIsEnquireOpen} />
     </div>
   );
 };
