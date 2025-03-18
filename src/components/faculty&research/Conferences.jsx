@@ -8,18 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "../ui/dialog";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { ScrollArea } from "../ui/scroll-area";
 
 import {
   BookOpen,
@@ -35,6 +24,10 @@ import {
   Users,
   ListTodo,
   FormInput,
+  Phone,
+  Mail,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import {
   Table,
@@ -45,17 +38,26 @@ import {
   TableRow,
 } from "../ui/table";
 import Heading from "../Heading";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { cn } from "@/lib/utils";
 
 // Navigation Data
 const navigationSections = [
   { id: "about-ssim", label: "ABOUT SSIM", icon: Building },
   { id: "about-conference", label: "ABOUT THE CONFERENCE", icon: Users },
-  { id: "themes-for-samaroh", label: "THEMES FOR SAMAROH 2025", icon: ListTodo },
+  {
+    id: "themes-for-samaroh",
+    label: "THEMES FOR SAMAROH 2025",
+    icon: ListTodo,
+  },
   { id: "conference-note", label: "CONFERENCE NOTE", icon: FileText },
-  { id: "publishing-opportunities", label: "PUBLISHING OPPORTUNITIES", icon: BookOpen },
+  {
+    id: "publishing-opportunities",
+    label: "PUBLISHING OPPORTUNITIES",
+    icon: BookOpen,
+  },
   { id: "online-registration", label: "ONLINE REGISTRATION", icon: FormInput },
 ];
-
 
 // Navigation Component
 const NavContent = ({ activeSection, setActiveSection, sections }) => (
@@ -84,7 +86,7 @@ const NavContent = ({ activeSection, setActiveSection, sections }) => (
 );
 
 // Section Components
-const AboutSsim= () => (
+const AboutSsim = () => (
   <div className="space-y-3 p-3">
     <h3 className="font-bold text-mainBlue text-2xl">
       About Siva Sivani Institute of Management
@@ -484,7 +486,9 @@ const OnlineRegistration = () => (
           sizes="(max-width: 1030px) 100vw, 1030px"
         />
       </p>
-      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">IMPORTANT DATES</h3>
+      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">
+        IMPORTANT DATES
+      </h3>
       <Table className="bg-blue-50 border border-gray-300">
         <TableBody>
           <TableRow>
@@ -569,7 +573,9 @@ const OnlineRegistration = () => (
           </TableRow>
         </TableBody>
       </Table>
-      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">REGISTRATION FEE</h3>
+      <h3 className="text-2xl !mt-10 font-bold text-mainBlue">
+        REGISTRATION FEE
+      </h3>
       <p className="text-lg text-gray-700">
         <strong>The registration fee is non-refundable.</strong>
       </p>
@@ -613,9 +619,6 @@ const OnlineRegistration = () => (
   </>
 );
 
-// const Scholarships = () => <div>Scholarships content here</div>;
-
-// Main Component
 const Conferences = () => {
   const [activeSection, setActiveSection] = useState("about-ssim");
   const [isEnquireOpen, setIsEnquireOpen] = useState(false);
@@ -646,7 +649,7 @@ const Conferences = () => {
       </div> */}
 
       {/* Main Content */}
-      <div className="container max-w-7xl mx-auto px-4 py-8">
+      <div className="container max-w-7xl mx-auto px-4 py-8 sm:pb-20">
         <Heading
           title="SAMAROH 2025 - International Conference on Industry 5.0 - Business with Purpose"
           className="text-red-600 sm:!text-4xl"
@@ -729,7 +732,7 @@ const Conferences = () => {
                     {(() => {
                       switch (activeSection) {
                         case "about-ssim":
-                          return <AboutSsim/>;
+                          return <AboutSsim />;
                         case "about-conference":
                           return <AboutConference />;
                         case "themes-for-samaroh":
@@ -738,7 +741,9 @@ const Conferences = () => {
                           return <ConferenceNote />;
                         case "publishing-opportunities":
                           return (
-                            <PublishingOpportunities setIsEnquireOpen={setIsEnquireOpen} />
+                            <PublishingOpportunities
+                              setIsEnquireOpen={setIsEnquireOpen}
+                            />
                           );
                         case "online-registration":
                           return <OnlineRegistration />;
@@ -755,8 +760,434 @@ const Conferences = () => {
           </main>
         </div>
       </div>
+      <TeamSection />
     </div>
   );
 };
 
 export default Conferences;
+
+const TeamSection = () => {
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Mrs. S. Aarathy",
+      title: "CHIEF PATRON",
+      bio: "President and Chief Executive Siva Sivani Group of Institutions (SSGI)",
+    },
+    {
+      id: 2,
+      name: "Dr. Sailesh Sampathy",
+      title: "PATRON",
+      bio: "Vice President and Deputy Chief Executive Siva Sivani Group of Institutions (SSGI)",
+    },
+    {
+      id: 3,
+      name: "Smt. Deepika Sampathy",
+      title: "ASSOCIATE PATRON",
+      bio: "Associate Vice President Siva Sivani Group of Institutions (SSGI).",
+    },
+  ];
+  const conferenceTeam = [
+    {
+      id: 1,
+      name: "Dr. S.V. Ramana Rao",
+      title: "Conference Chair",
+      bio: "Director, SSIM",
+    },
+  ];
+
+  const organizingCommittee = [
+    {
+      id: 1,
+      name: "Dr. K. Subbarama Sarma",
+      title: "Assistant Professor",
+      email: "sarmaramam@ssim.ac.in",
+      phone: "98491 58262",
+    },
+    {
+      id: 2,
+      name: "Dr. Gowri Kusuma",
+      title: "Assistant Professor",
+      email: "gowri@ssim.ac.in",
+      phone: "9505076127",
+    },
+    {
+      id: 3,
+      name: "Dr. A. Dinesh",
+      title: "Assistant Professor",
+      email: "dinesh@ssim.ac.in",
+      phone: "9566741581",
+    },
+    {
+      id: 4,
+      name: "Mr. Vallinayagam",
+      title: "Associate Professor",
+      email: "vallinayagam@ssim.ac.in",
+      phone: "9994191700",
+    },
+  ];
+
+  // For expanded bio state
+  const [expandedId, setExpandedId] = useState(null);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+    hover: {
+      y: -5,
+      boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10,
+      },
+    },
+  };
+
+  const contactVariants = {
+    hidden: { opacity: 0, x: -5 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const toggleBio = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  // Function to get initials from name
+  const getInitials = (name) => {
+    return name
+      .split(" ")
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase();
+  };
+
+  // Function to generate a consistent color based on name
+  const getAvatarColor = (name) => {
+    const colors = [
+      "border border-blue-500",
+      "border border-green-500",
+      "border border-purple-500",
+      "border border-amber-500",
+      "border border-rose-500",
+      "border border-cyan-500",
+      "border border-indigo-500",
+      "border border-emerald-500",
+      "border border-fuchsia-500",
+    ];
+
+    // Simple hash function to get a consistent index
+    const hash = name
+      .split("")
+      .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return colors[hash % colors.length];
+  };
+
+  return (
+    <section className="w-full py-16 md:py-20 bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-32 h-32 bg-blue-100 rounded-full opacity-30 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-100 rounded-full opacity-30 blur-3xl translate-x-1/3 translate-y-1/3"></div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-8 relative z-10"
+        >
+          <h2 className="text-4xl text-mainBlue font-bold tracking-tight mb-3">
+            CONFERENCE TEAM
+          </h2>
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto justify-center !mb-5 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {teamMembers.map((member) => (
+            <motion.div
+              key={member.id}
+              variants={cardVariants}
+              whileHover="hover"
+              className="h-full"
+            >
+              <Card
+                className={cn(
+                  "h-full p-6 bg-white backdrop-blur-sm bg-opacity-90 border border-slate-100",
+                  "transition-all duration-300 overflow-hidden rounded-xl"
+                )}
+              >
+                <div className="flex flex-col space-y-5 h-full">
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.2, type: "spring" }}
+                    >
+                      <Avatar
+                        className={cn(
+                          "h-14 w-14 text-black font-semibold",
+                          getAvatarColor(member.name)
+                        )}
+                      >
+                        <AvatarFallback>
+                          {getInitials(member.name)}
+                        </AvatarFallback>
+                      </Avatar>
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg text-slate-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-slate-500 font-medium">
+                        {member.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex-grow">
+                    <div className="relative mb-4">
+                      <motion.p
+                        className={cn(
+                          "text-slate-600 text-sm leading-relaxed",
+                          expandedId === member.id ? "" : "line-clamp-2"
+                        )}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {member.bio}
+                      </motion.p>
+
+                      {/* {member.bio.length > 80 && (
+                        <motion.button
+                          onClick={() => toggleBio(member.id)}
+                          className="mt-1 text-xs font-medium text-blue-600 hover:text-blue-800 flex items-center"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          {expandedId === member.id ? (
+                            <>
+                              Show less <ChevronUp className="h-3 w-3 ml-1" />
+                            </>
+                          ) : (
+                            <>
+                              Read more <ChevronDown className="h-3 w-3 ml-1" />
+                            </>
+                          )}
+                        </motion.button>
+                      )} */}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center mb-8 mt-16 relative z-10"
+        >
+          <h2 className="text-4xl text-mainBlue font-bold tracking-tight mb-3">
+            ORGANIZING COMMITTEE
+          </h2>
+        </motion.div>
+
+        <motion.div
+          className="flex justify-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {conferenceTeam.map((member) => (
+            <motion.div
+              key={member.id}
+              variants={cardVariants}
+              whileHover="hover"
+              className="h-full"
+            >
+              <Card
+                className={cn(
+                  "h-full p-6 bg-white backdrop-blur-sm bg-opacity-90 border border-slate-100",
+                  "transition-all duration-300 overflow-hidden rounded-xl"
+                )}
+              >
+                <div className="flex flex-col space-y-5 h-full">
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.2, type: "spring" }}
+                    >
+                      <Avatar
+                        className={cn(
+                          "h-14 w-14 text-black font-semibold",
+                          getAvatarColor(member.name)
+                        )}
+                      >
+                        <AvatarFallback>
+                          {getInitials(member.name)}
+                        </AvatarFallback>
+                      </Avatar>
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg text-slate-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-slate-500 font-medium">
+                        {member.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex-grow">
+                    <div className="relative mb-4">
+                      <motion.p
+                        className={cn(
+                          "text-slate-600 text-center text-lg leading-relaxed",
+                          expandedId === member.id ? "" : "line-clamp-2"
+                        )}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {member.bio}
+                      </motion.p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {organizingCommittee.map((member) => (
+            <motion.div
+              key={member.id}
+              variants={cardVariants}
+              whileHover="hover"
+              className="h-full"
+            >
+              <Card
+                className={cn(
+                  "h-full p-6 bg-white backdrop-blur-sm bg-opacity-90 border border-slate-100",
+                  "transition-all duration-300 overflow-hidden rounded-xl"
+                )}
+              >
+                <div className="flex flex-col space-y-5 h-full">
+                  <div className="flex items-start space-x-4">
+                    <motion.div
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.2, type: "spring" }}
+                    >
+                      <Avatar
+                        className={cn(
+                          "h-14 w-14 text-black font-semibold",
+                          getAvatarColor(member.name)
+                        )}
+                      >
+                        <AvatarFallback>
+                          {getInitials(member.name)}
+                        </AvatarFallback>
+                      </Avatar>
+                    </motion.div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg text-slate-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-slate-500 font-medium">
+                        {member.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex-grow">
+                    {/* <div className="relative mb-4">
+                      <motion.p
+                        className={cn(
+                          "text-slate-600 text-sm leading-relaxed",
+                          expandedId === member.id ? "" : "line-clamp-2"
+                        )}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                      >
+                        {member.bio}
+                      </motion.p>
+                    </div> */}
+
+                    <motion.div
+                      className="space-y-2 pt-2 border-t border-slate-100"
+                      variants={contactVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <motion.a
+                        href={`mailto:${member.email}`}
+                        className="flex items-center text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                        whileHover={{ x: 2 }}
+                      >
+                        <Mail className="h-4 w-4 mr-2 text-slate-400" />
+                        {member.email}
+                      </motion.a>
+
+                      <motion.a
+                        href={`tel:${member.phone.replace(/\D/g, "")}`}
+                        className="flex items-center text-sm text-slate-600 hover:text-blue-600 transition-colors"
+                        whileHover={{ x: 2 }}
+                      >
+                        <Phone className="h-4 w-4 mr-2 text-slate-400" />
+                        {member.phone}
+                      </motion.a>
+                    </motion.div>
+                  </div>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
