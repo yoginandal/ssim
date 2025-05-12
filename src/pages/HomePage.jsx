@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useMediaQuery } from "@/hooks/research";
 //import Testimonial from "@/components/Testimonial";
 import LatestBlogsAndEvents from "@/components/LatestBlogs&Events";
 import Carousel from "@/components/Carousel";
@@ -22,18 +23,26 @@ const sectionVariants = {
   visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
 };
 
+const mobileSectionVariants = {
+  hidden: { scale: 1, opacity: 1 },
+  visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
+};
+
 const SectionWrapper = ({ children }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+  
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const variants = isMobile ? mobileSectionVariants : sectionVariants;
 
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      variants={sectionVariants}
+      variants={variants}
     >
       {children}
     </motion.div>
