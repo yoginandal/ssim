@@ -38,7 +38,7 @@ const LiveProjects = () => {
             <IndustryMarquee className="mt-6" />
           </div>
 
-          <div className="relative">
+          {/* <div className="relative">
             <div
               className="absolute inset-0 flex items-center"
               aria-hidden="true"
@@ -51,7 +51,7 @@ const LiveProjects = () => {
               </span>
             </div>
           </div>
-          <StatsDashboard />
+          <StatsDashboard /> */}
         </div>
       </div>
     </div>
