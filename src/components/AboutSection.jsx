@@ -177,9 +177,7 @@ export default function AboutSection() {
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
-                    className={`p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow ${
-                      index === 2 ? "col-span-2" : ""
-                    } sm:col-span-1`}
+                    className={`p-6 rounded-sm bg-white shadow-lg hover:shadow-xl transition-shadow`}
                     whileHover={{ y: -5 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
