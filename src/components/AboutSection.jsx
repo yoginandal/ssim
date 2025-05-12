@@ -9,6 +9,8 @@ import {
   Award,
   ArrowRight,
   BookCheck,
+  Handshake,
+  BrainCircuit,
 } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
 
@@ -20,22 +22,40 @@ const fadeIn = {
 
 const stats = [
   {
+    icon: <Calendar className="w-6 h-6" />,
+    value: "30+",
+    label: "Years of Excellence",
+    description: "Academic excellence since 1992",
+  },
+  {
+    icon: <Handshake className="w-6 h-6" />,
+    value: "350+",
+    label: "Corporate",
+    description: "Partners",
+  },
+  {
+    icon: <GraduationCap className="w-6 h-6" />,
+    value: "6500+",
+    label: "Alumni",
+    description: "Network",
+  },
+  {
     icon: <Award className="w-6 h-6" />,
-    value: "#1",
-    label: "in Hyderabad",
-    description: "Top management institute",
+    value: "₹90000",
+    label: "Merit",
+    description: "Scholarship",
+  },
+  {
+    icon: <BrainCircuit className="w-6 h-6" />,
+    value: "50+",
+    label: "New Age",
+    description: "Specializations",
   },
   {
     icon: <BookCheck className="w-6 h-6" />,
     value: "9",
     label: "Value Added",
     description: "Certification Programs",
-  },
-  {
-    icon: <Calendar className="w-6 h-6" />,
-    value: "30+",
-    label: "Years of Excellence",
-    description: "Academic excellence since 1992",
   },
 ];
 
@@ -99,30 +119,50 @@ export default function AboutSection() {
               <div className="space-y-6 text-gray-600">
                 <p className="text-lg leading-relaxed">
                   Located in the heart of Hyderabad and Secunderabad, Siva
-                  Sivani Institute of Management (SSIM) is a <strong>premier institution
-                  with over three decades of excellence</strong> in management education.
-                  Renowned for its <strong>strong ethical foundation</strong>, this <strong>SAQS, NBA,
-                  and NAAC accredited institution</strong> delivers industry-relevant
-                  learning through an <strong>innovative curriculum and experienced
-                  faculty blending academic and corporate insights</strong>.
+                  Sivani Institute of Management (SSIM) is a{" "}
+                  <strong>
+                    premier institution with over three decades of excellence
+                  </strong>{" "}
+                  in management education. Renowned for its{" "}
+                  <strong>strong ethical foundation</strong>, this{" "}
+                  <strong>SAQS, AIU, NBA, NAAC and AICTE accredited institution</strong>{" "}
+                  delivers industry-relevant learning through an{" "}
+                  <strong>
+                    innovative curriculum and experienced faculty blending
+                    academic and corporate insights
+                  </strong>
+                  .
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  Recognized as an <strong>A<sup>+++</sup> B-School by Business India (2024)</strong>, SSIM
-                  ranks <strong>21st among private standalone B-Schools in India
-                  (Outlook 2024) and 2nd in Telangana</strong> (Outlook, CSR, and GHRDC
-                  Times 2024). Its <strong>vibrant, extremely qualified, and talented
-                  alumni network spans across the globe</strong>, fostering valuable
-                  professional connections and success stories across
-                  industries, domains, and profiles.
+                  Recognized as an{" "}
+                  <strong>
+                    A<sup>+++</sup> B-School by Business India (2024)
+                  </strong>
+                  , SSIM ranks{" "}
+                  <strong>
+                    21st among private standalone B-Schools in India (Outlook
+                    2024) and 2nd in Telangana
+                  </strong>{" "}
+                  (Outlook, CSR, and GHRDC Times 2024). Its{" "}
+                  <strong>
+                    vibrant, extremely qualified, and talented alumni network
+                    spans across the globe
+                  </strong>
+                  , fostering valuable professional connections and success
+                  stories across industries, domains, and profiles.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  With a focus on <strong>holistic development of individuals</strong> with
-                  special inclination towards <strong>critical decision-making bordering
-                  on creativity, innovation, sustainability, ethics, and
-                  practical applicability</strong>, SSIM continues to shape future-ready
-                  leaders year-on-year.
+                  With a focus on{" "}
+                  <strong>holistic development of individuals</strong> with
+                  special inclination towards{" "}
+                  <strong>
+                    critical decision-making bordering on creativity,
+                    innovation, sustainability, ethics, and practical
+                    applicability
+                  </strong>
+                  , SSIM continues to shape future-ready leaders year-on-year.
                 </p>
 
                 <p className="text-lg leading-relaxed">

@@ -15,30 +15,35 @@ import {
 
 const slides = [
   {
-    videoId: "https://www.youtube.com/watch?v=QonokkvYeNs",
-    alt: "E S Diwesh Rahul, PGDM Student",
-    thumbnail: `https://img.youtube.com/vi/QonokkvYeNs/maxresdefault.jpg`,
+    videoId: "https://www.youtube.com/watch?v=huRs1xw8Cfc",
+    alt: "Akshita, PGDM-Triple Specialisation Student",
+    thumbnail: `https://img.youtube.com/vi/huRs1xw8Cfc/maxresdefault.jpg`,
   },
   {
-    videoId: "https://www.youtube.com/watch?v=IvXy2S9FUBg",
-    alt: "Smily Christine, SSIM",
-    thumbnail: `https://img.youtube.com/vi/IvXy2S9FUBg/maxresdefault.jpg`,
+    videoId: "https://www.youtube.com/watch?v=3zQr7bXzYek",
+    alt: "Sarvesh Rathi, PGDM Student",
+    thumbnail: `https://img.youtube.com/vi/3zQr7bXzYek/maxresdefault.jpg`,
   },
   {
-    videoId: "https://www.youtube.com/watch?v=p6sWGcSmBl4",
-    alt: "Kanchana I SSIM",
-    thumbnail: `https://img.youtube.com/vi/p6sWGcSmBl4/maxresdefault.jpg`,
+    videoId: "https://www.youtube.com/watch?v=waiRCPTGtro",
+    alt: "Shubham Singh, PGDM Student",
+    thumbnail: `https://img.youtube.com/vi/waiRCPTGtro/maxresdefault.jpg`,
   },
   {
-    videoId: "https://www.youtube.com/watch?v=_BUXcgQMer8",
-    alt: "Shalini EN I PGDM BA Student",
-    thumbnail: `https://img.youtube.com/vi/_BUXcgQMer8/maxresdefault.jpg`,
+    videoId: "https://www.youtube.com/watch?v=SGFAi8MpnS4",
+    alt: "Ayesha Begum, PGDM-Triple Specialisation Student",
+    thumbnail: `https://img.youtube.com/vi/SGFAi8MpnS4/maxresdefault.jpg`,
   },
-  // {
-  //   videoId: "https://www.youtube.com/watch?v=huRs1xw8Cfc",
-  //   alt: "Akshita, a PGDM-Triple Specialisation student",
-  //   thumbnail: `https://img.youtube.com/vi/huRs1xw8Cfc/maxresdefault.jpg`,
-  // },
+  {
+    videoId: "https://www.youtube.com/watch?v=39XOoUacs9Q",
+    alt: "Ann Jacob, PGDM - Business Analytics Student",
+    thumbnail: `https://img.youtube.com/vi/39XOoUacs9Q/maxresdefault.jpg`,
+  },
+  {
+    videoId: "https://www.youtube.com/watch?v=tbfW_5bGKm4",
+    alt: "Gayatri Reddy, PGDM Student",
+    thumbnail: `https://img.youtube.com/vi/tbfW_5bGKm4/maxresdefault.jpg`,
+  },
 ];
 
 // Add a helper function to extract video ID from URL

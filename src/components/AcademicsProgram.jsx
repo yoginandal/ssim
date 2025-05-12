@@ -80,7 +80,7 @@ export default function AcademicPrograms() {
   };
 
   return (
-    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:pt-16">
+    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:pt-16 sm:pb-20">
       <div className="relative grid lg:grid-cols-2 gap-10 sm:gap-20 items-start">
         <div className="space-y-10">
           <div className="ml-auto max-w-[550px] space-y-8">

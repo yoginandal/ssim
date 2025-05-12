@@ -48,7 +48,7 @@ export default function HomePage() {
           <HeroSlider key="hero-slider" />,
           <AboutSection key="about-section" />,
           <AcademicPrograms key="academic-programs" />,
-          <ImmLegacySection key="imm-legacy-section" />,
+          // <ImmLegacySection key="imm-legacy-section" />,
           <Carousel key="carousel" />,
           <LatestBlogsAndEvents key="latest-blogs-and-events" />,
           <RadialIcons key="testimonial" />,
