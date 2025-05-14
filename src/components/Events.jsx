@@ -80,7 +80,17 @@ export default function Gallery() {
   };
 
   return (
-    <section className="pt-16 relative">
+    <section className="pt-16 pb-20 relative">
+      <div className="absolute inset-0 opacity-5">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
         <div className="mb-16">
           <WordPullUp

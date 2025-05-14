@@ -7,36 +7,35 @@ import placement4 from "@/assets/placement_images/placement4.webp";
 import placement5 from "@/assets/placement_images/placement5.webp";
 import StatsDashboard from "@/components/newMatrix/stats-dashboard";
 import WordPullUp from "./ui/word-pull-up";
-
+import PlacementStories from "./PlacementStories";
 const images = [placement1, placement2, placement3, placement4, placement5];
 
 const LiveProjects = () => {
   return (
-    <div className="py-20 bg-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
+    <>
+      <div className="py-16 relative bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 text-gray-900">
+        {/* <div className="absolute inset-0 opacity-5">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+              backgroundSize: "20px 20px",
+            }}
+          ></div>
+        </div> */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="inline-block text-base font-semibold bg-blue-600 text-white dark:bg-blue-500 px-4 py-2 rounded-full tracking-wide uppercase">
-              SSIM Placements
-            </h2>
-            <WordPullUp
-              words="Placement Stories"
-              className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-6"
-            />
-            <ImageSlider images={images} />
-            <p className="mt-6 max-w-2xl text-xl text-gray-500 dark:text-gray-400 mx-auto leading-relaxed">
-              Our students are successfully placed in top companies, gaining
-              invaluable experience and insights that enhance their skills and
-              career prospects.
-            </p>
+            {/* <ImageSlider images={images} /> */}
+            <PlacementStories />
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <WordPullUp
               words="Our Placement Partners"
               className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-12"
             />
             <IndustryMarquee className="mt-6" />
-          </div>
+          </div> */}
 
           {/* <div className="relative">
             <div
@@ -54,7 +53,28 @@ const LiveProjects = () => {
           <StatsDashboard /> */}
         </div>
       </div>
-    </div>
+      <div className="py-20 pt-10 relative bg-white dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-white">
+        {/* <div className="absolute inset-0 opacity-5">
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, black 1px, transparent 1px), linear-gradient(black 1px, transparent 1px)",
+              backgroundSize: "20px 20px",
+            }}
+          ></div>
+        </div> */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <WordPullUp
+              words="Our Placement Partners"
+              className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-12"
+            />
+            <IndustryMarquee className="mt-6" />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
