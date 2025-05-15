@@ -11,6 +11,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { TrendingUp, TrendingDown, Minus, Trophy, Medal } from "lucide-react";
 import { timelineData } from "./dataTimeline";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Accreditations from "../footer/Accreditations";
+
 
 export default function AccreditationsRankings() {
   const renderRankingGrid = (cards) => (
@@ -34,7 +37,37 @@ export default function AccreditationsRankings() {
 
   return (
     <div className="w-full">
-      <Timeline data={data} />
+      <div className="max-w-7xl mx-auto pt-16">
+        <h2 className="text-xl font-bold md:text-5xl text-center text-black dark:text-white">
+          Accreditations & Rankings
+        </h2>
+        {/* <p className="text-neutral-700 dark:text-neutral-300 text-lg max-w-screen-md">
+          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
+          a timeline of my journey.
+        </p> */}
+        <Tabs className="py-20" defaultValue="accreditations">
+          <TabsList className="grid w-full grid-cols-2 text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
+            <TabsTrigger
+              value="accreditations"
+              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
+            >
+              Accreditations
+            </TabsTrigger>
+            <TabsTrigger
+              value="rankings"
+              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
+            >
+              Rankings
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="accreditations" className="space-y-8 pt-10 sm:pt-16">
+            <Timeline data={data} />
+          </TabsContent>
+          <TabsContent value="rankings" className="space-y-8 pt-10 sm:pt-16">
+            <Accreditations />
+          </TabsContent>
+        </Tabs>
+      </div>
     </div>
   );
 }

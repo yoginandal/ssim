@@ -92,7 +92,7 @@ export const navlinks = [
     path: "/international-relations",
   },
   {
-    name: "Placement",
+    name: "Corporate Connect",
     dropdown: [
       { name: "Placement Records", path: "/placement/records" },
       { name: "Placement Team", path: "/placement/team" },

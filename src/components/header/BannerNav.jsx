@@ -16,6 +16,7 @@ export default function BannerNav() {
           </Link>
         </div>
         <div className="flex justify-end sm:items-center space-x-4">
+          <Link to="/iqac">IQAC</Link>
           <a
             href="https://maps.app.goo.gl/HhbEn3qSWAFCeuKR7"
             target="_blank"

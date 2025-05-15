@@ -37,6 +37,7 @@ import Careers from "@/components/footer/Careers";
 import StudentsFeedback from "@/components/studentslife/StudentsFeedback";
 import BlogDetail from "@/components/blog/BlogDetail";
 import Conferences from "@/components/faculty&research/Conferences";
+import IQAC from "./components/header/IQAC";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -159,6 +160,7 @@ export default function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/careers" element={<Careers />} />
+              <Route path="/iqac" element={<IQAC />} />
             </Routes>
             <Footer />
             {isVisible && (
