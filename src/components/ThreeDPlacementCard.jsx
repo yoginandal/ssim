@@ -91,8 +91,8 @@ export default memo(function ThreeDPlacementCard({
             <h3 className="mb-1 sm:text-xl  text-center   font-bold tracking-tight text-white">
               {name}
             </h3>
-            <div className="mb flex items-center gap-2 py-2 scale-75 bg-white rounded">
-              <img src={logo} alt="logo" className="w-auto mx-auto h-8" />
+            <div className="mb flex items-center gap-2 scale-75 bg-white rounded">
+              <img src={logo} alt="logo" className="w-min mx-auto px-5 h-10" />
             </div>
           </div>
         </div>

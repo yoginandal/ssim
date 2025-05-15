@@ -1,14 +1,9 @@
 import IndustryMarquee from "./IndustryMarquee";
 import ImageSlider from "./ImageSlider";
-import placement1 from "@/assets/placement_images/placement1.webp";
-import placement2 from "@/assets/placement_images/placement2.webp";
-import placement3 from "@/assets/placement_images/placement3.webp";
-import placement4 from "@/assets/placement_images/placement4.webp";
-import placement5 from "@/assets/placement_images/placement5.webp";
 import StatsDashboard from "@/components/newMatrix/stats-dashboard";
 import WordPullUp from "./ui/word-pull-up";
 import PlacementStories from "./PlacementStories";
-const images = [placement1, placement2, placement3, placement4, placement5];
+// const images = [placement1, placement2, placement3, placement4, placement5];
 
 const LiveProjects = () => {
   return (
