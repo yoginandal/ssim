@@ -48,7 +48,7 @@ export default memo(function ThreeDPlacementCard({
   return (
     <div
       ref={cardRef}
-      className="group relative h-[300px] w-[250px] sm:h-[350px] sm:w-[250px] cursor-pointer will-change-transform"
+      className="group relative h-[350px] w-[250px] cursor-pointer will-change-transform"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
