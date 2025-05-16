@@ -47,6 +47,26 @@ export const navlinks = [
     ],
   },
   {
+    name: "Programs",
+    dropdown: [
+      {
+        name: "FPM/EFPM",
+        path: "/programs/fpm-efpm",
+      },
+      {
+        name: "PGDM",
+        subDropdown: [
+          { name: "PGDM BA", path: "/programs/pgdm-ba" },
+          { name: "PGDM BFIS", path: "/programs/pgdm-bfis" },
+          {
+            name: "PGDM Triple Specialisation",
+            path: "/programs/pgdm-triple-specialisation",
+          },
+        ],
+      },
+    ],
+  },
+  {
     name: "Admissions",
     dropdown: [
       // { name: "Admission Process", path: "/admissions/process" },
@@ -94,29 +114,10 @@ export const navlinks = [
   {
     name: "Corporate Connect",
     dropdown: [
-      { name: "Placement Records", path: "/placement/records" },
+      { name: "Placement", path: "/placement/records" },
       { name: "Placement Team", path: "/placement/team" },
-      { name: "Internship Placement", path: "/placement/records" },
-    ],
-  },
-  {
-    name: "Programs",
-    dropdown: [
-      {
-        name: "FPM/EFPM",
-        path: "/programs/fpm-efpm",
-      },
-      {
-        name: "PGDM",
-        subDropdown: [
-          { name: "PGDM BA", path: "/programs/pgdm-ba" },
-          { name: "PGDM BFIS", path: "/programs/pgdm-bfis" },
-          {
-            name: "PGDM Triple Specialisation",
-            path: "/programs/pgdm-triple-specialisation",
-          },
-        ],
-      },
+      { name: "Internships", path: "/placement/records" },
+      { name: "Guest lectures", path: "/placement/guest-lectures" },
     ],
   },
   {

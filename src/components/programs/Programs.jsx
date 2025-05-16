@@ -48,6 +48,16 @@ import {
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { CalendarRange } from "lucide-react";
+import presentation from "../../assets/programs/presentation.png";
+import industry from "../../assets/programs/industrial-revolution.png";
+import experiential from "../../assets/programs/seminar.png";
+import pulse from "../../assets/programs/market.png";
+import bookreview from "../../assets/programs/ratings.png";
+import social from "../../assets/programs/share.png";
+import industryreview from "../../assets/programs/industry.png";
+import companyreview from "../../assets/programs/marketing.png";
+import independent from "../../assets/programs/studying.png";
+import article from "../../assets/programs/search.png";
 
 const programs = [
   { id: "fpm/efpm", name: "FPM/EFPM" },
@@ -59,6 +69,11 @@ const programs = [
 const sections = [
   { id: "about", name: "About", icon: ChevronRight },
   { id: "specializations", name: "Specializations", icon: ChevronRight },
+  {
+    id: "managerialCompetency",
+    name: "Managerial Competency Development Modules",
+    icon: ChevronRight,
+  },
   { id: "differentiators", name: "Differentiators", icon: ChevronRight },
   { id: "curriculum", name: "Curriculum", icon: ChevronRight },
   { id: "eligibility", name: "Eligibility & Admission", icon: ChevronRight },
@@ -102,6 +117,64 @@ const programData = {
       {
         title: "Strategic Management",
         icon: "https://ssim.ac.in/wp-content/uploads/2022/12/SM.png",
+      },
+    ],
+    managerialCompetency: [
+      {
+        title: "Company Fact Presentation",
+        icon: presentation, // Chart for data presentation
+      },
+      {
+        title: "Industry Readiness I",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Experiential Learning",
+        icon: experiential, // Microscope for hands-on learning
+      },
+      {
+        title: "Market Pulse I",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Book Review Session",
+        icon: bookreview, // Books icon
+      },
+      {
+        title: "Industry Readiness II",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Social Project",
+        icon: social, // People/group icon
+      },
+      {
+        title: "Market Pulse II",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Industry Review Session",
+        icon: industryreview, // Factory/industry icon
+      },
+      {
+        title: "Industry Readiness III",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Market Pulse III",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Company Review Session",
+        icon: companyreview, // Office building icon
+      },
+      {
+        title: "Course of Independent study",
+        icon: independent, // Open book icon
+      },
+      {
+        title: "Article Review Session",
+        icon: article, // Newspaper/article icon
       },
     ],
     differentiators: [
@@ -226,6 +299,64 @@ const programData = {
         icon: "☁️",
       },
     ],
+    managerialCompetency: [
+      {
+        title: "Company Fact Presentation",
+        icon: presentation, // Chart for data presentation
+      },
+      {
+        title: "Industry Readiness I",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Experiential Learning",
+        icon: experiential, // Microscope for hands-on learning
+      },
+      {
+        title: "Market Pulse I",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Book Review Session",
+        icon: bookreview, // Books icon
+      },
+      {
+        title: "Industry Readiness II",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Social Project",
+        icon: social, // People/group icon
+      },
+      {
+        title: "Market Pulse II",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Industry Review Session",
+        icon: industryreview, // Factory/industry icon
+      },
+      {
+        title: "Industry Readiness III",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Market Pulse III",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Company Review Session",
+        icon: companyreview, // Office building icon
+      },
+      {
+        title: "Course of Independent study",
+        icon: independent, // Open book icon
+      },
+      {
+        title: "Article Review Session",
+        icon: article, // Newspaper/article icon
+      },
+    ],
     differentiators: [
       {
         title: "Harvard Business School Certification",
@@ -348,6 +479,64 @@ const programData = {
         icon: "📊",
         description:
           "Fraud risk analytics, Financial analytics and Algo trading with Python",
+      },
+    ],
+    managerialCompetency: [
+      {
+        title: "Company Fact Presentation",
+        icon: presentation, // Chart for data presentation
+      },
+      {
+        title: "Industry Readiness I",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Experiential Learning",
+        icon: experiential, // Microscope for hands-on learning
+      },
+      {
+        title: "Market Pulse I",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Book Review Session",
+        icon: bookreview, // Books icon
+      },
+      {
+        title: "Industry Readiness II",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Social Project",
+        icon: social, // People/group icon
+      },
+      {
+        title: "Market Pulse II",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Industry Review Session",
+        icon: industryreview, // Factory/industry icon
+      },
+      {
+        title: "Industry Readiness III",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Market Pulse III",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Company Review Session",
+        icon: companyreview, // Office building icon
+      },
+      {
+        title: "Course of Independent study",
+        icon: independent, // Open book icon
+      },
+      {
+        title: "Article Review Session",
+        icon: article, // Newspaper/article icon
       },
     ],
     differentiators: [
@@ -515,6 +704,64 @@ const programData = {
       {
         title: "Pharma Management",
         icon: "💊",
+      },
+    ],
+    managerialCompetency: [
+      {
+        title: "Company Fact Presentation",
+        icon: presentation, // Chart for data presentation
+      },
+      {
+        title: "Industry Readiness I",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Experiential Learning",
+        icon: experiential, // Microscope for hands-on learning
+      },
+      {
+        title: "Market Pulse I",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Book Review Session",
+        icon: bookreview, // Books icon
+      },
+      {
+        title: "Industry Readiness II",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Social Project",
+        icon: social, // People/group icon
+      },
+      {
+        title: "Market Pulse II",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Industry Review Session",
+        icon: industryreview, // Factory/industry icon
+      },
+      {
+        title: "Industry Readiness III",
+        icon: industry, // Target/goal icon
+      },
+      {
+        title: "Market Pulse III",
+        icon: pulse, // Upward trend chart
+      },
+      {
+        title: "Company Review Session",
+        icon: companyreview, // Office building icon
+      },
+      {
+        title: "Course of Independent study",
+        icon: independent, // Open book icon
+      },
+      {
+        title: "Article Review Session",
+        icon: article, // Newspaper/article icon
       },
     ],
     differentiators: [
@@ -735,7 +982,12 @@ const KeyInformation = ({ info }) => {
         {Object.entries(info).map(([key, value]) => {
           const Icon = iconMap[key];
           return (
-            <Card key={key} className="overflow-hidden">
+            <Card
+              key={key}
+              className={`overflow-hidden ${
+                key === "degree" ? "md:col-span-2" : ""
+              }`}
+            >
               <CardContent className="p-6 flex items-start space-x-4">
                 <div className="bg-mainBlue rounded-full p-3 flex-shrink-0">
                   <Icon className="h-6 w-6 text-primary-foreground" />
@@ -772,10 +1024,30 @@ const Specializations = ({ specializations }) => {
             {spec.icon.startsWith("http") ? (
               <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
             ) : (
-              <div className="w-20 h-20 flex items-center justify-center text-4xl bg-gray-50 rounded-lg">
+              <div className="min-w-20 h-20 flex items-center justify-center text-4xl bg-gray-50 rounded-lg">
                 {spec.icon}
               </div>
             )}
+            <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+const ManagerialCompetency = ({ managerialCompetency }) => {
+  return (
+    <div>
+      <h3 className="text-2xl font-semibold mb-4 text-red-600">
+        Managerial Competency Development Modules
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {managerialCompetency.map((spec, index) => (
+          <Card
+            key={index}
+            className="overflow-hidden flex flex-row items-center gap-4 p-2"
+          >
+            <img src={spec.icon} alt={spec.title} className="w-16 h-16" />
             <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
           </Card>
         ))}
@@ -913,6 +1185,11 @@ const ProgramSection = ({ programId, activeSection }) => {
       {activeSection === "specializations" && (
         <Specializations specializations={program.specializations} />
       )}
+      {activeSection === "managerialCompetency" && (
+        <ManagerialCompetency
+          managerialCompetency={program.managerialCompetency}
+        />
+      )}
       {activeSection === "differentiators" && (
         <Differentiators differentiators={program.differentiators} />
       )}
@@ -974,9 +1251,9 @@ const ProgramsOverview = () => {
               <span className="flex items-center">
                 {section.name}
                 {activeSection === section.id ? (
-                  <ChevronDown className="ml-auto" />
+                  <ChevronDown className="ml-auto min-w-6" />
                 ) : (
-                  <ChevronRight className="ml-auto" />
+                  <ChevronRight className="ml-auto min-w-6" />
                 )}
               </span>
             </button>
