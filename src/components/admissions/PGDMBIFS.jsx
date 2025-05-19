@@ -35,6 +35,7 @@ import {
   Award,
   TrendingUp,
   Globe,
+  BriefcaseBusiness,
 } from "lucide-react";
 import {
   Table,
@@ -48,6 +49,7 @@ import {
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
+  { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
   { id: "process", label: "Admission Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
@@ -74,6 +76,40 @@ const overviewData = [
     description:
       "Publication of 2 research papers in SCOPUS / ABDC Indexed Journals",
     icon: BookOpen, // Changed to BookOpen for research paper publications
+  },
+];
+
+const programsOffered = [
+  {
+    minor: "Banking",
+    sectoral: "Entrepreneurship",
+  },
+  {
+    minor: "Human Resource", 
+    sectoral: "Digital Marketing",
+  },
+  {
+    minor: "Insurance",
+    sectoral: "Analytics", 
+  },
+  {
+    minor: "Analytics",
+    sectoral: "Pharma Management",
+  },
+  {
+    minor: "Operations",
+    sectoral: "Hospitality & Tourism Marketing",
+  },
+  {
+    minor: "Agri Business Management",
+    sectoral: "Retail Management",
+  },
+  {
+    minor: "Marketing",
+    sectoral: "Real Estate Management",
+  },
+  {
+    minor: "Technology Management",
   },
 ];
 
@@ -395,6 +431,42 @@ const Overview = () => (
       The program boasts a near 100% placement record with leading recruiters
       including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC,
       Factset Systems, Franklin Templeton, and InfoEdge.
+    </p>
+  </div>
+);
+
+const ProgramsOffered = () => (
+  <div className="space-y-8">
+    <h3 className="font-bold text-mainBlue text-2xl">Programs Offered</h3>
+    <div className="rounded-lg overflow-hidden border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Minor
+            </TableHead>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Sectoral
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {programsOffered.map((program, index) => (
+            <TableRow key={index}>
+              <TableCell className="text-red-600 text-lg">
+                {program.minor}
+              </TableCell>
+              <TableCell className="text-black text-lg">
+                {program.sectoral}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+    <p className="text-gray-700 text-lg !my-8">
+      <strong>Note:</strong> Student need to choose One Minor and One Sectoral
+      Sectoral
     </p>
   </div>
 );
@@ -826,6 +898,8 @@ const PGDMBIFS = () => {
                       switch (activeSection) {
                         case "overview":
                           return <Overview />;
+                        case "programs":
+                          return <ProgramsOffered />;
                         case "process":
                           return <Process />;
                         case "fees":

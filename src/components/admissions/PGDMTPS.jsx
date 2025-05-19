@@ -35,6 +35,7 @@ import {
   Award,
   TrendingUp,
   Globe,
+  BriefcaseBusiness,
 } from "lucide-react";
 import {
   Table,
@@ -48,6 +49,7 @@ import {
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
+  { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
   { id: "process", label: "Admission Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
@@ -74,6 +76,50 @@ const overviewData = [
     description:
       "Publication of 2 research papers in SCOPUS / ABDC Indexed Journals",
     icon: BookOpen, // Changed to BookOpen for research paper publications
+  },
+];
+
+const programsOffered = [
+  {
+    major: "Finance",
+    minor: "Finance",
+    sectoral: "Digital Marketing",
+  },
+  {
+    major: "Marketing",
+    minor: "Marketing",
+    sectoral: "Retail Management",
+  },
+  {
+    major: "Human Resource",
+    minor: "Human Resource",
+    sectoral: "Business Analytics",
+  },
+  {
+    major: "Agri Business Management",
+    minor: "Agri Business Management",
+    sectoral: "Entrepreneurship",
+  },
+  {
+    major: "Operations Management",
+    minor: "Operations Management",
+    sectoral: "Hospitality & Tourism Management",
+  },
+  {
+    major: "Technology Management",
+    minor: "Technology Management",
+    sectoral: "Pharmaceutical Management",
+  },
+  {
+    minor: "Banking",
+    sectoral: "Real Estate Management",
+  },
+  {
+    minor: "Business Analytics",
+    sectoral: "Insurance Management",
+  },
+  {
+    sectoral: "Banking",
   },
 ];
 
@@ -292,7 +338,7 @@ const Overview = () => (
       designed to develop managers with cross-functional skills blended with IT
       acumen, offering triple specialization opportunities.
     </p>
-    <p className="text-lg text-gray-700">
+    <p className="text-lg text-gray-700 !mb-8">
       The program focuses on specific leadership nuances of getting work done
       through teams. During the second year, students can customize their
       curriculum by choosing 10 electives across different areas apart from
@@ -300,7 +346,7 @@ const Overview = () => (
       future challenges.
     </p>
 
-    <h3 className="font-bold text-mainBlue text-2xl">
+    {/* <h3 className="font-bold text-mainBlue text-2xl">
       Triple Specialization Structure
     </h3>
     <div className="space-y-4">
@@ -350,7 +396,7 @@ const Overview = () => (
           <li>Liberal Arts</li>
         </ul>
       </div>
-    </div>
+    </div> */}
 
     <h3 className="font-bold text-mainBlue text-2xl mt-8">
       Program Highlights
@@ -409,6 +455,48 @@ const Overview = () => (
       The program boasts a near 100% placement record with leading recruiters
       including Deloitte, Accenture, Aditya Birla, ICICI, Asian Paints, ITC,
       Factset Systems, Franklin Templeton, and InfoEdge.
+    </p>
+  </div>
+);
+
+const ProgramsOffered = () => (
+  <div className="space-y-8">
+    <h3 className="font-bold text-mainBlue text-2xl">Programs Offered</h3>
+    <div className="rounded-lg overflow-hidden border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Major
+            </TableHead>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Minor
+            </TableHead>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Sectoral
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {programsOffered.map((program, index) => (
+            <TableRow key={index}>
+              <TableCell className="text-black text-lg">
+                {program.major}
+              </TableCell>
+              <TableCell className="text-red-600 text-lg">
+                {program.minor}
+              </TableCell>
+              <TableCell className="text-black text-lg">
+                {program.sectoral}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+    <p className="text-gray-700 text-lg !my-8">
+      <strong>Note:</strong> Student need to choose One Major, One Minor & One
+      Sectoral
     </p>
   </div>
 );
@@ -821,6 +909,8 @@ const PGDMTPS = () => {
                       switch (activeSection) {
                         case "overview":
                           return <Overview />;
+                        case "programs":
+                          return <ProgramsOffered />;
                         case "process":
                           return <Process />;
                         case "fees":

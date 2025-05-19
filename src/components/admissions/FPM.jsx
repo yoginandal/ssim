@@ -260,7 +260,7 @@ const Overview = () => (
       of management having serious implications for the corporate world and
       society.
     </p>
-    <p className="text-lg text-gray-700">
+    <p className="text-lg text-gray-700 !mb-8">
       FPM is launched with the objective of developing outstanding scholars for
       careers in teaching and research. To achieve this, the programme provides
       scholars with the knowledge and research skills that help them become
@@ -556,7 +556,10 @@ const Apply = () => (
           Ready to begin your journey? Click below to start your application.
           Make sure you have all necessary documents ready.
         </p>
-        <a target="_blank" href="https://apply.ssim.ac.in/fellowship-program-application-form">
+        <a
+          target="_blank"
+          href="https://apply.ssim.ac.in/fellowship-program-application-form"
+        >
           <Button
             size="lg"
             className="w-full bg-mainBlue hover:bg-mainBlue/80 text-white"

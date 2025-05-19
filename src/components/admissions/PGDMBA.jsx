@@ -36,6 +36,7 @@ import {
   TrendingUp,
   Code,
   Globe,
+  BriefcaseBusiness,
 } from "lucide-react";
 import {
   Table,
@@ -49,6 +50,7 @@ import {
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
+  { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
   { id: "process", label: "Admission Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
@@ -76,6 +78,17 @@ const overviewData = [
       "Publication of 2 research papers in SCOPUS / ABDC Indexed Journals",
     icon: BookOpen, // Changed to BookOpen for research paper publications
   },
+];
+
+const programsOffered = [
+  "Python for Analytics",
+  "Business Intelligence with Tableau & SQL",
+  "Financial Analytics",
+  "Marketing Analytics",
+  "HR Analytics",
+  "Machine Learning",
+  "Design Thinking & Innovation",
+  "Multivariate Data Analysis",
 ];
 
 const processData = [
@@ -397,6 +410,36 @@ const Overview = () => (
       With the demand for data analytics professionals projected to grow by 25%
       between 2020-2030, PGDM-BA graduates are well-positioned for successful
       careers in this rapidly expanding field.
+    </p>
+  </div>
+);
+
+const ProgramsOffered = () => (
+  <div className="space-y-8">
+    <h3 className="font-bold text-mainBlue text-2xl">Programs Offered</h3>
+    <div className="rounded-lg overflow-hidden border">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="bg-[#002f87] text-white text-lg">
+              Core Courses
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {programsOffered.map((program, index) => (
+            <TableRow key={index}>
+              <TableCell className="text-red-600 text-lg">
+                {program}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
+    <p className="text-gray-700 text-lg !my-8">
+      <strong>Note:</strong> Student need to choose any Two Electives 
+      Sectoral
     </p>
   </div>
 );
@@ -799,6 +842,8 @@ const PGDMBA = () => {
                       switch (activeSection) {
                         case "overview":
                           return <Overview />;
+                        case "programs":
+                          return <ProgramsOffered />;
                         case "process":
                           return <Process />;
                         case "fees":
