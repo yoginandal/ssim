@@ -76,38 +76,32 @@ const overviewData = [
 const processData = [
   {
     step: 1,
-    title: "Eligibility Check",
-    description: "Verify if you meet the program requirements.",
+    title: "Aptitude Test Scores",
+    description:
+      "Submit scores from accepted entrance exams like CAT/XAT/MAT/CMAT/ATMA/GMAT or State Government Exam",
     details:
-      "Must have MBA/PGDM/PG in Economics/Commerce/Statistics with first class, or CA/ICWA/CS with 60% aggregate.",
+      "Percentile / Scores of Aptitude Test (CAT/XAT/MAT/CMAT/ATMA/GMAT/State Government Exam)",
   },
   {
     step: 2,
-    title: "Target Participant Profile",
-    description: "Confirm you belong to eligible participant categories.",
-    details:
-      "Open to faculty members, government/private executives, postgraduates, and graduates with CA/CMA/CS.",
+    title: "Academic Records",
+    description: "Submit academic scores from Class X through Graduation",
+    details: "Academic Scores in Xth Class, XIIth Class and Graduation",
   },
   {
     step: 3,
-    title: "Application & Research Proposal",
-    description: "Submit application with research interest abstract.",
+    title: "Experience & Certifications",
+    description:
+      "Submit work experience (optional) and details of extracurricular activities/certifications",
     details:
-      "Include a 5,000-word tentative research proposal along with complete application form.",
+      "Work Experience (Not mandatory) | Extra Curricular Acvtivities/Certification Courses",
   },
   {
     step: 4,
-    title: "Entrance Test",
-    description: "Take SRAT entrance test or submit UGC NET scores.",
-    details:
-      "UGC NET scores after June 1, 2023 are valid for 2024 admission. SRAT is SSIM's admission test.",
-  },
-  {
-    step: 5,
-    title: "Research Presentation & Interview",
-    description: "Present proposal and attend personal interview.",
-    details:
-      "Final selection based on entrance scores, academic records, proposal presentation and interview performance.",
+    title: "SOP & Interview",
+    description:
+      "Submit Statement of Purpose, video introduction and attend personal interview",
+    details: "SOP | Video Introducon | Personal Interview",
   },
 ];
 
@@ -335,13 +329,20 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">
+          {/* <p className="text-xl font-semibold text-gray-700">
             {item.description}
-          </p>
+          </p> */}
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
     ))}
+    <p className="text-lg text-gray-700 !mt-5">
+      <strong>Note:</strong> Every student is given a specific date for reporng
+      to the classes. Any student who does not report within 10 days of the
+      specified date will be treated as having withdrawn from the instute. The
+      admission of such student/s will automacally stand cancelled and any fee
+      paid will be refunded aer deducng the processing fee.
+    </p>
   </div>
 );
 

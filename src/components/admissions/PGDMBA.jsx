@@ -94,38 +94,32 @@ const programsOffered = [
 const processData = [
   {
     step: 1,
-    title: "Eligibility Check",
-    description: "Verify if you meet the program requirements.",
+    title: "Aptitude Test Scores",
+    description:
+      "Submit scores from accepted entrance exams like CAT/XAT/MAT/CMAT/ATMA/GMAT or State Government Exam",
     details:
-      "Candidates with an Engineering or (B.Sc Maths/Physics/Statistics) Or B.A (MES) background or B.Com(Computers) or BBA (Analytics) from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
+      "Percentile / Scores of Aptitude Test (CAT/XAT/MAT/CMAT/ATMA/GMAT/State Government Exam)",
   },
   {
     step: 2,
-    title: "Entrance Test Scores",
-    description: "Submit scores from accepted entrance exams.",
-    details:
-      "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct. Minimum 60% score required in data interpretation and numerical ability sections.",
+    title: "Academic Records",
+    description: "Submit academic scores from Class X through Graduation",
+    details: "Academic Scores in Xth Class, XIIth Class and Graduation",
   },
   {
     step: 3,
-    title: "Application Submission",
-    description: "Submit your complete application.",
+    title: "Experience & Certifications",
+    description:
+      "Submit work experience (optional) and details of extracurricular activities/certifications",
     details:
-      "Submit the application form along with all required documents and test scores. Ensure all academic records and certificates are included with the application.",
+      "Work Experience (Not mandatory) | Extra Curricular Acvtivities/Certification Courses",
   },
   {
     step: 4,
-    title: "SOP & Video Introduction",
-    description: "Submit Statement of Purpose and self-introduction video.",
-    details:
-      "Prepare and submit your Statement of Purpose (SOP) along with a self-introduction video as part of your application. The SOP should highlight your interest in Business Analytics.",
-  },
-  {
-    step: 5,
-    title: "Personal Interview",
-    description: "Attend interview either online or offline.",
-    details:
-      "Final selection is based on cumulative score of: Entrance test scores, Academic records (X, XII, Graduation), Work Experience, SOP, Video Introduction, Personal Interview, and Extra Curricular Activities/Certification Courses.",
+    title: "SOP & Interview",
+    description:
+      "Submit Statement of Purpose, video introduction and attend personal interview",
+    details: "SOP | Video Introducon | Personal Interview",
   },
 ];
 
@@ -459,13 +453,20 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">
+          {/* <p className="text-xl font-semibold text-gray-700">
             {item.description}
-          </p>
+          </p> */}
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
     ))}
+    <p className="text-lg text-gray-700 !mt-5">
+      <strong>Note:</strong> Every student is given a specific date for reporng
+      to the classes. Any student who does not report within 10 days of the
+      specified date will be treated as having withdrawn from the instute. The
+      admission of such student/s will automacally stand cancelled and any fee
+      paid will be refunded aer deducng the processing fee.
+    </p>
   </div>
 );
 

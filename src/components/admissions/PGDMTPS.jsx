@@ -126,38 +126,32 @@ const programsOffered = [
 const processData = [
   {
     step: 1,
-    title: "Eligibility Check",
-    description: "Verify if you meet the program requirements.",
+    title: "Aptitude Test Scores",
+    description:
+      "Submit scores from accepted entrance exams like CAT/XAT/MAT/CMAT/ATMA/GMAT or State Government Exam",
     details:
-      "Candidates with a minimum three-year Bachelor Degree from any recognized university with 50% aggregate score are eligible. Students appearing in their final semester/year exams may also apply.",
+      "Percentile / Scores of Aptitude Test (CAT/XAT/MAT/CMAT/ATMA/GMAT/State Government Exam)",
   },
   {
     step: 2,
-    title: "Entrance Test Scores",
-    description: "Submit scores from accepted entrance exams.",
-    details:
-      "SSIM accepts scores of CAT/XAT/CMAT/MAT/ATMA/GMAT and State Government Entrance Exam. Note: Testing bodies do not have any role in selection process or program conduct.",
+    title: "Academic Records",
+    description: "Submit academic scores from Class X through Graduation",
+    details: "Academic Scores in Xth Class, XIIth Class and Graduation",
   },
   {
     step: 3,
-    title: "Application Submission",
-    description: "Submit your complete application.",
+    title: "Experience & Certifications",
+    description:
+      "Submit work experience (optional) and details of extracurricular activities/certifications",
     details:
-      "Submit the application form along with all required documents including academic records (X, XII, Graduation) and entrance test scores. Ensure all certificates and mark sheets are included.",
+      "Work Experience (Not mandatory) | Extra Curricular Acvtivities/Certification Courses",
   },
   {
     step: 4,
-    title: "SOP & Video Introduction",
-    description: "Submit Statement of Purpose and self-introduction video.",
-    details:
-      "Prepare and submit your Statement of Purpose (SOP) highlighting your career goals and interest in management studies, along with a self-introduction video that showcases your personality.",
-  },
-  {
-    step: 5,
-    title: "Selection Process",
-    description: "Final evaluation based on multiple criteria.",
-    details:
-      "The final selection is based on a cumulative score of: Entrance test scores, Academic records, Work Experience, SOP, Video Introduction, Personal Interview (online/offline), and Extra Curricular Activities/Certification Courses.",
+    title: "SOP & Interview",
+    description:
+      "Submit Statement of Purpose, video introduction and attend personal interview",
+    details: "SOP | Video Introducon | Personal Interview",
   },
 ];
 
@@ -503,7 +497,6 @@ const ProgramsOffered = () => (
 
 const Process = () => (
   <div className="space-y-8">
-    {/* Selection Process Steps */}
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -517,42 +510,20 @@ const Process = () => (
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-semibold text-mainBlue">{item.title}</h3>
-          <p className="text-xl font-semibold text-gray-700">
+          {/* <p className="text-xl font-semibold text-gray-700">
             {item.description}
-          </p>
+          </p> */}
           <p className="text-lg text-gray-700">{item.details}</p>
         </div>
       </motion.div>
     ))}
-
-    {/* Additional Information */}
-    <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-      <h3 className="text-xl font-semibold text-mainBlue mb-4">
-        Important Notes:
-      </h3>
-      <ul className="space-y-2 text-gray-700">
-        <li className="flex items-start gap-2">
-          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>
-            Testing Bodies have no role in the selection process or conduct of
-            the PGDM Program
-          </span>
-        </li>
-        <li className="flex items-start gap-2">
-          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>
-            Final year students can apply before completion of their degree
-          </span>
-        </li>
-        <li className="flex items-start gap-2">
-          <Info className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" />
-          <span>
-            Selection is based on overall profile evaluation including
-            academics, entrance test scores, and extracurricular activities
-          </span>
-        </li>
-      </ul>
-    </div>
+    <p className="text-lg text-gray-700 !mt-5">
+      <strong>Note:</strong> Every student is given a specific date for reporng
+      to the classes. Any student who does not report within 10 days of the
+      specified date will be treated as having withdrawn from the instute. The
+      admission of such student/s will automacally stand cancelled and any fee
+      paid will be refunded aer deducng the processing fee.
+    </p>
   </div>
 );
 
