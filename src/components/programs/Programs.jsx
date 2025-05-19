@@ -58,6 +58,10 @@ import industryreview from "../../assets/programs/industry.png";
 import companyreview from "../../assets/programs/marketing.png";
 import independent from "../../assets/programs/studying.png";
 import article from "../../assets/programs/search.png";
+import pgdmtps from "../../assets/programs/PGDM-TPS.webp";
+import pgdmtpse from "../../assets/programs/PGDM-TPSE.webp";
+import pgdmba from "../../assets/programs/PGDM-BA.webp";
+import pgdmbifs from "../../assets/programs/PGDM-BIFS.webp";
 
 const programs = [
   { id: "fpm/efpm", name: "FPM/EFPM" },
@@ -75,7 +79,12 @@ const sections = [
     icon: ChevronRight,
   },
   { id: "differentiators", name: "Differentiators", icon: ChevronRight },
-  { id: "curriculum", name: "Curriculum", icon: ChevronRight },
+  {
+    id: "curriculum",
+    name: "Program Structure",
+    icon: ChevronRight,
+    hidden: ["fpm/efpm"],
+  },
   { id: "eligibility", name: "Eligibility & Admission", icon: ChevronRight },
 ];
 
@@ -195,48 +204,48 @@ const programData = {
       },
     ],
     curriculum: [
-      {
-        name: "Module I (15 credits)",
-        semesters: [
-          {
-            name: "Core Courses",
-            courses: [
-              "Course 1",
-              "Course 2",
-              "Course 3",
-              "Course 4",
-              "Credit Seminar (Case Study)",
-            ],
-          },
-        ],
-      },
-      {
-        name: "Module II (12 credits)",
-        semesters: [
-          {
-            name: "Specialization Phase",
-            courses: [
-              "Stream Specific Course 1",
-              "Stream Specific Course 2",
-              "Stream Specific Course 3",
-              "Credit Seminar (Specific)",
-            ],
-          },
-        ],
-      },
-      {
-        name: "Module III (9 credits)",
-        semesters: [
-          {
-            name: "Research Phase",
-            courses: [
-              "Advanced Research Methodology",
-              "Design Thinking/Teaching Pedagogy",
-              "Review Paper (Research Area)",
-            ],
-          },
-        ],
-      },
+      // {
+      //   name: "Module I (15 credits)",
+      //   semesters: [
+      //     {
+      //       name: "Core Courses",
+      //       courses: [
+      //         "Course 1",
+      //         "Course 2",
+      //         "Course 3",
+      //         "Course 4",
+      //         "Credit Seminar (Case Study)",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: "Module II (12 credits)",
+      //   semesters: [
+      //     {
+      //       name: "Specialization Phase",
+      //       courses: [
+      //         "Stream Specific Course 1",
+      //         "Stream Specific Course 2",
+      //         "Stream Specific Course 3",
+      //         "Credit Seminar (Specific)",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: "Module III (9 credits)",
+      //   semesters: [
+      //     {
+      //       name: "Research Phase",
+      //       courses: [
+      //         "Advanced Research Methodology",
+      //         "Design Thinking/Teaching Pedagogy",
+      //         "Review Paper (Research Area)",
+      //       ],
+      //     },
+      //   ],
+      // },
     ],
     eligibility: [
       "MBA/PGDM/PG in allied subjects with first class aggregate marks",
@@ -389,43 +398,47 @@ const programData = {
       },
     ],
     curriculum: [
+      // {
+      //   name: "Core Areas",
+      //   semesters: [
+      //     {
+      //       name: "Business Foundation",
+      //       courses: [
+      //         "Business Management",
+      //         "Analytical Mathematics",
+      //         "Statistics",
+      //         "Computer Science",
+      //       ],
+      //     },
+      //     {
+      //       name: "Analytics Applications",
+      //       courses: [
+      //         "Marketing Analytics",
+      //         "Financial Analytics",
+      //         "HR Analytics",
+      //         "Operational Analytics",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: "Advanced Technologies",
+      //   semesters: [
+      //     {
+      //       name: "Emerging Technologies",
+      //       courses: [
+      //         "Artificial Intelligence",
+      //         "Neural Networks",
+      //         "Advanced Machine Learning",
+      //         "Big Data Analytics",
+      //         "Cloud Computing Techniques",
+      //       ],
+      //     },
+      //   ],
+      // },
       {
-        name: "Core Areas",
-        semesters: [
-          {
-            name: "Business Foundation",
-            courses: [
-              "Business Management",
-              "Analytical Mathematics",
-              "Statistics",
-              "Computer Science",
-            ],
-          },
-          {
-            name: "Analytics Applications",
-            courses: [
-              "Marketing Analytics",
-              "Financial Analytics",
-              "HR Analytics",
-              "Operational Analytics",
-            ],
-          },
-        ],
-      },
-      {
-        name: "Advanced Technologies",
-        semesters: [
-          {
-            name: "Emerging Technologies",
-            courses: [
-              "Artificial Intelligence",
-              "Neural Networks",
-              "Advanced Machine Learning",
-              "Big Data Analytics",
-              "Cloud Computing Techniques",
-            ],
-          },
-        ],
+        name: "PGDM BA",
+        link: pgdmba,
       },
     ],
     eligibility: [
@@ -570,42 +583,46 @@ const programData = {
       },
     ],
     curriculum: [
+      // {
+      //   name: "Year 1",
+      //   semesters: [
+      //     {
+      //       name: "Foundation Courses",
+      //       courses: [
+      //         "Economics",
+      //         "Finance",
+      //         "Marketing",
+      //         "Human Resources",
+      //         "Quantitative Techniques",
+      //         "Information Technology",
+      //         "Communication",
+      //         "Operations",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: "Year 2",
+      //   semesters: [
+      //     {
+      //       name: "Specialization Courses",
+      //       courses: [
+      //         "Banking",
+      //         "Insurance",
+      //         "Security Analysis",
+      //         "Portfolio Management",
+      //         "Capital Markets",
+      //         "Strategy",
+      //         "Entrepreneurship",
+      //         "Project Management",
+      //         "Governance and Ethics",
+      //       ],
+      //     },
+      //   ],
+      // },
       {
-        name: "Year 1",
-        semesters: [
-          {
-            name: "Foundation Courses",
-            courses: [
-              "Economics",
-              "Finance",
-              "Marketing",
-              "Human Resources",
-              "Quantitative Techniques",
-              "Information Technology",
-              "Communication",
-              "Operations",
-            ],
-          },
-        ],
-      },
-      {
-        name: "Year 2",
-        semesters: [
-          {
-            name: "Specialization Courses",
-            courses: [
-              "Banking",
-              "Insurance",
-              "Security Analysis",
-              "Portfolio Management",
-              "Capital Markets",
-              "Strategy",
-              "Entrepreneurship",
-              "Project Management",
-              "Governance and Ethics",
-            ],
-          },
-        ],
+        name: "PGDM BIFS",
+        link: pgdmbifs,
       },
     ],
     eligibility: [
@@ -794,31 +811,39 @@ const programData = {
     ],
     curriculum: [
       {
-        name: "Year 1",
-        semesters: [
-          {
-            name: "Core Courses",
-            courses: [
-              "Business Management Fundamentals",
-              "Marketing Management",
-              "Financial Management",
-              "Human Resource Management",
-              "Operations Management",
-              "Business Analytics",
-            ],
-          },
-        ],
+        name: "PGDM Triple Specialisation",
+        link: pgdmtps,
       },
       {
-        name: "Year 2",
-        semesters: [
-          {
-            name: "Specialization Phase",
-            description:
-              "Students choose 10 electives across different areas apart from compulsory courses",
-          },
-        ],
+        name: "PGDM Triple Specialisation",
+        link: pgdmtpse,
       },
+      // {
+      //   name: "Year 1",
+      //   semesters: [
+      //     {
+      //       name: "Core Courses",
+      //       courses: [
+      //         "Business Management Fundamentals",
+      //         "Marketing Management",
+      //         "Financial Management",
+      //         "Human Resource Management",
+      //         "Operations Management",
+      //         "Business Analytics",
+      //       ],
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: "Year 2",
+      //   semesters: [
+      //     {
+      //       name: "Specialization Phase",
+      //       description:
+      //         "Students choose 10 electives across different areas apart from compulsory courses",
+      //     },
+      //   ],
+      // },
     ],
     eligibility: [
       "Bachelor's degree in any discipline",
@@ -1094,35 +1119,15 @@ const Curriculum = ({ curriculum }) => {
   return (
     <div>
       <h3 className="text-2xl font-semibold mb-4 text-red-600">
-        Curriculum Overview
+        Program Structure
       </h3>
-      <Accordion type="single" collapsible className="w-full">
-        {curriculum.map((year, yearIndex) => (
-          <AccordionItem key={yearIndex} value={`year-${yearIndex}`}>
-            <AccordionTrigger className="text-lg font-medium">
-              {year.name}
-            </AccordionTrigger>
-            <AccordionContent>
-              {year.semesters.map((semester, semesterIndex) => (
-                <div key={semesterIndex} className="mb-4">
-                  <h4 className="font-semibold mb-2">{semester.name}</h4>
-                  <ul className="space-y-2">
-                    {semester?.courses?.map((course, courseIndex) => (
-                      <li
-                        key={courseIndex}
-                        className="flex items-center space-x-2"
-                      >
-                        <CheckCircle className="h-5 w-5 text-green-500" />
-                        <span>{course}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </AccordionContent>
-          </AccordionItem>
+      <div className="space-y-8">
+        {curriculum.map((item, index) => (
+          <div key={index}>
+            <img src={item.link} alt={item.name} className="w-full" />
+          </div>
         ))}
-      </Accordion>
+      </div>
     </div>
   );
 };
@@ -1214,9 +1219,13 @@ const ProgramsOverview = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const filteredSections = sections.filter((section) =>
-    section.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredSections = sections.filter((section) => {
+    const matchesSearch = section.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const isHidden = section.hidden?.includes(activeProgram);
+    return matchesSearch && !isHidden;
+  });
 
   const Overlay = isDesktop ? Dialog : Drawer;
   const OverlayContent = isDesktop ? DialogContent : DrawerContent;
