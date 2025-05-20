@@ -14,7 +14,6 @@ import { timelineData } from "./dataTimeline";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Accreditations from "../footer/Accreditations";
 
-
 export default function AccreditationsRankings() {
   const renderRankingGrid = (cards) => (
     <div>
@@ -45,25 +44,28 @@ export default function AccreditationsRankings() {
           I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
           a timeline of my journey.
         </p> */}
-        <Tabs className="py-20" defaultValue="accreditations">
+        <Tabs className="px-5 py-20" defaultValue="accreditations">
           <TabsList className="grid w-full grid-cols-2 text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
-            <TabsTrigger
-              value="accreditations"
-              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
-            >
-              Accreditations
-            </TabsTrigger>
             <TabsTrigger
               value="rankings"
               className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
               Rankings
             </TabsTrigger>
+            <TabsTrigger
+              value="accreditations"
+              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
+            >
+              Accreditations
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="accreditations" className="space-y-8 pt-10 sm:pt-16">
+          <TabsContent
+            value="rankings"
+            className="space-y-8 pt-10 sm:pt-16"
+          >
             <Timeline data={data} />
           </TabsContent>
-          <TabsContent value="rankings" className="space-y-8 pt-10 sm:pt-16">
+          <TabsContent value="accreditations" className="space-y-8 pt-10 sm:pt-16">
             <Accreditations />
           </TabsContent>
         </Tabs>
