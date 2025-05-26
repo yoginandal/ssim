@@ -16,32 +16,32 @@ import {
 const slides = [
   {
     videoId: "https://www.youtube.com/watch?v=huRs1xw8Cfc",
-    alt: "Akshita, PGDM-Triple Specialisation Student",
+    alt: "Akshita",
     thumbnail: `https://img.youtube.com/vi/huRs1xw8Cfc/maxresdefault.jpg`,
   },
   {
     videoId: "https://www.youtube.com/watch?v=3zQr7bXzYek",
-    alt: "Sarvesh Rathi, PGDM Student",
+    alt: "Sarvesh Rathi",
     thumbnail: `https://img.youtube.com/vi/3zQr7bXzYek/maxresdefault.jpg`,
   },
   {
     videoId: "https://www.youtube.com/watch?v=waiRCPTGtro",
-    alt: "Shubham Singh, PGDM Student",
+    alt: "Shubham Singh",
     thumbnail: `https://img.youtube.com/vi/waiRCPTGtro/maxresdefault.jpg`,
   },
   {
     videoId: "https://www.youtube.com/watch?v=SGFAi8MpnS4",
-    alt: "Ayesha Begum, PGDM-Triple Specialisation Student",
+    alt: "Ayesha Begum",
     thumbnail: `https://img.youtube.com/vi/SGFAi8MpnS4/maxresdefault.jpg`,
   },
   {
     videoId: "https://www.youtube.com/watch?v=39XOoUacs9Q",
-    alt: "Ann Jacob, PGDM - Business Analytics Student",
+    alt: "Ann Jacob",
     thumbnail: `https://img.youtube.com/vi/39XOoUacs9Q/maxresdefault.jpg`,
   },
   {
     videoId: "https://www.youtube.com/watch?v=tbfW_5bGKm4",
-    alt: "Gayatri Reddy, PGDM Student",
+    alt: "Gayatri Reddy",
     thumbnail: `https://img.youtube.com/vi/tbfW_5bGKm4/maxresdefault.jpg`,
   },
 ];

@@ -50,7 +50,7 @@ import {
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
   { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
-  { id: "process", label: "Admission Process", icon: GraduationCap },
+  { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
   { id: "brochure", label: "Brochure", icon: BookOpen },
