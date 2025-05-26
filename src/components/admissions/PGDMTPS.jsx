@@ -188,7 +188,7 @@ const feesData = {
       dueDate: "31st July 2026",
     },
     {
-      type: "5th & 6th Installment",
+      type: "5th Installment",
       amount: "₹1,00,000",
       dueDate: "8th November 2026",
     },
@@ -226,7 +226,7 @@ const feesData = {
     },
   ],
   importantNotes: [
-    "Caution money deposit of ₹25,000 should be deposited along with the 1st installment fee (refundable upon exit)",
+    `Caution money deposit of ₹25,000 (refundable upon exit) should be deposited along with the 1st installment fee`,
     "Fee structure includes Admission fee, Course fee and regular Examination fee",
     "Institute provides Laptop, Business Suit and Textbooks (As per Book Bank Policy) to every student",
     "Late payment fines: ₹100/day (days 1-10) and ₹500/day (days 11-15)",
@@ -585,10 +585,10 @@ const Fees = () => (
                 time of Admission
               </p>
             </div>
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <Info className="h-4 w-4 animate-pulse text-red-600 flex-shrink-0" />
               <p>1st Installment includes ₹25,000 refundable caution deposit</p>
-            </div>
+            </div> */}
           </div>
         </div>
 

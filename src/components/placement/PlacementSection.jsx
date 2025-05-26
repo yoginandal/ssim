@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -33,46 +33,80 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { studentsData } from "./placementData";
 import Heading from "../Heading";
 
-// Enhanced student data with year and salary
-
-const years = Array.from(
-  new Set(studentsData.map((student) => student.year))
-).sort((a, b) => b - a);
-const programs = Array.from(
-  new Set(studentsData.map((student) => student.program))
-);
-const companies = Array.from(
-  new Set(studentsData.map((student) => student.company))
-);
-const locations = Array.from(
-  new Set(studentsData.map((student) => student.location))
-);
-
 export default function PlacementSection() {
+  const [apiStudentsData, setApiStudentsData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedProgram, setSelectedProgram] = useState("all");
+  const [selectedDesignation, setSelectedDesignation] = useState("all");
   const [selectedCompany, setSelectedCompany] = useState("all");
-  const [selectedLocation, setSelectedLocation] = useState("all");
   const [sortConfig, setSortConfig] = useState(null);
 
-  // Calculate statistics
+  useEffect(() => {
+    const fetchPlacementData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("http://localhost:3000/api/placements");
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        setApiStudentsData(data);
+        setError(null);
+      } catch (e) {
+        console.error("Failed to fetch placement data:", e);
+        setError(e.message);
+        setApiStudentsData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlacementData();
+  }, []);
+
+  const years = useMemo(() => 
+    Array.from(new Set(apiStudentsData.map((student) => student.year)))
+    .sort((a, b) => {
+        const yearA = parseInt(a, 10) || 0;
+        const yearB = parseInt(b, 10) || 0;
+        return yearB - yearA; 
+    }), 
+  [apiStudentsData]);
+  
+  const designations = useMemo(() => 
+    Array.from(new Set(apiStudentsData.map((student) => student.designation).filter(Boolean))), 
+  [apiStudentsData]);
+  
+  const companies = useMemo(() => 
+    Array.from(new Set(apiStudentsData.map((student) => student.company).filter(Boolean))), 
+  [apiStudentsData]);
+
   const stats = useMemo(() => {
-    const totalPlacements = studentsData.length;
-    const totalSalary = studentsData.reduce(
-      (acc, curr) => acc + Number(curr.salary.replace(/,/g, "")),
+    if (!apiStudentsData || apiStudentsData.length === 0) {
+        return {
+            totalPlacements: 0,
+            averageSalary: "0K",
+            companiesHiring: 0,
+            placementRate: "0%",
+        };
+    }
+    const totalPlacements = apiStudentsData.length;
+    const totalSalary = apiStudentsData.reduce(
+      (acc, curr) => acc + Number(String(curr.salary).replace(/[^\d.-]/g, "") || 0),
       0
     );
     const averageSalary = totalPlacements
       ? `${(totalSalary / totalPlacements)
           .toFixed(0)
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}K`
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}${totalPlacements > 0 && totalSalary > 0 ? '' : 'K'}`
       : "0K";
-    const companiesHiring = new Set(studentsData.map((s) => s.company)).size;
-    const placementRate = "92%"; // Ideally, calculate based on actual data
+    const companiesHiring = new Set(apiStudentsData.map((s) => s.company)).size;
+    const placementRate = "92%";
 
     return {
       totalPlacements,
@@ -80,59 +114,45 @@ export default function PlacementSection() {
       companiesHiring,
       placementRate,
     };
-  }, []);
+  }, [apiStudentsData]);
 
   const filteredStudents = useMemo(() => {
     const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
-    const filtered = studentsData.filter((student) => {
-      // Search term filter
+    const filtered = apiStudentsData.filter((student) => {
       const searchFilter =
         normalizedSearchTerm === "" ||
-        student.name.toLowerCase().includes(normalizedSearchTerm) ||
-        student.company.toLowerCase().includes(normalizedSearchTerm) ||
-        student.program.toLowerCase().includes(normalizedSearchTerm) ||
-        student.location.toLowerCase().includes(normalizedSearchTerm) ||
-        student.year.toString().includes(normalizedSearchTerm) ||
-        student.salary.replace(/,/g, "").includes(normalizedSearchTerm);
+        (student.name && student.name.toLowerCase().includes(normalizedSearchTerm)) ||
+        (student.company && student.company.toLowerCase().includes(normalizedSearchTerm)) ||
+        (student.designation && student.designation.toLowerCase().includes(normalizedSearchTerm)) ||
+        (student.year && student.year.toString().includes(normalizedSearchTerm)) ||
+        (student.salary && String(student.salary).replace(/[^\d.-]/g, "").includes(normalizedSearchTerm));
 
-      // Individual filters
       const yearFilter =
-        selectedYear === "all" || student.year.toString() === selectedYear;
-      const programFilter =
-        selectedProgram === "all" || student.program === selectedProgram;
+        selectedYear === "all" || (student.year && student.year.toString() === selectedYear);
+      const DesignationFilter =
+        selectedDesignation === "all" ||
+        (student.designation && student.designation === selectedDesignation);
       const companyFilter =
-        selectedCompany === "all" || student.company === selectedCompany;
-      const locationFilter =
-        selectedLocation === "all" || student.location === selectedLocation;
+        selectedCompany === "all" || (student.company && student.company === selectedCompany);
 
-      // All filters must pass
-      return (
-        searchFilter &&
-        yearFilter &&
-        programFilter &&
-        companyFilter &&
-        locationFilter
-      );
+      return searchFilter && yearFilter && DesignationFilter && companyFilter;
     });
 
-    // Apply sorting if configured
     if (sortConfig) {
       filtered.sort((a, b) => {
         let aValue = a[sortConfig.key];
         let bValue = b[sortConfig.key];
 
-        // Handle numeric sorting for year and salary
         if (sortConfig.key === "salary") {
-          aValue = parseInt(aValue.replace(/,/g, ""), 10);
-          bValue = parseInt(bValue.replace(/,/g, ""), 10);
+          aValue = parseInt(String(aValue).replace(/[^\d.-]/g, "") || 0, 10);
+          bValue = parseInt(String(bValue).replace(/[^\d.-]/g, "") || 0, 10);
         } else if (sortConfig.key === "year") {
-          aValue = Number(aValue);
-          bValue = Number(bValue);
+          aValue = Number(aValue) || 0;
+          bValue = Number(bValue) || 0;
         } else {
-          // For string comparison, convert to lowercase to ensure case-insensitive sorting
-          aValue = aValue.toString().toLowerCase();
-          bValue = bValue.toString().toLowerCase();
+          aValue = (aValue || "").toString().toLowerCase();
+          bValue = (bValue || "").toString().toLowerCase();
         }
 
         if (aValue < bValue) return sortConfig.direction === "asc" ? -1 : 1;
@@ -145,11 +165,10 @@ export default function PlacementSection() {
   }, [
     searchTerm,
     selectedYear,
-    selectedProgram,
+    selectedDesignation,
     selectedCompany,
-    selectedLocation,
     sortConfig,
-    studentsData, // Added in case studentsData becomes dynamic
+    apiStudentsData,
   ]);
 
   const handleSort = (key) => {
@@ -162,9 +181,8 @@ export default function PlacementSection() {
 
   const clearFilters = () => {
     setSelectedYear("all");
-    setSelectedProgram("all");
+    setSelectedDesignation("all");
     setSelectedCompany("all");
-    setSelectedLocation("all");
     setSearchTerm("");
     setSortConfig(null);
   };
@@ -181,7 +199,6 @@ export default function PlacementSection() {
   return (
     <div className="min-h-fit bg-gradient-to-b from-background to-muted/20 pb-16">
       <div className="container max-w-7xl mx-auto p-4 md:p-8 space-y-8">
-        {/* Enhanced Header Section */}
         <div className="text-center space-y-4 py-8">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
             Student Placements
@@ -211,7 +228,6 @@ export default function PlacementSection() {
             value="placement-details"
             className="space-y-8 pt-10 sm:pt-16"
           >
-            {/* Enhanced Statistics Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               <Card className="group hover:shadow-lg hover:translate-y-[-10px] transition-all duration-200 hover:border-primary/20">
                 <CardHeader className="pb-2 space-y-4">
@@ -275,7 +291,6 @@ export default function PlacementSection() {
               </Card>
             </div>
 
-            {/* Enhanced Filters Section */}
             <div className="rounded-sm border bg-card p-5 space-y-4">
               <h2 className="text-lg font-semibold mb-4">Filter Placements</h2>
               <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
@@ -296,18 +311,18 @@ export default function PlacementSection() {
                   </Select>
 
                   <Select
-                    value={selectedProgram}
-                    onValueChange={setSelectedProgram}
+                    value={selectedDesignation}
+                    onValueChange={setSelectedDesignation}
                   >
-                    <SelectTrigger className="w-full sm:w-[160px] bg-background">
+                    <SelectTrigger className="w-full sm:w-[200px] bg-background">
                       <BuildingIcon className="w-4 h-4 mr-2 text-red-600  text-muted-foreground" />
-                      <SelectValue placeholder="Program" />
+                      <SelectValue placeholder="Designation" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="all">All Programs</SelectItem>
-                      {programs.map((program) => (
-                        <SelectItem key={program} value={program}>
-                          {program}
+                      <SelectItem value="all">All designations</SelectItem>
+                      {designations.map((designation) => (
+                        <SelectItem key={designation} value={designation}>
+                          {designation}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -330,24 +345,6 @@ export default function PlacementSection() {
                       ))}
                     </SelectContent>
                   </Select>
-
-                  <Select
-                    value={selectedLocation}
-                    onValueChange={setSelectedLocation}
-                  >
-                    <SelectTrigger className="w-full sm:w-[160px] bg-background">
-                      <MapPinIcon className="w-4 h-4 mr-2 text-red-600  text-muted-foreground" />
-                      <SelectValue placeholder="Location" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Locations</SelectItem>
-                      {locations.map((location) => (
-                        <SelectItem key={location} value={location}>
-                          {location}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
                 </div>
 
                 <div className="flex gap-2 w-full md:max-w-md">
@@ -361,11 +358,9 @@ export default function PlacementSection() {
                 </div>
               </div>
 
-              {/* Enhanced Active Filters */}
               {(selectedYear !== "all" ||
-                selectedProgram !== "all" ||
+                selectedDesignation !== "all" ||
                 selectedCompany !== "all" ||
-                selectedLocation !== "all" ||
                 searchTerm.trim() !== "") && (
                 <div className="flex flex-wrap items-center gap-2 pt-4">
                   <span className="text-sm text-muted-foreground">
@@ -379,12 +374,12 @@ export default function PlacementSection() {
                       Year: {selectedYear}
                     </Badge>
                   )}
-                  {selectedProgram !== "all" && (
+                  {selectedDesignation !== "all" && (
                     <Badge
                       variant="secondary"
                       className="hover:bg-secondary/80"
                     >
-                      Program: {selectedProgram}
+                      Designation: {selectedDesignation}
                     </Badge>
                   )}
                   {selectedCompany !== "all" && (
@@ -393,14 +388,6 @@ export default function PlacementSection() {
                       className="hover:bg-secondary/80"
                     >
                       Company: {selectedCompany}
-                    </Badge>
-                  )}
-                  {selectedLocation !== "all" && (
-                    <Badge
-                      variant="secondary"
-                      className="hover:bg-secondary/80"
-                    >
-                      Location: {selectedLocation}
                     </Badge>
                   )}
                   {searchTerm.trim() !== "" && (
@@ -412,9 +399,8 @@ export default function PlacementSection() {
                     </Badge>
                   )}
                   {(selectedYear !== "all" ||
-                    selectedProgram !== "all" ||
+                    selectedDesignation !== "all" ||
                     selectedCompany !== "all" ||
-                    selectedLocation !== "all" ||
                     searchTerm.trim() !== "") && (
                     <Button
                       variant="ghost"
@@ -430,7 +416,6 @@ export default function PlacementSection() {
               )}
             </div>
 
-            {/* Enhanced Table */}
             <div className="border border-gray-200 rounded-lg overflow-hidden bg-white flex flex-col h-[calc(100vh-100px)] invisible-scrollbar">
               <Table className="text-base relative">
                 <TableHeader className="bg-gray-50 sticky top-0 z-10">
@@ -455,23 +440,13 @@ export default function PlacementSection() {
                     </TableHead>
                     <TableHead
                       className="cursor-pointer hover:text-primary transition-colors"
-                      onClick={() => handleSort("program")}
+                      onClick={() => handleSort("designation")}
                     >
                       <div className="flex items-center gap-1">
-                        Program
-                        <SortIcon columnKey="program" />
+                        Designation
+                        <SortIcon columnKey="designation" />
                       </div>
                     </TableHead>
-                    <TableHead
-                      className="cursor-pointer hover:text-primary transition-colors"
-                      onClick={() => handleSort("location")}
-                    >
-                      <div className="flex items-center gap-1">
-                        Location
-                        <SortIcon columnKey="location" />
-                      </div>
-                    </TableHead>
-                    <TableHead>LinkedIn</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -502,30 +477,7 @@ export default function PlacementSection() {
                           {student.name}
                         </TableCell>
                         <TableCell>{student.company}</TableCell>
-                        <TableCell>{student.program}</TableCell>
-                        <TableCell>{student.location}</TableCell>
-                        <TableCell>
-                          {student.linkedin ? (
-                            <a
-                              href={student.linkedin}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                            >
-                              <LinkedinIcon className="w-5 h-5 text-blue-600" />
-                              <span className="inline text-blue-600">
-                                Profile
-                              </span>
-                            </a>
-                          ) : (
-                            <span className="inline-flex items-center gap-2 text-blue-600">
-                              <LinkedinIcon className="w-5 h-5" />
-                              <span className="inline text-blue-600">
-                                Profile
-                              </span>
-                            </span>
-                          )}
-                        </TableCell>
+                        <TableCell>{student.designation}</TableCell>
                       </TableRow>
                     ))
                   )}
