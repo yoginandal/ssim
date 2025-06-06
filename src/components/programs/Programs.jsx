@@ -19,7 +19,7 @@ import {
   Users,
 } from "lucide-react";
 import { ScrollArea } from "../ui/scroll-area";
-import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+// import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
@@ -46,7 +46,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Download, CalendarIcon } from "lucide-react";
 import { CalendarRange } from "lucide-react";
 import presentation from "../../assets/programs/presentation.png";
 import industry from "../../assets/programs/industrial-revolution.png";
@@ -62,6 +62,7 @@ import pgdmtps from "../../assets/programs/PGDM-TPS.webp";
 import pgdmtpse from "../../assets/programs/PGDM-TPSE.webp";
 import pgdmba from "../../assets/programs/PGDM-BA.webp";
 import pgdmbifs from "../../assets/programs/PGDM-BIFS.webp";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const programs = [
   { id: "fpm/efpm", name: "FPM/EFPM" },
@@ -203,50 +204,163 @@ const programData = {
           "Monthly stipend of ₹20,000-30,000 for qualified full-time scholars",
       },
     ],
-    curriculum: [
-      // {
-      //   name: "Module I (15 credits)",
-      //   semesters: [
-      //     {
-      //       name: "Core Courses",
-      //       courses: [
-      //         "Course 1",
-      //         "Course 2",
-      //         "Course 3",
-      //         "Course 4",
-      //         "Credit Seminar (Case Study)",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Module II (12 credits)",
-      //   semesters: [
-      //     {
-      //       name: "Specialization Phase",
-      //       courses: [
-      //         "Stream Specific Course 1",
-      //         "Stream Specific Course 2",
-      //         "Stream Specific Course 3",
-      //         "Credit Seminar (Specific)",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Module III (9 credits)",
-      //   semesters: [
-      //     {
-      //       name: "Research Phase",
-      //       courses: [
-      //         "Advanced Research Methodology",
-      //         "Design Thinking/Teaching Pedagogy",
-      //         "Review Paper (Research Area)",
-      //       ],
-      //     },
-      //   ],
-      // },
-    ],
+    // curriculum: [
+    //   {
+    //     module1: {
+    //       title: "Term Thematic: Corporate Impellent",
+    //       duration: "3 months",
+    //       description:
+    //         "Build a solid foundation in programming, statistics, and data manipulation",
+    //       topics: [
+    //         {
+    //           title: "Introduction to Python Programming",
+    //         },
+    //         {
+    //           title: "Statistics for Data Science",
+    //         },
+    //         {
+    //           title: "Data Manipulation and Analysis",
+    //           content:
+    //             "Working with Pandas, NumPy, and data cleaning techniques",
+    //         },
+    //         {
+    //           title: "Data Visualization",
+    //           content:
+    //             "Creating effective visualizations with Matplotlib, Seaborn, and Plotly",
+    //         },
+    //       ],
+    //     },
+    //     module2: {
+    //       title: "Machine Learning Fundamentals",
+    //       duration: "3 months",
+    //       description:
+    //         "Master the core concepts and algorithms of machine learning",
+    //       topics: [
+    //         {
+    //           title: "Supervised Learning",
+    //           content:
+    //             "Regression, classification, decision trees, and ensemble methods",
+    //         },
+    //         {
+    //           title: "Unsupervised Learning",
+    //           content:
+    //             "Clustering, dimensionality reduction, and anomaly detection",
+    //         },
+    //         {
+    //           title: "Model Evaluation and Validation",
+    //           content: "Cross-validation, metrics, and hyperparameter tuning",
+    //         },
+    //         {
+    //           title: "Feature Engineering",
+    //           content:
+    //             "Feature selection, extraction, and transformation techniques",
+    //         },
+    //       ],
+    //     },
+    //     module3: {
+    //       title: "Advanced Machine Learning",
+    //       duration: "3 months",
+    //       description:
+    //         "Explore cutting-edge techniques in deep learning and specialized domains",
+    //       topics: [
+    //         {
+    //           title: "Deep Learning",
+    //           content: "Neural networks, CNNs, RNNs, and transfer learning",
+    //         },
+    //         {
+    //           title: "Natural Language Processing",
+    //           content:
+    //             "Text preprocessing, sentiment analysis, and language models",
+    //         },
+    //         {
+    //           title: "Computer Vision",
+    //           content:
+    //             "Image processing, object detection, and image classification",
+    //         },
+    //         {
+    //           title: "Time Series Analysis",
+    //           content: "Forecasting, ARIMA models, and sequence modeling",
+    //         },
+    //       ],
+    //     },
+    //     module4: {
+    //       title: "Applied Data Science",
+    //       duration: "3 months",
+    //       description:
+    //         "Apply your skills to real-world problems and prepare for industry",
+    //       topics: [
+    //         {
+    //           title: "Big Data Technologies",
+    //           content: "Hadoop, Spark, and distributed computing",
+    //         },
+    //         {
+    //           title: "MLOps and Deployment",
+    //           content: "Model deployment, monitoring, and maintenance",
+    //         },
+    //         {
+    //           title: "Data Ethics and Privacy",
+    //           content: "Ethical considerations, bias, and responsible AI",
+    //         },
+    //         {
+    //           title: "Capstone Project",
+    //           content:
+    //             "End-to-end data science project with real-world applications",
+    //         },
+    //       ],
+    //     },
+    //     module5: {
+    //       title: "Advanced Machine Learning",
+    //       duration: "3 months",
+    //       description:
+    //         "Explore cutting-edge techniques in deep learning and specialized domains",
+    //       topics: [
+    //         {
+    //           title: "Deep Learning",
+    //           content: "Neural networks, CNNs, RNNs, and transfer learning",
+    //         },
+    //         {
+    //           title: "Natural Language Processing",
+    //           content:
+    //             "Text preprocessing, sentiment analysis, and language models",
+    //         },
+    //         {
+    //           title: "Computer Vision",
+    //           content:
+    //             "Image processing, object detection, and image classification",
+    //         },
+    //         {
+    //           title: "Time Series Analysis",
+    //           content: "Forecasting, ARIMA models, and sequence modeling",
+    //         },
+    //       ],
+    //     },
+    //     module6: {
+    //       title: "Applied Data Science",
+    //       duration: "3 months",
+    //       description:
+    //         "Apply your skills to real-world problems and prepare for industry",
+    //       topics: [
+    //         {
+    //           title: "Big Data Technologies",
+    //           content: "Hadoop, Spark, and distributed computing",
+    //         },
+    //         {
+    //           title: "MLOps and Deployment",
+    //           content: "Model deployment, monitoring, and maintenance",
+    //         },
+    //         {
+    //           title: "Data Ethics and Privacy",
+    //           content: "Ethical considerations, bias, and responsible AI",
+    //         },
+    //         {
+    //           title: "Capstone Project",
+    //           content:
+    //             "End-to-end data science project with real-world applications",
+    //         },
+    //       ],
+    //     },
+    //   },
+    // ],
     eligibility: [
       "MBA/PGDM/PG in allied subjects with first class aggregate marks",
       "Graduate with CA/ICWA/CS qualification (minimum 60% aggregate)",
@@ -398,47 +512,239 @@ const programData = {
       },
     ],
     curriculum: [
-      // {
-      //   name: "Core Areas",
-      //   semesters: [
-      //     {
-      //       name: "Business Foundation",
-      //       courses: [
-      //         "Business Management",
-      //         "Analytical Mathematics",
-      //         "Statistics",
-      //         "Computer Science",
-      //       ],
-      //     },
-      //     {
-      //       name: "Analytics Applications",
-      //       courses: [
-      //         "Marketing Analytics",
-      //         "Financial Analytics",
-      //         "HR Analytics",
-      //         "Operational Analytics",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Advanced Technologies",
-      //   semesters: [
-      //     {
-      //       name: "Emerging Technologies",
-      //       courses: [
-      //         "Artificial Intelligence",
-      //         "Neural Networks",
-      //         "Advanced Machine Learning",
-      //         "Big Data Analytics",
-      //         "Cloud Computing Techniques",
-      //       ],
-      //     },
-      //   ],
-      // },
       {
         name: "PGDM BA",
         link: pgdmba,
+      },
+      {
+        module1: {
+          title: "Term Thematic: Corporate Impellent pgdm-ba",
+          duration: "3 months",
+          description:
+            "Build a solid foundation in programming, statistics, and data manipulation",
+          topics: [
+            {
+              title: "Mgmt. Theory and Organizational Behaviour",
+            },
+            {
+              title: "Managerial Economics",
+            },
+            {
+              title: "Managerial Accounting",
+            },
+            {
+              title: "Statistics for Decision Making",
+            },
+            {
+              title: "Advanced Excel for Managers",
+            },
+            {
+              title: "Entrepreneurship Development - I",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Fact Presentation",
+            },
+            {
+              title: "Industry Readiness - I",
+            },
+            {
+              title: "Experiential Learning",
+            },
+            {
+              title: "Market Pulse - I",
+            },
+            {
+              title: "Term End Viva - I",
+            },
+          ],
+        },
+        module2: {
+          title: "Term Thematic: Corporate Intrinsic",
+          duration: "3 months",
+          description:
+            "Master the core concepts and algorithms of machine learning",
+          topics: [
+            {
+              title: "Python for Analytics",
+            },
+            {
+              title: "SQL for Business Intelligence",
+            },
+            {
+              title: "Corporate Finance",
+            },
+            {
+              title: "Operations Research",
+            },
+            {
+              title: "Marketing Management",
+            },
+            {
+              title: "Entrepreneurship Development - II",
+            },
+            {
+              title: "Art of Business Communication in Digital Era",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Book Review Session",
+            },
+            {
+              title: "Industry Readiness - II",
+            },
+            {
+              title: "Social Project",
+            },
+            {
+              title: "Market Pulse - II",
+            },
+            {
+              title: "Term End Viva - II",
+            },
+          ],
+        },
+        module3: {
+          title: "Term Thematic: Corporate Integral",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Financial Analytics",
+            },
+            {
+              title: "Marketing Analytics",
+            },
+            {
+              title: "Multivariate Data Analysis",
+            },
+            {
+              title: "Human Resource Management",
+            },
+            {
+              title: "Operations Management",
+            },
+            {
+              title: "Research Methodology",
+            },
+            {
+              title: "Entrepreneurship Development - III",
+            },
+            {
+              title: "Technology Enabled Managerial Communication",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Industry Review Session",
+            },
+            {
+              title: "Industry Readiness - III",
+            },
+            {
+              title: "Market Pulse - III",
+            },
+            {
+              title: "Term End Viva - III",
+            },
+          ],
+        },
+        module4: {
+          title: "Term Thematic: Corporate Adept",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Project Management",
+            },
+            {
+              title: "Elective - I",
+            },
+            {
+              title: "Elective - I",
+            },
+            {
+              title: "Elective - II",
+            },
+            {
+              title: "Elective - II",
+            },
+            {
+              title: "HR Analytics",
+            },
+            {
+              title: "Machine Learning - I",
+            },
+            {
+              title: "Organisational Communication for Industry 4.0",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Review Session",
+            },
+            {
+              title: "Industry Internship Project",
+            },
+            {
+              title: "Course of Independent Study/MOOC/Certificate Course",
+            },
+            {
+              title: "Term End Viva - IV",
+            },
+          ],
+        },
+        module5: {
+          title: "Term Thematic: Corporate Astute",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Strategic Management",
+            },
+            {
+              title: "Business Analysis Using Case Studies",
+            },
+            {
+              title: "Design Thinking and Innovation",
+            },
+            {
+              title: "Elective - I",
+            },
+            {
+              title: "Elective - II",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Article Review Session",
+            },
+            {
+              title: "Term End Viva - V",
+            },
+          ],
+        },
+        module6: {
+          title: "Term Thematic: Corporate Ace",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Corporate Governance and Sustainability",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Specialization Project",
+            },
+          ],
+        },
       },
     ],
     eligibility: [
@@ -583,46 +889,239 @@ const programData = {
       },
     ],
     curriculum: [
-      // {
-      //   name: "Year 1",
-      //   semesters: [
-      //     {
-      //       name: "Foundation Courses",
-      //       courses: [
-      //         "Economics",
-      //         "Finance",
-      //         "Marketing",
-      //         "Human Resources",
-      //         "Quantitative Techniques",
-      //         "Information Technology",
-      //         "Communication",
-      //         "Operations",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Year 2",
-      //   semesters: [
-      //     {
-      //       name: "Specialization Courses",
-      //       courses: [
-      //         "Banking",
-      //         "Insurance",
-      //         "Security Analysis",
-      //         "Portfolio Management",
-      //         "Capital Markets",
-      //         "Strategy",
-      //         "Entrepreneurship",
-      //         "Project Management",
-      //         "Governance and Ethics",
-      //       ],
-      //     },
-      //   ],
-      // },
       {
         name: "PGDM BIFS",
         link: pgdmbifs,
+      },
+      {
+        module1: {
+          title: "Term Thematic: Corporate Impellent",
+          duration: "3 months",
+          description:
+            "Build a solid foundation in programming, statistics, and data manipulation",
+          topics: [
+            {
+              title: "Mgmt. Theory and Organizational Behaviour",
+            },
+            {
+              title: "Managerial Economics",
+            },
+            {
+              title: "Managerial Accounting",
+            },
+            {
+              title: "Statistics for Decision Making",
+            },
+            {
+              title: "Advanced Excel for Managers",
+            },
+            {
+              title: "Entrepreneurship Development - I",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Fact Presentation",
+            },
+            {
+              title: "Industry Readiness - I",
+            },
+            {
+              title: "Experiential Learning",
+            },
+            {
+              title: "Market Pulse - I",
+            },
+            {
+              title: "Term End Viva - I",
+            },
+          ],
+        },
+        module2: {
+          title: "Term Thematic: Corporate Intrinsic",
+          duration: "3 months",
+          description:
+            "Master the core concepts and algorithms of machine learning",
+          topics: [
+            {
+              title: "Banking Law and Operations",
+            },
+            {
+              title: "Insurance and Risk Management",
+            },
+            {
+              title: "Corporate Finance",
+            },
+            {
+              title: "Operations Research",
+            },
+            {
+              title: "Marketing Management",
+            },
+            {
+              title: "Entrepreneurship Development - II",
+            },
+            {
+              title: "Art of Business Communication in Digital Era",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Book Review Session",
+            },
+            {
+              title: "Industry Readiness - II",
+            },
+            {
+              title: "Social Project",
+            },
+            {
+              title: "Market Pulse - II",
+            },
+            {
+              title: "Term End Viva - II",
+            },
+          ],
+        },
+        module3: {
+          title: "Term Thematic: Corporate Integral",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Business Environment and Law",
+            },
+            {
+              title: "Operations Management",
+            },
+            {
+              title: "Research Methodology",
+            },
+            {
+              title: "Major - I",
+            },
+            {
+              title: "Major - II",
+            },
+            {
+              title: "Major - III",
+            },
+            {
+              title: "Entrepreneurship Development - III",
+            },
+            {
+              title: "Technology Enabled Managerial Communication",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Industry Review Session",
+            },
+            {
+              title: "Industry Readiness - III",
+            },
+            {
+              title: "Market Pulse - III",
+            },
+            {
+              title: "Term End Viva - III",
+            },
+          ],
+        },
+        module4: {
+          title: "Term Thematic: Corporate Adept",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Project Management",
+            },
+            {
+              title: "Major - IV",
+            },
+            {
+              title: "Major - V",
+            },
+            {
+              title: "Major - VI",
+            },
+            {
+              title: "Minor - I",
+            },
+            {
+              title: "Minor - II",
+            },
+            {
+              title: "Sectoral - I",
+            },
+            {
+              title: "Organisational Communication for Industry 4.0",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Review Session",
+            },
+            {
+              title: "Industry Internship Project",
+            },
+            {
+              title: "Course of Independent Study/MOOC/Certificate Course",
+            },
+            {
+              title: "Term End Viva - IV",
+            },
+          ],
+        },
+        module5: {
+          title: "Term Thematic: Corporate Astute",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Strategic Management",
+            },
+            {
+              title: "InternationalBusiness",
+            },
+            {
+              title: "Design Thinking and Innovation",
+            },
+            {
+              title: "Minor - III",
+            },
+            {
+              title: "Sectoral - II",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Article Review Session",
+            },
+            {
+              title: "Term End Viva - V",
+            },
+          ],
+        },
+        module6: {
+          title: "Term Thematic: Corporate Ace",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Corporate Governance and Sustainability",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Specialization Project",
+            },
+          ],
+        },
       },
     ],
     eligibility: [
@@ -818,32 +1317,236 @@ const programData = {
         name: "PGDM Triple Specialisation",
         link: pgdmtpse,
       },
-      // {
-      //   name: "Year 1",
-      //   semesters: [
-      //     {
-      //       name: "Core Courses",
-      //       courses: [
-      //         "Business Management Fundamentals",
-      //         "Marketing Management",
-      //         "Financial Management",
-      //         "Human Resource Management",
-      //         "Operations Management",
-      //         "Business Analytics",
-      //       ],
-      //     },
-      //   ],
-      // },
-      // {
-      //   name: "Year 2",
-      //   semesters: [
-      //     {
-      //       name: "Specialization Phase",
-      //       description:
-      //         "Students choose 10 electives across different areas apart from compulsory courses",
-      //     },
-      //   ],
-      // },
+      {
+        module1: {
+          title: "Term Thematic: Corporate Impellent",
+          duration: "3 months",
+          description:
+            "Build a solid foundation in programming, statistics, and data manipulation",
+          topics: [
+            {
+              title: "Mgmt. Theory and Organizational Behaviour",
+            },
+            {
+              title: "Managerial Economics",
+            },
+            {
+              title: "Managerial Accounting",
+            },
+            {
+              title: "Statistics for Decision Making",
+            },
+            {
+              title: "Advanced Excel for Managers",
+            },
+            {
+              title: "Entrepreneurship Development - I",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Fact Presentation",
+            },
+            {
+              title: "Industry Readiness - I",
+            },
+            {
+              title: "Experiential Learning",
+            },
+            {
+              title: "Market Pulse - I",
+            },
+            {
+              title: "Term End Viva - I",
+            },
+          ],
+        },
+        module2: {
+          title: "Term Thematic: Corporate Intrinsic",
+          duration: "3 months",
+          description:
+            "Master the core concepts and algorithms of machine learning",
+          topics: [
+            {
+              title: "Human Resource Management",
+            },
+            {
+              title: "Marketing Management",
+            },
+            {
+              title: "Corporate Finance",
+            },
+            {
+              title: "Operations Research",
+            },
+            {
+              title: "Mgmt. Information System & Emerging Technologies",
+            },
+            {
+              title: "Entrepreneurship Development - II",
+            },
+            {
+              title: "Art of Business Communication in Digital Era",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Book Review Session",
+            },
+            {
+              title: "Industry Readiness - II",
+            },
+            {
+              title: "Social Project",
+            },
+            {
+              title: "Market Pulse - II",
+            },
+            {
+              title: "Term End Viva - II",
+            },
+          ],
+        },
+        module3: {
+          title: "Term Thematic: Corporate Integral",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Business Environment and Law",
+            },
+            {
+              title: "Operations Management",
+            },
+            {
+              title: "Research Methodology",
+            },
+            {
+              title: "Major - I",
+            },
+            {
+              title: "Major - II",
+            },
+            {
+              title: "Major - III",
+            },
+            {
+              title: "Entrepreneurship Development - III",
+            },
+            {
+              title: "Technology Enabled Managerial Communication",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Industry Review Session",
+            },
+            {
+              title: "Industry Readiness - III",
+            },
+            {
+              title: "Market Pulse - III",
+            },
+            {
+              title: "Term End Viva - III",
+            },
+          ],
+        },
+        module4: {
+          title: "Term Thematic: Corporate Adept",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Project Management",
+            },
+            {
+              title: "Major - IV",
+            },
+            {
+              title: "Major - V",
+            },
+            {
+              title: "Major - VI",
+            },
+            {
+              title: "Minor - I",
+            },
+            {
+              title: "Minor - II",
+            },
+            {
+              title: "Sectoral - I",
+            },
+            {
+              title: "Organisational Communication for Industry 4.0",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Company Review Session",
+            },
+            {
+              title: "Industry Internship Project",
+            },
+            {
+              title: "Course of Independent Study/MOOC/Certificate Course",
+            },
+            {
+              title: "Term End Viva - IV",
+            },
+          ],
+        },
+        module5: {
+          title: "Term Thematic: Corporate Astute",
+          duration: "3 months",
+          description:
+            "Explore cutting-edge techniques in deep learning and specialized domains",
+          topics: [
+            {
+              title: "Strategic Management",
+            },
+            {
+              title: "International Business",
+            },
+            {
+              title: "Design Thinking and Innovation",
+            },
+            {
+              title: "Minor - III",
+            },
+            {
+              title: "Sectoral - II",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Article Review Session",
+            },
+            {
+              title: "Term End Viva - V",
+            },
+          ],
+        },
+        module6: {
+          title: "Term Thematic: Corporate Ace",
+          duration: "3 months",
+          description:
+            "Apply your skills to real-world problems and prepare for industry",
+          topics: [
+            {
+              title: "Corporate Governance and Sustainability",
+            },
+          ],
+          mdevelopment: [
+            {
+              title: "Specialization Project",
+            },
+          ],
+        },
+      },
     ],
     eligibility: [
       "Bachelor's degree in any discipline",
@@ -1116,19 +1819,146 @@ const Differentiators = ({ differentiators }) => {
 };
 
 const Curriculum = ({ curriculum }) => {
+  // Find the detailed curriculum object, which contains module1, module2, etc.
+  const detailedCurriculumData = curriculum?.find((item) => item.module1);
+  // Filter for image-based curriculum items.
+  const imageCurriculum = curriculum?.filter((item) => item.link);
+
   return (
-    <div>
-      <h3 className="text-2xl font-semibold mb-4 text-red-600">
-        Program Structure
-      </h3>
-      <div className="space-y-8">
-        {curriculum.map((item, index) => (
-          <div key={index}>
-            <img src={item.link} alt={item.name} className="w-full" />
+    <>
+      {curriculum && (
+        <div>
+          <h3 className="text-2xl font-semibold mb-4 text-red-600">
+            Program Structure
+          </h3>
+
+          {/* Renders the tab-based detailed curriculum view if data for it exists */}
+          {detailedCurriculumData && (
+            <section className={`py-5`}>
+              <div className="container mx-auto relative z-10">
+                <Tabs defaultValue="module1" className="max-w-4xl mx-auto">
+                  <TabsList className="grid grid-cols-6 mb-12 p-1 bg-slate-100 rounded-full">
+                    {/* Static tabs for now */}
+                    <TabsTrigger
+                      value="module1"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 1
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="module2"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 2
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="module3"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 3
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="module4"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 4
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="module5"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 5
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="module6"
+                      className="rounded-full data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:shadow-sm transition-all duration-300"
+                    >
+                      Term 6
+                    </TabsTrigger>
+                  </TabsList>
+
+                  {Object.keys(detailedCurriculumData).map(
+                    (moduleKey, moduleIndex) => {
+                      const data = detailedCurriculumData[moduleKey];
+                      return (
+                        <TabsContent
+                          key={moduleIndex}
+                          value={moduleKey}
+                          className="transition-all duration-500 ease-in-out"
+                        >
+                          <div className="grid md:grid-cols-3 gap-8">
+                            <div className="md:col-span-1 h-min bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+                              <h3 className="text-xl font-bold mb-2">
+                                {data.title}
+                              </h3>
+                              <div className="flex items-center gap-2 mb-4">
+                                <Badge variant="outline" className="text-sm">
+                                  <CalendarIcon className="h-3 w-3 mr-1" />
+                                  {data.duration}
+                                </Badge>
+                              </div>
+                              <p className="text-muted-foreground mb-6">
+                                {data.description}
+                              </p>
+                              <div className="mt-auto pt-4 border-t">
+                                <Button
+                                  variant="outline"
+                                  className="w-full gap-2"
+                                >
+                                  Download Syllabus{" "}
+                                  <Download className="h-4 w-4" />
+                                </Button>
+                              </div>
+                            </div>
+                            <div className="md:col-span-2">
+                              <Accordion
+                                type="single"
+                                collapsible
+                                className="w-full"
+                              >
+                                {data.topics.map((topic, index) => (
+                                  <AccordionItem
+                                    key={index}
+                                    value={`item-${index}`}
+                                    className="bg-white mb-4 rounded-xl border border-slate-100 overflow-hidden group data-[state=open]:shadow-md transition-all duration-300"
+                                  >
+                                    <AccordionTrigger className="px-6 py-4 hover:no-underline group-data-[state=open]:bg-slate-50 transition-colors duration-300">
+                                      <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                          <span className="font-bold text-primary">
+                                            {index + 1}
+                                          </span>
+                                        </div>
+                                        <span className="text-lg font-medium">
+                                          {topic.title}
+                                        </span>
+                                      </div>
+                                    </AccordionTrigger>
+                                  </AccordionItem>
+                                ))}
+                              </Accordion>
+                            </div>
+                          </div>
+                        </TabsContent>
+                      );
+                    }
+                  )}
+                </Tabs>
+              </div>
+            </section>
+          )}
+
+          {/* Renders image-based curriculum items */}
+          <div className="space-y-8">
+            {imageCurriculum?.map((item, index) => (
+              <div key={index}>
+                <img src={item.link} alt={item.name} className="w-full" />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 
