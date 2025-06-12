@@ -2,7 +2,7 @@
 
 import { Calendar } from "../ui/calendar";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronRight,
@@ -63,12 +63,13 @@ import pgdmtpse from "../../assets/programs/PGDM-TPSE.webp";
 import pgdmba from "../../assets/programs/PGDM-BA.webp";
 import pgdmbifs from "../../assets/programs/PGDM-BIFS.webp";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 
 const programs = [
-  { id: "fpm/efpm", name: "FPM/EFPM" },
-  { id: "pgdm-ba", name: "PGDM BA" },
-  { id: "pgdm-bifs", name: "PGDM BIFS" },
-  { id: "pgdm-triple-specialisation", name: "PGDM Triple Specialisation" },
+  { id: "fpm/efpm", name: "FPM/EFPM", link: "/programs/fpm-efpm" },
+  { id: "pgdm-ba", name: "PGDM BA", link: "/programs/pgdm-ba" },
+  { id: "pgdm-bifs", name: "PGDM BIFS", link: "/programs/pgdm-bifs" },
+  { id: "pgdm-triple-specialisation", name: "PGDM Triple Specialisation", link: "/programs/pgdm-triple-specialisation" },
 ];
 
 const sections = [
@@ -2042,12 +2043,46 @@ const ProgramSection = ({ programId, activeSection }) => {
 };
 
 const ProgramsOverview = () => {
-  const [activeProgram, setActiveProgram] = useState(programs[0].id);
-  const [activeSection, setActiveSection] = useState("about");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pathname = location.pathname;
+
+  const [activeProgram, setActiveProgram] = useState(
+    () => programs.find((p) => p.link === pathname)?.id || programs[0].id
+  );
+  const [activeSection, setActiveSection] = useState(
+    () => searchParams.get("section") || "about"
+  );
   const [searchTerm, setSearchTerm] = useState("");
   const [showComparison, setShowComparison] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  React.useEffect(() => {
+    const program = programs.find((p) => p.link === pathname);
+    if (program && program.id !== activeProgram) {
+      setActiveProgram(program.id);
+    }
+    const section = searchParams.get("section") || "about";
+    if (section !== activeSection) {
+      setActiveSection(section);
+    }
+  }, [pathname, searchParams, activeProgram, activeSection]);
+
+  const handleProgramChange = (programId) => {
+    const program = programs.find((p) => p.id === programId);
+    if (program) {
+      navigate(`${program.link}?section=about`);
+    }
+  };
+
+  const handleSectionChange = (sectionId) => {
+    setActiveSection(sectionId);
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("section", sectionId);
+    setSearchParams(newParams);
+  };
 
   const filteredSections = sections.filter((section) => {
     const matchesSearch = section.name
@@ -2078,7 +2113,7 @@ const ProgramsOverview = () => {
           <li key={section.id}>
             <button
               onClick={() => {
-                setActiveSection(section.id);
+                handleSectionChange(section.id);
                 if (!isDesktop) setSidebarOpen(false);
               }}
               className={`w-full text-left px-4 py-2 rounded-sm transition-colors ${
@@ -2126,7 +2161,7 @@ const ProgramsOverview = () => {
       </h1>
       <Tabs
         value={activeProgram}
-        onValueChange={setActiveProgram}
+        onValueChange={handleProgramChange}
         className="mb-8"
       >
         <TabsList className="w-full flex flex-wrap text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 justify-center gap-2 p-1 h-auto">
