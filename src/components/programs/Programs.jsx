@@ -366,10 +366,10 @@ const programData = {
       },
     ],
     curriculum: [
-      {
-        name: "PGDM BA",
-        link: pgdmba,
-      },
+      // {
+      //   name: "PGDM BA",
+      //   link: pgdmba,
+      // },
       {
         module1: {
           title: "Term Thematic: Corporate Impellent pgdm-ba",
@@ -784,10 +784,10 @@ const programData = {
       },
     ],
     curriculum: [
-      {
-        name: "PGDM BIFS",
-        link: pgdmbifs,
-      },
+      // {
+      //   name: "PGDM BIFS",
+      //   link: pgdmbifs,
+      // },
       {
         module1: {
           title: "Term Thematic: Corporate Impellent",
@@ -1332,14 +1332,14 @@ const programData = {
       },
     ],
     curriculum: [
-      {
-        name: "PGDM Triple Specialisation",
-        link: pgdmtps,
-      },
-      {
-        name: "PGDM Triple Specialisation",
-        link: pgdmtpse,
-      },
+      // {
+      //   name: "PGDM Triple Specialisation",
+      //   link: pgdmtps,
+      // },
+      // {
+      //   name: "PGDM Triple Specialisation",
+      //   link: pgdmtpse,
+      // },
       {
         module1: {
           title: "Term Thematic: Corporate Impellent",
