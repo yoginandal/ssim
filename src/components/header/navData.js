@@ -57,7 +57,7 @@ export const navlinks = [
         name: "PGDM",
         subDropdown: [
           { name: "PGDM BA", path: "/programs/pgdm-ba" },
-          { name: "PGDM BFIS", path: "/programs/pgdm-bfis" },
+          { name: "PGDM BIFS", path: "/programs/pgdm-bifs" },
           {
             name: "PGDM Triple Specialisation",
             path: "/programs/pgdm-triple-specialisation",

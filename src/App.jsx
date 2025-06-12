@@ -39,6 +39,7 @@ import BlogDetail from "@/components/blog/BlogDetail";
 import Conferences from "@/components/faculty&research/Conferences";
 import IQAC from "./components/header/IQAC";
 import SSIM from "./SSIM";
+import CourseElectives from "./components/programs/CourseElectives";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -164,6 +165,7 @@ export default function App() {
               <Route path="/iqac" element={<IQAC />} />
               <Route path="/events" element={<SSIM />} />
               <Route path="testing" element={<LifeAtSsim />} />
+              <Route path="/programs/course-electives" element={<CourseElectives />} />
             </Routes>
             <Footer />
             {isVisible && (
