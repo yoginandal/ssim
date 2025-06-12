@@ -239,7 +239,7 @@ export default function PlacementSection() {
                       {stats.totalPlacements}
                     </CardTitle>
                     <CardDescription className="text-base">
-                      Total Placements
+                      Total Offers
                     </CardDescription>
                   </div>
                 </CardHeader>
@@ -262,6 +262,21 @@ export default function PlacementSection() {
               <Card className="group hover:shadow-lg hover:translate-y-[-10px] transition-all duration-200 hover:border-primary/20">
                 <CardHeader className="pb-2 space-y-4">
                   <div className="w-12 h-12 rounded-lg bg-mainBlue flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <TrendingUpIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-3xl font-bold text-red-600">
+                      {stats.averageSalary}
+                    </CardTitle>
+                    <CardDescription className="text-base">
+                      Highest Salary
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
+              <Card className="group hover:shadow-lg hover:translate-y-[-10px] transition-all duration-200 hover:border-primary/20">
+                <CardHeader className="pb-2 space-y-4">
+                  <div className="w-12 h-12 rounded-lg bg-mainBlue flex items-center justify-center group-hover:scale-110 transition-transform">
                     <BuildingOffice2Icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -274,7 +289,7 @@ export default function PlacementSection() {
                   </div>
                 </CardHeader>
               </Card>
-              <Card className="group hover:shadow-lg hover:translate-y-[-10px] transition-all duration-200 hover:border-primary/20">
+              {/* <Card className="group hover:shadow-lg hover:translate-y-[-10px] transition-all duration-200 hover:border-primary/20">
                 <CardHeader className="pb-2 space-y-4">
                   <div className="w-12 h-12 rounded-lg bg-mainBlue flex items-center justify-center group-hover:scale-110 transition-transform">
                     <PercentIcon className="w-6 h-6 text-white" />
@@ -288,7 +303,7 @@ export default function PlacementSection() {
                     </CardDescription>
                   </div>
                 </CardHeader>
-              </Card>
+              </Card> */}
             </div>
 
             <div className="rounded-sm border bg-card p-5 space-y-4">

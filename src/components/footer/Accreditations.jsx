@@ -8,6 +8,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import saqs from "@/assets/about/SAQS-Accredited-Logo.jpg";
+import aiu from "@/assets/about/aiu-header.png";
 
 const ServiceCard = ({ title, description, features, image }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -20,7 +22,7 @@ const ServiceCard = ({ title, description, features, image }) => {
           <img
             src={image}
             alt={`Worker ${title?.toLowerCase()}`}
-            className="rounded-l-2xl p-5 object-cover max-w-[220px] max-h-[220px] w-full h-full group-hover:scale-105 transition-transform duration-500"
+            className="rounded-l-2xl p-5 object-fit max-w-[220px] max-h-[220px] w-full h-full sm:h-auto group-hover:scale-105 transition-transform duration-500"
           />
         </div>
         <div className="md:col-span-8 lg:col-span-9 p-5 pt-3 sm:py-8 sm:pr-8 sm:!pl-2 flex flex-col justify-between">
@@ -76,7 +78,17 @@ export default function Accreditations() {
       title: "Accreditation by NAAC",
       description: "Siva Sivani Institute of Management (SSIM) PGDM programs received accreditation from National Assessment and Accreditation Council (NAAC) in the year 2014 and re-accreditation in the year 2021. NAAC conducts strategic audit it is considered to be the nationally benchmarked system for mentoring, quality improvement, quality assurance and accreditation. NAAC conduct audit to understand the institutes previous performances and their future aspirations.",
       image: "https://ssim.ac.in/wp-content/uploads/2022/11/accreditaton-logo2.png"
-    }
+    },
+    {
+      title: "Accreditation by SAQS",
+      description: "Siva Sivani Institute of Management (SSIM) has been awarded the prestigious SAQS accreditation, an international quality assurance system launched by AMDISA for management schools across South Asia. SAQS accreditation validates SSIM's commitment to global standards of management education while respecting diverse cultural contexts. This recognition by SAQS, which emerged from EFMD-AMDISA cooperation, affirms SSIM's excellence in delivering world-class management education aligned with international benchmarks.",
+      image: saqs
+    },
+    {
+      title: "Accreditation by AIU",
+      description: "Siva Sivani Institute of Management (SSIM) has been awarded the prestigious accreditation from the Association of Indian Universities (AIU), validating its commitment to maintaining high academic standards. The AIU accreditation recognizes SSIM's excellence in delivering quality management education through its PGDM program, ensuring it meets rigorous national benchmarks. This accreditation affirms SSIM's dedication to continuous quality improvement and its position among India's leading management institutions.",
+      image: aiu
+    },
   ];
 
   return (
