@@ -1,10 +1,10 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-const courseData = {
+const tripleSpecialisationData = {
   major: {
     title: "Major Electives",
-    color: "bg-amber-100 border-amber-200",
+    color: "bg-amber-50 border-amber-200",
     headerColor: "bg-amber-500",
     specializations: [
       {
@@ -77,20 +77,32 @@ const courseData = {
   },
   minor: {
     title: "Minor Electives",
-    color: "bg-blue-100 border-blue-200",
+    color: "bg-blue-50 border-blue-200",
     headerColor: "bg-blue-600",
     specializations: [
       {
         name: "Finance",
-        courses: ["Financial Products and Services", "Financial Planning & Wealth Management", "Financial Markets"],
+        courses: [
+          "Financial Products and Services",
+          "Financial Planning & Wealth Management",
+          "Financial Markets",
+        ],
       },
       {
         name: "Marketing",
-        courses: ["Sales Management", "Services Marketing and CRM", "Strategic Brand Management"],
+        courses: [
+          "Sales Management",
+          "Services Marketing and CRM",
+          "Strategic Brand Management",
+        ],
       },
       {
         name: "Operations Management",
-        courses: ["Supply Chain Management", "Total Quality Management", "Service Operations Management"],
+        courses: [
+          "Supply Chain Management",
+          "Total Quality Management",
+          "Service Operations Management",
+        ],
       },
       {
         name: "Technology Management",
@@ -102,7 +114,11 @@ const courseData = {
       },
       {
         name: "Human Resource",
-        courses: ["Performance and Compensation Management", "Human Resource Development", "Managing Diversity"],
+        courses: [
+          "Performance and Compensation Management",
+          "Human Resource Development",
+          "Managing Diversity",
+        ],
       },
       {
         name: "Banking",
@@ -118,7 +134,11 @@ const courseData = {
       },
       {
         name: "Business Analytics",
-        courses: ["Visual Analytics", "Machine Learning - I", "Machine Learning - II"],
+        courses: [
+          "Visual Analytics",
+          "Machine Learning - I",
+          "Machine Learning - II",
+        ],
       },
     ],
   },
@@ -133,11 +153,17 @@ const courseData = {
       },
       {
         name: "Entrepreneurship",
-        courses: ["Innovation Management and Entrepreneurship", "Family, Small and Social Entrepreneur"],
+        courses: [
+          "Innovation Management and Entrepreneurship",
+          "Family, Small and Social Entrepreneur",
+        ],
       },
       {
         name: "Real Estate Management",
-        courses: ["Strategic Real Estate Marketing", "Advance Real Estate Investment and Development"],
+        courses: [
+          "Strategic Real Estate Marketing",
+          "Advance Real Estate Investment and Development",
+        ],
       },
       {
         name: "Retail Management",
@@ -149,7 +175,10 @@ const courseData = {
       },
       {
         name: "Insurance Management",
-        courses: ["Insurance and Risk Management", "Principles and Practice of Life and General Insurance"],
+        courses: [
+          "Insurance and Risk Management",
+          "Principles and Practice of Life and General Insurance",
+        ],
       },
       {
         name: "Business Analytics",
@@ -161,31 +190,208 @@ const courseData = {
       },
       {
         name: "Banking",
-        courses: ["Principles and Practices of Banking", "Bank Credit Management"],
+        courses: [
+          "Principles and Practices of Banking",
+          "Bank Credit Management",
+        ],
       },
     ],
   },
-}
+};
 
-export default function CourseElectives() {
+const bfisData = {
+  minor: {
+    title: "Minor Electives",
+    color: "bg-blue-50 border-blue-200",
+    headerColor: "bg-blue-600",
+    specializations: [
+      {
+        name: "Finance",
+        courses: [
+          "Financial Products and Services",
+          "Financial Planning & Wealth Management",
+          "Financial Markets",
+        ],
+      },
+      {
+        name: "Marketing",
+        courses: [
+          "Sales Management",
+          "Services Marketing and CRM",
+          "Strategic Brand Management",
+        ],
+      },
+      {
+        name: "Operations Management",
+        courses: [
+          "Supply Chain Management",
+          "Total Quality Management",
+          "Service Operations Management",
+        ],
+      },
+      {
+        name: "Technology Management",
+        courses: [
+          "Software Project and Quality Management",
+          "IT Project Management",
+          "E-Business Technologies and Digital Transformation",
+        ],
+      },
+      {
+        name: "Human Resource",
+        courses: [
+          "Performance and Compensation Management",
+          "Human Resource Development",
+          "Managing Diversity",
+        ],
+      },
+      {
+        name: "Banking",
+        courses: ["Retail Banking", "Digital Banking"],
+      },
+      {
+        name: "Agri-Business Management",
+        courses: [
+          "Basics of Agriculture",
+          "Agri-Business Marketing and Sales",
+          "Agri Warehousing & Supply Chain Management",
+        ],
+      },
+      {
+        name: "Business Analytics",
+        courses: [
+          "Visual Analytics",
+          "Machine Learning - I",
+          "Machine Learning - II",
+        ],
+      },
+    ],
+  },
+  sectoral: {
+    title: "Sectoral Electives",
+    color: "bg-yellow-50 border-yellow-200",
+    headerColor: "bg-yellow-500",
+    specializations: [
+      {
+        name: "Digital Marketing",
+        courses: ["Digital Marketing", "Social Media and Content Marketing"],
+      },
+      {
+        name: "Entrepreneurship",
+        courses: [
+          "Innovation Management and Entrepreneurship",
+          "Family, Small and Social Entrepreneur",
+        ],
+      },
+      {
+        name: "Real Estate Management",
+        courses: [
+          "Strategic Real Estate Marketing",
+          "Advance Real Estate Investment and Development",
+        ],
+      },
+      {
+        name: "Retail Management",
+        courses: ["Retail Management", "Visual Merchandising"],
+      },
+      {
+        name: "Hospitality and Tourism Management",
+        courses: ["Hospitality Management", "Tourism Marketing"],
+      },
+      {
+        name: "Insurance Management",
+        courses: [
+          "Insurance and Risk Management",
+          "Principles and Practice of Life and General Insurance",
+        ],
+      },
+      {
+        name: "Business Analytics",
+        courses: ["Visual Analytics", "Predictive Analytics Using R"],
+      },
+      {
+        name: "Pharmaceutical Management",
+        courses: ["Pharmaceutical Management", "Pharmaceutical Marketing"],
+      },
+      {
+        name: "Banking",
+        courses: [
+          "Principles and Practices of Banking",
+          "Bank Credit Management",
+        ],
+      },
+    ],
+  },
+};
+
+const baData = {
+  minor: {
+    title: "Minor Electives",
+    color: "bg-blue-50 border-blue-200",
+    headerColor: "bg-blue-600",
+    specializations: [
+      {
+        name: "Finance",
+        courses: [
+          "Financial Products and Services",
+          "Financial Planning & Wealth Management",
+          "Financial Markets",
+        ],
+      },
+      {
+        name: "Marketing",
+        courses: [
+          "Sales Management",
+          "Services Marketing and CRM",
+          "Strategic Brand Management",
+        ],
+      },
+      {
+        name: "Human Resource",
+        courses: [
+          "Performance and Compensation Management",
+          "Human Resource Development",
+          "Managing Diversity",
+        ],
+      },
+      {
+        name: "Operations Management",
+        courses: [
+          "Supply Chain Management",
+          "Total Quality Management",
+          "Service Operations Management",
+        ],
+      },
+    ],
+  },
+};
+
+export default function CourseLayout() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Electives Offered</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Electives Offered
+        </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Choose from our comprehensive range of specialized courses across major, minor, and sectoral electives
+          Choose from our comprehensive range of specialized courses across
+          major, minor, and sectoral electives
         </p>
       </div>
 
       {/* Course Categories */}
       <div className="space-y-16">
-        {Object.entries(courseData).map(([key, category]) => (
+        {Object.entries(tripleSpecialisationData).map(([key, category]) => (
           <section key={key} className="relative">
             {/* Category Header */}
             <div className="flex items-center mb-8">
-              <div className={`${category.headerColor} text-white px-6 py-3 rounded-lg shadow-lg`}>
-                <h2 className="text-2xl md:text-3xl font-bold">{category.title}</h2>
+              <div
+                className={`${category.headerColor} text-white px-6 py-3 rounded-lg shadow-lg`}
+              >
+                <h2 className="text-2xl md:text-3xl font-bold">
+                  {category.title}
+                </h2>
               </div>
               <div className="flex-1 h-px bg-gray-300 ml-6"></div>
             </div>
@@ -228,10 +434,12 @@ export default function CourseElectives() {
       {/* Footer */}
       <div className="mt-16 text-center">
         <div className="bg-white rounded-lg shadow-sm border p-8">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">Ready to Choose Your Electives?</h3>
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+            Ready to Choose Your Electives?
+          </h3>
           <p className="text-gray-600 mb-6">
-            Contact our academic advisors for personalized guidance on selecting the right combination of electives for
-            your career goals.
+            Contact our academic advisors for personalized guidance on selecting
+            the right combination of electives for your career goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
@@ -244,5 +452,5 @@ export default function CourseElectives() {
         </div>
       </div>
     </div>
-  )
+  );
 }
