@@ -18,7 +18,7 @@ const cn = (...classes) => classes.filter(Boolean).join(" ");
 // Fetch events from the server
 const fetchEvents = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/api/events");
+    const response = await axios.get("https://www.bfis.in/ssim_backend/api/events");
     return response.data; // Return the data
     console.log(response.data);
   } catch (error) {
@@ -114,7 +114,7 @@ export default function LifeAtSsim() {
   const galleryItems = fetchedCategories.flatMap((event) =>
     event.imagePaths.map((path, index) => ({
       id: index + 1,
-      src: `http://localhost:3000${path}`,
+      src: `https://www.bfis.in/ssim_backend/${path}`,
       category: event.id.toString(),
       alt: `${event.title.split(" - ")[0]} image ${index + 1}`,
     }))

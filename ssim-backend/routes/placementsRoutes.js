@@ -69,7 +69,7 @@ module.exports = function (dbPool) {
     try {
       connection = await dbPool.getConnection();
       const [rows] = await connection.query(
-        "SELECT id, name, company, designation, year, created_at FROM placements ORDER BY created_at DESC"
+        "SELECT id, name, company, designation, year, created_at FROM placements ORDER BY id"
       );
       res.status(200).json(rows);
     } catch (error) {

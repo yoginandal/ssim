@@ -50,7 +50,7 @@ export default function PlacementSection() {
     const fetchPlacementData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:3000/api/placements");
+        const response = await fetch("https://www.bfis.in/ssim_backend/api/placements");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

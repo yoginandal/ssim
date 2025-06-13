@@ -49,7 +49,7 @@ export default function Internships() {
     const fetchPlacementData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:3000/api/internships");
+        const response = await fetch("https://www.bfis.in/ssim_backend/api/internships");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

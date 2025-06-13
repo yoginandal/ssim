@@ -12,14 +12,14 @@ const app = express();
 // For more specific control, you can configure it: e.g., app.use(cors({ origin: 'http://localhost:5174' }));
 app.use(cors());
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8100;
 
 // --- MySQL Connection Pool ---
 // IMPORTANT: Replace with your actual database credentials!
 const dbPool = mysql.createPool({
   host: "localhost", // Or your MySQL host
   user: "root", // Your MySQL username
-  password: "", // Your MySQL password
+  password: "Rand0m@1", // Your MySQL password
   database: "ssim_db", // Your MySQL database name
   waitForConnections: true,
   connectionLimit: 10,
@@ -412,7 +412,7 @@ app.get("/api/events", async (req, res) => {
 
     // 1. Fetch all events
     const [events] = await connection.query(
-      "SELECT id, title, description, created_at FROM events ORDER BY created_at DESC"
+      "SELECT id, title, description, created_at FROM events ORDER BY id"
     );
 
     if (!events || events.length === 0) {
@@ -463,11 +463,10 @@ app.use((err, req, res, next) => {
   next();
 });
 
-async function startServer() {
-  await initializeDatabaseSchema(); // Initialize DB schema before starting the server
+// F // Initialize DB schema before starting the server
   app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
   });
-}
+// }
 
-startServer();
+// startServer();
