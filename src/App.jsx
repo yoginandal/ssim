@@ -19,6 +19,7 @@ import BoardOfStudies from "@/components/abouts/BoardOfStudies";
 import AccreditationsRankings from "@/components/abouts/AccreditationsRankings";
 import Areas from "@/components/faculty&research/Areas";
 import PlacementSection from "@/components/placement/PlacementSection";
+import Internships from "@/components/placement/Internships";
 // import PlacementTeam from "@/components/placement/PlacementTeam";
 import PlacementTeams from "@/components/placement/PlacementTeams";
 import FPM from "@/components/admissions/FPM";
@@ -130,6 +131,7 @@ export default function App() {
                 {/* <Route path="records" element={<PlacementRecords />} /> */}
                 <Route path="records" element={<PlacementSection />} />
                 <Route path="team" element={<PlacementTeams />} />
+                <Route path="internships" element={<Internships />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"

@@ -35,14 +35,13 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Heading from "../Heading";
 
-export default function PlacementSection() {
+export default function Internships() {
   const [apiStudentsData, setApiStudentsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedDesignation, setSelectedDesignation] = useState("all");
   const [selectedCompany, setSelectedCompany] = useState("all");
   const [sortConfig, setSortConfig] = useState(null);
 
@@ -50,7 +49,7 @@ export default function PlacementSection() {
     const fetchPlacementData = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:3000/api/placements");
+        const response = await fetch("http://localhost:3000/api/internships");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -76,10 +75,6 @@ export default function PlacementSection() {
         const yearB = parseInt(b, 10) || 0;
         return yearB - yearA; 
     }), 
-  [apiStudentsData]);
-  
-  const designations = useMemo(() => 
-    Array.from(new Set(apiStudentsData.map((student) => student.designation).filter(Boolean))), 
   [apiStudentsData]);
   
   const companies = useMemo(() => 
@@ -124,19 +119,15 @@ export default function PlacementSection() {
         normalizedSearchTerm === "" ||
         (student.name && student.name.toLowerCase().includes(normalizedSearchTerm)) ||
         (student.company && student.company.toLowerCase().includes(normalizedSearchTerm)) ||
-        (student.designation && student.designation.toLowerCase().includes(normalizedSearchTerm)) ||
         (student.year && student.year.toString().includes(normalizedSearchTerm)) ||
         (student.salary && String(student.salary).replace(/[^\d.-]/g, "").includes(normalizedSearchTerm));
 
       const yearFilter =
         selectedYear === "all" || (student.year && student.year.toString() === selectedYear);
-      const DesignationFilter =
-        selectedDesignation === "all" ||
-        (student.designation && student.designation === selectedDesignation);
       const companyFilter =
         selectedCompany === "all" || (student.company && student.company === selectedCompany);
 
-      return searchFilter && yearFilter && DesignationFilter && companyFilter;
+      return searchFilter && yearFilter && companyFilter;
     });
 
     if (sortConfig) {
@@ -165,7 +156,6 @@ export default function PlacementSection() {
   }, [
     searchTerm,
     selectedYear,
-    selectedDesignation,
     selectedCompany,
     sortConfig,
     apiStudentsData,
@@ -181,7 +171,6 @@ export default function PlacementSection() {
 
   const clearFilters = () => {
     setSelectedYear("all");
-    setSelectedDesignation("all");
     setSelectedCompany("all");
     setSearchTerm("");
     setSortConfig(null);
@@ -201,7 +190,7 @@ export default function PlacementSection() {
       <div className="container max-w-7xl mx-auto p-4 md:p-8 space-y-8">
         <div className="text-center space-y-4 py-8">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Student Placements
+            Student Internships
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Explore our students' success stories and career achievements.
@@ -215,13 +204,13 @@ export default function PlacementSection() {
               value="placement-details"
               className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
-              Placement Details
+              Internship Details
             </TabsTrigger>
             <TabsTrigger
               value="placement-report"
               className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
-              Placement Report
+              Internship Report
             </TabsTrigger>
           </TabsList>
           <TabsContent
@@ -307,11 +296,11 @@ export default function PlacementSection() {
             </div>
 
             <div className="rounded-sm border bg-card p-5 space-y-4">
-              <h2 className="text-lg font-semibold mb-4">Filter Placements</h2>
+              <h2 className="text-lg font-semibold mb-4">Filter Internships</h2>
               <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
                 <div className="grid grid-cols-1 sm:flex w-full sm:w-auto sm:flex-row sm:flex-wrap gap-3 items-center">
                   <Select value={selectedYear} onValueChange={setSelectedYear}>
-                    <SelectTrigger className="w-full sm:w-[130px] bg-background">
+                    <SelectTrigger className="w-full sm:w-[160px] bg-background">
                       <GraduationCapIcon className="w-4 h-4 mr-2 text-red-600  text-muted-foreground" />
                       <SelectValue placeholder="Year" />
                     </SelectTrigger>
@@ -326,28 +315,10 @@ export default function PlacementSection() {
                   </Select>
 
                   <Select
-                    value={selectedDesignation}
-                    onValueChange={setSelectedDesignation}
-                  >
-                    <SelectTrigger className="w-full sm:w-[200px] bg-background">
-                      <BuildingIcon className="w-4 h-4 mr-2 text-red-600  text-muted-foreground" />
-                      <SelectValue placeholder="Designation" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All designations</SelectItem>
-                      {designations.map((designation) => (
-                        <SelectItem key={designation} value={designation}>
-                          {designation}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-
-                  <Select
                     value={selectedCompany}
                     onValueChange={setSelectedCompany}
                   >
-                    <SelectTrigger className="w-full sm:w-[160px] bg-background">
+                    <SelectTrigger className="w-full sm:w-[200px] bg-background">
                       <BuildingIcon className="w-4 h-4 mr-2 text-red-600  text-muted-foreground" />
                       <SelectValue placeholder="Company" />
                     </SelectTrigger>
@@ -374,7 +345,6 @@ export default function PlacementSection() {
               </div>
 
               {(selectedYear !== "all" ||
-                selectedDesignation !== "all" ||
                 selectedCompany !== "all" ||
                 searchTerm.trim() !== "") && (
                 <div className="flex flex-wrap items-center gap-2 pt-4">
@@ -389,14 +359,7 @@ export default function PlacementSection() {
                       Year: {selectedYear}
                     </Badge>
                   )}
-                  {selectedDesignation !== "all" && (
-                    <Badge
-                      variant="secondary"
-                      className="hover:bg-secondary/80"
-                    >
-                      Designation: {selectedDesignation}
-                    </Badge>
-                  )}
+                  
                   {selectedCompany !== "all" && (
                     <Badge
                       variant="secondary"
@@ -414,7 +377,6 @@ export default function PlacementSection() {
                     </Badge>
                   )}
                   {(selectedYear !== "all" ||
-                    selectedDesignation !== "all" ||
                     selectedCompany !== "all" ||
                     searchTerm.trim() !== "") && (
                     <Button
@@ -449,7 +411,7 @@ export default function PlacementSection() {
                       onClick={() => handleSort("company")}
                     >
                       <div className="flex items-center gap-1">
-                        Placement Company
+                        Internship Company
                         <SortIcon columnKey="company" />
                       </div>
                     </TableHead>
@@ -458,7 +420,7 @@ export default function PlacementSection() {
                       onClick={() => handleSort("designation")}
                     >
                       <div className="flex items-center gap-1">
-                        Designation/Role
+                        Major Specialization
                         <SortIcon columnKey="designation" />
                       </div>
                     </TableHead>
@@ -492,7 +454,7 @@ export default function PlacementSection() {
                           {student.name}
                         </TableCell>
                         <TableCell>{student.company}</TableCell>
-                        <TableCell>{student.designation}</TableCell>
+                        <TableCell>{student.majorSpecialization}</TableCell>
                       </TableRow>
                     ))
                   )}
@@ -504,7 +466,7 @@ export default function PlacementSection() {
             value="placement-report"
             className="space-y-8 pt-10 sm:pt-16"
           >
-            <Heading title="Placement Report" />
+            <Heading title="Internship Report" />
           </TabsContent>
         </Tabs>
       </div>

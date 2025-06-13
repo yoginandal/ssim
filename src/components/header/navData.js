@@ -116,7 +116,7 @@ export const navlinks = [
     dropdown: [
       { name: "Placement", path: "/placement/records" },
       { name: "Placement Team", path: "/placement/team" },
-      { name: "Internships", path: "/placement/records" },
+      { name: "Internships", path: "/placement/internships" },
       { name: "Guest lectures", path: "/placement/guest-lectures" },
     ],
   },
