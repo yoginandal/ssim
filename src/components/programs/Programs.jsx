@@ -2231,7 +2231,8 @@ const EligibilityAdmission = ({ eligibility, admission }) => {
   );
 };
 
-const CourseElectives = ({ electives }) => {
+const CourseElectives = ({ electives, programId }) => {
+  console.log(programId, electives.major.title);
   if (!electives) {
     return <div>No electives offered for this program.</div>;
   }
@@ -2262,7 +2263,11 @@ const CourseElectives = ({ electives }) => {
               <div className="flex-1 h-px bg-gray-300 ml-6"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              className={`grid grid-cols-1 md:grid-cols-2 ${
+                programId === "pgdm-ba" ? "lg:grid-cols-2" : "lg:grid-cols-3"
+              } gap-6`}
+            >
               {category.specializations.map((specialization, index) => (
                 <Card
                   key={index}
@@ -2323,7 +2328,7 @@ const ProgramSection = ({ programId, activeSection }) => {
         <Curriculum curriculum={program.curriculum} />
       )}
       {activeSection === "electives" && (
-        <CourseElectives electives={program.electives} />
+        <CourseElectives electives={program.electives} programId={programId} />
       )}
       {activeSection === "eligibility" && (
         <EligibilityAdmission
