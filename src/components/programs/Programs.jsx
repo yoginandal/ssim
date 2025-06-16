@@ -22,7 +22,13 @@ import { ScrollArea } from "../ui/scroll-area";
 // import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerContent,
@@ -37,7 +43,13 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Badge } from "../ui/badge";
 import {
   Accordion,
@@ -58,6 +70,11 @@ import industryreview from "../../assets/programs/industry.png";
 import companyreview from "../../assets/programs/marketing.png";
 import independent from "../../assets/programs/studying.png";
 import article from "../../assets/programs/search.png";
+import trainning from "../../assets/programs/thought-leadership.png";
+import project from "../../assets/programs/project.png";
+import internship from "../../assets/programs/working-man.png";
+import certification from "../../assets/programs/online-learning.png";
+import viva from "../../assets/programs/meeting.png";
 import pgdmtps from "../../assets/programs/PGDM-TPS.webp";
 import pgdmtpse from "../../assets/programs/PGDM-TPSE.webp";
 import pgdmba from "../../assets/programs/PGDM-BA.webp";
@@ -142,60 +159,76 @@ const programData = {
     ],
     managerialCompetency: [
       {
-        title: "Company Fact Presentation",
-        icon: presentation, // Chart for data presentation
-      },
-      {
-        title: "Industry Readiness I",
-        icon: industry, // Target/goal icon
-      },
-      {
         title: "Experiential Learning",
         icon: experiential, // Microscope for hands-on learning
+        description:
+          "Structured industry visits where students interact directly with corporate professionals, observe operations in real-time, and gain practical insights into organizational structures, production processes, and business functions.",
       },
       {
-        title: "Market Pulse I",
-        icon: pulse, // Upward trend chart
+        title: "Company Facts Presentation",
+        icon: presentation, // Chart for data presentation
+        description:
+          "Students research and analyze specific companies—covering history, operations, financials, and strategy—and present their findings creatively. This builds their confidence in public speaking, sharpens business analysis, and fosters peer-to-peer learning.",
       },
       {
         title: "Book Review Session",
         icon: bookreview, // Books icon
-      },
-      {
-        title: "Industry Readiness II",
-        icon: industry, // Target/goal icon
+        description:
+          "Encourages students to read books across business, leadership, psychology, and other genres. Students present key takeaways, critical reflections, and business applications, promoting intellectual growth and diverse thinking.",
       },
       {
         title: "Social Project",
         icon: social, // People/group icon
-      },
-      {
-        title: "Market Pulse II",
-        icon: pulse, // Upward trend chart
+        description:
+          "Hands-on involvement with NGOs or social enterprises. Students identify societal problems, work at the grassroots, propose innovative solutions, and present their impact—developing empathy, social responsibility, and creative thinking.",
       },
       {
         title: "Industry Review Session",
         icon: industryreview, // Factory/industry icon
+        description:
+          "In-depth sectoral studies where students examine market trends, industry dynamics, challenges, innovations, and future scope. It fosters macro-level business understanding and helps students identify potential career or business interests.",
       },
       {
-        title: "Industry Readiness III",
-        icon: industry, // Target/goal icon
-      },
-      {
-        title: "Market Pulse III",
-        icon: pulse, // Upward trend chart
+        title: "Outbound Training (OBT)",
+        icon: trainning, // Factory/industry icon
+        description:
+          "Adventure-based learning programs conducted off-campus. Through team activities, problem-solving tasks, and survival scenarios, students build leadership, collaboration, time management, decision-making, and stress-handling skills.",
       },
       {
         title: "Company Review Session",
         icon: companyreview, // Office building icon
+        description:
+          "Post-internship presentations where students assess their host companies—structure, culture, strengths, and gaps. This peer-sharing activity reinforces learning, strengthens presentation skills, and prepares students for future interviews.",
       },
       {
-        title: "Course of Independent study",
-        icon: independent, // Open book icon
+        title: "Industry Internship Project",
+        icon: internship, // Target/goal icon
+        description:
+          "A real-world corporate project undertaken during summer internships. Students also undertake a related academic extension to deepen understanding and bridge learning with their specialization areas.",
+      },
+      {
+        title: "Certification Courses",
+        icon: certification, // Upward trend chart
+        description:
+          "Students are encouraged to pursue relevant certifications (MOOCs, skill courses, or workshops) aligned with their career goals—enhancing technical know-how and strengthening their resumes with industry-recognized credentials.",
+      },
+      {
+        title: "Specialisation Project",
+        icon: project, // Target/goal icon
+        description:
+          "Research-based projects where students identify challenges or opportunities in their chosen domain (e.g., marketing, finance, HR), suggest solutions, and present their findings to an expert panel—fostering domain expertise and innovation.",
       },
       {
         title: "Article Review Session",
         icon: article, // Newspaper/article icon
+        description:
+          "Students critically review and present published research articles. This cultivates research literacy, academic curiosity, and helps build a foundation for evidence-based decision-making and future scholarly contributions.",
+      },
+      {
+        title: "Term-End Viva (Each Term)",
+        icon: viva, // Upward trend chart
+        description:
+          "Each term ends with a viva conducted by industry professionals. These interactions serve as checkpoints to assess student learning, provide corporate feedback, and enhance professional grooming and confidence.",
       },
     ],
     differentiators: [
@@ -278,60 +311,76 @@ const programData = {
     ],
     managerialCompetency: [
       {
-        title: "Company Fact Presentation",
-        icon: presentation, // Chart for data presentation
-      },
-      {
-        title: "Industry Readiness I",
-        icon: industry, // Target/goal icon
-      },
-      {
         title: "Experiential Learning",
         icon: experiential, // Microscope for hands-on learning
+        description:
+          "Structured industry visits where students interact directly with corporate professionals, observe operations in real-time, and gain practical insights into organizational structures, production processes, and business functions.",
       },
       {
-        title: "Market Pulse I",
-        icon: pulse, // Upward trend chart
+        title: "Company Facts Presentation",
+        icon: presentation, // Chart for data presentation
+        description:
+          "Students research and analyze specific companies—covering history, operations, financials, and strategy—and present their findings creatively. This builds their confidence in public speaking, sharpens business analysis, and fosters peer-to-peer learning.",
       },
       {
         title: "Book Review Session",
         icon: bookreview, // Books icon
-      },
-      {
-        title: "Industry Readiness II",
-        icon: industry, // Target/goal icon
+        description:
+          "Encourages students to read books across business, leadership, psychology, and other genres. Students present key takeaways, critical reflections, and business applications, promoting intellectual growth and diverse thinking.",
       },
       {
         title: "Social Project",
         icon: social, // People/group icon
-      },
-      {
-        title: "Market Pulse II",
-        icon: pulse, // Upward trend chart
+        description:
+          "Hands-on involvement with NGOs or social enterprises. Students identify societal problems, work at the grassroots, propose innovative solutions, and present their impact—developing empathy, social responsibility, and creative thinking.",
       },
       {
         title: "Industry Review Session",
         icon: industryreview, // Factory/industry icon
+        description:
+          "In-depth sectoral studies where students examine market trends, industry dynamics, challenges, innovations, and future scope. It fosters macro-level business understanding and helps students identify potential career or business interests.",
       },
       {
-        title: "Industry Readiness III",
-        icon: industry, // Target/goal icon
-      },
-      {
-        title: "Market Pulse III",
-        icon: pulse, // Upward trend chart
+        title: "Outbound Training (OBT)",
+        icon: trainning, // Factory/industry icon
+        description:
+          "Adventure-based learning programs conducted off-campus. Through team activities, problem-solving tasks, and survival scenarios, students build leadership, collaboration, time management, decision-making, and stress-handling skills.",
       },
       {
         title: "Company Review Session",
         icon: companyreview, // Office building icon
+        description:
+          "Post-internship presentations where students assess their host companies—structure, culture, strengths, and gaps. This peer-sharing activity reinforces learning, strengthens presentation skills, and prepares students for future interviews.",
       },
       {
-        title: "Course of Independent study",
-        icon: independent, // Open book icon
+        title: "Industry Internship Project",
+        icon: internship, // Target/goal icon
+        description:
+          "A real-world corporate project undertaken during summer internships. Students also undertake a related academic extension to deepen understanding and bridge learning with their specialization areas.",
+      },
+      {
+        title: "Certification Courses",
+        icon: certification, // Upward trend chart
+        description:
+          "Students are encouraged to pursue relevant certifications (MOOCs, skill courses, or workshops) aligned with their career goals—enhancing technical know-how and strengthening their resumes with industry-recognized credentials.",
+      },
+      {
+        title: "Specialisation Project",
+        icon: project, // Target/goal icon
+        description:
+          "Research-based projects where students identify challenges or opportunities in their chosen domain (e.g., marketing, finance, HR), suggest solutions, and present their findings to an expert panel—fostering domain expertise and innovation.",
       },
       {
         title: "Article Review Session",
         icon: article, // Newspaper/article icon
+        description:
+          "Students critically review and present published research articles. This cultivates research literacy, academic curiosity, and helps build a foundation for evidence-based decision-making and future scholarly contributions.",
+      },
+      {
+        title: "Term-End Viva (Each Term)",
+        icon: viva, // Upward trend chart
+        description:
+          "Each term ends with a viva conducted by industry professionals. These interactions serve as checkpoints to assess student learning, provide corporate feedback, and enhance professional grooming and confidence.",
       },
     ],
     differentiators: [
@@ -697,60 +746,76 @@ const programData = {
     ],
     managerialCompetency: [
       {
-        title: "Company Fact Presentation",
-        icon: presentation, // Chart for data presentation
-      },
-      {
-        title: "Industry Readiness I",
-        icon: industry, // Target/goal icon
-      },
-      {
         title: "Experiential Learning",
         icon: experiential, // Microscope for hands-on learning
+        description:
+          "Structured industry visits where students interact directly with corporate professionals, observe operations in real-time, and gain practical insights into organizational structures, production processes, and business functions.",
       },
       {
-        title: "Market Pulse I",
-        icon: pulse, // Upward trend chart
+        title: "Company Facts Presentation",
+        icon: presentation, // Chart for data presentation
+        description:
+          "Students research and analyze specific companies—covering history, operations, financials, and strategy—and present their findings creatively. This builds their confidence in public speaking, sharpens business analysis, and fosters peer-to-peer learning.",
       },
       {
         title: "Book Review Session",
         icon: bookreview, // Books icon
-      },
-      {
-        title: "Industry Readiness II",
-        icon: industry, // Target/goal icon
+        description:
+          "Encourages students to read books across business, leadership, psychology, and other genres. Students present key takeaways, critical reflections, and business applications, promoting intellectual growth and diverse thinking.",
       },
       {
         title: "Social Project",
         icon: social, // People/group icon
-      },
-      {
-        title: "Market Pulse II",
-        icon: pulse, // Upward trend chart
+        description:
+          "Hands-on involvement with NGOs or social enterprises. Students identify societal problems, work at the grassroots, propose innovative solutions, and present their impact—developing empathy, social responsibility, and creative thinking.",
       },
       {
         title: "Industry Review Session",
         icon: industryreview, // Factory/industry icon
+        description:
+          "In-depth sectoral studies where students examine market trends, industry dynamics, challenges, innovations, and future scope. It fosters macro-level business understanding and helps students identify potential career or business interests.",
       },
       {
-        title: "Industry Readiness III",
-        icon: industry, // Target/goal icon
-      },
-      {
-        title: "Market Pulse III",
-        icon: pulse, // Upward trend chart
+        title: "Outbound Training (OBT)",
+        icon: trainning, // Factory/industry icon
+        description:
+          "Adventure-based learning programs conducted off-campus. Through team activities, problem-solving tasks, and survival scenarios, students build leadership, collaboration, time management, decision-making, and stress-handling skills.",
       },
       {
         title: "Company Review Session",
         icon: companyreview, // Office building icon
+        description:
+          "Post-internship presentations where students assess their host companies—structure, culture, strengths, and gaps. This peer-sharing activity reinforces learning, strengthens presentation skills, and prepares students for future interviews.",
       },
       {
-        title: "Course of Independent study",
-        icon: independent, // Open book icon
+        title: "Industry Internship Project",
+        icon: internship, // Target/goal icon
+        description:
+          "A real-world corporate project undertaken during summer internships. Students also undertake a related academic extension to deepen understanding and bridge learning with their specialization areas.",
+      },
+      {
+        title: "Certification Courses",
+        icon: certification, // Upward trend chart
+        description:
+          "Students are encouraged to pursue relevant certifications (MOOCs, skill courses, or workshops) aligned with their career goals—enhancing technical know-how and strengthening their resumes with industry-recognized credentials.",
+      },
+      {
+        title: "Specialisation Project",
+        icon: project, // Target/goal icon
+        description:
+          "Research-based projects where students identify challenges or opportunities in their chosen domain (e.g., marketing, finance, HR), suggest solutions, and present their findings to an expert panel—fostering domain expertise and innovation.",
       },
       {
         title: "Article Review Session",
         icon: article, // Newspaper/article icon
+        description:
+          "Students critically review and present published research articles. This cultivates research literacy, academic curiosity, and helps build a foundation for evidence-based decision-making and future scholarly contributions.",
+      },
+      {
+        title: "Term-End Viva (Each Term)",
+        icon: viva, // Upward trend chart
+        description:
+          "Each term ends with a viva conducted by industry professionals. These interactions serve as checkpoints to assess student learning, provide corporate feedback, and enhance professional grooming and confidence.",
       },
     ],
     differentiators: [
@@ -1247,60 +1312,76 @@ const programData = {
     ],
     managerialCompetency: [
       {
-        title: "Company Fact Presentation",
-        icon: presentation, // Chart for data presentation
-      },
-      {
-        title: "Industry Readiness I",
-        icon: industry, // Target/goal icon
-      },
-      {
         title: "Experiential Learning",
         icon: experiential, // Microscope for hands-on learning
+        description:
+          "Structured industry visits where students interact directly with corporate professionals, observe operations in real-time, and gain practical insights into organizational structures, production processes, and business functions.",
       },
       {
-        title: "Market Pulse I",
-        icon: pulse, // Upward trend chart
+        title: "Company Facts Presentation",
+        icon: presentation, // Chart for data presentation
+        description:
+          "Students research and analyze specific companies—covering history, operations, financials, and strategy—and present their findings creatively. This builds their confidence in public speaking, sharpens business analysis, and fosters peer-to-peer learning.",
       },
       {
         title: "Book Review Session",
         icon: bookreview, // Books icon
-      },
-      {
-        title: "Industry Readiness II",
-        icon: industry, // Target/goal icon
+        description:
+          "Encourages students to read books across business, leadership, psychology, and other genres. Students present key takeaways, critical reflections, and business applications, promoting intellectual growth and diverse thinking.",
       },
       {
         title: "Social Project",
         icon: social, // People/group icon
-      },
-      {
-        title: "Market Pulse II",
-        icon: pulse, // Upward trend chart
+        description:
+          "Hands-on involvement with NGOs or social enterprises. Students identify societal problems, work at the grassroots, propose innovative solutions, and present their impact—developing empathy, social responsibility, and creative thinking.",
       },
       {
         title: "Industry Review Session",
         icon: industryreview, // Factory/industry icon
+        description:
+          "In-depth sectoral studies where students examine market trends, industry dynamics, challenges, innovations, and future scope. It fosters macro-level business understanding and helps students identify potential career or business interests.",
       },
       {
-        title: "Industry Readiness III",
-        icon: industry, // Target/goal icon
-      },
-      {
-        title: "Market Pulse III",
-        icon: pulse, // Upward trend chart
+        title: "Outbound Training (OBT)",
+        icon: trainning, // Factory/industry icon
+        description:
+          "Adventure-based learning programs conducted off-campus. Through team activities, problem-solving tasks, and survival scenarios, students build leadership, collaboration, time management, decision-making, and stress-handling skills.",
       },
       {
         title: "Company Review Session",
         icon: companyreview, // Office building icon
+        description:
+          "Post-internship presentations where students assess their host companies—structure, culture, strengths, and gaps. This peer-sharing activity reinforces learning, strengthens presentation skills, and prepares students for future interviews.",
       },
       {
-        title: "Course of Independent study",
-        icon: independent, // Open book icon
+        title: "Industry Internship Project",
+        icon: internship, // Target/goal icon
+        description:
+          "A real-world corporate project undertaken during summer internships. Students also undertake a related academic extension to deepen understanding and bridge learning with their specialization areas.",
+      },
+      {
+        title: "Certification Courses",
+        icon: certification, // Upward trend chart
+        description:
+          "Students are encouraged to pursue relevant certifications (MOOCs, skill courses, or workshops) aligned with their career goals—enhancing technical know-how and strengthening their resumes with industry-recognized credentials.",
+      },
+      {
+        title: "Specialisation Project",
+        icon: project, // Target/goal icon
+        description:
+          "Research-based projects where students identify challenges or opportunities in their chosen domain (e.g., marketing, finance, HR), suggest solutions, and present their findings to an expert panel—fostering domain expertise and innovation.",
       },
       {
         title: "Article Review Session",
         icon: article, // Newspaper/article icon
+        description:
+          "Students critically review and present published research articles. This cultivates research literacy, academic curiosity, and helps build a foundation for evidence-based decision-making and future scholarly contributions.",
+      },
+      {
+        title: "Term-End Viva (Each Term)",
+        icon: viva, // Upward trend chart
+        description:
+          "Each term ends with a viva conducted by industry professionals. These interactions serve as checkpoints to assess student learning, provide corporate feedback, and enhance professional grooming and confidence.",
       },
     ],
     differentiators: [
@@ -1996,10 +2077,39 @@ const ManagerialCompetency = ({ managerialCompetency }) => {
         {managerialCompetency.map((spec, index) => (
           <Card
             key={index}
-            className="overflow-hidden flex flex-row items-center gap-4 p-2"
+            className="overflow-hidden flex flex-col gap-3 p-5 sm:p-3"
           >
-            <img src={spec.icon} alt={spec.title} className="w-16 h-16" />
-            <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
+            <div className="flex flex-row items-center gap-4">
+              <img src={spec.icon} alt={spec.title} className="w-16 h-16" />
+              <CardTitle className="text-xl text-red-600">
+                {spec.title}
+              </CardTitle>
+            </div>
+            <div className="flex flex-col gap-2">
+              <div className="relative">
+                <CardDescription className="sm:line-clamp-2 line-clamp-1">
+                  {spec.description}
+                </CardDescription>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="link"
+                      className="text-mainBlue bg-white p-0 h-auto absolute right-0 bottom-0 bg-gradient-to-l from-white via-white to-transparent pl-4"
+                    >
+                      Read More
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>{spec.title}</DialogTitle>
+                    </DialogHeader>
+                    <div className="mt-4">
+                      <p>{spec.description}</p>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </div>
+            </div>
           </Card>
         ))}
       </div>
