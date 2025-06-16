@@ -9,7 +9,7 @@ const images = [
   "https://pagedone.io/asset/uploads/1713943731.png",
 ];
 
-const AUTO_SLIDE_INTERVAL = 1000; // 5 seconds
+const AUTO_SLIDE_INTERVAL = 3000; // 5 seconds
 
 export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,11 +91,11 @@ export default function Gallery() {
           }}
         ></div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 sm:px-5 lg:px-6">
+      <div className="mx-auto max-w-2xl px-4 sm:px-5 lg:px-6">
         <div className="mb-16">
           <WordPullUp
             words="Upcoming Events"
-            className="text-4xl md:text-5xl text-left sm:text-center font-bold tracking-tight text-mainBlue mt-8 mb-4 md:mb-6"
+            className="text-4xl md:text-5xl text-center font-bold tracking-tight text-mainBlue mt-8 mb-4 md:mb-6"
           />
           <p className="w-full text-center text-gray-600 text-lg font-normal leading-8">
             Explore the essence of beauty in our gallery's intimate space.
@@ -147,7 +147,7 @@ export default function Gallery() {
                   {images.map((image, index) => (
                     <motion.div
                       key={index}
-                      className={`thumbs-slide w-[70px] sm:!w-[150px] sm:!h-[150px] h-[70px] relative ${
+                      className={`thumbs-slide w-[70px] sm:!w-[100px] sm:!h-[100px] h-[70px] relative ${
                         index === currentIndex ? "active-thumbnail" : ""
                       }`}
                       onClick={() => handleThumbnailClick(index)}
