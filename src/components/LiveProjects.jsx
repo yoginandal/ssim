@@ -8,8 +8,9 @@ import PlacementStories from "./PlacementStories";
 const LiveProjects = () => {
   return (
     <>
-      <div className="py-16 relative bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 text-gray-900">
-        {/* <div className="absolute inset-0 opacity-5">
+      {/* <div className="py-16 relative bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200 text-gray-900"> */}
+      <div className="py-16 relative bg-white text-gray-900">
+        <div className="absolute inset-0 opacity-5">
           <div
             className="w-full h-full"
             style={{
@@ -18,7 +19,7 @@ const LiveProjects = () => {
               backgroundSize: "20px 20px",
             }}
           ></div>
-        </div> */}
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* <ImageSlider images={images} /> */}

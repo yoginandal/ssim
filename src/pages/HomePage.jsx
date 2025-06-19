@@ -61,7 +61,7 @@ export default function HomePage() {
           <Carousel key="carousel" />,
           <LatestBlogsAndEvents key="latest-blogs-and-events" />,
           <RadialIcons key="testimonial" />,
-          <Events key="events" />,
+          // <Events key="events" />,
           // <UpcomingEvents key="upcoming-events" />,
           <LiveProjects key="live-projects" />,
         ].map((Section, index) => (

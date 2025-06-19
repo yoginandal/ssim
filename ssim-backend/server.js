@@ -19,7 +19,7 @@ const port = process.env.PORT || 8100;
 const dbPool = mysql.createPool({
   host: "localhost", // Or your MySQL host
   user: "root", // Your MySQL username
-  password: "Rand0m@1", // Your MySQL password
+  password: "", // Your MySQL password
   database: "ssim_db", // Your MySQL database name
   waitForConnections: true,
   connectionLimit: 10,
@@ -76,6 +76,18 @@ async function initializeDatabaseSchema() {
             );
         `;
 
+    const createGuestLecturesTableSQL = `
+            CREATE TABLE IF NOT EXISTS guest_lectures (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255) NOT NULL,
+                designation VARCHAR(255) NOT NULL,
+                company VARCHAR(255) NOT NULL,
+                topic VARCHAR(255),
+                year VARCHAR(10),
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `;
+
     await connection.query(createEventsTableSQL);
     console.log("Table 'events' checked/created.");
 
@@ -87,6 +99,9 @@ async function initializeDatabaseSchema() {
 
     await connection.query(createInternshipsTableSQL);
     console.log("Table 'internships' checked/created.");
+
+    await connection.query(createGuestLecturesTableSQL);
+    console.log("Table 'guest_lectures' checked/created.");
   } catch (error) {
     console.error("Error initializing database schema:", error);
     // Exit the process if we can't set up the database, as the app won't work.
@@ -205,6 +220,10 @@ app.use("/api/placements", placementRoutes);
 const internshipRoutes = require("./routes/internshipRoutes")(dbPool); // Pass dbPool to the router
 app.use("/api/internships", internshipRoutes);
 
+// Import and use guest lecture routes
+const guestRoutes = require("./routes/guestRoutes")(dbPool); // Pass dbPool to the router
+app.use("/api/guest-lectures", guestRoutes);
+
 // POST endpoint for event upload
 app.post("/api/events", upload.array("eventImages"), async (req, res) => {
   console.log(
@@ -215,11 +234,9 @@ app.post("/api/events", upload.array("eventImages"), async (req, res) => {
   const tempUploadedFiles = req.files; // Files as uploaded by multer with temporary names
 
   if (!id || !title || !description) {
-    return res
-      .status(400)
-      .json({
-        message: "Missing required event fields: id, title, description.",
-      });
+    return res.status(400).json({
+      message: "Missing required event fields: id, title, description.",
+    });
   }
 
   let connection;
@@ -383,12 +400,10 @@ app.post("/api/events", upload.array("eventImages"), async (req, res) => {
       error.code === "ER_DUP_ENTRY" &&
       error.message.includes("events.PRIMARY")
     ) {
-      return res
-        .status(409)
-        .json({
-          message: "Conflict: Event with this ID already exists.",
-          error: error.message,
-        });
+      return res.status(409).json({
+        message: "Conflict: Event with this ID already exists.",
+        error: error.message,
+      });
     }
     const clientMessage =
       error.message &&
@@ -464,9 +479,9 @@ app.use((err, req, res, next) => {
 });
 
 // F // Initialize DB schema before starting the server
-  app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
 // }
 
 // startServer();

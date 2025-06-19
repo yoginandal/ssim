@@ -40,6 +40,7 @@ import BlogDetail from "@/components/blog/BlogDetail";
 import Conferences from "@/components/faculty&research/Conferences";
 import IQAC from "./components/header/IQAC";
 import SSIM from "./SSIM";
+import GuestLectures from "./components/placement/GuestLectures";
 // import CourseElectives from "./components/programs/CourseElectives";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -132,6 +133,7 @@ export default function App() {
                 <Route path="records" element={<PlacementSection />} />
                 <Route path="team" element={<PlacementTeams />} />
                 <Route path="internships" element={<Internships />} />
+                <Route path="guest-lectures" element={<GuestLectures />} />
               </Route>
               <Route
                 path="/students-life/life-at-ssim"
