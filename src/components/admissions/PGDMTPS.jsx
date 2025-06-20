@@ -149,10 +149,11 @@ const processData = [
   },
   {
     step: 4,
-    title: "SOP & Interview",
+    // title: "SOP & Interview",
+    title: "Selection Rounds",
     description:
       "Submit Statement of Purpose, video introduction and attend personal interview",
-    details: "SOP | Video Introducon | Personal Interview",
+    details: "SOP | Video Introduction | Personal Interview",
   },
 ];
 

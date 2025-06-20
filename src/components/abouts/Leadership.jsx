@@ -14,6 +14,7 @@ import { Quote, ChevronRight } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import sampathy from "@/assets/about/Sampathy.png";
 import ramana from "@/assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+import ambuj from "@/assets/about/dr-ambuj.jpeg";
 
 // Leaders data (unchanged)
 const leaders = [
@@ -69,14 +70,14 @@ const leaders = [
   },
   {
     role: "Director, SSIM.",
-    name: "PROF. S.V. RAMANA RAO",
-    image: ramana,
+    name: "Prof. (Dr.) Ambuj Jagdish Gupta,",
+    image: ambuj,
     quote:
       "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
     quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",
     content: [
       "Management education has evolved to be a premier choice among post-graduation degrees for students all over the world. The growing complexity of business, coupled with quantum leaps in technological advances has made this course, futuristic in its outlook, attracting the best minds to unravel and chart new directions for organizations. Business education provided by business schools should, therefore, integrate these vagaries into the environment to build a competent talent base.",
-      `Siva Sivani Institute of Management (SSIM) is one of the leading business schools in the country offering Post Graduation in Business Management since 1992. These programs are carefully designed in accordance with industry requirements offered by prominent professors from the industry as well as the academic fraternity. SSIM is striving to "achieve and sustain a reputation for excellence in teaching, learning, research and consultancy whilst upholding human values". These values are imbibed in every fibre of the operations at SSIM and leaders walk the talk to help students emulate these standards!`,
+      `Siva Sivani Institute of Management (SSIM) is one of the leading business schools in the country offering Post Graduation in Business Management since 1992. These programs are carefully designed in accordance with industry requirements offered by prominent professors from the industry as well as the academic fraternity. SSIM is striving to “achieve and sustain a reputation for excellence in teaching, learning, research and consultancy whilst upholding human values”. These values are imbibed in every fibre of the operations at SSIM and leaders walk the talk to help students emulate these standards!`,
       `SSIM is committed to shaping students' careers in a way that can be ready to take on entrepreneurial roles. It is our responsibility to offer more specialized and focused programs to meet the industry needs of PGDM-TPS, PGDM-BIFS, and PGDM-Business Analytics.`,
       "PGDM at SSIM is an expedition which helps an individual get acquainted with business expertise and business functionalities. The degree confers one with prospects to broaden his/her aptitude and apply it on the job. The institute's faculty ensures that students acquire knowledge, analyse concepts in given organizational case studies, and overall personality development. The entire learning process provides an individual with a strong foundation to mould careers. These synergistic efforts result in significant changes in the life of a student's career at SSIM.",
       "The benefits of studying PGDM are numerous, especially at SSIM since we provide a different experience in terms of learning through exceptionally qualified faculty members, teaching techniques, case studies and direct attention of faculty members.",
