@@ -46,6 +46,7 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
+import Scholarships from "./Scholarships";
 
 // Navigation Data
 const navigationSections = [
@@ -727,7 +728,7 @@ const Apply = () => (
   </Card>
 );
 
-const Scholarships = () => <div>Scholarships content here</div>;
+// const Scholarships = () => <div>Scholarships content here</div>;
 
 // Main Component
 const PGDMBA = () => {

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSDCH Inauguration Ceremony</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="max-w-7xl px-5 sm:px-0 mx-auto grid grid-cols-2 md:grid-cols-3 gap-4"
+    >
+      <script>
+        const images = [
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0087.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0082.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0081.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0080.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0079.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0055.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0054.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0048.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0047.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0046.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0043.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0042.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0040.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0038.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0035.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0031.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0029.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0028.jpg", //
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0026.jpg",
+          "https://ssdchyderabad.in/wp-content/uploads/2025/06/IMG-20250618-WA0024.jpg",
+        ];
+
+        const galleryItems = images
+          .map(
+            (image) => `
+          <div>
+            <img class="h-auto max-w-full rounded-lg" src="${image}" alt="" />
+          </div>
+        `
+          )
+          .join("");
+
+        document.write(galleryItems);
+      </script>
+    </div>
+  </body>
+</html>

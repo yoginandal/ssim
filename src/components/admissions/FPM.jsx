@@ -20,6 +20,7 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ScrollArea } from "../ui/scroll-area";
+import Scholarships from "./Scholarships";
 
 import {
   BookOpen,
@@ -573,7 +574,7 @@ const Apply = () => (
   </Card>
 );
 
-const Scholarships = () => <div>Scholarships content here</div>;
+// const Scholarships = () => <div>Scholarships content here</div>;
 
 // Main Component
 const FPM = () => {
