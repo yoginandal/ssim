@@ -43,14 +43,24 @@ import subba from "../../assets/faculty&research/faculty/subba.webp";
 import Subhash from "../../assets/faculty&research/faculty/Subhash Tej.webp";
 import Thirumal from "../../assets/faculty&research/faculty/THIRUMALREDDY.webp";
 import Vallinayagam from "../../assets/faculty&research/faculty/Vallinayagam.webp";
+import Ambuj from "../../assets/about/dr-ambuj.jpeg";
 
 const teamMembers = [
+  // {
+  //   name: "Dr. S.V. Ramana Rao",
+  //   area: "Finance",
+  //   qualification: "Ph.D, MBA",
+  //   experience: 30,
+  //   image: Ramana,
+  //   description:
+  //     "Expert in financial markets with extensive research in corporate finance. Passionate about teaching and mentoring students in investment strategies.",
+  // },
   {
-    name: "Dr. S.V. Ramana Rao",
+    name: "Dr. Ambuj Jagdish Gupta",
     area: "Finance",
     qualification: "Ph.D, MBA",
     experience: 30,
-    image: Ramana,
+    image: Ambuj,
     description:
       "Expert in financial markets with extensive research in corporate finance. Passionate about teaching and mentoring students in investment strategies.",
   },

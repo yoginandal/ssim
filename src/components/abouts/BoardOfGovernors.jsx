@@ -4,6 +4,7 @@ import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 import chandra from "../../assets/faculty&research/faculty/SF Chandra.webp";
 import Thirumal from "../../assets/faculty&research/faculty/THIRUMALREDDY.webp";
 import DrArij from "../../assets/faculty&research/faculty/DR Arijit.webp";
+import Ambuj from "../../assets/about/dr-ambuj.jpeg";
 
 export default function BoardOfGovernors() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -28,6 +29,13 @@ export default function BoardOfGovernors() {
     },
     {
       id: 3,
+      name: "Prof. (Dr.) Ambuj Jagdish Gupta",
+      role: "Director",
+      description: "Director, Siva Sivani Institute of Management",
+      image: Ambuj,
+    },
+    {
+      id: 4,
       name: "Dr. S.V. Ramana Rao",
       role: "Board Member",
       description:
@@ -35,7 +43,7 @@ export default function BoardOfGovernors() {
       image: Ramana,
     },
     {
-      id: 4,
+      id: 5,
       name: "Dr. Deepika",
       role: "Board Member",
       description:
@@ -43,14 +51,14 @@ export default function BoardOfGovernors() {
       image: "https://ssim.ac.in/wp-content/uploads/2022/10/Deepika-mam_pp.jpg",
     },
     {
-      id: 5,
+      id: 6,
       name: "Dr. Kalakar",
       role: "Board Member",
       description: "Providing strategic guidance for institutional growth.",
       image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kalakar_PP.jpg",
     },
     {
-      id: 6,
+      id: 7,
       name: "Md. Masood Ahmed",
       role: "Board Member",
       description: "Supporting SSIM's mission with industry expertise.",
@@ -58,28 +66,28 @@ export default function BoardOfGovernors() {
         "https://ssim.ac.in/wp-content/uploads/2022/10/Md_Masood_Ahmed.jpg",
     },
     {
-      id: 7,
+      id: 8,
       name: "Dr. S.F. Chandrasekhar",
       role: "Board Member",
       description: "Guiding academic and administrative excellence.",
       image: chandra,
     },
     {
-      id: 8,
+      id: 9,
       name: "Dr. Arijit Santikary",
       role: "Board Member",
       description: "Contributing to research and academic development.",
       image: DrArij,
     },
     {
-      id: 9,
+      id: 10,
       name: "Dr. Harish",
       role: "Board Member",
       description: "Fostering innovation in management education.",
       image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Harish.jpg",
     },
     {
-      id: 10,
+      id: 11,
       name: "Dr. V. Jayalakshmi",
       role: "Board Member",
       description: "Promoting excellence in teaching and research.",
@@ -87,14 +95,14 @@ export default function BoardOfGovernors() {
         "https://ssim.ac.in/wp-content/uploads/2022/10/Dr.-V.Jayalakshmi_b.jpg",
     },
     {
-      id: 11,
+      id: 12,
       name: "T. Thirumal Reddy",
       role: "Board Member",
       description: "Supporting institutional development and growth.",
       image: Thirumal,
     },
     {
-      id: 12,
+      id: 13,
       name: "Board Member",
       role: "Advisory Member",
       description: "Contributing to SSIM's continued success and development.",

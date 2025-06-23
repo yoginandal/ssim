@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
+import Ambuj from "../../assets/about/dr-ambuj.jpeg";
 
 export default function BoardOfStudies() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -10,106 +11,127 @@ export default function BoardOfStudies() {
       id: 1,
       name: "Dr. Sailesh Sampathy",
       role: "Chairman",
-      description: "Leading SSIM's Board of Studies with strategic vision and academic excellence.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg"
+      description:
+        "Leading SSIM's Board of Studies with strategic vision and academic excellence.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
     },
     {
       id: 2,
-      name: "Dr. Kalakar",
-      role: "Member",
-      description: "Contributing expertise in academic planning and curriculum development.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kalakar_PP-1.jpg"
+      name: "Prof. (Dr.) Ambuj Jagdish Gupta",
+      role: "Director",
+      description: "Director, Siva Sivani Institute of Management",
+      image: Ambuj,
     },
     {
       id: 3,
-      name: "Dr. S.V. Ramana Rao",
+      name: "Dr. Kalakar",
       role: "Member",
-      description: "Providing valuable insights for academic growth and innovation.",
-      image: Ramana,
+      description:
+        "Contributing expertise in academic planning and curriculum development.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kalakar_PP-1.jpg",
     },
     {
       id: 4,
-      name: "Dr. R.K. Mishra",
+      name: "Dr. S.V. Ramana Rao",
       role: "Member",
-      description: "Guiding curriculum enhancement and academic standards.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/R_K_Mishra.jpg"
+      description:
+        "Providing valuable insights for academic growth and innovation.",
+      image: Ramana,
     },
     {
       id: 5,
-      name: "Dr. Jagan Mohan Reddy",
+      name: "Dr. R.K. Mishra",
       role: "Member",
-      description: "Supporting academic excellence and program development.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Jagan_Mohan_Reddy.jpg"
+      description: "Guiding curriculum enhancement and academic standards.",
+      image: "https://ssim.ac.in/wp-content/uploads/2022/10/R_K_Mishra.jpg",
     },
     {
       id: 6,
-      name: "Dr. Choudhary Prasad",
+      name: "Dr. Jagan Mohan Reddy",
       role: "Member",
-      description: "Contributing to academic policy and quality assurance.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Choudhary_Prasad.jpg"
+      description: "Supporting academic excellence and program development.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Jagan_Mohan_Reddy.jpg",
     },
     {
       id: 7,
-      name: "Dr. Kumar Chunduri",
+      name: "Dr. Choudhary Prasad",
       role: "Member",
-      description: "Advancing research initiatives and academic partnerships.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kumar-Chunduri.jpg"
+      description: "Contributing to academic policy and quality assurance.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Choudhary_Prasad.jpg",
     },
     {
       id: 8,
-      name: "Prof. Y. Lakshman Kumar",
-      role: "Member", 
-      description: "Fostering innovation in teaching methodologies.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Prof_Y_Lakshman-Kumar.jpg"
+      name: "Dr. Kumar Chunduri",
+      role: "Member",
+      description: "Advancing research initiatives and academic partnerships.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kumar-Chunduri.jpg",
     },
     {
       id: 9,
-      name: "Dr. Kishore NK",
+      name: "Prof. Y. Lakshman Kumar",
       role: "Member",
-      description: "Enhancing academic programs and student outcomes.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kishore-NK.jpg"
+      description: "Fostering innovation in teaching methodologies.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Prof_Y_Lakshman-Kumar.jpg",
     },
     {
       id: 10,
-      name: "Sri Ravi Tanniru",
+      name: "Dr. Kishore NK",
       role: "Member",
-      description: "Supporting industry-academia collaboration.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Sri_Ravi_Tanniru.jpg"
+      description: "Enhancing academic programs and student outcomes.",
+      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kishore-NK.jpg",
     },
     {
       id: 11,
-      name: "Dr. A. Sudhakar",
+      name: "Sri Ravi Tanniru",
       role: "Member",
-      description: "Driving academic excellence and innovation.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_A_Sudhakar-1.jpg"
+      description: "Supporting industry-academia collaboration.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Sri_Ravi_Tanniru.jpg",
     },
     {
       id: 12,
-      name: "Dr. Anand S. Upadhyaya",
+      name: "Dr. A. Sudhakar",
       role: "Member",
-      description: "Contributing to curriculum development and academic planning.",
-      image: "https://ssim.ac.in/wp-content/uploads/1.-Dr.-Anand-S-Upadhyaya.jpg"
+      description: "Driving academic excellence and innovation.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_A_Sudhakar-1.jpg",
     },
     {
       id: 13,
-      name: "Dr. Durga Prasad M",
+      name: "Dr. Anand S. Upadhyaya",
       role: "Member",
-      description: "Advancing research and academic standards.",
-      image: "https://ssim.ac.in/wp-content/uploads/2.-Dr.-Durga-Prasad-M.jpg"
+      description:
+        "Contributing to curriculum development and academic planning.",
+      image:
+        "https://ssim.ac.in/wp-content/uploads/1.-Dr.-Anand-S-Upadhyaya.jpg",
     },
     {
       id: 14,
-      name: "Dr. S. Anand Reddy",
+      name: "Dr. Durga Prasad M",
       role: "Member",
-      description: "Supporting program development and quality assurance.",
-      image: "https://ssim.ac.in/wp-content/uploads/4.-Dr.-S.-Anand-Reddy.jpg"
+      description: "Advancing research and academic standards.",
+      image: "https://ssim.ac.in/wp-content/uploads/2.-Dr.-Durga-Prasad-M.jpg",
     },
     {
       id: 15,
+      name: "Dr. S. Anand Reddy",
+      role: "Member",
+      description: "Supporting program development and quality assurance.",
+      image: "https://ssim.ac.in/wp-content/uploads/4.-Dr.-S.-Anand-Reddy.jpg",
+    },
+    {
+      id: 16,
       name: "Prof. Mahananda Chalise",
       role: "Member",
       description: "Contributing to academic excellence and innovation.",
-      image: "https://ssim.ac.in/wp-content/uploads/5.-Prof.-Mahananda-Chalise.jpg"
+      image:
+        "https://ssim.ac.in/wp-content/uploads/5.-Prof.-Mahananda-Chalise.jpg",
     },
   ];
 

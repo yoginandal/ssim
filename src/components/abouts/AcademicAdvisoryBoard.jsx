@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
-
+import Ambuj from "../../assets/about/dr-ambuj.jpeg";
 
 export default function AcademicAdvisoryBoard() {
   const teamMembers = [
@@ -19,9 +19,15 @@ export default function AcademicAdvisoryBoard() {
         "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
     },
     {
-      name: "Dr. S.V. Ramana Rao",
+      name: "Prof. (Dr.) Ambuj Jagdish Gupta",
       role: "Director",
       bio: "Director, Siva Sivani Institute of Management",
+      image: Ambuj,
+    },
+    {
+      name: "Dr. S.V. Ramana Rao",
+      role: "Member",
+      bio: "Member, Siva Sivani Institute of Management",
       image: Ramana,
     },
     {
@@ -128,7 +134,8 @@ export default function AcademicAdvisoryBoard() {
       name: "Sri. C. Shanthan Reddy",
       role: "Managing Partner",
       bio: "Arise Films, Hyderabad.",
-      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+      image:
+        "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
     {
       name: "Dr. S. Siva Kumar",
@@ -153,7 +160,8 @@ export default function AcademicAdvisoryBoard() {
       name: "Prof. B.R. Virmani",
       role: "Chairman",
       bio: "Centre for Organization Research & Development in Management (CORD-M), Hyderabad.",
-      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+      image:
+        "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
     {
       name: "Prof. V. Viswanadham",
@@ -183,7 +191,8 @@ export default function AcademicAdvisoryBoard() {
       name: "Prof. A. Sudhakar",
       role: "Former Director – General",
       bio: "SSGI.",
-      image: "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
+      image:
+        "https://th.bing.com/th/id/OIP.pA6t_4n5Y5TvS00-jLkhPwHaHa?w=500&h=500&rs=1&pid=ImgDetMain",
     },
   ];
 
