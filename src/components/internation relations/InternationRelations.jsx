@@ -18,6 +18,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import InternationalEvents from "./InternationalEvents";
 
 // Add this at the top of the file, after the imports
 const scrollbarStyles = `
@@ -467,6 +468,7 @@ Human Resources`,
           </Drawer>
         </div>
       </div>
+      <InternationalEvents />
     </section>
   );
 }
