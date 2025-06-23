@@ -46,6 +46,8 @@ import {
   TableRow,
 } from "../ui/table";
 import Scholarships from "./Scholarships";
+import SelectionProcess from "./SelectionProcess";
+import AdmissionParameters from "./AdmissionParameters";
 
 // Navigation Data
 const navigationSections = [
@@ -139,7 +141,7 @@ const processData = [
   },
   {
     step: 4,
-    title: "SOP & Interview",
+    title: "Selection Rounds",
     description:
       "Submit Statement of Purpose, video introduction and attend personal interview",
     details: "SOP | Video Introducon | Personal Interview",
@@ -468,6 +470,7 @@ const ProgramsOffered = () => (
 
 const Process = () => (
   <div className="space-y-8">
+    <SelectionProcess />
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -495,6 +498,11 @@ const Process = () => (
       admission of such student/s will automacally stand cancelled and any fee
       paid will be refunded aer deducng the processing fee.
     </p>
+    <p className="text-lg font-semibold text-gray-700 !mt-5">
+      SSIM follows Profile Based Selection process. The final selection is based
+      on the cumulative score of the below mentioned components -
+    </p>
+    <AdmissionParameters />
   </div>
 );
 

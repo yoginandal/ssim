@@ -20,6 +20,11 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ScrollArea } from "../ui/scroll-area";
+import shortlist from "../../assets/admissions/short listing.png";
+import documents from "../../assets/admissions/documents-submission.png";
+import sop from "../../assets/admissions/statement-of-purpose.jpg";
+import introduction from "../../assets/admissions/video-introduction.png";
+import interview from "../../assets/admissions/interview.png";
 
 import {
   BookOpen,
@@ -46,6 +51,8 @@ import {
   TableRow,
 } from "../ui/table";
 import Scholarships from "./Scholarships";
+import SelectionProcess from "./SelectionProcess";
+import AdmissionParameters from "./AdmissionParameters";
 
 // Navigation Data
 const navigationSections = [
@@ -499,6 +506,7 @@ const ProgramsOffered = () => (
 
 const Process = () => (
   <div className="space-y-8">
+    <SelectionProcess />
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -526,6 +534,11 @@ const Process = () => (
       admission of such student/s will automacally stand cancelled and any fee
       paid will be refunded aer deducng the processing fee.
     </p>
+    <p className="text-lg font-semibold text-gray-700 !mt-5">
+      SSIM follows Profile Based Selection process. The final selection is based
+      on the cumulative score of the below mentioned components -
+    </p>
+    <AdmissionParameters />
   </div>
 );
 

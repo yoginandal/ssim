@@ -41,6 +41,7 @@ import Conferences from "@/components/faculty&research/Conferences";
 import IQAC from "./components/header/IQAC";
 import SSIM from "./SSIM";
 import GuestLectures from "./components/placement/GuestLectures";
+// import SelectionProcess from "./components/admissions/SelectionProcess";
 // import CourseElectives from "./components/programs/CourseElectives";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
@@ -169,6 +170,7 @@ export default function App() {
               <Route path="/iqac" element={<IQAC />} />
               <Route path="/events" element={<SSIM />} />
               <Route path="testing" element={<LifeAtSsim />} />
+              {/* <Route path="/admissions/process" element={<SelectionProcess />} /> */}
               {/* <Route path="/programs/course-electives" element={<CourseElectives />} /> */}
             </Routes>
             <Footer />
