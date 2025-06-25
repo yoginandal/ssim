@@ -36,7 +36,9 @@ const Drawer = () => {
             {item.dropdown?.map((subItem, subIndex) => (
               <li key={subIndex}>
                 {subItem.subDropdown ? (
-                  <CollapsibleNavItem item={{ name: subItem.name, dropdown: subItem.subDropdown }} />
+                  <CollapsibleNavItem
+                    item={{ name: subItem.name, dropdown: subItem.subDropdown }}
+                  />
                 ) : (
                   <SheetClose asChild>
                     <Link
@@ -57,8 +59,9 @@ const Drawer = () => {
 
   return (
     <Sheet>
-      <SheetTrigger className="lg:hidden block">
-        <PanelLeft className="w-8 h-8 text-gray-800" />
+      <SheetTrigger className="flex items-center gap-1 bg-gray-200 rounded-md p-2">
+        <PanelLeft className="w-6 h-6 text-gray-800" />
+        <p className="text-gray-800 text-sm mb-[2px]">Menu</p>
       </SheetTrigger>
       <SheetContent className="bg-white overflow-auto">
         <SheetHeader>
