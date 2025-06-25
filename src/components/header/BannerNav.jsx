@@ -5,7 +5,7 @@ import Drawer from "./Drawer";
 
 export default function BannerNav() {
   return (
-    <div className="bg-white py-2 px-4 text-sm block">
+    <div className="bg-gray-100 py-2 px-4 text-sm block">
       <div className="container mx-auto flex justify-between sm:items-center">
         <div className="flex items-center space-x-4">
           <Link to="/">
