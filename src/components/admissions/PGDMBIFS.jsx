@@ -20,6 +20,7 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { ScrollArea } from "../ui/scroll-area";
+import EligibilityCriteria from "./EligibilityCriteria";
 
 import {
   BookOpen,
@@ -36,6 +37,7 @@ import {
   TrendingUp,
   Globe,
   BriefcaseBusiness,
+  ClipboardList,
 } from "lucide-react";
 import {
   Table,
@@ -53,6 +55,7 @@ import AdmissionParameters from "./AdmissionParameters";
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
   { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
+  { id: "eligibility", label: "Eligibility Criteria", icon: ClipboardList },
   { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
@@ -883,6 +886,8 @@ const PGDMBIFS = () => {
                           return <ProgramsOffered />;
                         case "process":
                           return <Process />;
+                        case "eligibility":
+                          return <EligibilityCriteria />;
                         case "fees":
                           return <Fees />;
                         case "dates":

@@ -95,9 +95,9 @@ const ContactUs = () => {
           <CardContent className="p-6 md:p-10">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Contact Information */}
-              <div className="space-y-6">
+              <div className="space-y-5">
                 <Card>
-                  <CardContent className="flex items-center space-x-4 p-6">
+                  <CardContent className="flex items-start space-x-4 p-4">
                     <MapPin className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
                       <h3 className="font-semibold">Our Location</h3>
@@ -109,36 +109,74 @@ const ContactUs = () => {
                   </CardContent>
                 </Card>
                 <Card>
-                  <CardContent className="flex items-center space-x-4 p-6">
+                  <CardContent className="flex items-start space-x-4 p-4">
                     <Phone className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
-                      <h3 className="font-semibold">Phone Number</h3>
-                      <p className="text-sm text-muted-foreground">
-                        040-2716 5451 / 53 / 54
+                      <h3 className="font-semibold">Admissions Office</h3>
+                      <p className="text-sm text-gray-600">
+                        <strong>Email:</strong> info@ssim.ac.in
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Call:</strong> 040-2716 5451 / 53 / 54
                       </p>
                     </div>
                   </CardContent>
                 </Card>
                 <Card>
-                  <CardContent className="flex items-center space-x-4 p-6">
+                  <CardContent className="flex items-start space-x-4 p-4">
+                    <Phone className="h-6 min-w-6 text-primary text-red-600" />
+                    <div>
+                      <h3 className="font-semibold">
+                        Corporate Relations Office
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        <strong>Email:</strong> info@ssim.ac.in
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Call:</strong> 040-2716 5451 / 53 / 54
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex items-start space-x-4 p-4">
+                    <Phone className="h-6 min-w-6 text-primary text-red-600" />
+                    <div>
+                      <h3 className="font-semibold">PGP Office</h3>
+                      <p className="text-sm text-gray-600">
+                        <strong>Email:</strong> info@ssim.ac.in
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Call:</strong> 040-2716 5451 / 53 / 54
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex items-start space-x-4 p-4">
                     <Mail className="h-6 min-w-6 text-primary text-red-600" />
                     <div>
-                      <h3 className="font-semibold">Email Address</h3>
-                      <p className="text-sm text-muted-foreground">
-                        info@ssim.ac.in
+                      <h3 className="font-semibold">
+                        Examination Department (For student verification)
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        <strong>Email:</strong> info@ssim.ac.in
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        <strong>Call:</strong> 040-2716 5451 / 53 / 54
                       </p>
                     </div>
                   </CardContent>
                 </Card>
               </div>
               {/* Contact Form */}
-              <Card className="lg:col-span-2">
+              <Card className="lg:col-span-2 flex flex-col justify-center">
                 <CardHeader>
                   <CardTitle className="text-red-600">
                     Send us a message
                   </CardTitle>
                   <CardDescription>
-                    Fill out the form below and we&apos;ll get back to you as
+                    Fill out the form below and we'll get back to you as
                     soon as possible.
                   </CardDescription>
                 </CardHeader>
@@ -197,7 +235,7 @@ const ContactUs = () => {
                     <Textarea
                       placeholder="Your message"
                       name="message"
-                      className="min-h-[120px]"
+                      className="min-h-[180px]"
                       value={formData.message}
                       onChange={handleChange}
                       onBlur={handleBlur}

@@ -44,6 +44,7 @@ import GuestLectures from "./components/placement/GuestLectures";
 // import InternationalEvents from "./components/internation relations/InternationalEvents";
 // import SelectionProcess from "./components/admissions/SelectionProcess";
 // import CourseElectives from "./components/programs/CourseElectives";
+// import EligibilityCriteria from "@/components/admissions/EligibilityCriteria";
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
@@ -161,6 +162,7 @@ export default function App() {
               />
               <Route path="/admissions/pgdm-bifs" element={<PGDMBIFS />} />
               <Route path="/admissions/pgdm-ba" element={<PGDMBA />} />
+              {/* <Route path="/admissions/eligibility-criteria" element={<EligibilityCriteria />} /> */}
               <Route path="/programs/:id" element={<Programs />} />
               <Route path="/contact-us" element={<ContactUs />} />
               {/* Contact Us page route */}

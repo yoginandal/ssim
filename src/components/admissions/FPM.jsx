@@ -32,6 +32,7 @@ import {
   Menu,
   School,
   Trophy,
+  ClipboardList,
 } from "lucide-react";
 import {
   Table,
@@ -43,11 +44,13 @@ import {
 } from "../ui/table";
 import SelectionProcess from "./SelectionProcess";
 import AdmissionParameters from "./AdmissionParameters";
+import EligibilityCriteria from "./EligibilityCriteria";
 
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
   { id: "process", label: "Selection Process", icon: GraduationCap },
+  { id: "eligibility", label: "Eligibility Criteria", icon: ClipboardList },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
   { id: "brochure", label: "Brochure", icon: BookOpen },
@@ -697,6 +700,8 @@ const FPM = () => {
                           return <Overview />;
                         case "process":
                           return <Process />;
+                        case "eligibility":
+                          return <EligibilityCriteria />;
                         case "fees":
                           return <Fees />;
                         case "dates":

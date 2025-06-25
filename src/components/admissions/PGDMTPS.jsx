@@ -41,6 +41,7 @@ import {
   TrendingUp,
   Globe,
   BriefcaseBusiness,
+  ClipboardList,
 } from "lucide-react";
 import {
   Table,
@@ -53,11 +54,13 @@ import {
 import Scholarships from "./Scholarships";
 import SelectionProcess from "./SelectionProcess";
 import AdmissionParameters from "./AdmissionParameters";
+import EligibilityCriteria from "./EligibilityCriteria";
 
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
   { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
+  { id: "eligibility", label: "Eligibility Criteria", icon: ClipboardList },
   { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
@@ -899,6 +902,8 @@ const PGDMTPS = () => {
                           return <ProgramsOffered />;
                         case "process":
                           return <Process />;
+                        case "eligibility":
+                          return <EligibilityCriteria />;
                         case "fees":
                           return <Fees />;
                         case "dates":
