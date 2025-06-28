@@ -1,5 +1,3 @@
-# GitHub Actions: Build and Deploy React app (with pnpm) to Azure Web App
-
 name: Build and deploy React app to Azure Web App - ssimnew
 
 on:
@@ -11,30 +9,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build the app
-        run: pnpm run build
+        run: npm run build
 
-      - name: Zip dist folder
-        run: zip -r release.zip dist
+      - name: Zip build folder
+        run: zip -r release.zip build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -45,9 +37,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      id-token: write
-      contents: read
 
     steps:
       - name: Download artifact
@@ -58,7 +47,7 @@ jobs:
       - name: Unzip artifact
         run: unzip release.zip
 
-      - name: Azure login
+      - name: Azure Login
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_09C86A5503D04C1FB98BDFFD313C2457 }}
@@ -70,4 +59,4 @@ jobs:
         with:
           app-name: 'ssimnew'
           slot-name: 'Production'
-          package: dist
+          package: build
