@@ -25,14 +25,14 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Verify build output
-        run: ls -R dist/
+      - name: Zip the build output
+        run: (cd dist && zip -r ../release.zip .)
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: react-app
-          path: dist/
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,10 +46,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: react-app
-          path: deploy_package
 
       - name: Verify downloaded artifact
-        run: ls -R deploy_package
+        run: ls -l
 
       - name: Azure Login
         uses: azure/login@v2
@@ -63,4 +62,4 @@ jobs:
         with:
           app-name: "ssimnew"
           slot-name: "Production"
-          package: deploy_package
+          package: release.zip
