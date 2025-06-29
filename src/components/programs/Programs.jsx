@@ -2054,13 +2054,15 @@ const Specializations = ({ specializations }) => {
             className="overflow-hidden flex flex-row items-center gap-4 p-2"
           >
             {spec.icon.startsWith("http") ? (
-              <img src={spec.icon} alt={spec.title} className="w-20 h-20" />
+              <img src={spec?.icon} alt={spec?.title} className="w-20 h-20" />
             ) : (
               <div className="min-w-20 h-20 flex items-center justify-center text-4xl bg-gray-50 rounded-lg">
-                {spec.icon}
+                {spec?.icon}
               </div>
             )}
-            <CardTitle className="text-xl text-red-600">{spec.title}</CardTitle>
+            <CardTitle className="text-xl text-red-600">
+              {spec?.title}
+            </CardTitle>
           </Card>
         ))}
       </div>
@@ -2080,15 +2082,15 @@ const ManagerialCompetency = ({ managerialCompetency }) => {
             className="overflow-hidden flex flex-col gap-3 p-5 sm:p-3"
           >
             <div className="flex flex-row items-center gap-4">
-              <img src={spec.icon} alt={spec.title} className="w-16 h-16" />
+              <img src={spec?.icon} alt={spec?.title} className="w-16 h-16" />
               <CardTitle className="text-xl text-red-600">
-                {spec.title}
+                {spec?.title}
               </CardTitle>
             </div>
             <div className="flex flex-col gap-2">
               <div className="relative">
                 <CardDescription className="sm:line-clamp-2 line-clamp-1">
-                  {spec.description}
+                  {spec?.description}
                 </CardDescription>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -2101,10 +2103,10 @@ const ManagerialCompetency = ({ managerialCompetency }) => {
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>{spec.title}</DialogTitle>
+                      <DialogTitle>{spec?.title}</DialogTitle>
                     </DialogHeader>
                     <div className="mt-4">
-                      <p>{spec.description}</p>
+                      <p>{spec?.description}</p>
                     </div>
                   </DialogContent>
                 </Dialog>
@@ -2342,7 +2344,7 @@ const EligibilityAdmission = ({ eligibility, admission }) => {
 };
 
 const CourseElectives = ({ electives, programId }) => {
-  console.log(programId, electives.major.title);
+  console.log(programId, electives?.major?.title);
   if (!electives) {
     return <div>No electives offered for this program.</div>;
   }
@@ -2367,7 +2369,7 @@ const CourseElectives = ({ electives, programId }) => {
                 className={`${category.headerColor} text-white px-6 py-3 rounded-lg shadow-lg`}
               >
                 <h2 className="text-2xl md:text-3xl font-bold">
-                  {category.title}
+                  {category?.title}
                 </h2>
               </div>
               <div className="flex-1 h-px bg-gray-300 ml-6"></div>
@@ -2378,14 +2380,14 @@ const CourseElectives = ({ electives, programId }) => {
                 programId === "pgdm-ba" ? "lg:grid-cols-2" : "lg:grid-cols-3"
               } gap-6`}
             >
-              {category.specializations.map((specialization, index) => (
+              {category?.specializations.map((specialization, index) => (
                 <Card
                   key={index}
                   className={`${category.color} hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
                 >
                   <CardHeader className="pb-3">
                     <CardTitle className="text-lg font-semibold text-gray-800 flex items-center justify-between">
-                      {specialization.name}
+                      {specialization?.name}
                       {/* <Badge variant="secondary" className="ml-2 text-xs">
                         {specialization.courses.length} courses
                       </Badge> */}
@@ -2393,7 +2395,7 @@ const CourseElectives = ({ electives, programId }) => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
-                      {specialization.courses.map((course, courseIndex) => (
+                      {specialization?.courses?.map((course, courseIndex) => (
                         <li
                           key={courseIndex}
                           className="text-sm text-gray-700 leading-relaxed hover:text-gray-900 transition-colors duration-200 cursor-pointer"
