@@ -128,34 +128,34 @@ const programData = {
       degree: "Fellow Program in Management (FPM)",
     },
     specializations: [
-      {
-        title: "Accounting & Finance",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/5410839.png",
-      },
-      {
-        title: "Organizational Behavior / Human Resource",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/human-resource.png",
-      },
-      {
-        title: "Marketing",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/marketing.png",
-      },
-      {
-        title: "Economics",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/economics.png",
-      },
-      {
-        title: "Operations Management",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/OM.png",
-      },
-      {
-        title: "General Management",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/GM.png",
-      },
-      {
-        title: "Strategic Management",
-        icon: "https://ssim.ac.in/wp-content/uploads/2022/12/SM.png",
-      },
+      // {
+      //   title: "Accounting & Finance",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/5410839.png",
+      // },
+      // {
+      //   title: "Organizational Behavior / Human Resource",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/human-resource.png",
+      // },
+      // {
+      //   title: "Marketing",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/marketing.png",
+      // },
+      // {
+      //   title: "Economics",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/economics.png",
+      // },
+      // {
+      //   title: "Operations Management",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/OM.png",
+      // },
+      // {
+      //   title: "General Management",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/GM.png",
+      // },
+      // {
+      //   title: "Strategic Management",
+      //   icon: "https://ssim.ac.in/wp-content/uploads/2022/12/SM.png",
+      // },
     ],
     managerialCompetency: [
       {
