@@ -2550,7 +2550,7 @@ const ProgramsOverview = () => {
       </ul>
       {/* </ScrollArea> */}
       <div className="flex flex-col sm:flex-row gap-2 mt-4">
-        <Button
+        {/* <Button
           onClick={() => {
             setShowComparison(!showComparison);
             if (!isDesktop) setSidebarOpen(false);
@@ -2558,7 +2558,7 @@ const ProgramsOverview = () => {
           className="w-full sm:flex-1 bg-gradient-to-r from-mainBlue via-[#2f65ca] to-mainBlue text-white hover:bg-mainBlue/80"
         >
           {showComparison ? "Hide Comparison" : "Compare Programs"}
-        </Button>
+        </Button> */}
         <Overlay>
           <OverlayContent className="">
             <ProgramStats programId={activeProgram} />
