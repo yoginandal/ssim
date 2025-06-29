@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
-import chandra from "../../assets/faculty&research/faculty/SF Chandra.webp";
-import Thirumal from "../../assets/faculty&research/faculty/THIRUMALREDDY.webp";
-import DrArij from "../../assets/faculty&research/faculty/DR Arijit.webp";
-import Ambuj from "../../assets/about/dr-ambuj.jpeg";
+import ArathySampathy from "../../assets/about/BoardOfGoverners/Smt_Arathy_Sampathy.jpg";
+import SaileshSampathy from "../../assets/about/BoardOfGoverners/Dr_Sailesh_Sampathy.jpg";
+import Ambuj from "../../assets/about/BoardOfGoverners/dr-ambuj (1).jpeg";
+import Ramana from "../../assets/about/BoardOfGoverners/Dr. Ramana Rao.webp";
+import Deepika from "../../assets/about/BoardOfGoverners/Deepika-mam_pp.jpg";
+import Kalakar from "../../assets/about/BoardOfGoverners/Dr_Kalakar_PP.jpg";
+import MasoodAhmed from "../../assets/about/BoardOfGoverners/Md_Masood_Ahmed.jpg";
+import Chandra from "../../assets/about/BoardOfGoverners/SF Chandra.webp";
+import DrArijit from "../../assets/about/BoardOfGoverners/DR Arijit.webp";
+import Harish from "../../assets/about/BoardOfGoverners/Dr_Harish.jpg";
+import Jayalakshmi from "../../assets/about/BoardOfGoverners/Dr.-V.Jayalakshmi_b.jpg";
+import ThirumalReddy from "../../assets/about/BoardOfGoverners/THIRUMALREDDY.webp";
+import VipulSingh from "../../assets/about/BoardOfGoverners/vipulsingh.jpg";
 
 export default function BoardOfGovernors() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -16,16 +24,14 @@ export default function BoardOfGovernors() {
       role: "Chairperson",
       description:
         "Leading SSIM's vision and strategic direction with dedication and expertise.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/09/Smt_Arathy_Sampathy.jpg",
+      image: ArathySampathy,
     },
     {
       id: 2,
       name: "Dr. Sailesh Sampathy",
       role: "Vice Chairman",
       description: "Driving innovation and academic excellence at SSIM.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
+      image: SaileshSampathy,
     },
     {
       id: 3,
@@ -48,65 +54,63 @@ export default function BoardOfGovernors() {
       role: "Board Member",
       description:
         "Bringing expertise in academic leadership and management education.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Deepika-mam_pp.jpg",
+      image: Deepika,
     },
     {
       id: 6,
       name: "Dr. Kalakar",
       role: "Board Member",
       description: "Providing strategic guidance for institutional growth.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kalakar_PP.jpg",
+      image: Kalakar,
     },
     {
       id: 7,
       name: "Md. Masood Ahmed",
       role: "Board Member",
       description: "Supporting SSIM's mission with industry expertise.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Md_Masood_Ahmed.jpg",
+      image: MasoodAhmed,
     },
     {
       id: 8,
       name: "Dr. S.F. Chandrasekhar",
       role: "Board Member",
       description: "Guiding academic and administrative excellence.",
-      image: chandra,
+      image: Chandra,
     },
     {
       id: 9,
       name: "Dr. Arijit Santikary",
       role: "Board Member",
       description: "Contributing to research and academic development.",
-      image: DrArij,
+      image: DrArijit,
     },
     {
       id: 10,
       name: "Dr. Harish",
       role: "Board Member",
       description: "Fostering innovation in management education.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Harish.jpg",
+      image: Harish,
     },
     {
       id: 11,
       name: "Dr. V. Jayalakshmi",
       role: "Board Member",
       description: "Promoting excellence in teaching and research.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr.-V.Jayalakshmi_b.jpg",
+      image: Jayalakshmi,
     },
     {
       id: 12,
       name: "T. Thirumal Reddy",
       role: "Board Member",
       description: "Supporting institutional development and growth.",
-      image: Thirumal,
+      image: ThirumalReddy,
     },
     {
       id: 13,
-      name: "Board Member",
+      name: "Dr. Vipul Singh",
       role: "Advisory Member",
       description: "Contributing to SSIM's continued success and development.",
-      image: "https://ssim.ac.in/wp-content/uploads/1517690112564.jpg",
+      image: VipulSingh,
     },
   ];
 
