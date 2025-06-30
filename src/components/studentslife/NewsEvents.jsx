@@ -10,6 +10,12 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import news1 from "../../assets/studentslife/news/news1.jpg";
+import news2 from "../../assets/studentslife/news/news2.jpg";
+import news3 from "../../assets/studentslife/news/news3.jpg";
+import news4 from "../../assets/studentslife/news/news4.jpg";
+import news5 from "../../assets/studentslife/news/news5.jpg";
+import news6 from "../../assets/studentslife/news/news6.jpg";
 
 const AnnouncementCard = ({ image, alt, date, title, description }) => (
   <div className="flex flex-col items-center gap-4 md:flex-row lg:gap-6">
@@ -91,27 +97,27 @@ const NewsEvents = () => {
 
   const newsImages = [
     {
-      src: "https://ssim.ac.in/wp-content/uploads/6354a728cd00f.jpg",
+      src: news1,
       alt: "Description of image 1",
     },
     {
-      src: "https://ssim.ac.in/wp-content/uploads/2383b5c1_09-crop-cbaa80.jpg",
+      src: news2,
       alt: "Description of image 2",
     },
     {
-      src: "https://ssim.ac.in/wp-content/uploads/466f36a9_03-crop-80dd5c.jpg",
+      src: news3,
       alt: "Description of image 3",
     },
     {
-      src: "https://ssim.ac.in/wp-content/uploads/5aec74b8-5744-4ca1-b334-c8ce4fbf4611.jpg",
+      src: news4,
       alt: "Description of image 4",
     },
     {
-      src: "https://ssim.ac.in/wp-content/uploads/4dd27887_20-crop-9f20f2.jpg",
+      src: news5,
       alt: "Description of image 5",
     },
     {
-      src: "https://ssim.ac.in/wp-content/uploads/4d99ea3f_06-crop-b02560.jpg",
+      src: news6,
       alt: "Description of image 6",
     },
     // Add more images as needed

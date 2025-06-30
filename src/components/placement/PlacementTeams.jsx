@@ -9,22 +9,27 @@ import {
   Building,
   ExternalLink,
 } from "lucide-react";
+import longtermPartnership from "../../assets/corporate-connect/longterm-partnership.png";
+import experience from "../../assets/corporate-connect/experience.png";
+import bridging from "../../assets/corporate-connect/bridging.png";
+import placementImg from "../../assets/corporate-connect/placement.jpg";
+import arijitImg from "../../assets/corporate-connect/arijit.png";
+import ramaraoImg from "../../assets/corporate-connect/ramarao.png";
+import rahulImg from "../../assets/corporate-connect/rahul.png";
+import sushmaImg from "../../assets/corporate-connect/sushma.png";
 
 const features = [
   {
     desc: "SSIM placement team is agile, committed and enduring in building long-term partnerships.",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/elementor/thumbs/longterm-partnership-pyuvxqxhgxlteq39j1t2w7uorxeetkup79sifodmxk.png",
+    image: longtermPartnership,
   },
   {
     desc: "The placement team has a collective experience of 25 years in Client Services.",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/elementor/thumbs/experience-pyuw6e22jv70h962y2gtqr3xlxn8bqszwen9ijnrq8.png",
+    image: experience,
   },
   {
     desc: "Works towards bridging the talent gap by coordinating industry-institute collaborations.",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/elementor/thumbs/bridging-pyuwaa40u6iqj5in8908k9rm4cgx6n903num0rw3z4.png",
+    image: bridging,
   },
 ];
 
@@ -57,7 +62,7 @@ export default function PlacementTeams() {
             <div className="col-span-2 md:col-span-1 md:order-2">
               <div className="relative mb-12">
                 <img
-                  src="https://ssim.ac.in/wp-content/uploads/2022/12/placemnt.jpg"
+                  src={placementImg}
                   alt=""
                   className="rounded-3xl w-full max-h-[490px] object-cover mx-auto"
                 />
@@ -189,7 +194,7 @@ const TeamContactSection = () => {
       phone: "+91-9963713840",
       primaryEmail: "arijitsantikary@ssim.ac.in",
       secondaryEmail: "placements@ssim.ac.in",
-      imageSrc: "https://ssim.ac.in/wp-content/uploads/1.png",
+      imageSrc: arijitImg,
     },
     {
       name: "Mr. K V Rama Rao",
@@ -198,7 +203,7 @@ const TeamContactSection = () => {
       primaryEmail: "kvramarao@ssim.ac.in",
       secondaryEmail: "gmplacements@ssim.ac.in",
       tertiaryEmail: "placements@ssim.ac.in",
-      imageSrc: "https://ssim.ac.in/wp-content/uploads/ramarao.png",
+      imageSrc: ramaraoImg,
     },
     {
       name: "Mr. Rahul Jain",
@@ -206,7 +211,7 @@ const TeamContactSection = () => {
       phone: "+91-9989191878",
       primaryEmail: "rahul@ssim.ac.in",
       secondaryEmail: "placements@ssim.ac.in",
-      imageSrc: "https://ssim.ac.in/wp-content/uploads/4.png",
+      imageSrc: rahulImg,
     },
     {
       name: "Ms. M. Sushma",
@@ -214,7 +219,7 @@ const TeamContactSection = () => {
       phone: "+91-9515026132",
       primaryEmail: "msushma@ssim.ac.in",
       secondaryEmail: "placements@ssim.ac.in",
-      imageSrc: "https://ssim.ac.in/wp-content/uploads/3.png",
+      imageSrc: sushmaImg,
     },
   ];
 

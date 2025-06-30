@@ -1,7 +1,21 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import Ramana from "../../assets/faculty&research/faculty/Dr. Ramana Rao.webp";
-import Ambuj from "../../assets/about/dr-ambuj.jpeg";
+import SaileshSampathy from "../../assets/about/BoardOfStudies/Dr_Sailesh_Sampathy.jpg";
+import Ambuj from "../../assets/about/BoardOfStudies/dr-ambuj (1).jpeg";
+import Kalakar from "../../assets/about/BoardOfStudies/Dr_Kalakar_PP-1.jpg";
+import Ramana from "../../assets/about/BoardOfStudies/Dr. Ramana Rao.webp";
+import RKMishra from "../../assets/about/BoardOfStudies/R_K_Mishra.jpg";
+import JaganMohanReddy from "../../assets/about/BoardOfStudies/Jagan_Mohan_Reddy.jpg";
+import ChoudharyPrasad from "../../assets/about/BoardOfStudies/Dr_Choudhary_Prasad.jpg";
+import KumarChunduri from "../../assets/about/BoardOfStudies/Dr_Kumar-Chunduri.jpg";
+import YLakshmanKumar from "../../assets/about/BoardOfStudies/Prof_Y_Lakshman-Kumar.jpg";
+import KishoreNK from "../../assets/about/BoardOfStudies/Dr_Kishore-NK.jpg";
+import RaviTanniru from "../../assets/about/BoardOfStudies/Sri_Ravi_Tanniru.jpg";
+import ASudhakar from "../../assets/about/BoardOfStudies/Dr_A_Sudhakar-1.jpg";
+import AnandSUpadhyaya from "../../assets/about/BoardOfStudies/1.-Dr.-Anand-S-Upadhyaya.jpg";
+import DurgaPrasadM from "../../assets/about/BoardOfStudies/2.-Dr.-Durga-Prasad-M.jpg";
+import SAnandReddy from "../../assets/about/BoardOfStudies/4.-Dr.-S.-Anand-Reddy.jpg";
+import MahanandaChalise from "../../assets/about/BoardOfStudies/5.-Prof.-Mahananda-Chalise.jpg";
 
 export default function BoardOfStudies() {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -13,8 +27,7 @@ export default function BoardOfStudies() {
       role: "Chairman",
       description:
         "Leading SSIM's Board of Studies with strategic vision and academic excellence.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
+      image: SaileshSampathy,
     },
     {
       id: 2,
@@ -29,8 +42,7 @@ export default function BoardOfStudies() {
       role: "Member",
       description:
         "Contributing expertise in academic planning and curriculum development.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kalakar_PP-1.jpg",
+      image: Kalakar,
     },
     {
       id: 4,
@@ -45,62 +57,56 @@ export default function BoardOfStudies() {
       name: "Dr. R.K. Mishra",
       role: "Member",
       description: "Guiding curriculum enhancement and academic standards.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/R_K_Mishra.jpg",
+      image: RKMishra,
     },
     {
       id: 6,
       name: "Dr. Jagan Mohan Reddy",
       role: "Member",
       description: "Supporting academic excellence and program development.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Jagan_Mohan_Reddy.jpg",
+      image: JaganMohanReddy,
     },
     {
       id: 7,
       name: "Dr. Choudhary Prasad",
       role: "Member",
       description: "Contributing to academic policy and quality assurance.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Choudhary_Prasad.jpg",
+      image: ChoudharyPrasad,
     },
     {
       id: 8,
       name: "Dr. Kumar Chunduri",
       role: "Member",
       description: "Advancing research initiatives and academic partnerships.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kumar-Chunduri.jpg",
+      image: KumarChunduri,
     },
     {
       id: 9,
       name: "Prof. Y. Lakshman Kumar",
       role: "Member",
       description: "Fostering innovation in teaching methodologies.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Prof_Y_Lakshman-Kumar.jpg",
+      image: YLakshmanKumar,
     },
     {
       id: 10,
       name: "Dr. Kishore NK",
       role: "Member",
       description: "Enhancing academic programs and student outcomes.",
-      image: "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_Kishore-NK.jpg",
+      image: KishoreNK,
     },
     {
       id: 11,
       name: "Sri Ravi Tanniru",
       role: "Member",
       description: "Supporting industry-academia collaboration.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Sri_Ravi_Tanniru.jpg",
+      image: RaviTanniru,
     },
     {
       id: 12,
       name: "Dr. A. Sudhakar",
       role: "Member",
       description: "Driving academic excellence and innovation.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/10/Dr_A_Sudhakar-1.jpg",
+      image: ASudhakar,
     },
     {
       id: 13,
@@ -108,30 +114,28 @@ export default function BoardOfStudies() {
       role: "Member",
       description:
         "Contributing to curriculum development and academic planning.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/1.-Dr.-Anand-S-Upadhyaya.jpg",
+      image: AnandSUpadhyaya,
     },
     {
       id: 14,
       name: "Dr. Durga Prasad M",
       role: "Member",
       description: "Advancing research and academic standards.",
-      image: "https://ssim.ac.in/wp-content/uploads/2.-Dr.-Durga-Prasad-M.jpg",
+      image: DurgaPrasadM,
     },
     {
       id: 15,
       name: "Dr. S. Anand Reddy",
       role: "Member",
       description: "Supporting program development and quality assurance.",
-      image: "https://ssim.ac.in/wp-content/uploads/4.-Dr.-S.-Anand-Reddy.jpg",
+      image: SAnandReddy,
     },
     {
       id: 16,
       name: "Prof. Mahananda Chalise",
       role: "Member",
       description: "Contributing to academic excellence and innovation.",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/5.-Prof.-Mahananda-Chalise.jpg",
+      image: MahanandaChalise,
     },
   ];
 

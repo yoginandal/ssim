@@ -15,6 +15,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import sampathy from "@/assets/about/Sampathy.png";
 import ramana from "@/assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 import ambuj from "@/assets/about/dr-ambuj.jpeg";
+import ArathySampathy from "../../assets/about/BoardOfGoverners/Smt_Arathy_Sampathy.jpg";
+import SaileshSampathy from "../../assets/about/BoardOfGoverners/Dr_Sailesh_Sampathy.jpg";
+import Ambuj from "../../assets/about/BoardOfGoverners/dr-ambuj (1).jpeg";
 
 // Leaders data (unchanged)
 const leaders = [
@@ -38,8 +41,7 @@ const leaders = [
   {
     role: "President & Chief Executive, SSGI.",
     name: "SMT. S. AARATHY",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/2022/09/Smt_Arathy_Sampathy.jpg",
+    image: ArathySampathy,
     quote:
       "Learn to Serve - Shaping tomorrow's leaders through innovation, resilience, and excellence",
     quoteAuthor: "SMT. S. AARATHY's Vision",
@@ -54,8 +56,7 @@ const leaders = [
   {
     role: "Vice President & Dy. Chief Executive, SSGI.",
     name: "DR. SAILESH SAMPATHY",
-    image:
-      "https://ssim.ac.in/wp-content/uploads/2022/09/Dr_Sailesh_Sampathy.jpg",
+    image: SaileshSampathy,
     quote:
       "Building bridges across borders through quality education, creating global leaders of tomorrow",
     quoteAuthor: "DR. SAILESH SAMPATHY's Vision",
@@ -71,7 +72,7 @@ const leaders = [
   {
     role: "Director, SSIM.",
     name: "Prof. (Dr.) Ambuj Jagdish Gupta,",
-    image: ambuj,
+    image: Ambuj,
     quote:
       "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
     quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",

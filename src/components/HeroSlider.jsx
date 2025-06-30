@@ -18,6 +18,7 @@ import WordPullUp from "@/components/ui/word-pull-up";
 import ShinyButton from "@/components/ui/shiny-button";
 import WordRotate from "@/components/ui/word-rotate";
 import { ChevronRight } from "lucide-react";
+import Hero from "@/assets/Hero/Hero.webp";
 
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/ui/animated-gradient-text";
@@ -44,7 +45,7 @@ const HeroSlider = () => {
 
   const imgSlider = [
     {
-      image: Events,
+      image: Hero,
       tagline: "Shaping Bright Futures Together",
       highlight:
         "World-class curriculum, experienced faculty, and state-of-the-art classrooms.",
@@ -54,59 +55,59 @@ const HeroSlider = () => {
         "State-of-the-art classrooms",
       ],
     },
-    {
-      image: Education,
-      tagline: "Celebrate Every Special Moment",
-      highlight: "Cultural festivals, workshops, and leadership opportunities.",
-      highlights: [
-        "Cultural festivals",
-        "Workshops",
-        "Leadership opportunities",
-      ],
-    },
-    {
-      image: Sports,
-      tagline: "Fuel Your Passion Daily",
-      highlight:
-        "Top-notch facilities, diverse sports options, and vibrant athletic culture.",
-      highlights: [
-        "Top-notch facilities",
-        "Diverse sports options",
-        "Vibrant athletic culture",
-      ],
-    },
-    {
-      image: Labs,
-      tagline: "Innovate, Learn, Discover Together ",
-      highlight:
-        "Cutting-edge labs for practical learning, research, and discovery.",
-      highlights: [
-        "Cutting-edge labs",
-        "Practical learning",
-        "Research and discovery",
-      ],
-    },
-    {
-      image: Auditorium,
-      tagline: "Inspire, Engage, Create Together",
-      highlight:
-        "Modern auditorium for events, seminars, and cultural programs.",
-      highlights: [
-        "Modern auditorium",
-        "Events and seminars",
-        "Cultural programs",
-      ],
-    },
-    {
-      image: Placement,
-      tagline: "Launch Your Career Successfully",
-      highlight: "Strong industry connections and 100% placement assistance.",
-      highlights: [
-        "Strong industry connections",
-        "100% placement assistance",
-        "Career launch support",
-      ],
-    },
+    // {
+    //   image: Education,
+    //   tagline: "Celebrate Every Special Moment",
+    //   highlight: "Cultural festivals, workshops, and leadership opportunities.",
+    //   highlights: [
+    //     "Cultural festivals",
+    //     "Workshops",
+    //     "Leadership opportunities",
+    //   ],
+    // },
+    // {
+    //   image: Sports,
+    //   tagline: "Fuel Your Passion Daily",
+    //   highlight:
+    //     "Top-notch facilities, diverse sports options, and vibrant athletic culture.",
+    //   highlights: [
+    //     "Top-notch facilities",
+    //     "Diverse sports options",
+    //     "Vibrant athletic culture",
+    //   ],
+    // },
+    // {
+    //   image: Labs,
+    //   tagline: "Innovate, Learn, Discover Together ",
+    //   highlight:
+    //     "Cutting-edge labs for practical learning, research, and discovery.",
+    //   highlights: [
+    //     "Cutting-edge labs",
+    //     "Practical learning",
+    //     "Research and discovery",
+    //   ],
+    // },
+    // {
+    //   image: Auditorium,
+    //   tagline: "Inspire, Engage, Create Together",
+    //   highlight:
+    //     "Modern auditorium for events, seminars, and cultural programs.",
+    //   highlights: [
+    //     "Modern auditorium",
+    //     "Events and seminars",
+    //     "Cultural programs",
+    //   ],
+    // },
+    // {
+    //   image: Placement,
+    //   tagline: "Launch Your Career Successfully",
+    //   highlight: "Strong industry connections and 100% placement assistance.",
+    //   highlights: [
+    //     "Strong industry connections",
+    //     "100% placement assistance",
+    //     "Career launch support",
+    //   ],
+    // },
   ];
 
   // Initialize Embla Carousel first
@@ -144,7 +145,7 @@ const HeroSlider = () => {
   }, [emblaApi, handleDrag]);
 
   return (
-    <section className="hero-section h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)] w-full relative">
+    <section className="hero-section overflow-hidden h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)] w-full relative">
       <Carousel
         ref={emblaRef}
         plugins={[plugin.current]}
@@ -161,11 +162,17 @@ const HeroSlider = () => {
               <img
                 src={img.image}
                 alt={img.tagline}
-                className="object-cover w-screen  h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)] sm:blur-sm blur-[2px]"
+                className="object-cover w-screen  h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)]"
               />
-              <div className="absolute inset-0 z-20 bg-black opacity-50" />
+              {/* <img
+                src={img.image}
+                alt={img.tagline}
+                className="object-cover w-screen  h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)] sm:blur-sm blur-[2px]"
+              /> */}
+              {/* <div className="absolute inset-0 z-20 bg-black opacity-50" /> */}
+              {/* <div className="absolute inset-0 z-20 bg-black opacity-10" /> */}
               <div className="size-full sm:max-w-5xl items-center justify-center overflow-hidden sm:pt-8 absolute top-16 sm:top-[4%] left-[10%] z-20 space-y-6 sm:space-y-">
-                <AnimatedGradientText className="mx-0 rounded-md">
+                {/* <AnimatedGradientText className="mx-0 rounded-md">
                   🔔 <hr className="h-4 mx-2 w-" />{" "}
                   <span
                     className={cn(
@@ -175,8 +182,8 @@ const HeroSlider = () => {
                     Enroll now
                   </span>
                   <ChevronRight className="ml-1 mt-1 size-3 sm:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5 text-white/70" />
-                </AnimatedGradientText>
-                <BoxReveal boxColor={"#2B346D"} duration={0.5}>
+                </AnimatedGradientText> */}
+                {/* <BoxReveal boxColor={"#2B346D"} duration={0.5}>
                   <p className="text-4xl font-extrabold leading-tight text-white md:text-6xl lg:text-8xl sm:py-4 sm:tracking-wide drop-shadow-lg">
                     {img.tagline.split(" ").map((word, index) => {
                       if (index === 1) {
@@ -197,9 +204,9 @@ const HeroSlider = () => {
                       }
                     })}
                   </p>
-                </BoxReveal>
+                </BoxReveal> */}
 
-                <WordPullUp
+                {/* <WordPullUp
                   words={img.highlight}
                   className="hidden sm:block text-xl font-semibold md:text-3xl text-slate-200  md:font-bold text-left max-w-[20rem] md:max-w-3xl"
                 />
@@ -214,7 +221,7 @@ const HeroSlider = () => {
                       Explore Courses
                     </ShinyButton>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </CarouselItem>
           ))}

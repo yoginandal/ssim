@@ -46,17 +46,17 @@ export default function AccreditationsRankings() {
         </p> */}
         <Tabs className="px-5 py-20" defaultValue="accreditations">
           <TabsList className="grid w-full grid-cols-2 text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
+          <TabsTrigger
+              value="accreditations"
+              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
+            >
+              Accreditations
+            </TabsTrigger>
             <TabsTrigger
               value="rankings"
               className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
               Rankings
-            </TabsTrigger>
-            <TabsTrigger
-              value="accreditations"
-              className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
-            >
-              Accreditations
             </TabsTrigger>
           </TabsList>
           <TabsContent

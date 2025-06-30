@@ -15,6 +15,17 @@ import Testimonials9 from "../assets/user_images/Ankit.jpeg";
 import Testimonials10 from "../assets/user_images/Venkatesh.jpeg";
 import Testimonials11 from "../assets/user_images/women4.jpg";
 import goc from "../assets/user_images/goc.png";
+import jpmc from "../assets/Home/jpmc-logo.svg";
+import naukri from "../assets/Home/naukri.svg";
+import microsoft from "../assets/Home/microsoft.png";
+import prodapt from "../assets/Home/prodapt.svg";
+import sbi from "../assets/Home/SBI_Logo.png";
+import citi from "../assets/Home/citi-logo.svg";
+import cognizant from "../assets/Home/cognizant.svg";
+import dabur from "../assets/Home/dabur.png";
+import innova from "../assets/Home/innova-logo.svg";
+
+
 
 // Testimonials data
 const testimonials = [
@@ -22,7 +33,7 @@ const testimonials = [
     name: "Aditya Datta ",
     role: "Executive Director",
     company:
-      "https://www.jpmorganchase.com/content/dam/jpmorganchase/images/logos/jpmc-logo.svg",
+      jpmc,
     text: "Inspiring leadership qualities. Always pushes the team forward with innovative solutions and creative problem-solving approaches.",
     rating: 5,
   },
@@ -36,7 +47,7 @@ const testimonials = [
   {
     name: "Itha Lakshmipathi",
     role: "AVP & Global Head - HR",
-    company: "https://www.prodapt.com/wp-content/uploads/Logo-for-website.svg",
+    company: prodapt,
     text: "Reliable and punctual in every project. A true professional who consistently delivers outstanding results on time.",
     rating: 5,
   },
@@ -44,7 +55,7 @@ const testimonials = [
     name: "Jaideep Avasarala",
     role: "Talent Acquisition Leader",
     company:
-      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/UHFbanner-MSlogo?fmt=png-alpha&bfc=off&qlt=100,1",
+      microsoft,
     text: "An amazing communicator who always keeps the team informed. Her ability to connect with clients is unmatched.",
     rating: 4,
   },
@@ -52,7 +63,7 @@ const testimonials = [
     name: "Niraj Kumar Rana",
     role: "EVP & Head of Sales",
     company:
-      "https://static.naukimg.com/s/0/0/i/naukri-identity/naukri_gnb_logo.svg",
+      naukri,
     text: "Brings incredible data insights to every project. His analytical skills and attention to detail make all the difference.",
     rating: 5,
   },
@@ -60,14 +71,14 @@ const testimonials = [
     name: "Parameshwar N",
     role: "Vice-President Customer Engagement",
     company:
-      "https://www.sbilife.co.in/sites/SBILife/NewHomePage/images/SBI_Logo.png",
+      sbi,
     text: "An extraordinary thinker who knows how to capture the essence of our brand in every piece of content.",
     rating: 5,
   },
   {
     name: "Swapnil Bhele",
     role: "Assistsnt Vice President",
-    company: "https://www.citi.com/CBOL/IA/Angular/assets/citiredesign.svg",
+    company: citi,
     text: "A quick problem solver who always finds efficient and scalable solutions. A great team player.",
     rating: 4,
   },
@@ -75,7 +86,7 @@ const testimonials = [
     name: "Umesh Golecha",
     role: "Director",
     company:
-      "https://www.innovasolutions.com/wp-content/uploads/2025/01/Innova-Logo-New.svg",
+      innova,
     text: "Her designs are always fresh and creative, perfectly capturing the essence of every project.",
     rating: 5,
   },
@@ -83,14 +94,14 @@ const testimonials = [
     name: "Ankit Bhadauriya",
     role: "National Key Account Manager",
     company:
-      "https://www.dabur.com/static/images/android-icon-72x72.png",
+      dabur,
     text: "Has a knack for making our systems run smoothly. A key player in maintaining our infrastructure.",
     rating: 4,
   },
   {
     name: "Venkatesh Dixit",
     role: "Presales Consultant",
-    company: "https://cognizant.scene7.com/is/content/cognizant/COG-Logo-2022-1?fmt=png-alpha",
+    company: cognizant,
     text: "Consistently delivers exceptional results in improving our online presence and driving organic traffic.",
     rating: 5,
   },

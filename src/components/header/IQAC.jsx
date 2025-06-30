@@ -22,6 +22,32 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import aicte2024 from "../../assets/iqac/AICTE/AICTE_2024.pdf";
+import aicte2023 from "../../assets/iqac/AICTE/AICTE_2023.pdf";
+import aicte2022 from "../../assets/iqac/AICTE/AICTE_2022.pdf";
+import aicte2021 from "../../assets/iqac/AICTE/AICTE_2021.pdf";
+import aicte2020 from "../../assets/iqac/AICTE/AICTE_2020.pdf";
+import aicte2019 from "../../assets/iqac/AICTE/AICTE_2019.pdf";
+import aicte2018 from "../../assets/iqac/AICTE/AICTE_2018.pdf";
+import aicte2017 from "../../assets/iqac/AICTE/AICTE_2017.pdf";
+import insurance2023 from "../../assets/iqac/Accreditations/Insurance-Institute-of-India-of-Siva-Sivani-Inst.of-Management-Exemption-Letter-2023.pdf";
+import insurance2021 from "../../assets/iqac/Accreditations/Insurance-Institute-of-India-of-Siva-Sivani-Inst.of-Management-Exemption-Letter-2021.pdf";
+import insurance2016 from "../../assets/iqac/Accreditations/Insurance-Institute-of-India-of-Siva-Sivani-Inst.-of-Management-2016.pdf";
+import aiuEquivalent from "../../assets/iqac/Accreditations/5.-Siva-Sivani-PGDM-Letters-PGDM-PGDM-BA-PGDM-BIFS.pdf";
+import naacAccreditation from "../../assets/iqac/Accreditations/NAAC_Accreditation.pdf";
+import nbaAccreditation from "../../assets/iqac/Accreditations/NBA-Accreditation.pdf";
+import saqsAccreditation from "../../assets/iqac/Accreditations/SAQS-Accreditation.pdf";
+import annualReport2022 from "../../assets/iqac/AnnualReport/SSIM_Annual-Accounts_OriginalScanned_FY2021-22.pdf";
+import annualReport2021 from "../../assets/iqac/AnnualReport/SSIM_Annual-Accounts_OriginalScanned_FY2020-21.pdf";
+import annualReport2020 from "../../assets/iqac/AnnualReport/SSIM_Annual-Accounts_OriginalScanned_FY2019-20.pdf";
+import bogJuly2022 from "../../assets/iqac/AabBog/BOG-JULY-2022-MINUTES-OF-THE-MEETING.pdf";
+import bogAug2021 from "../../assets/iqac/AabBog/BOG-AUG-2021-MINUTES-OF-THE-MEETING.pdf";
+import bogJune2020 from "../../assets/iqac/AabBog/BOG-MINUTES-OF-THE-MEETING-JUNE-2020.pdf";
+import bogJan2020 from "../../assets/iqac/AabBog/BOG-MINUTES-OF-THE-MEETING-JAN-2020.pdf";
+import bogJuly2019 from "../../assets/iqac/AabBog/BOG-MINUTES-OF-THE-MEETING-JULY-2019.pdf";
+import sss2122 from "../../assets/iqac/SSS-21-22.pdf";
+import aqar2021 from "../../assets/iqac/AQAR-20-21.pdf";
+import mandatoryDisclosure2023 from "../../assets/iqac/Mandatory_Disclosures-2023.pdf";
 
 export default function IQAC() {
   return (
@@ -301,38 +327,14 @@ export default function IQAC() {
               <CardContent>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    {
-                      year: 2024,
-                      link: "https://ssim.ac.in/wp-content/uploads/AICTE_2024.pdf",
-                    },
-                    {
-                      year: 2020,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2020.pdf",
-                    },
-                    {
-                      year: 2023,
-                      link: "https://ssim.ac.in/wp-content/uploads/AICTE_2023.pdf",
-                    },
-                    {
-                      year: 2019,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2019.pdf",
-                    },
-                    {
-                      year: 2022,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2022.pdf",
-                    },
-                    {
-                      year: 2018,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2018.pdf",
-                    },
-                    {
-                      year: 2021,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2018.pdf",
-                    },
-                    {
-                      year: 2017,
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/AICTE_2017.pdf",
-                    },
+                    { year: 2024, link: aicte2024 },
+                    { year: 2023, link: aicte2023 },
+                    { year: 2022, link: aicte2022 },
+                    { year: 2021, link: aicte2021 },
+                    { year: 2020, link: aicte2020 },
+                    { year: 2019, link: aicte2019 },
+                    { year: 2018, link: aicte2018 },
+                    { year: 2017, link: aicte2017 },
                   ].map((item) => (
                     <Link
                       to={item.link}
@@ -363,31 +365,31 @@ export default function IQAC() {
                   {[
                     {
                       name: "Insurance Institute of India of Siva Sivani Inst.of Management Exemption Letter (2023)",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/Insurance-Institute-of-India-of-Siva-Sivani-Inst.of-Management-Exemption-Letter-2023.pdf",
+                      link: insurance2023,
                     },
                     {
                       name: "Insurance Institute of India of Siva Sivani Inst.of Management Exemption Letter (2021)",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/Insurance-Institute-of-India-of-Siva-Sivani-Inst.of-Management-Exemption-Letter-2021.pdf",
+                      link: insurance2021,
                     },
                     {
                       name: "Insurance Institute of India of Siva Sivani Inst.of Management (2016)",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/Insurance-Institute-of-India-of-Siva-Sivani-Inst.-of-Management-2016.pdf",
+                      link: insurance2016,
                     },
                     {
                       name: "AIU Equivalence Certificate",
-                      link: "https://ssim.ac.in/wp-content/uploads/5.-Siva-Sivani-PGDM-Letters-PGDM-PGDM-BA-PGDM-BIFS.pdf",
+                      link: aiuEquivalent,
                     },
                     {
                       name: "NAAC Accreditation",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/NAAC_Accreditation.pdf",
+                      link: naacAccreditation,
                     },
                     {
                       name: "NBA Accreditation",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/NBA-Accreditation.pdf",
+                      link: nbaAccreditation,
                     },
                     {
                       name: "SAQS Accreditation",
-                      link: "https://ssim.ac.in/wp-content/uploads/SAQS-Accreditation.pdf",
+                      link: saqsAccreditation,
                     },
                   ].map((item, index) => (
                     <Link
@@ -419,15 +421,15 @@ export default function IQAC() {
                   {[
                     {
                       name: "SSIM Annual Accounts - 2021 - 22",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/SSIM_Annual-Accounts_OriginalScanned_FY2021-22.pdf",
+                      link: annualReport2022,
                     },
                     {
                       name: "SSIM Annual Accounts - 2020 - 21",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/SSIM_Annual-Accounts_OriginalScanned_FY2020-21.pdf",
+                      link: annualReport2021,
                     },
                     {
                       name: "SSIM Annual Accounts - 2019 - 20",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/SSIM_Annual-Accounts_OriginalScanned_FY2019-20.pdf",
+                      link: annualReport2020,
                     },
                   ].map((item, index) => (
                     <Link
@@ -459,23 +461,23 @@ export default function IQAC() {
                   {[
                     {
                       name: "BOG JULY 2022 MINUTES OF THE MEETING",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/BOG-JULY-2022-MINUTES-OF-THE-MEETING.pdf",
+                      link: bogJuly2022,
                     },
                     {
                       name: "BOG AUG 2021 MINUTES OF THE MEETING",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/BOG-AUG-2021-MINUTES-OF-THE-MEETING.pdf",
+                      link: bogAug2021,
                     },
                     {
                       name: "BOG MINUTES OF THE MEETING JUNE 2020",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/BOG-MINUTES-OF-THE-MEETING-JUNE-2020.pdf",
+                      link: bogJune2020,
                     },
                     {
                       name: "BOG MINUTES OF THE MEETING JAN 2020",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/BOG-MINUTES-OF-THE-MEETING-JAN-2020.pdf",
+                      link: bogJan2020,
                     },
                     {
                       name: "BOG MINUTES OF THE MEETING JULY 2019",
-                      link: "https://ssim.ac.in/wp-content/uploads/2023/03/BOG-MINUTES-OF-THE-MEETING-JULY-2019.pdf",
+                      link: bogJuly2019,
                     },
                   ].map((item, index) => (
                     <Link
@@ -506,11 +508,11 @@ export default function IQAC() {
                   {[
                     {
                       name: "SSR 21-22",
-                      link: "https://ssim.ac.in/wp-content/uploads/SSS-21-22.pdf",
+                      link: sss2122,
                     },
                     {
                       name: "AQAR 20-21",
-                      link: "https://ssim.ac.in/wp-content/uploads/AQAR-20-21.pdf",
+                      link: aqar2021,
                     },
                   ].map((item, index) => (
                     <Link
@@ -538,7 +540,7 @@ export default function IQAC() {
               </CardHeader>
               <CardContent>
                 <Link
-                  to="https://ssim.ac.in/wp-content/uploads/Mandatory_Disclosures-2023.pdf"
+                  to={mandatoryDisclosure2023}
                   target="_blank"
                   className="flex items-center justify-center gap-2 w-full p-3 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
                 >

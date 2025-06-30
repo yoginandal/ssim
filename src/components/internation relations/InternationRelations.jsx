@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/drawer";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import InternationalEvents from "./InternationalEvents";
+import DamanJohar from "../../assets/international-relations/Daman-Johar.jpg";
 
 // Add this at the top of the file, after the imports
 const scrollbarStyles = `
@@ -72,8 +73,7 @@ export default function TestimonialSection() {
       id: 1,
       name: "Damandeep Johar",
       experience: "12 Years",
-      image:
-        "https://ssim.ac.in/wp-content/uploads/2022/09/Daman-Johar-1-e1670679117895.jpg",
+      image: DamanJohar,
       area: "International Relations",
       phone: "+91-9030397737",
       email: "damanjohar@ssim.ac.in",

@@ -44,6 +44,13 @@ import Heading from "../Heading";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import imageAAA from "../../assets/faculty&research/conferences/AAA.png";
+import image1 from "../../assets/faculty&research/conferences/1-1.png";
+import image2 from "../../assets/faculty&research/conferences/2-1.png";
+import image3 from "../../assets/faculty&research/conferences/3-1.png";
+import image5 from "../../assets/faculty&research/conferences/5.png";
+import image6 from "../../assets/faculty&research/conferences/6.png";
+
 
 // Navigation Data
 const navigationSections = [
@@ -141,10 +148,10 @@ const AboutSsim = () => (
       About Dallas Baptist University
     </h3>
     <p className="text-gray-700 text-lg">
-      DBU’s forerunner, Decatur Baptist College, was founded in 1898 as the
+      DBU's forerunner, Decatur Baptist College, was founded in 1898 as the
       first junior college in Texas, In 1965, the school relocated to the scenic
       foothills of southwest Dallas. Today, DBU offers a variety of degrees at
-      the undergraduate, master’s, and doctoral levels. Well into our second
+      the undergraduate, master's, and doctoral levels. Well into our second
       century, DBU continues to press forward in our mission to produce servant
       leaders who will transform the world. Dallas Baptist University is a
       nationally ranked, comprehensive, global Christ-centered university with a
@@ -415,7 +422,7 @@ const PublishingOpportunities = ({ setIsEnquireOpen }) => (
         for your publication after peer-review
       </p>
       <p className="text-lg text-gray-700">
-        We provide publishing opportunities in “SuGyaan Management Journal of
+        We provide publishing opportunities in "SuGyaan Management Journal of
         Siva Sivani institute of Management, ISSN 0975-4032.
       </p>
       <h3 className="text-2xl font-bold text-mainBlue">CONFIRMED JOURNALS</h3>
@@ -482,11 +489,10 @@ const OnlineRegistration = () => (
           fetchpriority="high"
           decoding="async"
           class="aligncenter wp-image-12109 size-full"
-          src="https://ssim.ac.in/wp-content/uploads/AAA.png"
+          src={imageAAA}
           alt=""
           width="1030"
           height="281"
-          srcset="https://ssim.ac.in/wp-content/uploads/AAA.png 1030w, https://ssim.ac.in/wp-content/uploads/AAA-300x82.png 300w, https://ssim.ac.in/wp-content/uploads/AAA-1024x279.png 1024w, https://ssim.ac.in/wp-content/uploads/AAA-768x210.png 768w"
           sizes="(max-width: 1030px) 100vw, 1030px"
         />
       </p>
@@ -1203,16 +1209,16 @@ const team = [
     area: "Finance",
     qualification: "Ph.D, MBA",
     experience: 30,
-    image: "https://ssim.ac.in/wp-content/uploads/1-1.png",
+    image: image1,
     description:
-      "A historic monument located in the heart of Hyderabad, India, built in 1591 by Sultan Muhammad Quli Qutb Shah. It is a stunning architectural masterpiece featuring four grand arches and minarets, and it remains an iconic symbol of Hyderabad’s rich cultural heritage.",
+      "A historic monument located in the heart of Hyderabad, India, built in 1591 by Sultan Muhammad Quli Qutb Shah. It is a stunning architectural masterpiece featuring four grand arches and minarets, and it remains an iconic symbol of Hyderabad's rich cultural heritage.",
   },
   {
     name: "GOLKONDA FORT",
     area: "HR & Strategy",
     qualification: "Ph.D, MBA",
     experience: 36,
-    image: "https://ssim.ac.in/wp-content/uploads/2-1.png",
+    image: image2,
     description:
       "A historic citadel known for its architectural brilliance and rich history dating back to the medieval era. Renowned for its impressive acoustics, fascinating engineering, and once housing the world-famous Koh-i-Noor and Hope diamonds, Golkonda stands as a testament to the regions.",
   },
@@ -1221,7 +1227,7 @@ const team = [
     area: "HR & Strategy",
     qualification: "Ph.D, MIRPM",
     experience: 36,
-    image: "https://ssim.ac.in/wp-content/uploads/3-1.png",
+    image: image3,
     description:
       "A prominent Hindu temple in Hyderabad, India, dedicated to Lord Venkateswara. Constructed with white marble atop a hill, this architectural marvel offers breath-taking views of the city and attracts devotees and tourists alike due to its intricate carvings and religious significance.",
   },
@@ -1230,7 +1236,7 @@ const team = [
     area: "Data Science",
     qualification: "Ph.D, M.Sc.",
     experience: 36,
-    image: "https://ssim.ac.in/wp-content/uploads/5.png",
+    image: image5,
     description:
       "A grand palace exhibiting the opulence and grandeur of the Nizams, featuring beautiful architecture and historic artifacts.",
   },
@@ -1239,7 +1245,7 @@ const team = [
     area: "Data Science",
     qualification: "MCA, M.Tech, M.Sc.",
     experience: 36,
-    image: "https://ssim.ac.in/wp-content/uploads/6.png",
+    image: image6,
     description:
       "Home to an extensive collection of art, sculptures, manuscripts, and artifacts from various civilizations across the world.",
   },
