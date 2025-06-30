@@ -11,8 +11,12 @@ import {
   BookCheck,
   Handshake,
   BrainCircuit,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -60,6 +64,63 @@ const stats = [
 ];
 
 export default function AboutSection() {
+  const isMobile = useIsMobile();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const paragraphs = [
+    <p className="text-lg leading-relaxed" key="1">
+      Located in the heart of Hyderabad and Secunderabad, Siva Sivani Institute
+      of Management (SSIM) is a{" "}
+      <strong>premier institution with over three decades of excellence</strong>{" "}
+      in management education. Renowned for its{" "}
+      <strong>strong ethical foundation</strong>, this{" "}
+      <strong>
+        SAQS, AIU, NBA, NAAC and AICTE accredited institution
+      </strong>{" "}
+      delivers industry-relevant learning through an{" "}
+      <strong>
+        innovative curriculum and experienced faculty blending academic and
+        corporate insights
+      </strong>
+      .
+    </p>,
+    <p className="text-lg leading-relaxed" key="2">
+      Recognized as an{" "}
+      <strong>
+        A<sup>+++</sup> B-School by Business India (2024)
+      </strong>
+      , SSIM ranks{" "}
+      <strong>
+        21st among private standalone B-Schools in India (Outlook 2024) and 2nd
+        in Telangana
+      </strong>{" "}
+      (Outlook, CSR, and GHRDC Times 2024). Its{" "}
+      <strong>
+        vibrant, extremely qualified, and talented alumni network spans across
+        the globe
+      </strong>
+      , fostering valuable professional connections and success stories across
+      industries, domains, and profiles.
+    </p>,
+    <p className="text-lg leading-relaxed" key="3">
+      With a focus on{" "}
+      <strong>holistic development of individuals</strong> with special
+      inclination towards{" "}
+      <strong>
+        critical decision-making bordering on creativity, innovation,
+        sustainability, ethics, and practical applicability
+      </strong>
+      , SSIM continues to shape future-ready leaders year-on-year.
+    </p>,
+    <p className="text-lg leading-relaxed" key="4">
+      Embark on your transformative journey with SSIM today and unlock limitless
+      opportunities of growth and success ready to embrace you!!!
+    </p>,
+  ];
+
+  const contentToShow =
+    isMobile && !isExpanded ? paragraphs.slice(0, 2) : paragraphs;
+
   return (
     <section className="relative py-16 md:py-24">
       <div className="absolute inset-0 bg-grid-gray-100/50 [mask-image:radial-gradient(white,transparent_85%)] -z-10" />
@@ -117,59 +178,25 @@ export default function AboutSection() {
               </div>
 
               <div className="space-y-6 text-gray-600">
-                <p className="text-lg leading-relaxed">
-                  Located in the heart of Hyderabad and Secunderabad, Siva
-                  Sivani Institute of Management (SSIM) is a{" "}
-                  <strong>
-                    premier institution with over three decades of excellence
-                  </strong>{" "}
-                  in management education. Renowned for its{" "}
-                  <strong>strong ethical foundation</strong>, this{" "}
-                  <strong>SAQS, AIU, NBA, NAAC and AICTE accredited institution</strong>{" "}
-                  delivers industry-relevant learning through an{" "}
-                  <strong>
-                    innovative curriculum and experienced faculty blending
-                    academic and corporate insights
-                  </strong>
-                  .
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  Recognized as an{" "}
-                  <strong>
-                    A<sup>+++</sup> B-School by Business India (2024)
-                  </strong>
-                  , SSIM ranks{" "}
-                  <strong>
-                    21st among private standalone B-Schools in India (Outlook
-                    2024) and 2nd in Telangana
-                  </strong>{" "}
-                  (Outlook, CSR, and GHRDC Times 2024). Its{" "}
-                  <strong>
-                    vibrant, extremely qualified, and talented alumni network
-                    spans across the globe
-                  </strong>
-                  , fostering valuable professional connections and success
-                  stories across industries, domains, and profiles.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  With a focus on{" "}
-                  <strong>holistic development of individuals</strong> with
-                  special inclination towards{" "}
-                  <strong>
-                    critical decision-making bordering on creativity,
-                    innovation, sustainability, ethics, and practical
-                    applicability
-                  </strong>
-                  , SSIM continues to shape future-ready leaders year-on-year.
-                </p>
-
-                <p className="text-lg leading-relaxed">
-                  Embark on your transformative journey with SSIM today and
-                  unlock limitless opportunities of growth and success ready to
-                  embrace you!!!
-                </p>
+                {contentToShow}
+                {isMobile && (
+                  <Button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="group gap-0 px-0 py-0 h-0 pt-5 bg-transparent rounded-none hover:bg-transparent"
+                    size="lg"
+                  >
+                    <div className="bg-red-600 h-11 flex items-center pl-6 pr-4 hover:bg-red-700 text-white">
+                      {isExpanded ? "Read Less" : "Read More"}
+                    </div>
+                    <div className="bg-mainBlue h-11 flex items-center px-4 text-white">
+                      {isExpanded ? (
+                        <ChevronUp className="h-4 w-4" />
+                      ) : (
+                        <ChevronDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                      )}
+                    </div>
+                  </Button>
+                )}
               </div>
 
               {/* Stats Grid */}
