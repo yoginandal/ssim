@@ -1,4 +1,4 @@
-import AboutSSIM from "@/assets/about_ssim/aboutssim.webp";
+import AboutSSIM from "@/assets/about_ssim/About.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
