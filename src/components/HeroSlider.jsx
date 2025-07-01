@@ -145,7 +145,7 @@ const HeroSlider = () => {
   }, [emblaApi, handleDrag]);
 
   return (
-    <section className="hero-section overflow-hidden h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)] w-full relative">
+    <section className="hero-section overflow-hidden max-h-full h-full md:max-h-[calc(100vh-160px)] lg:max-h-[calc(100vh-120px)] w-full relative">
       <Carousel
         ref={emblaRef}
         plugins={[plugin.current]}
@@ -157,12 +157,12 @@ const HeroSlider = () => {
           {imgSlider.map((img, index) => (
             <CarouselItem
               key={index}
-              className="w-full sm:h-full relative h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)]"
+              className="w-full sm:h-full relative max-h-full h-full md:max-h-[calc(100vh-160px)] lg:max-h-[calc(100vh-120px)]"
             >
               <img
                 src={img.image}
                 alt={img.tagline}
-                className="object-cover w-screen  h-[420px] md:h-[calc(100vh-160px)] lg:h-[calc(100vh-120px)]"
+                className="object-cover w-screen  max-h-full h-full md:max-h-[calc(100vh-160px)] lg:max-h-[calc(100vh-120px)]"
               />
               {/* <img
                 src={img.image}
