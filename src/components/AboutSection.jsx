@@ -122,8 +122,8 @@ export default function AboutSection() {
     isMobile && !isExpanded ? paragraphs.slice(0, 2) : paragraphs;
 
   return (
-    <section className="relative py-16 md:py-24">
-      <div className="absolute inset-0 bg-grid-gray-100/50 [mask-image:radial-gradient(white,transparent_85%)] -z-10" />
+    <section className="relative py-16 bg-white md:py-24">
+      {/* <div className="absolute inset-0 bg-grid-gray-100/50 [mask-image:radial-gradient(white,transparent_85%)] -z-10" /> */}
 
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
@@ -146,7 +146,7 @@ export default function AboutSection() {
                         objectFit: "cover",
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" /> */}
                     <Badge className="absolute top-4 left-4 bg-red-600 animate-pulse text-white  backdrop-blur">
                       <GraduationCap className="w-4 h-4 mr-2" />
                       Excellence in Education
