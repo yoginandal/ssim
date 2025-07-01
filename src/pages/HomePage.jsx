@@ -15,7 +15,7 @@ import UpcomingEvents from "@/components/UpcomingEvents";
 //import AwardsSection from "@/components/AwardsSection";
 // import AnimatedBeamShowcase from "@/components/animated-beam-showcase";
 import Events from "@/components/Events";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 // import Page from "@/components/page"
 
 const sectionVariants = {
@@ -50,6 +50,37 @@ const SectionWrapper = ({ children }) => {
 };
 
 export default function HomePage() {
+  // Auto scroll to top when component mounts (handles both link navigation and browser back button)
+  useEffect(() => {
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    // Scroll to top immediately when component mounts
+    const timer = setTimeout(() => {
+      scrollToTop();
+    }, 100);
+
+    // Also handle browser navigation events (back/forward buttons)
+    const handleNavigation = () => {
+      setTimeout(() => {
+        scrollToTop();
+      }, 100);
+    };
+
+    // Listen for browser navigation events
+    window.addEventListener('popstate', handleNavigation);
+
+    // Cleanup
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('popstate', handleNavigation);
+    };
+  }, []);
+
   return (
     <>
       <div>
