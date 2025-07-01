@@ -32,18 +32,18 @@ const TopBar = () => {
   const socialIcons = [
     {
       icon: <Instagram className="w-4 h-4" />,
-      url: "https://www.instagram.com/imm_india/",
+      url: "https://www.instagram.com/ssim_b_school/",
     },
     {
       icon: <Linkedin className="w-4 h-4" />,
-      url: "https://www.linkedin.com/school/institute-of-marketing-and-management/?originalSubdomain=in",
+      url: "https://www.linkedin.com/school/siva-sivani-institute-of-management/",
     },
-    { icon: <Youtube className="w-4 h-4" />, url: "https://bit.ly/IMM-YT" },
+    { icon: <Youtube className="w-4 h-4" />, url: "https://www.youtube.com/@sivasivaniinstituteofmanag3545" },
     {
       icon: <Facebook className="w-4 h-4" />,
-      url: "https://www.facebook.com/indiaimm",
+      url: "https://www.facebook.com/SivaSivaniInstituteofManagementHyderabad/",
     },
-    { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/imm_bschool" },
+    { icon: <Twitter className="w-4 h-4" />, url: "https://x.com/SSIMHyderabad" },
   ];
 
   return (
