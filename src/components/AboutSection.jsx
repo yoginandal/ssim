@@ -17,6 +17,7 @@ import {
 import WordPullUp from "./ui/word-pull-up";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -74,9 +75,7 @@ export default function AboutSection() {
       <strong>premier institution with over three decades of excellence</strong>{" "}
       in management education. Renowned for its{" "}
       <strong>strong ethical foundation</strong>, this{" "}
-      <strong>
-        SAQS, AIU, NBA, NAAC and AICTE accredited institution
-      </strong>{" "}
+      <strong>SAQS, AIU, NBA, NAAC and AICTE accredited institution</strong>{" "}
       delivers industry-relevant learning through an{" "}
       <strong>
         innovative curriculum and experienced faculty blending academic and
@@ -103,9 +102,8 @@ export default function AboutSection() {
       industries, domains, and profiles.
     </p>,
     <p className="text-lg leading-relaxed" key="3">
-      With a focus on{" "}
-      <strong>holistic development of individuals</strong> with special
-      inclination towards{" "}
+      With a focus on <strong>holistic development of individuals</strong> with
+      special inclination towards{" "}
       <strong>
         critical decision-making bordering on creativity, innovation,
         sustainability, ethics, and practical applicability
@@ -229,17 +227,27 @@ export default function AboutSection() {
               </div>
 
               {/* CTA Button */}
-              <Button
-                className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
-                size="lg"
+              <Link
+                to="/about/vision-mission"
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }}
               >
-                <div className="bg-red-600 mt-8 h-11 flex items-center pl-8 pr-4 hover:bg-red-700">
-                  Learn More About SSIM
-                </div>
-                <div className="bg-mainBlue mt-8 h-11 flex items-center px-4">
-                  <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Button>
+                <Button
+                  className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
+                  size="lg"
+                >
+                  <div className="bg-red-600 mt-8 h-11 flex items-center pl-8 pr-4 hover:bg-red-700">
+                    Learn More About SSIM
+                  </div>
+                  <div className="bg-mainBlue mt-8 h-11 flex items-center px-4">
+                    <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
