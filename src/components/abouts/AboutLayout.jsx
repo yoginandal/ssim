@@ -1,38 +1,122 @@
+import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import BannerWithBreadcrumbs from "./BannerWithBreadcrumbs";
 import AboutSidebar from "./AboutSidebar";
+import { routeConfigs } from "@/utils/routeConfig";
 
-const AboutLayout = () => {
+const AboutLayout = ({ 
+  bannerImage, 
+  sidebarLinks = [],
+  showSidebar = false,
+  // Optional override props - if provided, they take precedence over dynamic detection
+  customTitle,
+  customBreadcrumbs,
+  customDropdownLinks,
+  showDropdown = false
+}) => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // Define breadcrumbs based on path
-  const breadcrumbs = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-  ];
+  // Determine which section we're in and the current route
+  const getSectionAndRoute = (path) => {
+    // Remove leading slash and split path
+    const pathSegments = path.replace(/^\//, '').split('/');
+    const section = pathSegments[0]; // e.g., 'about', 'placement', etc.
+    const route = pathSegments[1]; // e.g., 'directors-message', 'records', etc.
+    
+    return { section, route };
+  };
 
-  const sidebarLinks = [
-    { href: "/about/academic-advisory-board", label: "Academic Advisory Board" },
-    { href: "/about/directors-message", label: "Message" },
-    { href: "/about/vision-mission", label: "Vision & Mission" },
-    { href: "/about/values", label: "Our Values" },
-    { href: "/about/set-us-apart", label: "What Sets Us Apart" },
-  ];
+  const { section, route } = getSectionAndRoute(currentPath);
+  const sectionConfig = routeConfigs[section];
 
-  // Determine title based on the current path
-  const title = currentPath.includes("/values")
-    ? "Our Values"
-    : currentPath.includes("/set-us-apart")
-    ? "What Sets Us Apart"
-    : "Message";
+  // Generate dynamic title
+  const getDynamicTitle = () => {
+    if (customTitle) return customTitle;
+    
+    if (sectionConfig && route && sectionConfig.routes[route]) {
+      return sectionConfig.routes[route].title;
+    }
+    
+    // Fallback to base title or section name
+    return sectionConfig?.baseTitle || section?.charAt(0).toUpperCase() + section?.slice(1) || "Page";
+  };
+
+  // Generate dynamic breadcrumbs
+  const getDynamicBreadcrumbs = () => {
+    if (customBreadcrumbs && customBreadcrumbs.length > 0) {
+      return customBreadcrumbs;
+    }
+
+    const breadcrumbs = [
+      { href: "/", label: "Home", isActive: false }
+    ];
+
+    if (sectionConfig) {
+      // Add section breadcrumb
+      breadcrumbs.push({
+        href: sectionConfig.basePath,
+        label: sectionConfig.baseTitle,
+        isActive: false
+      });
+
+      // Add current route breadcrumb if it exists
+      if (route && sectionConfig.routes[route]) {
+        breadcrumbs.push({
+          label: sectionConfig.routes[route].breadcrumbLabel,
+          isActive: true
+        });
+      } else {
+        // Mark section as active if no specific route
+        breadcrumbs[breadcrumbs.length - 1].isActive = true;
+      }
+    }
+
+    return breadcrumbs;
+  };
+
+  // Generate dropdown links for the current section
+  const getDynamicDropdownLinks = () => {
+    if (customDropdownLinks && customDropdownLinks.length > 0) {
+      return customDropdownLinks;
+    }
+
+    if (sectionConfig && sectionConfig.routes) {
+      return Object.entries(sectionConfig.routes).map(([routeKey, routeData]) => ({
+        href: `${sectionConfig.basePath}/${routeKey}`,
+        label: routeData.breadcrumbLabel
+      }));
+    }
+
+    return [];
+  };
+
+  const dynamicTitle = getDynamicTitle();
+  const dynamicBreadcrumbs = getDynamicBreadcrumbs();
+  const dynamicDropdownLinks = getDynamicDropdownLinks();
+
+  // Auto scroll to top when route changes
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [currentPath]);
 
   return (
     <div>
       {/* Banner with Breadcrumbs */}
-      <BannerWithBreadcrumbs title={title} breadcrumbs={breadcrumbs} />
-      <div className="mt-8">
-        {/* <AboutSidebar sidebarLinks={sidebarLinks} /> */}
+      <BannerWithBreadcrumbs 
+        title={dynamicTitle}
+        bannerImage={bannerImage}
+        breadcrumbs={dynamicBreadcrumbs}
+        dropdownLinks={dynamicDropdownLinks}
+        showDropdown={showDropdown}
+      />
+      <div className="">
+        {/* Optional Sidebar */}
+        {showSidebar && <AboutSidebar sidebarLinks={sidebarLinks} />}
+        
         {/* Content Area for Subpages */}
         <div className="bg-white">
           <Outlet />

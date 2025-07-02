@@ -11,7 +11,13 @@ import {
 import { ChevronDown } from "lucide-react";
 import AboutBanner from "@/assets/breadcrumb.png";
 
-const BannerWithBreadcrumbs = ({ title, aboutLinks }) => {
+const BannerWithBreadcrumbs = ({ 
+  title, 
+  bannerImage = AboutBanner, 
+  breadcrumbs = [],
+  dropdownLinks = [],
+  showDropdown: showDropdownProp = false 
+}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -32,11 +38,19 @@ const BannerWithBreadcrumbs = ({ title, aboutLinks }) => {
     setShowDropdown((prev) => !prev);
   };
 
+  // Auto scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   return (
     <div
-      className="relative w-full h-[35vh] flex items-center justify-center shadow-lg"
+      className="relative w-full h-[35vh] sm:h-[50vh] flex items-center justify-center shadow-lg"
       style={{
-        backgroundImage: `url(${AboutBanner})`,
+        backgroundImage: `url(${bannerImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -45,73 +59,75 @@ const BannerWithBreadcrumbs = ({ title, aboutLinks }) => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
 
       {/* Content */}
-      <h1 className="text-3xl md:text-5xl font-bold z-20 text-center animate-fadeInUp text-white">
+      <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold z-20 text-center animate-fadeInUp text-white">
         {title}
       </h1>
 
       {/* Breadcrumb Wrapper */}
       <div
-        className="absolute z-20 -bottom-5 left-1/2 transform -translate-x-1/2 backdrop-blur-sm rounded-full shadow-lg border border-red-600 bg-red-600"
+        className="absolute w-full sm:w-auto hidden sm:block z-20 -bottom-5 left-1/2 transform -translate-x-1/2 backdrop-blur-sm rounded-full shadow-lg border border-red-600 bg-red-600"
         style={{
           padding: "0.5rem 1rem",
         }}
       >
         <Breadcrumb>
           <BreadcrumbList className="flex flex-wrap justify-center gap-2 md:gap-3 text-sm md:text-base font-medium text-white relative">
-            {/* Home Link */}
-            <BreadcrumbItem>
-              <BreadcrumbLink
-                href="/"
-                className="hover:text-gray-300 transition-colors whitespace-nowrap"
-              >
-                Home
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="text-white" />
-
-            {/* About Dropdown */}
-            <BreadcrumbItem className="relative">
-              <div
-                className="flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors whitespace-nowrap"
-                onClick={handleDropdownToggle}
-              >
-                About
-                {/* <ChevronDown className="w-4 h-4" /> */}
-              </div>
-              {showDropdown && (
-                <div
-                  ref={dropdownRef}
-                  className="absolute left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999]"
-                  style={{
-                    top: "100%",
-                    marginTop: "0.5rem",
-                    position: "fixed",
-                  }}
-                >
-                  <ul className="py-2 w-48">
-                    {aboutLinks.map((link) => (
-                      <li key={link.href}>
-                        <a
-                          href={link.href}
-                          className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
-                          onClick={() => setShowDropdown(false)}
+            {breadcrumbs.map((crumb, index) => (
+              <div key={index} className="flex items-center">
+                <BreadcrumbItem>
+                  {crumb.isDropdown ? (
+                    <div className="relative">
+                      <div
+                        className="flex items-center gap-1 cursor-pointer hover:text-gray-300 transition-colors whitespace-nowrap"
+                        onClick={handleDropdownToggle}
+                      >
+                        {crumb.label}
+                        {showDropdownProp && <ChevronDown className="w-4 h-4" />}
+                      </div>
+                      {showDropdown && dropdownLinks.length > 0 && (
+                        <div
+                          ref={dropdownRef}
+                          className="absolute left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999]"
+                          style={{
+                            top: "100%",
+                            marginTop: "0.5rem",
+                            position: "fixed",
+                          }}
                         >
-                          {link.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="text-white" />
-
-            {/* Current Page */}
-            <BreadcrumbItem>
-              <BreadcrumbPage className="font-bold text-white whitespace-nowrap">
-                {title}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
+                          <ul className="py-2 w-48">
+                            {dropdownLinks.map((link) => (
+                              <li key={link.href}>
+                                <a
+                                  href={link.href}
+                                  className="block px-4 py-2 hover:bg-gray-100 text-sm text-gray-700"
+                                  onClick={() => setShowDropdown(false)}
+                                >
+                                  {link.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ) : crumb.isActive ? (
+                    <BreadcrumbPage className="font-bold text-white whitespace-nowrap">
+                      {crumb.label}
+                    </BreadcrumbPage>
+                  ) : (
+                    <BreadcrumbLink
+                      href={crumb.href}
+                      className="hover:text-gray-300 transition-colors whitespace-nowrap"
+                    >
+                      {crumb.label}
+                    </BreadcrumbLink>
+                  )}
+                </BreadcrumbItem>
+                {index < breadcrumbs.length - 1 && (
+                  <BreadcrumbSeparator className="text-white" />
+                )}
+              </div>
+            ))}
           </BreadcrumbList>
         </Breadcrumb>
       </div>
