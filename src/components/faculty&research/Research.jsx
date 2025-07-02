@@ -46,20 +46,20 @@ const BannerSection = ({ className, ...props }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
       <div className="container relative z-10 flex h-full flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
-        <h1 className="mb-4 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="mb-4 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl text-center lg:text-7xl">
           About SSIM Research
         </h1>
         <p className="mb-8 max-w-2xl text-lg text-gray-300 sm:text-xl text-center">
           Exploring innovative solutions in structural similarity index
           measurement for advanced image processing and analysis.
         </p>
-        <Button
+        {/* <Button
           size="lg"
           className="group animate-bounce bg-mainBlue hover:bg-mainBlue"
         >
           Learn More
           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
+        </Button> */}
       </div>
     </section>
   );
@@ -69,7 +69,7 @@ function ResearchSection() {
   const [videoOpen, setVideoOpen] = useState(false);
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-50 py-20">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-blue-50 via-white to-blue-50 py-16 sm:py-20">
       {/* Decorative elements */}
       <div className="absolute left-0 top-0 -z-10 h-[600px] w-[600px] rounded-full bg-blue-100/30 blur-3xl" />
       <div className="absolute right-0 bottom-0 -z-10 h-[600px] w-[600px] rounded-full bg-purple-100/30 blur-3xl" />
@@ -85,7 +85,7 @@ function ResearchSection() {
               transition={{ duration: 0.5 }}
               className="mb-8"
             >
-              <h2 className="mb-4 text-5xl font-bold tracking-tight text-mainBlue">
+              <h2 className="mb-4 text-4xl sm:text-5xl font-bold tracking-tight text-mainBlue">
                 About Research
               </h2>
               <p className="mb-6 text-lg text-gray-800">
@@ -99,7 +99,7 @@ function ResearchSection() {
                 Industrial Research Organization).
               </p>
 
-              <Button
+              {/* <Button
                 className="group gap-0 px-0 py-0 h-0 rounded-none"
                 size="lg"
               >
@@ -109,7 +109,7 @@ function ResearchSection() {
                 <div className="bg-mainBlue h-11 flex items-center px-4">
                   <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
                 </div>
-              </Button>
+              </Button> */}
               {/* <Button className="group" size="lg">
                 READ MORE
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -232,7 +232,7 @@ const features = [
   },
   {
     icon: <Share2 className="h-6 w-6" />,
-    title: "Effortless File Sharing",
+    title: "Effortless File Sharing", 
     description:
       "Seamlessly exchange files across teams for streamlined collaboration and productivity.",
   },
@@ -241,66 +241,6 @@ const features = [
     title: "Virtual Meeting",
     description:
       "Facilitate remote collaboration and discussions through interactive online sessions.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <MessageCircle className="h-6 w-6" />,
-    title: "Instant Communication",
-    description:
-      "Real-time exchange of information for swift collaboration and decision-making.",
-  },
-  {
-    icon: <Share2 className="h-6 w-6" />,
-    title: "Effortless File Sharing",
-    description:
-      "Seamlessly exchange files across teams for streamlined collaboration and productivity.",
-  },
-  {
-    icon: <Headphones className="h-6 w-6" />,
-    title: "Virtual Meeting",
-    description:
-      "Facilitate remote collaboration and discussions through interactive online sessions.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Robust Security",
-    description:
-      "Ensure protection of sensitive data through advanced security measures.",
   },
   {
     icon: <Shield className="h-6 w-6" />,
