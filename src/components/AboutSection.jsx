@@ -16,13 +16,81 @@ import {
 } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
+};
+
+// Counter Animation Hook
+const useCountAnimation = (end, duration = 2000, shouldStart = false) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(0);
+
+  useEffect(() => {
+    if (!shouldStart) {
+      setCount(0);
+      return;
+    }
+
+    const startTime = Date.now();
+    const startValue = 0;
+
+    const animate = () => {
+      const now = Date.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutExpo = 1 - Math.pow(2, -10 * progress);
+      const currentCount = Math.floor(startValue + (end - startValue) * easeOutExpo);
+      
+      countRef.current = currentCount;
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    animate();
+  }, [end, duration, shouldStart]);
+
+  return count;
+};
+
+// Extract numeric value from stat value
+const extractNumber = (value) => {
+  const numericString = value.replace(/[^0-9]/g, '');
+  return parseInt(numericString) || 0;
+};
+
+// Format the display value with prefix/suffix
+const formatValue = (originalValue, animatedNumber) => {
+  if (originalValue.includes('₹')) {
+    return `₹${animatedNumber.toLocaleString()}`;
+  }
+  if (originalValue.includes('+')) {
+    return `${animatedNumber.toLocaleString()}+`;
+  }
+  return animatedNumber.toLocaleString();
+};
+
+// Animated Counter Component
+const AnimatedCounter = ({ value, shouldStart, delay = 0 }) => {
+  const numericValue = extractNumber(value);
+  const animatedValue = useCountAnimation(numericValue, 2000 + delay, shouldStart);
+  
+  return (
+    <span className="text-3xl font-bold text-mainBlue">
+      {formatValue(value, animatedValue)}
+    </span>
+  );
 };
 
 const stats = [
@@ -67,6 +135,12 @@ const stats = [
 export default function AboutSection() {
   const isMobile = useIsMobile();
   const [isExpanded, setIsExpanded] = useState(false);
+  
+  // Intersection observer for stats animation
+  const [statsRef, statsInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
 
   const paragraphs = [
     <p className="text-lg leading-relaxed" key="1">
@@ -198,7 +272,10 @@ export default function AboutSection() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8">
+              <div 
+                ref={statsRef}
+                className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8"
+              >
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
@@ -212,9 +289,11 @@ export default function AboutSection() {
                       <div className="p-2 bg-red-600 w-fit rounded-lg text-white">
                         {stat.icon}
                       </div>
-                      <div className="text-3xl font-bold text-mainBlue">
-                        {stat.value}
-                      </div>
+                      <AnimatedCounter 
+                        value={stat.value}
+                        shouldStart={statsInView}
+                        delay={index * 200}
+                      />
                       <div className="text-sm font-medium text-gray-600">
                         {stat.label}
                       </div>
