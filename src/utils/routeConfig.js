@@ -26,7 +26,7 @@ export const routeConfigs = {
         breadcrumbLabel: "Academic Advisory Board"
       },
       "leadership": {
-        title: "Leadership",
+        title: "Our Leaders Message",
         breadcrumbLabel: "Leadership"
       },
       "board-of-governors": {

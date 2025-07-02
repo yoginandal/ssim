@@ -50,7 +50,7 @@ import {
 import Scholarships from "./Scholarships";
 import SelectionProcess from "./SelectionProcess";
 import AdmissionParameters from "./AdmissionParameters";
-
+import PGDMBIFSBanner from "../../assets/admissions/admissions.webp";
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
@@ -779,14 +779,14 @@ const PGDMBIFS = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-primary/5 to-background border-b">
+      <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-white to-white border-b">
         <div className="container max-w-7xl mx-auto px-4 py-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
               Begin Your Journey with PGDM-BIFS Program
             </h1>
             <p className="text-xl text-gray-900">
@@ -795,7 +795,14 @@ const PGDMBIFS = () => {
             </p>
           </motion.div>
         </div>
-        <div className="absolute inset-0 z-0">
+        {/* Background image - only on large devices */}
+        <div
+          className="absolute inset-0 z-0 bg-contain bg-no-repeat bg-right hidden lg:block"
+          style={{ backgroundImage: `url(${PGDMBIFSBanner})` }}
+        />
+
+        {/* Gradient and icon - only on smaller devices */}
+        <div className="absolute inset-0 z-0 block lg:hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 backdrop-blur-3xl" />
           <GraduationCap className="absolute right-10 top-10 w-96 h-96 text-primary/5 rotate-12" />
         </div>

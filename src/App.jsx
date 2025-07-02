@@ -22,7 +22,6 @@ import PlacementSection from "@/components/placement/PlacementSection";
 import Internships from "@/components/placement/Internships";
 // import PlacementTeam from "@/components/placement/PlacementTeam";
 import PlacementTeams from "@/components/placement/PlacementTeams";
-import FPM from "@/components/admissions/FPM";
 import PGDMTPS from "@/components/admissions/PGDMTPS";
 import PGDMBIFS from "@/components/admissions/PGDMBIFS";
 import PGDMBA from "@/components/admissions/PGDMBA";
@@ -47,6 +46,7 @@ import GuestLectures from "./components/placement/GuestLectures";
 // import EligibilityCriteria from "@/components/admissions/EligibilityCriteria";
 // Define different banner images for different sections
 import AboutBanner from "@/assets/breadcrumb.png";
+import FPM from "./components/admissions/FPM";
 // You can add custom banner images for different sections:
 // import PlacementBanner from "@/assets/placement-banner.jpg";
 // import FacultyBanner from "@/assets/faculty-banner.jpg";
