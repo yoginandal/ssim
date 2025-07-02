@@ -97,10 +97,10 @@ export default function Accreditations() {
   ];
 
   return (
-    <div className="container grid grid-cols-2 md:block gap-5 mx-auto py-16 max-w-6xl">
+    <div className="container grid grid-cols-2 md:block gap-5 mx-auto py-10 sm:py-16 max-w-6xl">
       {/* Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 col-span-2 items-start">
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-12 sm:mb-16 mb-10 col-span-2 items-start">
+        <div className="sm:space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
             Accreditations
           </h1>

@@ -37,16 +37,19 @@ export default function AccreditationsRankings() {
   return (
     <div className="w-full">
       <div className="max-w-7xl mx-auto pt-16">
-        <h2 className="text-xl font-bold md:text-5xl text-center text-black dark:text-white">
+        <h2 className="px-5 sm:px-0 text-4xl font-bold md:text-5xl text-center text-black dark:text-white">
           Accreditations & Rankings
         </h2>
         {/* <p className="text-neutral-700 dark:text-neutral-300 text-lg max-w-screen-md">
           I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
           a timeline of my journey.
         </p> */}
-        <Tabs className="px-5 py-20" defaultValue="accreditations">
+        <Tabs
+          className="px-5 !pt-10 !pb-0 sm:py-20"
+          defaultValue="accreditations"
+        >
           <TabsList className="grid w-full grid-cols-2 text-[#293794] bg-gradient-to-r from-blue-200 via-blue-50 to-blue-200">
-          <TabsTrigger
+            <TabsTrigger
               value="accreditations"
               className="data-[state=active]:bg-mainBlue data-[state=active]:text-primary-foreground"
             >
@@ -59,13 +62,10 @@ export default function AccreditationsRankings() {
               Rankings
             </TabsTrigger>
           </TabsList>
-          <TabsContent
-            value="rankings"
-            className="space-y-8 pt-10 sm:pt-16"
-          >
+          <TabsContent value="rankings" className="space-y-8 sm:pt-16">
             <Timeline data={data} />
           </TabsContent>
-          <TabsContent value="accreditations" className="space-y-8 pt-10 sm:pt-16">
+          <TabsContent value="accreditations" className="space-y-8 sm:pt-16">
             <Accreditations />
           </TabsContent>
         </Tabs>
