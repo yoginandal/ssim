@@ -47,6 +47,7 @@ import GuestLectures from "./components/placement/GuestLectures";
 // Define different banner images for different sections
 import AboutBanner from "@/assets/breadcrumb.png";
 import FPM from "./components/admissions/FPM";
+import InternalComplaints from "./components/footer/InternalComplaints";
 // You can add custom banner images for different sections:
 // import PlacementBanner from "@/assets/placement-banner.jpg";
 // import FacultyBanner from "@/assets/faculty-banner.jpg";
@@ -278,6 +279,7 @@ export default function App() {
               <Route path="/iqac" element={<IQAC />} />
               <Route path="/events" element={<SSIM />} />
               <Route path="testing" element={<LifeAtSsim />} />
+              <Route path="/internal-complaints" element={<InternalComplaints />} />
               {/* <Route path="/international-events" element={<InternationalEvents />} /> */}
               {/* <Route path="/admissions/process" element={<SelectionProcess />} /> */}
               {/* <Route path="/programs/course-electives" element={<CourseElectives />} /> */}

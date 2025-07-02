@@ -48,7 +48,7 @@ export default function Footer() {
       label: "Committees",
       items: [
         { name: "Grievance Redressal Mechanism", path: "/grievance" },
-        { name: "Internal Complaints Committee", path: "/complaints" },
+        { name: "Internal Complaints Committee", path: "/internal-complaints" },
       ],
     },
     {
