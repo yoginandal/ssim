@@ -189,7 +189,7 @@ function LeaderCard({ leader }) {
 
 export default function Leadership() {
   return (
-    <section className="w-full py-12 lg:py-16">
+    <section className="w-full py-16 sm:py-20">
       <div className="container px-4 md:px-6 mx-auto max-w-5xl">
         <motion.div
           className="text-center mb-12"
