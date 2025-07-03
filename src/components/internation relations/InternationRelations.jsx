@@ -183,7 +183,7 @@ Human Resources`,
 
         <div className="relative">
           {/* Testimonial Label */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -192,7 +192,7 @@ Human Resources`,
             <span className="text-mainBlue text-lg font-semibold tracking-wide uppercase">
               International Relations
             </span>
-          </motion.div>
+          </motion.div> */}
 
           {/* Main Heading */}
           <motion.h2
