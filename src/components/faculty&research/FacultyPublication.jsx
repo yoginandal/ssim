@@ -150,10 +150,10 @@ export default function FacultyPublication() {
   }
 
   return (
-    <div className="container mx-auto py-16 px-4 max-w-7xl">
+    <div className="container mx-auto py-16 sm:py-20 px-4 max-w-7xl">
       <WordPullUp
         words="Faculty Publications"
-        className="text-4xl md:text-5xl font-bold tracking-tight text-mainBlue text-center mt-8 mb-10 md:mb-16"
+        className="text-4xl md:text-5xl font-bold tracking-tight text-mainBlue text-center mb-10 md:mb-16"
       />
 
       <Card className="shadow-lg border-0 bg-gradient-to-br from-slate-50 to-white">
@@ -261,7 +261,9 @@ export default function FacultyPublication() {
                         </TableCell>
                         <TableCell className="py-4 px-6">
                           <div className="text-slate-600 font-medium">
-                            {paper.classification}
+                            {paper.classification === "Nill"
+                              ? "Not Mentioned"
+                              : paper.classification}
                           </div>
                         </TableCell>
                       </TableRow>
