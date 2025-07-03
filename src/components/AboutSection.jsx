@@ -43,11 +43,13 @@ const useCountAnimation = (end, duration = 2000, shouldStart = false) => {
     const animate = () => {
       const now = Date.now();
       const progress = Math.min((now - startTime) / duration, 1);
-      
+
       // Easing function for smooth animation
       const easeOutExpo = 1 - Math.pow(2, -10 * progress);
-      const currentCount = Math.floor(startValue + (end - startValue) * easeOutExpo);
-      
+      const currentCount = Math.floor(
+        startValue + (end - startValue) * easeOutExpo
+      );
+
       countRef.current = currentCount;
       setCount(currentCount);
 
@@ -66,16 +68,16 @@ const useCountAnimation = (end, duration = 2000, shouldStart = false) => {
 
 // Extract numeric value from stat value
 const extractNumber = (value) => {
-  const numericString = value.replace(/[^0-9]/g, '');
+  const numericString = value.replace(/[^0-9]/g, "");
   return parseInt(numericString) || 0;
 };
 
 // Format the display value with prefix/suffix
 const formatValue = (originalValue, animatedNumber) => {
-  if (originalValue.includes('₹')) {
+  if (originalValue.includes("₹")) {
     return `₹${animatedNumber.toLocaleString()}`;
   }
-  if (originalValue.includes('+')) {
+  if (originalValue.includes("+")) {
     return `${animatedNumber.toLocaleString()}+`;
   }
   return animatedNumber.toLocaleString();
@@ -84,8 +86,12 @@ const formatValue = (originalValue, animatedNumber) => {
 // Animated Counter Component
 const AnimatedCounter = ({ value, shouldStart, delay = 0 }) => {
   const numericValue = extractNumber(value);
-  const animatedValue = useCountAnimation(numericValue, 2000 + delay, shouldStart);
-  
+  const animatedValue = useCountAnimation(
+    numericValue,
+    2000 + delay,
+    shouldStart
+  );
+
   return (
     <span className="text-3xl font-bold text-mainBlue">
       {formatValue(value, animatedValue)}
@@ -135,7 +141,7 @@ const stats = [
 export default function AboutSection() {
   const isMobile = useIsMobile();
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   // Intersection observer for stats animation
   const [statsRef, statsInView] = useInView({
     threshold: 0.3,
@@ -200,7 +206,7 @@ export default function AboutSection() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Column - Image */}
-          <div className="lg:sticky lg:top-20 h-fit">
+          <div className="lg:sticky lg:top-20 hidden lg:block h-fit">
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -248,6 +254,25 @@ export default function AboutSection() {
                 />
                 <div className="w-32 h-1.5 bg-red-600/80 rounded-none" />
               </div>
+              <Card className="overflow-hidden block lg:hidden !mt-16 border-0 shadow-2xl rounded-none">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <img
+                      alt="SSIM Campus Life"
+                      className="object-cover w-full h-full transform transition-transform hover:scale-105 duration-700"
+                      src={AboutSSIM}
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" /> */}
+                    <Badge className="absolute top-4 left-4 bg-red-600 animate-pulse text-white  backdrop-blur">
+                      <GraduationCap className="w-4 h-4 mr-2" />
+                      Excellence in Education
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
 
               <div className="space-y-6 text-gray-600">
                 {contentToShow}
@@ -272,7 +297,7 @@ export default function AboutSection() {
               </div>
 
               {/* Stats Grid */}
-              <div 
+              <div
                 ref={statsRef}
                 className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8"
               >
@@ -289,7 +314,7 @@ export default function AboutSection() {
                       <div className="p-2 bg-red-600 w-fit rounded-lg text-white">
                         {stat.icon}
                       </div>
-                      <AnimatedCounter 
+                      <AnimatedCounter
                         value={stat.value}
                         shouldStart={statsInView}
                         delay={index * 200}
