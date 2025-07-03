@@ -262,7 +262,7 @@ export default function FacultyPublication() {
                         <TableCell className="py-4 px-6">
                           <div className="text-slate-600 font-medium">
                             {paper.classification === "Nill"
-                              ? "Not Mentioned"
+                              ? "Not Available"
                               : paper.classification}
                           </div>
                         </TableCell>
