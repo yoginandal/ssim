@@ -83,7 +83,7 @@ const overviewData = [
 const processData = [
   {
     step: 1,
-    title: "Aptitude Test Scores",
+    title: "Aptitude Test Score",
     description:
       "Submit scores from accepted entrance exams like CAT/XAT/MAT/CMAT/ATMA/GMAT or State Government Exam",
     details:
@@ -105,7 +105,7 @@ const processData = [
   },
   {
     step: 4,
-    title: "Selection Rounds",
+    title: "Selection Round",
     description:
       "Submit Statement of Purpose, video introduction and attend personal interview",
     details: "SOP | Video Introducon | Personal Interview",
@@ -163,27 +163,16 @@ const feesData = {
 
 const datesData = [
   {
-    date: "September 1, 2024",
-    event: "Application Opens",
-    description: "Start your application process",
+    date: "July 5-8, 2025",
+    event: "Reporting & Registration",
+    description: "Complete registration process and report to campus",
   },
   {
-    date: "November 15, 2024",
-    event: "Early Decision Deadline",
-    description: "Submit for early consideration",
-  },
-  {
-    date: "January 15, 2025",
-    event: "Regular Decision Deadline",
-    description: "Final application deadline",
-  },
-  {
-    date: "March 31, 2025",
-    event: "Decisions Released",
-    description: "Check your application status",
+    date: "July 9, 2025",
+    event: "Inaugural Session",
+    description: "Official commencement of academic session for Batch 2025-27",
   },
 ];
-
 // Navigation Component
 const NavContent = ({ activeSection, setActiveSection, sections }) => (
   <div className="space-y-2">
@@ -324,6 +313,10 @@ const Overview = () => (
 const Process = () => (
   <div className="space-y-8">
     <SelectionProcess />
+    <p className="text-lg font-semibold text-gray-700 !mt-5">
+      SSIM follows Profile Based Selection process. The final selection is based
+      on the cumulative score of the below mentioned components -
+    </p>
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -345,15 +338,12 @@ const Process = () => (
       </motion.div>
     ))}
     <p className="text-lg text-gray-700 !mt-5">
-      <strong>Note:</strong> Every student is given a specific date for reporng
-      to the classes. Any student who does not report within 10 days of the
-      specified date will be treated as having withdrawn from the instute. The
-      admission of such student/s will automacally stand cancelled and any fee
-      paid will be refunded aer deducng the processing fee.
-    </p>
-    <p className="text-lg font-semibold text-gray-700 !mt-5">
-      SSIM follows Profile Based Selection process. The final selection is based
-      on the cumulative score of the below mentioned components -
+      <strong>Note:</strong> Every student is given a specific date for
+      reporting to the classes. Any student who does not report within 10 days
+      of the specified date will be treated as having withdrawn from the
+      institute. The admission of such students will automatically stand
+      cancelled and any fee paid will be refunded after deducting the processing
+      fee.
     </p>
     <AdmissionParameters />
   </div>

@@ -19,7 +19,7 @@ const admissionSteps = [
   },
   {
     id: 2,
-    title: "Submission of required documents",
+    title: "Submission of Required Documents",
     icon: Files,
     bgColor: "bg-blue-500",
   },
