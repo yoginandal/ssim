@@ -88,6 +88,18 @@ async function initializeDatabaseSchema() {
             );
         `;
 
+    const createPublicationsTableSQL = `
+            CREATE TABLE IF NOT EXISTS publications (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                authors VARCHAR(255) NOT NULL,
+                journal VARCHAR(255) NOT NULL,
+                classification VARCHAR(255),
+                year VARCHAR(10),
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            );
+        `;
+
     await connection.query(createEventsTableSQL);
     console.log("Table 'events' checked/created.");
 
@@ -223,6 +235,10 @@ app.use("/api/internships", internshipRoutes);
 // Import and use guest lecture routes
 const guestRoutes = require("./routes/guestRoutes")(dbPool); // Pass dbPool to the router
 app.use("/api/guest-lectures", guestRoutes);
+
+// Import and use publication routes
+const publicationRoutes = require("./routes/publicationRoutes")(dbPool); // Pass dbPool to the router
+app.use("/api/publications", publicationRoutes);
 
 // POST endpoint for event upload
 app.post("/api/events", upload.array("eventImages"), async (req, res) => {

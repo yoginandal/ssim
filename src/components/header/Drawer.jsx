@@ -14,7 +14,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { PanelLeft, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { navlinks } from "./navData";
 
 const Drawer = () => {
@@ -60,8 +60,8 @@ const Drawer = () => {
   return (
     <Sheet>
       <SheetTrigger className="flex items-center gap-1 bg-gray-200 rounded-md p-2">
-        <PanelLeft className="w-6 h-6 text-gray-800" />
-        <p className="text-gray-800 text-sm mb-[2px]">Menu</p>
+        <Menu className="w-6 h-6 text-gray-800" />
+        {/* <p className="text-gray-800 text-sm mb-[2px]">Menu</p> */}
       </SheetTrigger>
       <SheetContent className="bg-white overflow-auto">
         <SheetHeader>

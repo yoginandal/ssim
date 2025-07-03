@@ -49,6 +49,7 @@ import AboutBanner from "@/assets/breadcrumb.png";
 import FPM from "./components/admissions/FPM";
 import InternalComplaints from "./components/footer/InternalComplaints";
 import GrievanceRedressalMechanism from "./components/footer/GrievanceRedressalMechanism";
+import FacultyPublication from "./components/faculty&research/FacultyPublication";
 // You can add custom banner images for different sections:
 // import PlacementBanner from "@/assets/placement-banner.jpg";
 // import FacultyBanner from "@/assets/faculty-banner.jpg";
@@ -282,6 +283,7 @@ export default function App() {
               <Route path="testing" element={<LifeAtSsim />} />
               <Route path="/internal-complaints" element={<InternalComplaints />} />
               <Route path="/grievance-redressal-mechanism" element={<GrievanceRedressalMechanism />} />
+              <Route path="/faculty/publications" element={<FacultyPublication />} />
               {/* <Route path="/international-events" element={<InternationalEvents />} /> */}
               {/* <Route path="/admissions/process" element={<SelectionProcess />} /> */}
               {/* <Route path="/programs/course-electives" element={<CourseElectives />} /> */}

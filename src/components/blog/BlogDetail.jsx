@@ -119,7 +119,7 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50/50 py-12">
+    <div className="min-h-screen bg-slate-50/50 py-16 sm:py-20">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Back Button */}
         <Button
@@ -207,7 +207,7 @@ export default function BlogDetail() {
           </Card>
 
           {/* Engagement Section */}
-          <div className="flex items-center justify-between py-6">
+          {/* <div className="flex items-center justify-between py-6">
             <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
@@ -252,9 +252,9 @@ export default function BlogDetail() {
                 <Share2 className="h-5 w-5" />
               </Button>
             </div>
-          </div>
+          </div> */}
 
-          <Separator className="my-8" />
+          {/* <Separator className="my-8" /> */}
         </article>
       </div>
     </div>
