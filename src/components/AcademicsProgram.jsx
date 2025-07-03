@@ -180,7 +180,7 @@ export default function AcademicPrograms() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -193,10 +193,10 @@ export default function AcademicPrograms() {
   };
 
   return (
-    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:pt-16 sm:pb-20">
+    <div className="container mx-auto pl-4 pr-4 sm:pr-0 py-0 sm:pt-16 pb-20">
       <div className="relative grid lg:grid-cols-2 gap-10 sm:gap-20 items-start">
         <div className="space-y-10">
-          <div className="ml-auto max-w-[550px] space-y-8">
+          <div className="ml-auto lg:max-w-[550px] space-y-8">
             <WordPullUp
               words="Academic Programs"
               className="text-4xl md:text-5xl font-bold tracking-tight text-red-600 text-left mb-0 md:mb-6"
@@ -237,6 +237,33 @@ export default function AcademicPrograms() {
               ))}
             </div>
             <div
+              className={`relative block lg:hidden cursor-pointer aspect-square bg-gray-900 overflow-hidden transition-opacity duration-500 ${
+                isAnimating ? "opacity-0" : "opacity-100"
+              }`}
+              onClick={() => setVideoOpen(true)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              <img
+                className="w-full h-full object-cover"
+                src={`https://img.youtube.com/vi/${getVideoId(
+                  features[activeVideo].video
+                )}/maxresdefault.jpg`}
+              />
+              <div
+                className="absolute cursor-pointer inset-0 w-full h-full flex lg:hidden items-center justify-center"
+                onClick={() => setVideoOpen(true)}
+              >
+                <div className="relative">
+                  <div className="w-16 h-16 bg-[#C62B28] rounded-full flex items-center justify-center cursor-pointer hover:bg-[#B52522] transition-colors">
+                    <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-white border-b-[12px] border-b-transparent ml-1" />
+                  </div>
+                  <div className="absolute -inset-4 bg-[#C62B28]/20 rounded-full animate-ping" />
+                  <div className="absolute -inset-8 bg-[#C62B28]/10 rounded-full" />
+                </div>
+              </div>
+            </div>
+            <div
               className={`mt-4 text-gray-600 text-base leading-relaxed space-y-4 transition-opacity duration-500 ${
                 isAnimating ? "opacity-0" : "opacity-100"
               }`}
@@ -272,7 +299,7 @@ export default function AcademicPrograms() {
         </div>
 
         <div
-          className={`relative cursor-pointer aspect-square bg-gray-900 overflow-hidden transition-opacity duration-500 ${
+          className={`relative hidden lg:block cursor-pointer aspect-square bg-gray-900 overflow-hidden transition-opacity duration-500 ${
             isAnimating ? "opacity-0" : "opacity-100"
           }`}
           onClick={() => setVideoOpen(true)}
@@ -299,7 +326,7 @@ export default function AcademicPrograms() {
           </div>
         </div>
         <div
-          className="absolute cursor-pointer top-1/2 left-[53%] transform -translate-x-[53%] -translate-y-1/2 w-fit h-fit hidden sm:flex items-center justify-center"
+          className="absolute cursor-pointer top-1/2 left-[53%] transform -translate-x-[53%] -translate-y-1/2 w-fit h-fit hidden lg:flex items-center justify-center"
           onClick={() => setVideoOpen(true)}
         >
           <div className="relative">
