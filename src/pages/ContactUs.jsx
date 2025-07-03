@@ -21,6 +21,118 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Move InputField component outside to prevent re-creation on renders
+const InputField = ({
+  name,
+  label,
+  type = "text",
+  placeholder,
+  className,
+  formData,
+  errors,
+  touched,
+  onChange,
+  onBlur,
+  ...props
+}) => {
+  const hasError = touched[name] && errors[name];
+  const isValid = touched[name] && !errors[name] && formData[name]?.trim();
+
+  return (
+    <div className={cn("space-y-2", className)}>
+      <Label htmlFor={name} className="text-sm font-medium text-gray-700">
+        {label}
+      </Label>
+      <div className="relative">
+        <Input
+          id={name}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          value={formData[name]}
+          onChange={onChange}
+          onBlur={onBlur}
+          className={cn(
+            "transition-all duration-200",
+            hasError &&
+              "border-red-500 focus:border-red-500 focus:ring-red-500",
+            isValid &&
+              "border-green-500 focus:border-green-500 focus:ring-green-500"
+          )}
+          {...props}
+        />
+        {isValid && (
+          <CheckCircle className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-green-500" />
+        )}
+        {hasError && (
+          <AlertCircle className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-red-500" />
+        )}
+      </div>
+      {hasError && (
+        <p className="text-sm text-red-600 flex items-center gap-1">
+          <AlertCircle className="h-3 w-3" />
+          {errors[name]}
+        </p>
+      )}
+    </div>
+  );
+};
+
+// Move TextareaField component outside to prevent re-creation on renders
+const TextareaField = ({
+  name,
+  label,
+  placeholder,
+  className,
+  formData,
+  errors,
+  touched,
+  onChange,
+  onBlur,
+  ...props
+}) => {
+  const hasError = touched[name] && errors[name];
+  const isValid = touched[name] && !errors[name] && formData[name]?.trim();
+
+  return (
+    <div className={cn("space-y-2", className)}>
+      <Label htmlFor={name} className="text-sm font-medium text-gray-700">
+        {label}
+      </Label>
+      <div className="relative">
+        <Textarea
+          id={name}
+          name={name}
+          placeholder={placeholder}
+          value={formData[name]}
+          onChange={onChange}
+          onBlur={onBlur}
+          className={cn(
+            "min-h-[120px] transition-all duration-200 resize-none",
+            hasError &&
+              "border-red-500 focus:border-red-500 focus:ring-red-500",
+            isValid &&
+              "border-green-500 focus:border-green-500 focus:ring-green-500"
+          )}
+          {...props}
+        />
+        {isValid && (
+          <CheckCircle className="absolute right-3 top-3 h-4 w-4 text-green-500" />
+        )}
+        {hasError && (
+          <AlertCircle className="absolute right-3 top-3 h-4 w-4 text-red-500" />
+        )}
+      </div>
+      {hasError && (
+        <p className="text-sm text-red-600 flex items-center gap-1">
+          <AlertCircle className="h-3 w-3" />
+          {errors[name]}
+        </p>
+      )}
+    </div>
+  );
+};
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -225,100 +337,6 @@ const ContactUs = () => {
     },
   ];
 
-  const InputField = ({
-    name,
-    label,
-    type = "text",
-    placeholder,
-    className,
-    ...props
-  }) => {
-    const hasError = touched[name] && errors[name];
-    const isValid = touched[name] && !errors[name] && formData[name].trim();
-
-    return (
-      <div className={cn("space-y-2", className)}>
-        <Label htmlFor={name} className="text-sm font-medium text-gray-700">
-          {label}
-        </Label>
-        <div className="relative">
-          <Input
-            id={name}
-            name={name}
-            type={type}
-            placeholder={placeholder}
-            value={formData[name]}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={cn(
-              "transition-all duration-200",
-              hasError &&
-                "border-red-500 focus:border-red-500 focus:ring-red-500",
-              isValid &&
-                "border-green-500 focus:border-green-500 focus:ring-green-500"
-            )}
-            {...props}
-          />
-          {isValid && (
-            <CheckCircle className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-green-500" />
-          )}
-          {hasError && (
-            <AlertCircle className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-red-500" />
-          )}
-        </div>
-        {hasError && (
-          <p className="text-sm text-red-600 flex items-center gap-1">
-            <AlertCircle className="h-3 w-3" />
-            {errors[name]}
-          </p>
-        )}
-      </div>
-    );
-  };
-
-  const TextareaField = ({ name, label, placeholder, className, ...props }) => {
-    const hasError = touched[name] && errors[name];
-    const isValid = touched[name] && !errors[name] && formData[name].trim();
-
-    return (
-      <div className={cn("space-y-2", className)}>
-        <Label htmlFor={name} className="text-sm font-medium text-gray-700">
-          {label}
-        </Label>
-        <div className="relative">
-          <Textarea
-            id={name}
-            name={name}
-            placeholder={placeholder}
-            value={formData[name]}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={cn(
-              "min-h-[120px] transition-all duration-200 resize-none",
-              hasError &&
-                "border-red-500 focus:border-red-500 focus:ring-red-500",
-              isValid &&
-                "border-green-500 focus:border-green-500 focus:ring-green-500"
-            )}
-            {...props}
-          />
-          {isValid && (
-            <CheckCircle className="absolute right-3 top-3 h-4 w-4 text-green-500" />
-          )}
-          {hasError && (
-            <AlertCircle className="absolute right-3 top-3 h-4 w-4 text-red-500" />
-          )}
-        </div>
-        {hasError && (
-          <p className="text-sm text-red-600 flex items-center gap-1">
-            <AlertCircle className="h-3 w-3" />
-            {errors[name]}
-          </p>
-        )}
-      </div>
-    );
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -399,11 +417,21 @@ const ContactUs = () => {
                         name="firstName"
                         label="First Name"
                         placeholder="Enter your first name"
+                        formData={formData}
+                        errors={errors}
+                        touched={touched}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                       <InputField
                         name="lastName"
                         label="Last Name"
                         placeholder="Enter your last name"
+                        formData={formData}
+                        errors={errors}
+                        touched={touched}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
 
@@ -413,11 +441,21 @@ const ContactUs = () => {
                         label="Email Address"
                         type="email"
                         placeholder="Enter your email address"
+                        formData={formData}
+                        errors={errors}
+                        touched={touched}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                       <InputField
                         name="phone"
                         label="Phone Number"
                         placeholder="Enter your phone number"
+                        formData={formData}
+                        errors={errors}
+                        touched={touched}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
                     </div>
 
@@ -425,6 +463,11 @@ const ContactUs = () => {
                       name="subject"
                       label="Subject"
                       placeholder="What is this regarding?"
+                      formData={formData}
+                      errors={errors}
+                      touched={touched}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
 
                     <TextareaField
@@ -432,6 +475,11 @@ const ContactUs = () => {
                       label="Message"
                       className="min-h-[180px] h-full"
                       placeholder="Tell us more about your inquiry..."
+                      formData={formData}
+                      errors={errors}
+                      touched={touched}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
 
                     <Button
