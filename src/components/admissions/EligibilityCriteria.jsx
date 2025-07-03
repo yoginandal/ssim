@@ -120,8 +120,7 @@ export default function EligibilityCriteria() {
                     50% average up to the current semester
                   </span>{" "}
                   and complete all exams before{" "}
-                  <span className="font-medium">July 31</span> of the admission
-                  year.
+                  <span className="font-medium">July 31</span> of the respective admission year.
                 </p>
               </div>
 
@@ -132,11 +131,9 @@ export default function EligibilityCriteria() {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Proof of graduation with at least 50% marks must be submitted
-                  by
-                  <Badge variant="outline" className="mx-2 font-medium">
-                    July 31
-                  </Badge>
-                  of the admission year.
+                  by{" "}
+                  <strong className="font-medium">July 31 </strong>
+                  of the respective admission year.
                 </p>
               </div>
 
