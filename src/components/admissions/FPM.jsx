@@ -33,6 +33,8 @@ import {
   School,
   Trophy,
   ClipboardList,
+  Award,
+  Globe,
 } from "lucide-react";
 import {
   Table,
@@ -289,8 +291,26 @@ const Overview = () => (
       candidate needs to fulfil specific requirements as specified by the
       institute related to
     </p>
-    <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
-      {overviewData.map((item, index) => (
+    <div className="grid md:grid-cols-3 !my-8 gap-6 h-full">
+      {[
+        {
+          title: "Industry Recognition",
+          description:
+            "AICTE, NBA & NAAC Approved, AIU Affiliated and SAQS Accredited program with Outcome based education",
+          icon: Award,
+        },
+        {
+          title: "Experiential Learning",
+          description: "Value Added Management Competency Development Modules",
+          icon: BookOpen,
+        },
+        {
+          title: "Global Exposure",
+          description:
+            "Specialization in 3 domains with choice of 50+ Elective subjects",
+          icon: Globe,
+        },
+      ].map((item, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 20 }}

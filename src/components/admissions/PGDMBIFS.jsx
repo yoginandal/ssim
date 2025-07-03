@@ -243,7 +243,7 @@ const datesData = [
     date: "July 9, 2025",
     event: "Inaugural Session",
     description: "Official commencement of academic session for Batch 2025-27",
-  }
+  },
 ];
 
 // Navigation Component
@@ -364,24 +364,23 @@ const Overview = () => (
     </ul>
 
     <h3 className="font-bold text-mainBlue text-2xl">Program Highlights</h3>
-    <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
+    <div className="grid md:grid-cols-3 !my-8 gap-6 h-full">
       {[
         {
           title: "Industry Recognition",
           description:
-            "Accredited by Insurance Institute of India (III) with state-of-the-art NSE Assisted Finance Lab",
+            "AICTE, NBA & NAAC Approved, AIU Affiliated and SAQS Accredited program with Outcome based education",
           icon: Award,
         },
         {
           title: "Experiential Learning",
-          description:
-            "Hands-on experience through StratX, Equity Levers, and CESIM simulations",
+          description: "Value Added Management Competency Development Modules",
           icon: BookOpen,
         },
         {
           title: "Global Exposure",
           description:
-            "International exchange program with Herzing University, Atlanta (USA)",
+            "Specialization in 3 domains with choice of 50+ Elective subjects",
           icon: Globe,
         },
       ].map((item, index) => (
@@ -427,7 +426,9 @@ const Overview = () => (
 
 const ProgramsOffered = () => (
   <div className="space-y-8">
-    <h3 className="font-bold text-mainBlue text-2xl">Areas Of Specialization</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">
+      Areas Of Specialization
+    </h3>
     <p className="text-gray-700 text-lg !my-8">
       <strong>Note:</strong> Student need to choose One Minor and One Sectoral
       Sectoral
@@ -489,11 +490,12 @@ const Process = () => (
       </motion.div>
     ))}
     <p className="text-lg text-gray-700 !mt-5">
-      <strong>Note:</strong> Every student is given a specific date for reporting
-      to the classes. Any student who does not report within 10 days of the
-      specified date will be treated as having withdrawn from the institute. The
-      admission of such students will automatically stand cancelled and any fee
-      paid will be refunded after deducting the processing fee.
+      <strong>Note:</strong> Every student is given a specific date for
+      reporting to the classes. Any student who does not report within 10 days
+      of the specified date will be treated as having withdrawn from the
+      institute. The admission of such students will automatically stand
+      cancelled and any fee paid will be refunded after deducting the processing
+      fee.
     </p>
     <AdmissionParameters />
   </div>

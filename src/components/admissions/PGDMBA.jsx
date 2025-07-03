@@ -340,24 +340,23 @@ const Overview = () => (
     </ul>
 
     <h3 className="font-bold text-mainBlue text-2xl">Program Highlights</h3>
-    <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
+    <div className="grid md:grid-cols-3 !my-8 gap-6 h-full">
       {[
         {
-          title: "Harvard Certification",
+          title: "Industry Recognition",
           description:
-            "Embedded with Harvard Business School Online Business Analytics certification",
+            "AICTE, NBA & NAAC Approved, AIU Affiliated and SAQS Accredited program with Outcome based education",
           icon: Award,
         },
         {
-          title: "Technical Expertise",
-          description:
-            "Exposure to wide range of software, programming languages and big data processing tools",
-          icon: Code,
+          title: "Experiential Learning",
+          description: "Value Added Management Competency Development Modules",
+          icon: BookOpen,
         },
         {
           title: "Global Exposure",
           description:
-            "Exchange programs with Herzing University, Atlanta (USA)",
+            "Specialization in 3 domains with choice of 50+ Elective subjects",
           icon: Globe,
         },
       ].map((item, index) => (
