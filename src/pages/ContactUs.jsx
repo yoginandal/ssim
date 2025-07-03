@@ -18,6 +18,10 @@ import {
   CheckCircle,
   AlertCircle,
   Send,
+  GraduationCap,
+  Briefcase,
+  UserPlus,
+  FileText,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -280,57 +284,86 @@ const ContactUs = () => {
         "Siva Sivani Institute of Management, NH 44, Kompally, Secunderabad, Telangana - 500100.",
     },
     {
-      icon: Phone,
+      icon: GraduationCap,
       title: "Admissions Office",
       content: (
         <>
           <p>
-            <strong>Email:</strong> info@ssim.ac.in
+            <strong>Email:</strong>{" "}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=admissions@ssim.ac.in">
+              admissions@ssim.ac.in
+            </a>
           </p>
           <p>
-            <strong>Call:</strong> 040-2716 5451 / 53 / 54
+            <strong>Call:</strong> <a href="tel:+919391114948">9391114948</a> /{" "}
+            <a href="tel:+916281350079">6281350079</a>
           </p>
         </>
       ),
     },
+    // {
+    //   icon: Phone,
+    //   title: "Corporate Relations Office",
+    //   content: (
+    //     <>
+    //       <p>
+    //         <strong>Email:</strong> info@ssim.ac.in
+    //       </p>
+    //       <p>
+    //         <strong>Call:</strong> 040-2716 5451 / 53 / 54
+    //       </p>
+    //     </>
+    //   ),
+    // },
     {
-      icon: Phone,
-      title: "Corporate Relations Office",
+      icon: Briefcase,
+      title: "Placements",
       content: (
         <>
           <p>
-            <strong>Email:</strong> info@ssim.ac.in
+            <strong>Email:</strong>{" "}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=placements@ssim.ac.in">
+              placements@ssim.ac.in
+            </a>
           </p>
           <p>
-            <strong>Call:</strong> 040-2716 5451 / 53 / 54
+            <strong>Call:</strong>{" "}
+            <a href="tel:+919133305060">9133305060</a> /{" "}
+            <a href="tel:+919989191878">9989191878</a>
           </p>
         </>
       ),
     },
     {
-      icon: Phone,
+      icon: UserPlus,
       title: "PGP Office",
       content: (
         <>
           <p>
-            <strong>Email:</strong> info@ssim.ac.in
+            <strong>Email:</strong>{" "}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pgpchair@ssim.ac.in">
+              pgpchair@ssim.ac.in
+            </a>
           </p>
           <p>
-            <strong>Call:</strong> 040-2716 5451 / 53 / 54
+            <strong>Call:</strong> <a href="tel:+918328275438">8328275438</a>
           </p>
         </>
       ),
     },
     {
-      icon: Mail,
+      icon: FileText,
       title: "Examination Department (For student verification)",
       content: (
         <>
           <p>
-            <strong>Email:</strong> info@ssim.ac.in
+            <strong>Email:</strong>{" "}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=controller.exams@ssim.ac.in">
+              controller.exams@ssim.ac.in
+            </a>
           </p>
           <p>
-            <strong>Call:</strong> 040-2716 5451 / 53 / 54
+            <strong>Call:</strong> <a href="tel:+919391115088">9391115088</a>
           </p>
         </>
       ),
