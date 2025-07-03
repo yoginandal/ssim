@@ -54,7 +54,7 @@ import PGDMBIFSBanner from "../../assets/admissions/admissions.webp";
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
-  { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
+  { id: "programs", label: "Areas Of Specialization", icon: BriefcaseBusiness },
   { id: "eligibility", label: "Eligibility Criteria", icon: ClipboardList },
   { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
@@ -437,7 +437,11 @@ const Overview = () => (
 
 const ProgramsOffered = () => (
   <div className="space-y-8">
-    <h3 className="font-bold text-mainBlue text-2xl">Programs Offered</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">Areas Of Specialization</h3>
+    <p className="text-gray-700 text-lg !my-8">
+      <strong>Note:</strong> Student need to choose One Minor and One Sectoral
+      Sectoral
+    </p>
     <div className="rounded-lg overflow-hidden border">
       <Table>
         <TableHeader>
@@ -464,10 +468,6 @@ const ProgramsOffered = () => (
         </TableBody>
       </Table>
     </div>
-    <p className="text-gray-700 text-lg !my-8">
-      <strong>Note:</strong> Student need to choose One Minor and One Sectoral
-      Sectoral
-    </p>
   </div>
 );
 
