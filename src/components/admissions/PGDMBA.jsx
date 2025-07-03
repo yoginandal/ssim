@@ -61,7 +61,7 @@ const navigationSections = [
   { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
-  { id: "brochure", label: "Brochure", icon: BookOpen },
+  // { id: "brochure", label: "Brochure", icon: BookOpen },
   { id: "apply", label: "Apply Now", icon: School },
   { id: "scholarships", label: "Scholarships", icon: Trophy },
 ];
