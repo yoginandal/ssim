@@ -22,7 +22,6 @@ import PlacementSection from "@/components/placement/PlacementSection";
 import Internships from "@/components/placement/Internships";
 // import PlacementTeam from "@/components/placement/PlacementTeam";
 import PlacementTeams from "@/components/placement/PlacementTeams";
-import FPM from "@/components/admissions/FPM";
 import PGDMTPS from "@/components/admissions/PGDMTPS";
 import PGDMBIFS from "@/components/admissions/PGDMBIFS";
 import PGDMBA from "@/components/admissions/PGDMBA";
@@ -45,10 +44,80 @@ import GuestLectures from "./components/placement/GuestLectures";
 // import SelectionProcess from "./components/admissions/SelectionProcess";
 // import CourseElectives from "./components/programs/CourseElectives";
 // import EligibilityCriteria from "@/components/admissions/EligibilityCriteria";
+// Define different banner images for different sections
+import AboutBanner from "@/assets/breadcrumb.png";
+import FPM from "./components/admissions/FPM";
+import InternalComplaints from "./components/footer/InternalComplaints";
+import GrievanceRedressalMechanism from "./components/footer/GrievanceRedressalMechanism";
+import FacultyPublication from "./components/faculty&research/FacultyPublication";
+// You can add custom banner images for different sections:
+// import PlacementBanner from "@/assets/placement-banner.jpg";
+// import FacultyBanner from "@/assets/faculty-banner.jpg";
+// import ResearchBanner from "@/assets/research-banner.jpg";
+
+// Example of how to create custom layouts for other sections:
+/*
+// For a Programs section:
+const programsSidebarLinks = [
+  { href: "/programs/pgdm-triple-specialisation", label: "PGDM Triple Specialisation" },
+  { href: "/programs/pgdm-bifs", label: "PGDM BIFS" },
+  { href: "/programs/pgdm-ba", label: "PGDM Business Analytics" },
+  { href: "/programs/fpm-efpm", label: "FPM / EFPM" },
+];
+
+// For an Admissions section:
+const admissionsSidebarLinks = [
+  { href: "/admissions/eligibility", label: "Eligibility Criteria" },
+  { href: "/admissions/process", label: "Application Process" },
+  { href: "/admissions/scholarships", label: "Scholarships" },
+  { href: "/admissions/fee-structure", label: "Fee Structure" },
+];
+
+// Usage in Routes:
+<Route 
+  path="/programs"
+  element={
+    <AboutLayout 
+      title="Academic Programs"
+      bannerImage={ProgramsBanner}
+      breadcrumbs={[
+        { href: "/", label: "Home", isActive: false },
+        { href: "/programs", label: "Programs", isDropdown: true, isActive: false },
+        { label: "All Programs", isActive: true }
+      ]}
+      dropdownLinks={programsSidebarLinks}
+      showDropdown={true}
+      sidebarLinks={programsSidebarLinks}
+      showSidebar={true}
+    />
+  }
+>
+  <Route path="" element={<Navigate to="pgdm-triple-specialisation" replace />} />
+  <Route path="pgdm-triple-specialisation" element={<PGDMTPS />} />
+  // ... other program routes
+</Route>
+*/
+
 const aboutSidebarLinks = [
   { href: "/about/message", label: "Message" },
   { href: "/about/values", label: "Values & Mission" },
   { href: "/about/set-us-apart", label: "What Sets Us Apart" },
+];
+
+const placementSidebarLinks = [
+  { href: "/placement/records", label: "Placement Records" },
+  { href: "/placement/team", label: "Placement Team" },
+  { href: "/placement/internships", label: "Internships" },
+  { href: "/placement/guest-lectures", label: "Guest Lectures" },
+];
+
+const facultySidebarLinks = [
+  { href: "/faculty/areas", label: "Areas of Expertise" },
+];
+
+const researchSidebarLinks = [
+  { href: "/research/case-research-center", label: "Case Research Center" },
+  { href: "/research/conferences", label: "Conferences" },
 ];
 
 export default function App() {
@@ -89,9 +158,11 @@ export default function App() {
               <Route path="/" element={<HomePage />} /> {/* Home page route */}
               <Route
                 path="/about"
-                element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
+                element={
+                  <AboutLayout bannerImage={AboutBanner} showDropdown={true} />
+                }
               >
-                <Route path="" element={<Navigate to="message" replace />} />
+                {/* <Route path="" element={<Navigate to="message" replace />} /> */}
                 <Route path="directors-message" element={<AboutMessage />} />
                 <Route path="values" element={<AboutValues />} />
                 <Route
@@ -118,18 +189,55 @@ export default function App() {
               />
               <Route
                 path="/faculty"
-                element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
+                element={
+                  <AboutLayout
+                    bannerImage={AboutBanner} // You can replace with FacultyBanner
+                    sidebarLinks={facultySidebarLinks}
+                  />
+                }
               >
                 <Route path="" element={<Navigate to="message" replace />} />
                 <Route path="areas" element={<Areas />} />
               </Route>
-              <Route path="/research">
-                <Route path="" element={<Navigate to="message" replace />} />
+              <Route
+                path="/research"
+                // element={
+                //   <AboutLayout
+                //     title="Research"
+                //     bannerImage={AboutBanner} // You can replace with ResearchBanner
+                //     breadcrumbs={[
+                //       { href: "/", label: "Home", isActive: false },
+                //       {
+                //         href: "/research",
+                //         label: "Research",
+                //         isDropdown: true,
+                //         isActive: false,
+                //       },
+                //       { label: "Research Center", isActive: true },
+                //     ]}
+                //     dropdownLinks={researchSidebarLinks}
+                //     showDropdown={true}
+                //     sidebarLinks={researchSidebarLinks}
+                //     showSidebar={false}
+                //   />
+                // }
+              >
+                <Route
+                  path=""
+                  element={<Navigate to="case-research-center" replace />}
+                />
                 <Route path="case-research-center" element={<Research />} />
               </Route>
               <Route
                 path="/placement"
-                element={<AboutLayout sidebarLinks={aboutSidebarLinks} />}
+                element={
+                  <AboutLayout
+                    bannerImage={AboutBanner} // You can replace with PlacementBanner
+                    showDropdown={true}
+                    sidebarLinks={placementSidebarLinks}
+                    showSidebar={false}
+                  />
+                }
               >
                 <Route path="" element={<Navigate to="message" replace />} />
                 {/* <Route path="records" element={<PlacementRecords />} /> */}
@@ -173,6 +281,9 @@ export default function App() {
               <Route path="/iqac" element={<IQAC />} />
               <Route path="/events" element={<SSIM />} />
               <Route path="testing" element={<LifeAtSsim />} />
+              <Route path="/internal-complaints" element={<InternalComplaints />} />
+              <Route path="/grievance-redressal-mechanism" element={<GrievanceRedressalMechanism />} />
+              <Route path="/faculty/publications" element={<FacultyPublication />} />
               {/* <Route path="/international-events" element={<InternationalEvents />} /> */}
               {/* <Route path="/admissions/process" element={<SelectionProcess />} /> */}
               {/* <Route path="/programs/course-electives" element={<CourseElectives />} /> */}

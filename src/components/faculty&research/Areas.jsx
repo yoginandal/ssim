@@ -358,7 +358,7 @@ export default function Areas() {
   const [hoveredMember, setHoveredMember] = useState(null);
 
   return (
-    <section className="w-full pt-4 pb-16">
+    <section className="w-full py-16">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -366,15 +366,14 @@ export default function Areas() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
         >
-          <Badge variant="outline" className="border-blue-500 text-blue-600">
+          {/* <Badge variant="outline" className="border-blue-500 text-blue-600">
             Our Amazing Team
-          </Badge>
+          </Badge> */}
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-gray-900">
-            Meet the Innovators
+            Faculty Areas of Expertise
           </h2>
           <p className="max-w-[900px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Passionate individuals working together to create extraordinary
-            experiences
+            Meet our distinguished faculty members and their specialized domains of knowledge and research
           </p>
         </motion.div>
 

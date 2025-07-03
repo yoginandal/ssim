@@ -16,12 +16,87 @@ import {
 } from "lucide-react";
 import WordPullUp from "./ui/word-pull-up";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.5 },
+};
+
+// Counter Animation Hook
+const useCountAnimation = (end, duration = 2000, shouldStart = false) => {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(0);
+
+  useEffect(() => {
+    if (!shouldStart) {
+      setCount(0);
+      return;
+    }
+
+    const startTime = Date.now();
+    const startValue = 0;
+
+    const animate = () => {
+      const now = Date.now();
+      const progress = Math.min((now - startTime) / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutExpo = 1 - Math.pow(2, -10 * progress);
+      const currentCount = Math.floor(
+        startValue + (end - startValue) * easeOutExpo
+      );
+
+      countRef.current = currentCount;
+      setCount(currentCount);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
+    };
+
+    animate();
+  }, [end, duration, shouldStart]);
+
+  return count;
+};
+
+// Extract numeric value from stat value
+const extractNumber = (value) => {
+  const numericString = value.replace(/[^0-9]/g, "");
+  return parseInt(numericString) || 0;
+};
+
+// Format the display value with prefix/suffix
+const formatValue = (originalValue, animatedNumber) => {
+  if (originalValue.includes("₹")) {
+    return `₹${animatedNumber.toLocaleString()}`;
+  }
+  if (originalValue.includes("+")) {
+    return `${animatedNumber.toLocaleString()}+`;
+  }
+  return animatedNumber.toLocaleString();
+};
+
+// Animated Counter Component
+const AnimatedCounter = ({ value, shouldStart, delay = 0 }) => {
+  const numericValue = extractNumber(value);
+  const animatedValue = useCountAnimation(
+    numericValue,
+    2000 + delay,
+    shouldStart
+  );
+
+  return (
+    <span className="text-3xl font-bold text-mainBlue">
+      {formatValue(value, animatedValue)}
+    </span>
+  );
 };
 
 const stats = [
@@ -67,6 +142,12 @@ export default function AboutSection() {
   const isMobile = useIsMobile();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Intersection observer for stats animation
+  const [statsRef, statsInView] = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   const paragraphs = [
     <p className="text-lg leading-relaxed" key="1">
       Located in the heart of Hyderabad and Secunderabad, Siva Sivani Institute
@@ -74,9 +155,7 @@ export default function AboutSection() {
       <strong>premier institution with over three decades of excellence</strong>{" "}
       in management education. Renowned for its{" "}
       <strong>strong ethical foundation</strong>, this{" "}
-      <strong>
-        SAQS, AIU, NBA, NAAC and AICTE accredited institution
-      </strong>{" "}
+      <strong>SAQS, AIU, NBA, NAAC and AICTE accredited institution</strong>{" "}
       delivers industry-relevant learning through an{" "}
       <strong>
         innovative curriculum and experienced faculty blending academic and
@@ -103,9 +182,8 @@ export default function AboutSection() {
       industries, domains, and profiles.
     </p>,
     <p className="text-lg leading-relaxed" key="3">
-      With a focus on{" "}
-      <strong>holistic development of individuals</strong> with special
-      inclination towards{" "}
+      With a focus on <strong>holistic development of individuals</strong> with
+      special inclination towards{" "}
       <strong>
         critical decision-making bordering on creativity, innovation,
         sustainability, ethics, and practical applicability
@@ -128,7 +206,7 @@ export default function AboutSection() {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Column - Image */}
-          <div className="lg:sticky lg:top-20 h-fit">
+          <div className="lg:sticky lg:top-20 hidden lg:block h-fit">
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -176,6 +254,25 @@ export default function AboutSection() {
                 />
                 <div className="w-32 h-1.5 bg-red-600/80 rounded-none" />
               </div>
+              <Card className="overflow-hidden block lg:hidden !mt-16 border-0 shadow-2xl rounded-none">
+                <CardContent className="p-0">
+                  <div className="relative">
+                    <img
+                      alt="SSIM Campus Life"
+                      className="object-cover w-full h-full transform transition-transform hover:scale-105 duration-700"
+                      src={AboutSSIM}
+                      style={{
+                        objectFit: "cover",
+                      }}
+                    />
+                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" /> */}
+                    <Badge className="absolute top-4 left-4 bg-red-600 animate-pulse text-white  backdrop-blur">
+                      <GraduationCap className="w-4 h-4 mr-2" />
+                      Excellence in Education
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
 
               <div className="space-y-6 text-gray-600">
                 {contentToShow}
@@ -200,7 +297,10 @@ export default function AboutSection() {
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8">
+              <div
+                ref={statsRef}
+                className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-6 mt-8"
+              >
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
@@ -214,9 +314,11 @@ export default function AboutSection() {
                       <div className="p-2 bg-red-600 w-fit rounded-lg text-white">
                         {stat.icon}
                       </div>
-                      <div className="text-3xl font-bold text-mainBlue">
-                        {stat.value}
-                      </div>
+                      <AnimatedCounter
+                        value={stat.value}
+                        shouldStart={statsInView}
+                        delay={index * 200}
+                      />
                       <div className="text-sm font-medium text-gray-600">
                         {stat.label}
                       </div>
@@ -229,17 +331,27 @@ export default function AboutSection() {
               </div>
 
               {/* CTA Button */}
-              <Button
-                className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
-                size="lg"
+              <Link
+                to="/about/vision-mission"
+                onClick={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }}
               >
-                <div className="bg-red-600 mt-8 h-11 flex items-center pl-8 pr-4 hover:bg-red-700">
-                  Learn More About SSIM
-                </div>
-                <div className="bg-mainBlue mt-8 h-11 flex items-center px-4">
-                  <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
-                </div>
-              </Button>
+                <Button
+                  className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
+                  size="lg"
+                >
+                  <div className="bg-red-600 mt-8 h-11 flex items-center pl-8 pr-4 hover:bg-red-700">
+                    Learn More About SSIM
+                  </div>
+                  <div className="bg-mainBlue mt-8 h-11 flex items-center px-4">
+                    <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

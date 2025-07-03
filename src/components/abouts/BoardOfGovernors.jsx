@@ -122,7 +122,7 @@ export default function BoardOfGovernors() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-[2.5rem] font-bold text-mainBlue mb-4 tracking-tight">
+        <h2 className="text-4xl sm:text-5xl font-bold text-mainBlue mb-4 tracking-tight">
           Board Of Governers
         </h2>
       </motion.div>

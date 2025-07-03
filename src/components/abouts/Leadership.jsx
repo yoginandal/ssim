@@ -17,7 +17,7 @@ import ramana from "@/assets/faculty&research/faculty/Dr. Ramana Rao.webp";
 import ambuj from "@/assets/about/dr-ambuj.jpeg";
 import ArathySampathy from "../../assets/about/BoardOfGoverners/Smt_Arathy_Sampathy.jpg";
 import SaileshSampathy from "../../assets/about/BoardOfGoverners/Dr_Sailesh_Sampathy.jpg";
-import Ambuj from "../../assets/about/BoardOfGoverners/dr-ambuj (1).jpeg";
+import Ambuj from "../../assets/about/Ambuj Gupta.png";
 
 // Leaders data (unchanged)
 const leaders = [
@@ -75,7 +75,7 @@ const leaders = [
     image: Ambuj,
     quote:
       "Nurturing holistic excellence through innovative education, industry integration, and value-based leadership",
-    quoteAuthor: "PROF. S.V. RAMANA RAO's Vision",
+    quoteAuthor: "Prof. (Dr.) Ambuj Jagdish Gupta",
     content: [
       "Management education has evolved to be a premier choice among post-graduation degrees for students all over the world. The growing complexity of business, coupled with quantum leaps in technological advances has made this course, futuristic in its outlook, attracting the best minds to unravel and chart new directions for organizations. Business education provided by business schools should, therefore, integrate these vagaries into the environment to build a competent talent base.",
       `Siva Sivani Institute of Management (SSIM) is one of the leading business schools in the country offering Post Graduation in Business Management since 1992. These programs are carefully designed in accordance with industry requirements offered by prominent professors from the industry as well as the academic fraternity. SSIM is striving to “achieve and sustain a reputation for excellence in teaching, learning, research and consultancy whilst upholding human values”. These values are imbibed in every fibre of the operations at SSIM and leaders walk the talk to help students emulate these standards!`,
@@ -103,7 +103,7 @@ function LeaderCard({ leader }) {
               <img
                 src={leader.image || "/placeholder.svg"}
                 alt={`${leader.role} - ${leader.name}`}
-                className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-300"
+                className="object-cover bg-gray-100 object-center w-full h-full transform group-hover:scale-105 transition-transform duration-300"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -189,7 +189,7 @@ function LeaderCard({ leader }) {
 
 export default function Leadership() {
   return (
-    <section className="w-full py-12 lg:py-16">
+    <section className="w-full py-16 sm:py-20">
       <div className="container px-4 md:px-6 mx-auto max-w-5xl">
         <motion.div
           className="text-center mb-12"

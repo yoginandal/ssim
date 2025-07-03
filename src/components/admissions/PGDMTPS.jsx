@@ -55,16 +55,16 @@ import Scholarships from "./Scholarships";
 import SelectionProcess from "./SelectionProcess";
 import AdmissionParameters from "./AdmissionParameters";
 import EligibilityCriteria from "./EligibilityCriteria";
-
+import PGDMTPSBanner from "../../assets/admissions/admissions.webp";
 // Navigation Data
 const navigationSections = [
   { id: "overview", label: "Overview", icon: FileText },
-  { id: "programs", label: "Programs Offered", icon: BriefcaseBusiness },
+  { id: "programs", label: "Areas Of Specialization", icon: BriefcaseBusiness },
   { id: "eligibility", label: "Eligibility Criteria", icon: ClipboardList },
   { id: "process", label: "Selection Process", icon: GraduationCap },
   { id: "fees", label: "Fee Structure", icon: CreditCard },
   { id: "dates", label: "Important Dates", icon: Calendar },
-  { id: "brochure", label: "Brochure", icon: BookOpen },
+  // { id: "brochure", label: "Brochure", icon: BookOpen },
   { id: "apply", label: "Apply Now", icon: School },
   { id: "scholarships", label: "Scholarships", icon: Trophy },
 ];
@@ -137,7 +137,7 @@ const programsOffered = [
 const processData = [
   {
     step: 1,
-    title: "Aptitude Test Scores",
+    title: "Aptitude Test Score",
     description:
       "Submit scores from accepted entrance exams like CAT/XAT/MAT/CMAT/ATMA/GMAT or State Government Exam",
     details:
@@ -160,7 +160,7 @@ const processData = [
   {
     step: 4,
     // title: "SOP & Interview",
-    title: "Selection Rounds",
+    title: "Selection Round",
     description:
       "Submit Statement of Purpose, video introduction and attend personal interview",
     details: "SOP | Video Introduction | Personal Interview",
@@ -251,24 +251,14 @@ const feesData = {
 
 const datesData = [
   {
-    date: "September 1, 2024",
-    event: "Application Opens",
-    description: "Start your application process",
+    date: "July 5-8, 2025",
+    event: "Reporting & Registration",
+    description: "Complete registration process and report to campus",
   },
   {
-    date: "November 15, 2024",
-    event: "Early Decision Deadline",
-    description: "Submit for early consideration",
-  },
-  {
-    date: "January 15, 2025",
-    event: "Regular Decision Deadline",
-    description: "Final application deadline",
-  },
-  {
-    date: "March 31, 2025",
-    event: "Decisions Released",
-    description: "Check your application status",
+    date: "July 9, 2025",
+    event: "Inaugural Session",
+    description: "Official commencement of academic session for Batch 2025-27",
   },
 ];
 
@@ -407,24 +397,23 @@ const Overview = () => (
     <h3 className="font-bold text-mainBlue text-2xl mt-8">
       Program Highlights
     </h3>
-    <div className="grid md:grid-cols-3 !mt-8 gap-6 h-full">
+    <div className="grid md:grid-cols-3 !my-8 gap-6 h-full">
       {[
         {
-          title: "Accreditations",
+          title: "Industry Recognition",
           description:
-            "NBA and NAAC Accredited program with outcome-based education",
+            "AICTE, NBA & NAAC Approved, AIU Affiliated and SAQS Accredited program with Outcome based education",
           icon: Award,
         },
         {
           title: "Experiential Learning",
-          description:
-            "StratX, Equity Levers, and CESIM simulations for practical exposure",
+          description: "Value Added Management Competency Development Modules",
           icon: BookOpen,
         },
         {
-          title: "Global Connect",
+          title: "Global Exposure",
           description:
-            "International exchange program with Herzing University, Atlanta (USA)",
+            "Specialization in 3 domains with choice of 50+ Elective subjects",
           icon: Globe,
         },
       ].map((item, index) => (
@@ -467,7 +456,13 @@ const Overview = () => (
 
 const ProgramsOffered = () => (
   <div className="space-y-8">
-    <h3 className="font-bold text-mainBlue text-2xl">Programs Offered</h3>
+    <h3 className="font-bold text-mainBlue text-2xl">
+      Areas Of Specialization
+    </h3>
+    <p className="text-gray-700 text-lg !my-8">
+      <strong>Note:</strong> Student need to choose One Major, One Minor & One
+      Sectoral
+    </p>
     <div className="rounded-lg overflow-hidden border">
       <Table>
         <TableHeader>
@@ -500,16 +495,16 @@ const ProgramsOffered = () => (
         </TableBody>
       </Table>
     </div>
-    <p className="text-gray-700 text-lg !my-8">
-      <strong>Note:</strong> Student need to choose One Major, One Minor & One
-      Sectoral
-    </p>
   </div>
 );
 
 const Process = () => (
   <div className="space-y-8">
     <SelectionProcess />
+    <p className="text-lg font-semibold text-gray-700 !mt-5">
+      SSIM follows Profile Based Selection process. The final selection is based
+      on the cumulative score of the below mentioned components -
+    </p>
     {processData.map((item, index) => (
       <motion.div
         key={index}
@@ -531,15 +526,12 @@ const Process = () => (
       </motion.div>
     ))}
     <p className="text-lg text-gray-700 !mt-5">
-      <strong>Note:</strong> Every student is given a specific date for reporng
-      to the classes. Any student who does not report within 10 days of the
-      specified date will be treated as having withdrawn from the instute. The
-      admission of such student/s will automacally stand cancelled and any fee
-      paid will be refunded aer deducng the processing fee.
-    </p>
-    <p className="text-lg font-semibold text-gray-700 !mt-5">
-      SSIM follows Profile Based Selection process. The final selection is based
-      on the cumulative score of the below mentioned components -
+      <strong>Note:</strong> Every student is given a specific date for
+      reporting to the classes. Any student who does not report within 10 days
+      of the specified date will be treated as having withdrawn from the
+      institute. The admission of such students will automatically stand
+      cancelled and any fee paid will be refunded after deducting the processing
+      fee.
     </p>
     <AdmissionParameters />
   </div>
@@ -795,14 +787,14 @@ const PGDMTPS = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-primary/5 to-background border-b">
+      <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-white to-white border-b">
         <div className="container max-w-7xl mx-auto px-4 py-16 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4 pb-4 bg-gradient-to-r from-red-600 to-red-600/60 bg-clip-text text-transparent">
               Begin Your Journey with PGDM Triple Specialisation Program
             </h1>
             <p className="text-xl text-gray-900">
@@ -811,7 +803,14 @@ const PGDMTPS = () => {
             </p>
           </motion.div>
         </div>
-        <div className="absolute inset-0 z-0">
+        {/* Background image - only on large devices */}
+        <div
+          className="absolute inset-0 z-0 bg-contain bg-no-repeat bg-right hidden lg:block"
+          style={{ backgroundImage: `url(${PGDMTPSBanner})` }}
+        />
+
+        {/* Gradient and icon - only on smaller devices */}
+        <div className="absolute inset-0 z-0 block lg:hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 backdrop-blur-3xl" />
           <GraduationCap className="absolute right-10 top-10 w-96 h-96 text-primary/5 rotate-12" />
         </div>

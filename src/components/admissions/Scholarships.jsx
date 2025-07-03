@@ -99,6 +99,11 @@ export default function Scholarships() {
     <>
       <div className="min-h-screen bg-white pb-12">
         <div className="max-w-7xl mx-auto">
+          <p className="text-lg text-slate-600 mb-4">
+            <strong className="text-red-600">*</strong> Students who meet below mentioned criteria
+            are eligible for Merit Scholarship (A student will be awarded the
+            best option, if eligible for more than 1 criteria)
+          </p>
           {/* Header Section */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -111,7 +116,7 @@ export default function Scholarships() {
               <GraduationCap className="w-8 h-8 text-white" />
             </div> */}
               <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Merit-Based Scholarship Rewards
+                Criteria-1: Merit-Based Scholarship Rewards
               </h1>
             </div>
             <p className="text-lg text-slate-600">

@@ -4,8 +4,11 @@ import Heading from "@/components/Heading";
 import ThreeDPlacementCard from "@/components/ThreeDPlacementCard";
 import PlacementCardMarquee from "@/components/PlacementCardMarquee";
 import { placementCards } from "@/data/placementData";
+import { Button } from "@/components/ui/button";
 
 import { useEffect, memo } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const PlacementStories = () => {
   // Preload images
@@ -43,6 +46,27 @@ const PlacementStories = () => {
           </PlacementCardMarquee>
         </div>
       </Container>
+      <Link
+        to="/placement/records"
+        onClick={() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }}
+      >
+        <Button
+          className="group gap-0 px-0 py-0 h-0 rounded-none mt-8"
+          size="lg"
+        >
+          <div className="bg-red-600 mt-8 h-11 flex items-center pl-8 pr-4 hover:bg-red-700">
+            View All Placement
+          </div>
+          <div className="bg-mainBlue mt-8 h-11 flex items-center px-4">
+            <ArrowRight className="w-4 bg-mainBlue h-4 transition-transform group-hover:translate-x-1" />
+          </div>
+        </Button>
+      </Link>
     </div>
   );
 };

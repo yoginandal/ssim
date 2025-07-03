@@ -123,7 +123,7 @@ const programData = {
     keyInfo: {
       duration: "3 years",
       credits: "36",
-      startDate: "July 2024",
+      "Sanctioned Intake": "20",
       location: "Full-time On-campus",
       degree: "Fellow Program in Management (FPM)",
     },
@@ -275,7 +275,7 @@ const programData = {
     keyInfo: {
       duration: "2 years",
       credits: "120",
-      startDate: "2024",
+      "Sanctioned Intake": "60",
       location: "Full-time On-campus",
       degree: "Post Graduate Diploma in Management - Business Analytics",
     },
@@ -719,7 +719,7 @@ const programData = {
     keyInfo: {
       duration: "2 years",
       credits: "120",
-      startDate: "2024",
+      "Sanctioned Intake": "60",
       location: "Full-time On-campus",
       degree:
         "Post Graduate Diploma in Management - Banking, Insurance and Financial Services",
@@ -1256,7 +1256,7 @@ const programData = {
     keyInfo: {
       duration: "2 years",
       credits: "120",
-      startDate: "2024",
+      "Sanctioned Intake": "180",
       location: "Full-time On-campus",
       degree: "Post Graduate Diploma in Management",
     },
@@ -1942,7 +1942,7 @@ const ProgramComparison = ({ programs }) => {
   const comparisonData = [
     { feature: "Duration", key: "duration" },
     { feature: "Credits", key: "credits" },
-    { feature: "Start Date", key: "startDate" },
+    { feature: "Sanctioned Intake", key: "Sanctioned Intake" },
     { feature: "Location", key: "location" },
     { feature: "Degree", key: "degree" },
     { feature: "Applicants", key: "applicants" },
@@ -2000,7 +2000,7 @@ const KeyInformation = ({ info }) => {
   const iconMap = {
     duration: Clock,
     credits: BookOpen,
-    startDate: CalendarRange,
+    "Sanctioned Intake": CalendarRange,
     location: MapPin,
     degree: GraduationCap,
   };

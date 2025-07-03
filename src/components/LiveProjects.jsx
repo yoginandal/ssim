@@ -64,7 +64,7 @@ const LiveProjects = () => {
           <div className="text-center">
             <WordPullUp
               words="Our Placement Partners"
-              className="text-3xl md:text-4xl font-bold tracking-tight text-mainBlue mt-8 mb-0 md:mb-12"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-mainBlue mt-3 sm:mt-8 mb-12"
             />
             <IndustryMarquee className="mt-6" />
           </div>

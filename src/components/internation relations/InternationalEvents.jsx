@@ -192,7 +192,7 @@ const EventCard = ({ event }) => {
 // Main Events Section Component
 export default function InternationalEvents() {
   return (
-    <section className="pt-16 sm:pt-20 px-4">
+    <section className="pt-5 px-4">
       <div className="max-w-[1100px] mx-auto">
         {/* Section Header */}
         {/* <div className="text-center mb-12">
