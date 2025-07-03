@@ -182,7 +182,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-xl border border-blue-100 shadow-sm">
+        {/* <div className="mt-12 p-6 bg-white/50 backdrop-blur-sm rounded-xl border border-blue-100 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8">
               <h3 className="text-xl font-semibold text-mainBlue mb-2">Stay Updated with SSIM</h3>
@@ -202,13 +202,9 @@ export default function Footer() {
                   Subscribe
                 </Button>
               </form>
-              {/* <p className="text-xs text-[#293794]/70 mt-2">
-                By subscribing, you agree to our privacy policy. We respect your privacy and will never share your
-                information.
-              </p> */}
             </div>
           </div>
-        </div>
+        </div> */}
 
         <Separator className="my-12 bg-[#293794]" />
 
